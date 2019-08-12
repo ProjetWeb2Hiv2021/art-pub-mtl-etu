@@ -3,8 +3,10 @@
 ## Configurations : 
 Les fichiers suivants sont à modifier en fonction de la configuration du site (url, accès MySQL, etc)
 - /js/define.js
-- db_info.php (prendre le fichier db_info_modele.php et le renommer)
-- config.php
+- /api/db_info.php (prendre le fichier db_info_modele.php et le renommer)
+- /api/config.php
+- /api/.htaccess
+- /api/admin/.htaccess
 
 
 ## Routes disponibles
