@@ -1,8 +1,8 @@
 <?php
-	class Model_Usager extends TemplateDAO {
+	class Model_Utilisateur extends TemplateDAO {
 		
 		public function getTable() {
-			return "usagers";
+			return "utilisateur";
 		}
 		/* Differentes methodes CRUD utilisateurs */
 		
