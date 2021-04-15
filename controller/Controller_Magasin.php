@@ -21,6 +21,8 @@
 				// Action par défaut
 				$vue = "Filtrer";
 				$this->showView($vue);
+				$vueDeux = "VoitureListe";
+				$this->showView($vueDeux);
 			}
 			$this->showView("Footer");
 		}
