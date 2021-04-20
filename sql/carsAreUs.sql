@@ -38,7 +38,7 @@ CREATE TABLE transmission (
 	PRIMARY KEY (idTransmission)
 )ENGINE=InnoDB;	
 CREATE TABLE voiture (
-	idVoiture SMALLINT UNSIGNED AUTO_INCREMENT, 
+	vin SMALLINT UNSIGNED AUTO_INCREMENT, 
 	annee SMALLINT UNSIGNED NOT NULL,
 	dateArrivee DATE NOT NULL,
 	prixPaye MEDIUMINT NOT NULL, 
@@ -49,7 +49,7 @@ CREATE TABLE voiture (
 	idChassis TINYINT UNSIGNED NOT NULL,
 	idModele SMALLINT UNSIGNED NOT NULL, 
 	idTransmission TINYINT UNSIGNED NOT NULL,
-	PRIMARY KEY (idVoiture),
+	PRIMARY KEY (vin),
 	FOREIGN KEY (idTypeCarburant) REFERENCES typeCarburant(idTypeCarburant),
 	FOREIGN KEY (idModele) REFERENCES modele(idModele),
 	FOREIGN KEY (idChassis) REFERENCES chassis(idChassis),
@@ -59,9 +59,9 @@ CREATE TABLE voiture (
 CREATE TABLE listeImage (
 	idImage SMALLINT UNSIGNED AUTO_INCREMENT, 
 	cheminFichier VARCHAR(255) NOT NULL,	
-	idVoiture SMALLINT UNSIGNED,
+	vin SMALLINT UNSIGNED,
 	PRIMARY KEY (idImage),
-	FOREIGN KEY (idVoiture) REFERENCES voiture(idVoiture)
+	FOREIGN KEY (vin) REFERENCES voiture(vin)
 )ENGINE=InnoDB;	
 CREATE TABLE ville (
 	idVille SMALLINT UNSIGNED AUTO_INCREMENT, 
@@ -136,11 +136,11 @@ CREATE TABLE commande (
 )ENGINE=InnoDB;
 CREATE TABLE ligneCommande (
 	idCommande INT UNSIGNED NOT NULL AUTO_INCREMENT,	
-	idVoiture SMALLINT UNSIGNED NOT NULL,
+	vin SMALLINT UNSIGNED NOT NULL,
 	quantite TINYINT UNSIGNED NOT NULL,
-	PRIMARY KEY (idCommande, idVoiture), 
+	PRIMARY KEY (idCommande, vin), 
 	FOREIGN KEY (idCommande) REFERENCES commande(idCommande),
-	FOREIGN KEY (idVoiture) REFERENCES voiture(idVoiture)
+	FOREIGN KEY (vin) REFERENCES voiture(vin)
 )ENGINE=InnoDB;
 
 CREATE TABLE facture (
