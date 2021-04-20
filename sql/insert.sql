@@ -43,7 +43,7 @@ INSERT INTO expedition(expedition) VALUES ("Livraison locale"),("Ramassage");
 INSERT INTO statut(statut) VALUES ("Réservé"),("Facturé");
 INSERT INTO commande(idUtilisateur, idModePaiement, idExpedition, idStatut, dateCommande) VALUES (1, 2, 1, 1, "2021-04-20"), (2, 3, 2, 2, "2021-04-20"), (3, 4, 1, 1, "2021-04-22");
 INSERT INTO facture(idCommande) VALUES (2);
-INSERT INTO `voiture` (`idVoiture`, `annee`, `dateArrivee`, `prixPaye`, `km`, `couleur`, `idGroupeMotopropulseur`, `idTypeCarburant`, `idChassis`, `idModele`, `idTransmission`) VALUES
+INSERT INTO `voiture` (`vin`, `annee`, `dateArrivee`, `prixPaye`, `km`, `couleur`, `idGroupeMotopropulseur`, `idTypeCarburant`, `idChassis`, `idModele`, `idTransmission`) VALUES
 (1, 2017, '2019-03-12', 18700, 100000, 'Rouge', 2, 1, 3, 1, 2),
 (2, 2004, '2020-03-12', 2600, 261670, 'Argent', 2, 2, 1, 11, 1),
 (3, 2008, '2019-08-10', 2950, 239884, 'Gris', 2, 1, 1, 23, 1),
@@ -61,7 +61,7 @@ INSERT INTO `voiture` (`idVoiture`, `annee`, `dateArrivee`, `prixPaye`, `km`, `c
 (16, 2017, '2019-04-28', 20950, 45000, 'Gris', 1, 1, 1, 479, 1),
 (17, 2018, '2019-12-23', 41766, 36574, 'Noir', 1, 1, 4, 489, 1),
 (18, 2009, '2019-03-12', 6995, 289584, 'Gris', 1, 1, 4, 494, 1);
-INSERT INTO `listeImage` (`idImage`, `cheminFichier`, `idVoiture`) VALUES
+INSERT INTO `listeImage` (`idImage`, `cheminFichier`, `vin`) VALUES
 (55, './assets/images/img11.jpg', 1),
 (56, './assets/images/img12.jpg', 1),
 (57, './assets/images/img13.jpg', 1),
