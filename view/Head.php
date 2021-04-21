@@ -10,7 +10,7 @@
 	<script type="text/javascript" src="./scripts/Filtrer.js"></script>
 	<script type="text/javascript" src="./scripts/FormValidator.js"></script>
 	<script type="text/javascript" src="./scripts/Header.js"></script>
-	<script type="text/javascript" src="./scripts/Produit.js"></script>
+	<script type="text/javascript" src="./scripts/Voiture.js"></script>
 	<script type="text/javascript" src="./scripts/classMapping.js"></script>
 	<script type="text/javascript" src="./scripts/script.js" defer></script>
 

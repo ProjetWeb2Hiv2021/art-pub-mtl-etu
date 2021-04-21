@@ -1,4 +1,4 @@
-class Produit {
+class Voiture {
     constructor(el) {
         this._el = el;
 
@@ -8,5 +8,5 @@ class Produit {
     init = (e) => {
 
     }
-
+   
 }

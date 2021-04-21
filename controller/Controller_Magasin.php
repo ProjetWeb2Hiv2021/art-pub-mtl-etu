@@ -22,7 +22,10 @@
 				$vue = "Filtrer";
 				$this->showView($vue);
 				$vueDeux = "VoitureListe";
-				$this->showView($vueDeux);
+				$modelVoiture = new Model_Voiture();
+				$data = $modelVoiture ->getListeVoiture();
+
+				$this->showView($vueDeux, $data);
 			}
 			$this->showView("Footer");
 		}
