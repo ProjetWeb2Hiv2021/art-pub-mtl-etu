@@ -19,13 +19,15 @@
 				}			
 			} else {
 				// Action par défaut
-				$vue = "Filtrer";
-				$this->showView($vue);
-				$vueDeux = "VoitureListe";
+				$vueFiltreUn = "FiltrerUnCritere";
+				$this->showView($vueFiltreUn);
+				$vueFiltrePlusieurs = "FiltrerPlusieursCriteres";
+				$this->showView($vueFiltrePlusieurs);
+				$vue = "VoitureListe";
 				$modelVoiture = new Model_Voiture();
 				$data = $modelVoiture ->getListeVoiture();
 
-				$this->showView($vueDeux, $data);
+				$this->showView($vue, $data);
 			}
 			$this->showView("Footer");
 		}

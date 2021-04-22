@@ -1,5 +1,6 @@
-<section class="filtrer" data-component="Filtrer">
-	<h1>Page pare defaut</h1>
+<section class="FiltrerPlusieursCriteres" data-component="FiltrerPlusieursCriteres">
+
+	<!-- plusieurs criteres -->
 	<form>	
 		<label>Annee Minimum:</label><br>
 		<select name="annee_min" data-component="dateMin">			

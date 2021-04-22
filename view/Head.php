@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="./styles/styles.css">
 	
 	<!-- Script -->
-	<script type="text/javascript" src="./scripts/Filtrer.js"></script>
+	<script type="text/javascript" src="./scripts/FiltrerUnCritere.js"></script>
+	<script type="text/javascript" src="./scripts/FiltrerPlusieursCriteres.js"></script>
 	<script type="text/javascript" src="./scripts/FormValidator.js"></script>
 	<script type="text/javascript" src="./scripts/Header.js"></script>
 	<script type="text/javascript" src="./scripts/Voiture.js"></script>
