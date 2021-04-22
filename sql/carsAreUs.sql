@@ -37,8 +37,15 @@ CREATE TABLE transmission (
 	transmission VARCHAR(100) NOT NULL,
 	PRIMARY KEY (idTransmission)
 )ENGINE=InnoDB;	
+CREATE TABLE statut (
+	idStatut TINYINT UNSIGNED AUTO_INCREMENT, 
+	statut VARCHAR(100) NOT NULL,
+	PRIMARY KEY (idStatut)
+)ENGINE=InnoDB;
 CREATE TABLE voiture (
-	vin SMALLINT UNSIGNED AUTO_INCREMENT, 
+	idVoiture SMALLINT UNSIGNED AUTO_INCREMENT,
+	vin  VARCHAR(50) NOT NULL,
+	prixVente MEDIUMINT NOT NULL, 
 	annee SMALLINT UNSIGNED NOT NULL,
 	dateArrivee DATE NOT NULL,
 	prixPaye MEDIUMINT NOT NULL, 
@@ -49,19 +56,22 @@ CREATE TABLE voiture (
 	idChassis TINYINT UNSIGNED NOT NULL,
 	idModele SMALLINT UNSIGNED NOT NULL, 
 	idTransmission TINYINT UNSIGNED NOT NULL,
-	PRIMARY KEY (vin),
+	idStatut TINYINT UNSIGNED NOT NULL,
+	PRIMARY KEY (idVoiture),
 	FOREIGN KEY (idTypeCarburant) REFERENCES typeCarburant(idTypeCarburant),
 	FOREIGN KEY (idModele) REFERENCES modele(idModele),
 	FOREIGN KEY (idChassis) REFERENCES chassis(idChassis),
 	FOREIGN KEY (idTransmission) REFERENCES transmission(idTransmission),
+	FOREIGN KEY (idStatut) REFERENCES statut(idStatut),
 	FOREIGN KEY (idGroupeMotopropulseur) REFERENCES groupeMotopropulseur(idGroupeMotopropulseur)
 )ENGINE=InnoDB;
 CREATE TABLE listeImage (
 	idImage SMALLINT UNSIGNED AUTO_INCREMENT, 
 	cheminFichier VARCHAR(255) NOT NULL,	
-	vin SMALLINT UNSIGNED,
+	idVoiture SMALLINT UNSIGNED,
+	ordre TINYINT UNSIGNED NOT NULL,
 	PRIMARY KEY (idImage),
-	FOREIGN KEY (vin) REFERENCES voiture(vin)
+	FOREIGN KEY (idVoiture) REFERENCES voiture(idVoiture)
 )ENGINE=InnoDB;	
 CREATE TABLE ville (
 	idVille SMALLINT UNSIGNED AUTO_INCREMENT, 
@@ -116,11 +126,6 @@ CREATE TABLE expedition (
 	expedition VARCHAR(100) NOT NULL,
 	PRIMARY KEY (idExpedition)
 )ENGINE=InnoDB;
-CREATE TABLE statut (
-	idStatut TINYINT UNSIGNED AUTO_INCREMENT, 
-	statut VARCHAR(100) NOT NULL,
-	PRIMARY KEY (idStatut)
-)ENGINE=InnoDB;
 CREATE TABLE commande (
 	idCommande INT UNSIGNED AUTO_INCREMENT, 
 	dateCommande DATE NOT NULL,
@@ -136,11 +141,11 @@ CREATE TABLE commande (
 )ENGINE=InnoDB;
 CREATE TABLE ligneCommande (
 	idCommande INT UNSIGNED NOT NULL AUTO_INCREMENT,	
-	vin SMALLINT UNSIGNED NOT NULL,
+	idVoiture SMALLINT UNSIGNED NOT NULL,
 	quantite TINYINT UNSIGNED NOT NULL,
-	PRIMARY KEY (idCommande, vin), 
+	PRIMARY KEY (idCommande, idVoiture), 
 	FOREIGN KEY (idCommande) REFERENCES commande(idCommande),
-	FOREIGN KEY (vin) REFERENCES voiture(vin)
+	FOREIGN KEY (idVoiture) REFERENCES voiture(idVoiture)
 )ENGINE=InnoDB;
 
 CREATE TABLE facture (
