@@ -4,7 +4,7 @@
 		public function getTable() {
 			return "utilisateur";
 		}
-		/* Differentes methodes CRUD utilisateurs */
+		/* Differentes methodes CRUD utilisateur */
 		
 	}
 ?>

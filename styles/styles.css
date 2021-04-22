@@ -1,0 +1,11 @@
+.VoitureListe{
+    display: flex;
+
+}
+.voiture_liste__voiture{
+    display: inline-block;
+    margin-bottom: 10px;
+    border-bottom: 2px solid black;
+    margin-left: 10px;
+    padding: 5px;
+}
