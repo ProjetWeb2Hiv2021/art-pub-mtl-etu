@@ -1,26 +1,75 @@
-.VoitureListe{
-    display: flex;
-
+.VoitureListe {
+  display: flex;
 }
 /* Ne pas supprimer */
 .disabled {
-    opacity: .5;
-    pointer-events: none;
+  opacity: 0.5;
+  pointer-events: none;
 }
 /*  */
-.voiture_liste__voiture{
-    display: inline-block;
-    margin-bottom: 10px;
-    border-bottom: 2px solid black;
-    margin-left: 10px;
-    padding: 5px;
-    max-width: 20%;
+.voiture_liste__voiture {
+  display: inline-block;
+  margin-bottom: 10px;
+  border-bottom: 2px solid black;
+  margin-left: 10px;
+  padding: 5px;
+  max-width: 20%;
 }
 
-.voiture_liste__image-wrapper img{
-    max-width: 100%;
+.voiture_liste__image-wrapper img {
+  max-width: 100%;
 }
-.voiture_liste__voiture:hover{
-    border: burlywood 2px solid;
-    cursor: pointer;
+.voiture_liste__voiture:hover {
+  border: burlywood 2px solid;
+  cursor: pointer;
+}
+
+/*Voiture détail */
+.row {
+  display: flex;
+}
+.distribue {
+  justify-content: space-between;
+}
+[data-component="VoitureDetail"] form {
+  display: flex;
+}
+.infoVoiture {
+  flex: 2;
+}
+.imagesVoiture {
+  flex: 3;
+}
+[data-component="VoitureDetail"] input[disabled] {
+  opacity: 1;
+  pointer-events: none;
+  background-color: white;
+  border: 1px black solid;
+  color: black;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+
+[data-component="VoitureDetail"] select[disabled] {
+  opacity: 1;
+  pointer-events: none;
+  background-color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+  width: 170px;
+  border: 1px black solid;
+  color: black;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+
+.imagesVoiture img {
+  width: 200px;
+  margin-right: 20px;
+}
+[data-component="VoitureDetail"] {
+  margin-right: 30px;
+  margin-left: 30px;
 }
