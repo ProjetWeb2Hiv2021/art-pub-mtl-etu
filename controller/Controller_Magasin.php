@@ -22,11 +22,14 @@
 				$vueFiltreUn = "FiltrerUnCritere";
 				$this->showView($vueFiltreUn);
 				$vueFiltrePlusieurs = "FiltrerPlusieursCriteres";
-				$this->showView($vueFiltrePlusieurs);
+				$modelModele = new Model_Modele();
+				$data["modele"] = $modelModele ->obtenirListeModele();
+				$modelFabricant = new Model_Fabricant();
+				$data["fabricant"] = $modelFabricant ->obtenirListeFabricant();
+				$this->showView($vueFiltrePlusieurs, $data);
 				$vue = "VoitureListe";
 				$modelVoiture = new Model_Voiture();
-				$data = $modelVoiture ->getListeVoiture();
-
+				$data["voiture"] = $modelVoiture ->getListeVoiture();				
 				$this->showView($vue, $data);
 			}
 			$this->showView("Footer");
