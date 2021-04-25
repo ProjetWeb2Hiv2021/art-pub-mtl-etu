@@ -164,6 +164,8 @@ class FiltrerUnCritere {
         }
     }
 
+    /* le code si dessous est juste au cas ou nous decidions de faire un appel ajax au lieu d'un tri comme plus haut */
+
     callAJAX = (param) => {
 
         // Déclaration de l'objet XMLHttpRequest

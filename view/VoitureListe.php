@@ -1,8 +1,9 @@
 <section data-component="VoitureListe">
  <!-- juste un prototype -->   
     <?php
-    if($data){
-        foreach ($data as $voiture) {
+    
+    if($data["voiture"]){
+        foreach ($data["voiture"] as $voiture) {
             
     ?>
             <article class="voiture_liste__voiture" 
