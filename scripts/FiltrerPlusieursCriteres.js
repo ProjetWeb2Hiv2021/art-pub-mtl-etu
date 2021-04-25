@@ -149,30 +149,30 @@ class FiltrerPlusieursCriteres{
         }
     }
     populerListeVoitureRecherche = () => {
-        let minAnnee = this._elMinAnnee.value;
-        if(minAnnee==""){
-            minAnnee = 1900;
+        let anneeMin = this._elMinAnnee.value;
+        if(anneeMin==""){
+            anneeMin = 1900;
         }
-        let maxAnnee = this._elMaxAnnee.value;
-        /* a revoir Lyes */
-        /* let dateAjouduit = new date(); */
-        if(maxAnnee==""){
-            maxAnnee = 2021;
+        let anneeMax = this._elMaxAnnee.value;
+        
+        if(anneeMax==""){       
+            anneeMax = new Date().getFullYear();
         }
-        let minPrix = this._elMinPrix.value;
-        if(minPrix==""){
-            minPrix = 0;
+        let prixMin = this._elMinPrix.value;
+        if(prixMin==""){
+            prixMin = 0;
         }
-        let maxPrix = this._elMaxPrix.value;
-        if(maxPrix==""){
-            maxPrix = 10000000;
+        let prixMax = this._elMaxPrix.value;
+        if(prixMax==""){
+            prixMax = 10000000;
         }
         let idFabricant = this._elSelectFabricant.options[this._elSelectFabricant.selectedIndex].dataset.jsIdfabricant;
         let idModele = this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmodele;
-        this.chargerListeVoitureRecherche(idModele, idFabricant, minAnnee, maxAnnee, minPrix, maxPrix);
+        this.chargerListeVoitureRecherche(idModele, idFabricant, anneeMin, anneeMax, prixMin, prixMax);
 
     }
     chargerListeVoitureRecherche = (idModele, idFabricant, anneeMin, anneeMax, prixMin, prixMax) => {
+       
         let xhr;
         xhr = new XMLHttpRequest();
 
@@ -238,7 +238,7 @@ class FiltrerPlusieursCriteres{
                             </div> 
                             <div class = "info_voiture">
                                 <h2>${marque}</h2>
-                                <h2><?= $voiture["modele"] ?></h2>
+                                <h2>${modele}</h2>
                                 <h3>${prixVente}&nbsp;$</h3>
                                 <span>${fabricant}</span> 
                                 <span>${annee}</span><br>                             
