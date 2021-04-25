@@ -18,13 +18,13 @@
 				return 0;
 			}
 		}
-		public function obtenirFabricantModel($idModele){
+		public function obtenirModelesFabricant($idFabricant){
 			try {
-				$stmt = $this->connexion->query("SELECT fabricant, fabricant.idFabricant FROM modele 
-												INNER JOIN marque ON modele.idMarque = marque.idMarque 
-												INNER JOIN fabricant on fabricant.idFabricant = marque.idFabricant 
-												WHERE idModele = $idModele");
-				
+				$stmt = $this->connexion->query("SELECT modele, idModele FROM fabricant 
+												INNER JOIN marque ON marque.idFabricant = fabricant.idFabricant
+												INNER JOIN modele on modele.idMarque = marque.idMarque
+												WHERE fabricant.idFabricant = $idFabricant");
+
 				$stmt->execute();
 				return $stmt->fetchAll();
 

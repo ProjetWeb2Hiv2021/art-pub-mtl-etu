@@ -28,6 +28,7 @@
 				return 0;
 			}
 		}
+
 		public function obtenirRechercheVoiture($idModele, $idFabricant, $anneeMin, $anneeMax, $prixMin, $prixMax) {
 			try {
 				$stmt = $this->connexion->query("SELECT * from voiture
@@ -54,6 +55,38 @@
 
 			}
 			catch(Exception $exc) {
+				var_dump($exc->getMessage());
+
+				return 0;
+			}
+		}
+
+		public function obtenirVoiture($id) {
+			
+			
+			try {
+				$sql = 	"SELECT * from voiture v 
+												JOIN groupemotopropulseur gpm on gpm.idGroupemotopropulseur = v.idGroupemotopropulseur
+												JOIN chassis c on c.idChassis = v.idChassis
+												JOIN typeCarburant t on t.idTypeCarburant = v.idTypeCarburant
+												JOIN statut s on s.idStatut = v.idStatut												
+												JOIN transmission tr on tr.idtransmission = v.idtransmission																								
+												JOIN modele m on m.idModele = v.idModele
+												JOIN marque ma on ma.idMarque = m.idMarque
+												JOIN fabricant f on f.idFabricant = ma.idFabricant
+												WHERE v.idVoiture =" .$id.";";
+				
+												
+				$stmt = $this->connexion->prepare($sql);																
+				
+				$stmt->execute();
+				
+				return $stmt->fetch();
+
+			}
+			catch(Exception $exc) {
+				var_dump($exc->getMessage());
+
 				return 0;
 			}
 		}

@@ -8,7 +8,7 @@ class FiltrerUnCritere {
     }
 
     init = (e) => {
-
+        
         this._el.addEventListener('change', (e) => {
             e.preventDefault();
             console.log("lyes1");
