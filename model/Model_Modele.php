@@ -8,7 +8,7 @@
 		/* Differentes methodes CRUD modele   */
 		public function obtenirListeModele() { 
 			try {
-				$stmt = $this->connexion->query("SELECT * from modele");
+				$stmt = $this->connexion->query("SELECT m.idModele as idModele, m.modele as modele, ma.marque as marque from modele m JOIN marque ma on m.idMarque = ma.idMarque");
 
 				$stmt->execute();
 				return $stmt->fetchAll();
@@ -18,13 +18,13 @@
 				return 0;
 			}
 		}
-		public function obtenirModelesFabricant($idFabricant){
+		public function obtenirFabricantModel($idModele){
 			try {
-				$stmt = $this->connexion->query("SELECT modele, idModele FROM fabricant 
-												INNER JOIN marque ON marque.idFabricant = fabricant.idFabricant
-												INNER JOIN modele on modele.idMarque = marque.idMarque
-												WHERE fabricant.idFabricant = $idFabricant");
-
+				$stmt = $this->connexion->query("SELECT fabricant, idModele FROM modele 
+												INNER JOIN marque ON modele.idMarque = marque.idMarque 
+												INNER JOIN fabricant on fabricant.idFabricant = marque.idFabricant 
+												WHERE idModele = $idModele");
+				
 				$stmt->execute();
 				return $stmt->fetchAll();
 
