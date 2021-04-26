@@ -16,25 +16,33 @@ class FiltrerPlusieursCriteres{
     }
     init = (e) => {
         /* au change le btn recherche s'active */
-        this._el.addEventListener('change', (e) => {
-            e.preventDefault();
-            if (this._elSelectModele.options[this._elSelectModele.selectedIndex].value != 0) this._elSubmit.classList.remove('disabled');
-            else this._elSubmit.classList.add('disabled');
-            if (this._elSelectFabricant.options[this._elSelectFabricant.selectedIndex].value != 0) this._elSubmit.classList.remove('disabled');
-            else this._elSubmit.classList.add('disabled');
-            for (let i = 0; i <  this._elInputs.length; i++) {
-                const input =  this._elInputs[i];
-                if (input.value >= 0) this._elSubmit.classList.remove('disabled');
+        // si le formulaire est valide, appelle la fonction showThanks
+        // appel le script de validation front-end
+        
+        /* if (validation.isValid){ */
+            this._el.addEventListener('change', (e) => {
+                e.preventDefault();
+                if (this._elSelectModele.options[this._elSelectModele.selectedIndex].value != 0) this._elSubmit.classList.remove('disabled');
                 else this._elSubmit.classList.add('disabled');
-                console.log(input.value);
-            }
-        });
-        this.populerSelectFabricant();
-        this.populerSelectModele();
-        this._elSubmit.addEventListener('click', (e) => {
-            e.preventDefault();
-            this.populerListeVoitureRecherche();
-        });
+                if (this._elSelectFabricant.options[this._elSelectFabricant.selectedIndex].value != 0) this._elSubmit.classList.remove('disabled');
+                else this._elSubmit.classList.add('disabled');
+                for (let i = 0; i <  this._elInputs.length; i++) {
+                    const input =  this._elInputs[i];
+                    if (input.value >= 0) this._elSubmit.classList.remove('disabled');
+                    else this._elSubmit.classList.add('disabled');
+                    console.log(input.value);
+                }
+            });
+            this.populerSelectFabricant();
+            this.populerSelectModele();
+            this._elSubmit.addEventListener('click', (e) => {
+                e.preventDefault();
+                let validation = new FormValidator(this._el);
+                if (validation.isValid){
+                    this.populerListeVoitureRecherche();
+                }
+            });
+        
     }
 
     populerSelectFabricant = () => {
@@ -149,11 +157,11 @@ class FiltrerPlusieursCriteres{
         }
     }
     populerListeVoitureRecherche = () => {
-        let anneeMin = this._elMinAnnee.value;
+        let anneeMin = Number(this._elMinAnnee.value);
         if(anneeMin==""){
             anneeMin = 1900;
         }
-        let anneeMax = this._elMaxAnnee.value;
+        let anneeMax = Number(this._elMaxAnnee.value);
         
         if(anneeMax==""){       
             anneeMax = new Date().getFullYear();
@@ -168,6 +176,7 @@ class FiltrerPlusieursCriteres{
         }
         let idFabricant = this._elSelectFabricant.options[this._elSelectFabricant.selectedIndex].dataset.jsIdfabricant;
         let idModele = this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmodele;
+        
         this.chargerListeVoitureRecherche(idModele, idFabricant, anneeMin, anneeMax, prixMin, prixMax);
 
     }
@@ -175,7 +184,7 @@ class FiltrerPlusieursCriteres{
        
         let xhr;
         xhr = new XMLHttpRequest();
-
+        console.log(idModele, idFabricant, anneeMin, anneeMax, prixMin, prixMax);
         // Initialisation de la requète
         if (xhr) {	
             
@@ -189,7 +198,7 @@ class FiltrerPlusieursCriteres{
                     if (xhr.status === 200) {
 
                         // Traitement du DOM
-                        console.log(JSON.parse(xhr.responseText));
+                        console.log(xhr.responseText);
                        let reponse = JSON.parse(xhr.responseText);
                        this._elVoitures.innerHTML="";
                        /* console.log(fabricant[0]["fabricant"]); */
