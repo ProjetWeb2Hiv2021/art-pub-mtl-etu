@@ -1,0 +1,1 @@
+<h1>Vue utilisateur</h1>

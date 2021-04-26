@@ -18,5 +18,7 @@
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto:300,400,500&display=swap" rel="stylesheet">
 
+	<link rel="shortcut icon" href="data:," type="image/x-icon">
+
 </head>
 <body>

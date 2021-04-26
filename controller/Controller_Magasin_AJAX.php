@@ -100,6 +100,9 @@
 						$vue = "VoitureDetails";       
                         $this->showView($vue, $data);
                         break;	
+					case "connexionSWT":
+                        
+                        break;
 				}			
             } else {
 				echo "ERROR ACTION";					
