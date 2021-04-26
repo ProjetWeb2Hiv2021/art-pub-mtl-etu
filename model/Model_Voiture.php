@@ -32,7 +32,7 @@
 		public function obtenirRechercheVoiture($idModele, $idFabricant, $anneeMin, $anneeMax, $prixMin, $prixMax) {
 			try {
 				if(isset($idModele) && isset($idFabricant) && isset($anneeMin) && isset($anneeMax) && isset($prixMin) && isset($prixMax)){
-					if($idModele == "undefined" && !$idFabricant == "undefined"){
+					if($idModele == "NaN" && $idFabricant !== "NaN"){
 						$stmt = $this->connexion->query("SELECT * from voiture 
 														INNER JOIN groupemotopropulseur on groupemotopropulseur.idGroupemotopropulseur = voiture.idGroupemotopropulseur 
 														INNER JOIN chassis on chassis.idChassis = voiture.idChassis 
@@ -55,7 +55,7 @@
 						$stmt->execute();
 						return $stmt->fetchAll();
 
-					}else if($idModele == "undefined" && $idFabricant == "undefined"){
+					}else if($idModele == "NaN" && $idFabricant == "NaN"){
 						$stmt = $this->connexion->query("SELECT * from voiture
 														INNER JOIN groupemotopropulseur on groupemotopropulseur.idGroupemotopropulseur = voiture.idGroupemotopropulseur
 														INNER JOIN chassis on chassis.idChassis = voiture.idChassis
