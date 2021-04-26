@@ -16,8 +16,10 @@
 				switch($params["action"]) {
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
+					
 				}			
 			} else {
+				
 				// Action par défaut
 				$vueFiltreUn = "FiltrerUnCritere";
 				$this->showView($vueFiltreUn);

@@ -27,12 +27,26 @@
 /*Voiture détail */
 .row {
   display: flex;
+  flex-wrap: wrap;
+}
+.colonne {
+  display: flex;
+  flex-direction: column;
 }
 .distribue {
   justify-content: space-between;
 }
+.aLaFin {
+  justify-content: flex-end;
+}
 [data-component="VoitureDetail"] form {
   display: flex;
+}
+
+[data-component="VoitureDetail"] a {
+  text-decoration: none;
+
+  color: black;
 }
 .infoVoiture {
   flex: 2;
@@ -69,7 +83,22 @@
   width: 200px;
   margin-right: 20px;
 }
-[data-component="VoitureDetail"] {
-  margin-right: 30px;
-  margin-left: 30px;
+[data-component="VoitureDetail"],
+[data-component="Connexion"] {
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+/* Connexion */
+.logo > a {
+  display: inline-block;
+  padding-top: 0.2em;
+}
+.connexion img {
+  width: 2em;
+  margin-left: 0.3em;
+}
+
+.centreV {
+  align-items: center;
 }
