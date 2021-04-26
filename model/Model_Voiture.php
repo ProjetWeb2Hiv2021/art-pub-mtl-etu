@@ -10,14 +10,14 @@
 			
 			try {
 				$stmt = $this->connexion->query("SELECT * from voiture
-												INNER JOIN groupemotopropulseur on groupemotopropulseur.idGroupemotopropulseur = voiture.idGroupemotopropulseur
+												INNER JOIN groupeMotopropulseur on groupeMotopropulseur.idGroupemotopropulseur = voiture.idGroupemotopropulseur
 												INNER JOIN chassis on chassis.idChassis = voiture.idChassis
 												INNER JOIN statut on statut.idStatut = voiture.idStatut
 												INNER JOIN modele on modele.idModele = voiture.idModele
 												INNER JOIN marque on marque.idMarque = modele.idMarque
 												INNER JOIN fabricant on fabricant.idFabricant = marque.idFabricant
-												INNER JOIN listeimage on listeimage.idVoiture = voiture.idVoiture
-												WHERE listeimage.idVoiture = voiture.idVoiture AND listeimage.ordre = 1
+												INNER JOIN listeImage on listeImage.idVoiture = voiture.idVoiture
+												WHERE listeImage.idVoiture = voiture.idVoiture AND listeImage.ordre = 1
 												order by voiture.dateArrivee");
 
 				$stmt->execute();

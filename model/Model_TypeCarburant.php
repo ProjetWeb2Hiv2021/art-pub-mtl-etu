@@ -9,7 +9,7 @@
 		public function obtenirListeTypeCarburant() {
 			
 			try {
-				$stmt = $this->connexion->query("SELECT * from typecarburant;");
+				$stmt = $this->connexion->query("SELECT * from typeCarburant;");
 
 				$stmt->execute();
 				return $stmt->fetchAll();
