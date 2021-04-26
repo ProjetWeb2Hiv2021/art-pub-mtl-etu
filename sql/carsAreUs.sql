@@ -90,7 +90,7 @@ CREATE TABLE typeUtilisateur (
 )ENGINE=InnoDB;
 CREATE TABLE utilisateur (
 	idUtilisateur MEDIUMINT UNSIGNED AUTO_INCREMENT, 
-	nomUtilisateur VARCHAR(100) NOT NULL UNIQUE,
+	nomUtilisateur VARCHAR(255) NOT NULL UNIQUE,
 	motPasse VARCHAR(255) NOT NULL,
 	prenom VARCHAR(255) NOT NULL,
 	nomFamille VARCHAR(255) NOT NULL,
@@ -99,8 +99,7 @@ CREATE TABLE utilisateur (
 	rue VARCHAR(255) NOT NULL,
 	codePostal VARCHAR(20) NOT NULL,
 	telephone VARCHAR(20) NOT NULL,
-	telephonePortable VARCHAR(20) NOT NULL,
-	courriel VARCHAR(255) NOT NULL,
+	telephonePortable VARCHAR(20) NOT NULL,	
 	idTypeUtilisateur TINYINT UNSIGNED NOT NULL, 
 	idVille SMALLINT UNSIGNED NOT NULL, 
 	idProvince SMALLINT UNSIGNED NOT NULL, 
