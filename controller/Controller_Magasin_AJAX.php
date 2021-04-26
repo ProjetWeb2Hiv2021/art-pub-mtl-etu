@@ -71,6 +71,14 @@
 							echo "ERROR";
 						}
 						break;
+					case "chargerListeModeleRafraichir":
+							$modeleModele = new Model_Modele();				
+							$data["modele"] = $modeleModele->obtenirListeModele();	
+							$modeleFabricant = new Model_Fabricant();				
+							$data["fabricant"] = $modeleFabricant->obtenirListeFabricant();	
+							echo json_encode($data);
+
+						break;
 
                     case "afficheVoiture":	
 						$modeleVoiture = new Model_Voiture();						

@@ -48,7 +48,7 @@
 			<input type="number" data-js-prix data-component="prixMax" name="prix_max" placeholder="À" maxlength="6" mainlength="0"><br>
 			<small class="error-message" data-js-error-msg></small>
 		</div>
-		<button class="disabled" data-js-btn>Recherche</button>
+		<button class="disabled" data-js-btn>Recherche</button><button class="disabled" data-js-rafraichir>Rafraichir</button>
 	</form>
 </section>
 

@@ -2,6 +2,7 @@ class FiltrerPlusieursCriteres{
     constructor(el) {
         this._el = el;
         this._elSubmit = this._el.querySelector('[data-js-btn]');
+        this._elRafraichir= this._el.querySelector('[data-js-rafraichir]');
         this._elSelectModele = this._el.querySelector('[data-js-modele]');
         this._elSelectFabricant = this._el.querySelector('[data-js-fabricant]');
         this._elInputs= this._el.querySelectorAll('input');
@@ -22,14 +23,30 @@ class FiltrerPlusieursCriteres{
         /* if (validation.isValid){ */
             this._el.addEventListener('change', (e) => {
                 e.preventDefault();
-                if (this._elSelectModele.options[this._elSelectModele.selectedIndex].value != 0) this._elSubmit.classList.remove('disabled');
-                else this._elSubmit.classList.add('disabled');
-                if (this._elSelectFabricant.options[this._elSelectFabricant.selectedIndex].value != 0) this._elSubmit.classList.remove('disabled');
-                else this._elSubmit.classList.add('disabled');
+                if (this._elSelectModele.options[this._elSelectModele.selectedIndex].value != ""){
+                    this._elSubmit.classList.remove('disabled');
+                    this._elRafraichir.classList.remove('disabled');
+                }else{
+                    this._elSubmit.classList.add('disabled');
+                    this._elRafraichir.classList.add('disabled');
+                } 
+                 
+                if (this._elSelectFabricant.options[this._elSelectFabricant.selectedIndex].value != ""){
+                    this._elSubmit.classList.remove('disabled');
+                    this._elRafraichir.classList.remove('disabled');
+                }else{
+                    this._elSubmit.classList.add('disabled');
+                    this._elRafraichir.classList.add('disabled');
+                } 
                 for (let i = 0; i <  this._elInputs.length; i++) {
                     const input =  this._elInputs[i];
-                    if (input.value >= 0) this._elSubmit.classList.remove('disabled');
-                    else this._elSubmit.classList.add('disabled');
+                    if (input.value >= 0){
+                        this._elSubmit.classList.remove('disabled');
+                        this._elRafraichir.classList.remove('disabled');
+                    }else{
+                        this._elSubmit.classList.add('disabled');
+                        this._elRafraichir.classList.add('disabled');
+                    } 
                     console.log(input.value);
                 }
             });
@@ -42,13 +59,28 @@ class FiltrerPlusieursCriteres{
                     this.populerListeVoitureRecherche();
                 }
             });
+            this._elRafraichir.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (this._elSelectModele.options[this._elSelectModele.selectedIndex].value != "") {
+                    this._elSelectFabricant.removeAttribute("disabled", "disabled");
+                }
+                
+                this.chargerListeModeleFabricantRafraichir();
+                this._elMinAnnee.value = "";
+                this._elMaxAnnee.value = "";
+                this._elMinPrix.value = "";
+                this._elMaxPrix.value = "";
+
+                this._elSubmit.classList.add('disabled');
+                this._elRafraichir.classList.add('disabled');  
+                
+            });
         
     }
 
     populerSelectFabricant = () => {
         this._elSelectModele.addEventListener('change', (e) => {
-            this._elSelectFabricant.removeAttribute("disabled")
-            console.log("alooooo");
+            this._elSelectFabricant.removeAttribute("disabled");
             console.log(this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmodele);
            this.fabricantDuModelSelectione(this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmodele);
         });
@@ -174,8 +206,8 @@ class FiltrerPlusieursCriteres{
         if(prixMax==""){
             prixMax = 10000000;
         }
-        let idFabricant = this._elSelectFabricant.options[this._elSelectFabricant.selectedIndex].dataset.jsIdfabricant;
-        let idModele = this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmodele;
+        let idFabricant = Number(this._elSelectFabricant.options[this._elSelectFabricant.selectedIndex].dataset.jsIdfabricant) ;
+        let idModele = Number(this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmodele);
         
         this.chargerListeVoitureRecherche(idModele, idFabricant, anneeMin, anneeMax, prixMin, prixMax);
 
@@ -260,6 +292,55 @@ class FiltrerPlusieursCriteres{
                             this._elVoitures.insertAdjacentHTML("afterbegin", html);
                         
                         }
+
+
+
+                    } else if (xhr.status === 404) {
+                        console.log('Le fichier appelé dans la méthode open() n’existe pas.');
+                    }
+                }
+            });
+            // Envoi de la requète
+            xhr.send();
+        }
+    }
+    chargerListeModeleFabricantRafraichir = () => {
+       
+        let xhr;
+        xhr = new XMLHttpRequest();
+        
+        // Initialisation de la requète
+        if (xhr) {	
+            
+            // Ouverture de la requète : fichier recherché
+            xhr.open('GET', 'index.php?Magasin_AJAX&action=chargerListeModeleRafraichir');
+            
+            // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
+            xhr.addEventListener('readystatechange', () => {
+
+                if (xhr.readyState === 4) {							
+                    if (xhr.status === 200) {
+
+                        // Traitement du DOM
+                        console.log(xhr.responseText);
+                       let data = JSON.parse(xhr.responseText);
+                       console.log(data["fabricant"]);
+                       
+                       this._elSelectModele.innerHTML = "";
+                        let html = "<option value=''></option>";
+                       for (let i = 0; i < data["modele"].length; i++) {
+                           const modele = data["modele"][i];
+                           
+                           html += `<option data-js-idModele="${modele["idModele"]}"  value="${modele["modele"]}">${modele["modele"]}</option>`;
+                        }                       
+                        this._elSelectModele.insertAdjacentHTML("afterbegin", html);
+                        this._elSelectFabricant.innerHTML = "";
+                        let htmlFabricant = "<option value=''></option>";
+                        for (let i = 0; i < data["fabricant"].length; i++) {
+                            const fabricant = data["fabricant"][i];
+                            htmlFabricant += `<option data-js-idFabricant="${fabricant["idFabricant"]}"  value="${fabricant["fabricant"]}">${fabricant["fabricant"]}</option>`;
+                         }   
+                         this._elSelectFabricant.insertAdjacentHTML("afterbegin", htmlFabricant);
 
 
 
