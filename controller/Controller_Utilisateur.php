@@ -56,7 +56,11 @@
 
 						}
                         break;
-				}			
+					case "creerClient":
+						$vue = "FormulaireAjoutUtilisateur";  						
+						$this->showView($vue);
+						break;
+			}			
 			} else {
 				
 				
