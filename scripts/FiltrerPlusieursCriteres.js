@@ -55,6 +55,7 @@ class FiltrerPlusieursCriteres{
             this._elSubmit.addEventListener('click', (e) => {
                 e.preventDefault();
                 let validation = new FormValidator(this._el);
+                console.log(validation.isValid);
                 if (validation.isValid){
                     this.populerListeVoitureRecherche();
                 }
@@ -171,7 +172,7 @@ class FiltrerPlusieursCriteres{
                             this._elSelectModele.setAttribute("disabled", "disabled")
                         }
                   
-                       /* console.log(fabricant[0]["fabricant"]); */
+                  
 
 
                     } else if (xhr.status === 404) {
@@ -225,7 +226,7 @@ class FiltrerPlusieursCriteres{
 
                         // Traitement du DOM
                        let reponse = JSON.parse(xhr.responseText);
-                       console.log(reponse.length);
+
                        this._elVoitures.innerHTML="";
                        /* console.log(fabricant[0]["fabricant"]); */
                        if(reponse.length >0){
@@ -284,7 +285,7 @@ class FiltrerPlusieursCriteres{
   
                     }else{
                         let htmlErr = "";
-                        console.log("probleme");
+
                         htmlErr += `<p>Pas de voiture disponible pour cette recherche</p>`;
                         this._elVoitures.innerHTML = htmlErr;
                     }
@@ -316,9 +317,9 @@ class FiltrerPlusieursCriteres{
                     if (xhr.status === 200) {
 
                         // Traitement du DOM
-                        console.log(xhr.responseText);
+
                        let data = JSON.parse(xhr.responseText);
-                       console.log(data["fabricant"]);
+
                        
                        this._elSelectModele.innerHTML = "";
                         let html = "<option value=''></option>";

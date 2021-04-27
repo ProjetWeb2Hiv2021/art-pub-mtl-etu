@@ -2,7 +2,6 @@
 
 	<!-- plusieurs criteres -->
 	<form>
-
 		<div class="input-wrapper" data-js-input-wrapper>
 			<label for="username">Pseudonyme :</label>
 			<input type="text" id="username" required data-js-param="username"><small class="error-message" data-js-error-msg></small>
@@ -74,8 +73,9 @@
 				
 				if($data["province"]){
 				foreach ($data["province"] as $province) {
+					var_dump($data["pville"]);
 				?>
-					<option data-js-province="<?= $province["province"] ?>"  value="<?= $province["province"] ?>"><?= $province["province"] ?></option>
+					<option data-js-province="<?= $province["idProvince"] ?>"  value="<?= $province["province"] ?>"><?= $province["province"] ?></option>
 				<?php
 					}
 				}
@@ -113,7 +113,7 @@
 			<small class="error-message" data-js-error-msg></small>			
 		</div>
 
-		<button  data-js-submit>Soumettre</button>
+		<button data-js-btn>Soumettre</button>
 	</form>
 </section>
 

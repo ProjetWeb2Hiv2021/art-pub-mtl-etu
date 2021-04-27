@@ -57,8 +57,15 @@
 						}
                         break;
 					case "creerClient":
-						$vue = "FormulaireAjoutUtilisateur";  						
-						$this->showView($vue);
+						$vue = "FormulaireAjoutUtilisateur";
+						$modelVille= new Model_Ville();
+						$data["ville"] = $modelVille ->obtenirListeVille();
+						$modelProvince = new Model_Province();
+						$data["province"] = $modelProvince ->obtenirListeProvince();
+						$modelTypeUtilisateur = new Model_TypeUtilisateur();
+						$data["typeUtilisateur"] = $modelTypeUtilisateur ->obtenirListeTypeUtilisateur();
+						
+						$this->showView($vue, $data);
 						break;
 			}			
 			} else {
