@@ -9,7 +9,8 @@
 	<!-- Script -->
 	<script type="text/javascript" src="./scripts/FiltrerUnCritere.js"></script>
 	<script type="text/javascript" src="./scripts/FormValidator.js"></script>
-	<script type="text/javascript" src="./scripts/FiltrerPlusieursCriteres.js"></script>	
+	<script type="text/javascript" src="./scripts/FiltrerPlusieursCriteres.js"></script>
+	<script type="text/javascript" src="./scripts/FormulaireAjoutUtilisateur.js"></script>	
 	<script type="text/javascript" src="./scripts/Header.js"></script>
 	<script type="text/javascript" src="./scripts/Voiture.js"></script>
 	<script type="text/javascript" src="./scripts/classMapping.js"></script>
