@@ -17,7 +17,7 @@
 												INNER JOIN marque on marque.idMarque = modele.idMarque
 												INNER JOIN fabricant on fabricant.idFabricant = marque.idFabricant
 												INNER JOIN listeImage on listeImage.idVoiture = voiture.idVoiture
-												WHERE listeImage.idVoiture = voiture.idVoiture AND listeImage.ordre = 1 AND modele.status = 1
+												WHERE listeImage.idVoiture = voiture.idVoiture AND listeImage.ordre = 1
 												order by voiture.dateArrivee");
 
 				$stmt->execute();

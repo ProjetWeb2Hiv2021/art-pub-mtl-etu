@@ -1,4 +1,4 @@
-<section class="FiltrerPlusieursCriteres" data-component="FiltrerPlusieursCriteres" data-js-component="Form">
+<section class="FiltrerPlusieursCriteres" data-component="FiltrerPlusieursCriteres">
 
 	<!-- plusieurs criteres -->
 	<form>	

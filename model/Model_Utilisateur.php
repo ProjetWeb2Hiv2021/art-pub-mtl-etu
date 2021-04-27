@@ -26,6 +26,18 @@
 			return false; 
     	}
 		/* Differentes methodes CRUD utilisateur */
-		
+		public function obtenirListeUtilisateur() {
+			
+			try {
+				$stmt = $this->connexion->query("SELECT * from utilisateur");
+
+				$stmt->execute();
+				return $stmt->fetchAll();
+
+			}
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
 	}
 ?>

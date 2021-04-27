@@ -16,23 +16,6 @@
                     /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
 
-					
-					case "fabricantDuModelSelectione":
-                        if (isset($params["idModele"])) {
-                           
-                            $idModele = $params["idModele"];
-                            $modeleModele = new Model_Modele();
-                            $data = $modeleModele->obtenirFabricantModel($idModele);
-                            
-                            
-                            echo json_encode($data);
-                            /* $vue = "Acceuil";
-                            $this->afficheVue($vue, $data); */
-                                                      
-                        } else {													
-                            echo "ERROR";
-                        }
-                        break;
 						
 					case "modelesDuFabricantSelectione":
 						if (isset($params["idFabricant"])) {
@@ -111,6 +94,39 @@
 					case "connexionSWT":
                         
                         break;
+					case "fabricantDuModelSelectione":
+						if (isset($params["idModele"])) {
+
+							$idModele = $params["idModele"];
+							$modeleModele = new Model_Modele();
+							$data = $modeleModele->obtenirFabricantModel($idModele);
+
+
+							echo json_encode($data);
+							/* $vue = "Acceuil";
+							$this->afficheVue($vue, $data); */
+
+						} else {													
+							echo "ERROR";
+						}
+						break;
+					case "modelesDuFabricantSelectione":
+						if (isset($params["idFabricant"])) {
+
+							$idFabricant = $params["idFabricant"];
+							$modeleFabricant = new Model_Fabricant();
+							$data = $modeleFabricant->obtenirModelesFabricant($idFabricant);
+
+
+
+							echo json_encode($data);
+
+
+						} else {													
+							echo "ERROR";
+						}
+						break;
+					
 				}			
             } else {
 				echo "ERROR ACTION";					

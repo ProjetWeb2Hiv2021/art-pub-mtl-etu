@@ -24,7 +24,7 @@
             <a href="index.php?action=oublie">Mot de passe oublié</a>
         </div>    
         <div>
-            <a href="index.php?action=creerClient">Créer un compte</a>
+            <a href="index.php?Utilisateur&action=creerClient">Créer un compte</a>
         </div>    
         <div>
             <a href="index.php?action=invite">Invité</a>

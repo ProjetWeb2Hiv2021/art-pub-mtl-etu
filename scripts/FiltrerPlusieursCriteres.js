@@ -55,6 +55,7 @@ class FiltrerPlusieursCriteres{
             this._elSubmit.addEventListener('click', (e) => {
                 e.preventDefault();
                 let validation = new FormValidator(this._el);
+                console.log(validation.isValid);
                 if (validation.isValid){
                     this.populerListeVoitureRecherche();
                 }
@@ -81,15 +82,13 @@ class FiltrerPlusieursCriteres{
     populerSelectFabricant = () => {
         this._elSelectModele.addEventListener('change', (e) => {
             this._elSelectFabricant.removeAttribute("disabled");
-            console.log(this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmodele);
            this.fabricantDuModelSelectione(this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmodele);
         });
     }
     populerSelectModele = () => {
 
         this._elSelectFabricant.addEventListener('change', (e) => {
-            this._elSelectModele.removeAttribute("disabled")
-            console.log(this._elSelectFabricant.options[this._elSelectFabricant.selectedIndex].dataset.jsIdfabricant);
+            this._elSelectModele.removeAttribute("disabled");
             this.modelesDuFabricantSelectione(this._elSelectFabricant.options[this._elSelectFabricant.selectedIndex].dataset.jsIdfabricant);
         });
     }
@@ -118,14 +117,13 @@ class FiltrerPlusieursCriteres{
                         let listeOptionFabricant = this._elSelectFabricant.querySelectorAll('option');
                        for (let i = 0; i < listeOptionFabricant.length; i++) {
                            const option = listeOptionFabricant[i];
-                           console.log(fabricant);
-                           
+
                            if(option.value === fabricant){
                                 option.setAttribute('selected', 'selected');
                                 this._elSelectFabricant.setAttribute("disabled", "disabled");
                            }                          
                         }
-                       /* console.log(fabricant[0]["fabricant"]); */
+                       
 
 
                     } else if (xhr.status === 404) {
@@ -155,9 +153,7 @@ class FiltrerPlusieursCriteres{
                     if (xhr.status === 200) {
 
                         // Traitement du DOM
-                        console.log(xhr.responseText);
                        let reponse = JSON.parse(xhr.responseText);
-                       console.log(reponse.length);
                        this._elSelectModele.innerHTML = "";
                        let elementOption ="<option></option>";
                         for (let j = 0; j < reponse.length; j++) {
@@ -176,7 +172,7 @@ class FiltrerPlusieursCriteres{
                             this._elSelectModele.setAttribute("disabled", "disabled")
                         }
                   
-                       /* console.log(fabricant[0]["fabricant"]); */
+                  
 
 
                     } else if (xhr.status === 404) {
@@ -216,7 +212,6 @@ class FiltrerPlusieursCriteres{
        
         let xhr;
         xhr = new XMLHttpRequest();
-        console.log(idModele, idFabricant, anneeMin, anneeMax, prixMin, prixMax);
         // Initialisation de la requète
         if (xhr) {	
             
@@ -230,70 +225,70 @@ class FiltrerPlusieursCriteres{
                     if (xhr.status === 200) {
 
                         // Traitement du DOM
-                        console.log(xhr.responseText);
                        let reponse = JSON.parse(xhr.responseText);
+
                        this._elVoitures.innerHTML="";
                        /* console.log(fabricant[0]["fabricant"]); */
-                       for (let j = 0; j < reponse.length; j++) {
-                            let idVoiture = reponse[j]["idVoiture"];
-                            let vin = reponse[j]["vin"];
-                            let prixVente = reponse[j]["prixVente"];
-                            let annee = reponse[j]["annee"];
-                            let dateArrivee = reponse[j]["dateArrivee"];
-                            let km = reponse[j]["km"];
-                            let groupeMotopropulseur = reponse[j]["groupeMotopropulseur"];
-                            let marque = reponse[j]["marque"];
-                            let statut = reponse[j]["statut"];
+                       if(reponse.length >0){
+                        for (let j = 0; j < reponse.length; j++) {
+                                let idVoiture = reponse[j]["idVoiture"];
+                                let vin = reponse[j]["vin"];
+                                let prixVente = reponse[j]["prixVente"];
+                                let annee = reponse[j]["annee"];
+                                let dateArrivee = reponse[j]["dateArrivee"];
+                                let km = reponse[j]["km"];
+                                let groupeMotopropulseur = reponse[j]["groupeMotopropulseur"];
+                                let marque = reponse[j]["marque"];
+                                let statut = reponse[j]["statut"];
 
-                            let modele = reponse[j]["modele"];
-                            let fabricant = reponse[j]["fabricant"];
-                            let couleur = reponse[j]["couleur"];
-                            let cheminFichier = reponse[j]["cheminFichier"];
-                            let chassis = reponse[j]["chassis"];
+                                let modele = reponse[j]["modele"];
+                                let fabricant = reponse[j]["fabricant"];
+                                let couleur = reponse[j]["couleur"];
+                                let cheminFichier = reponse[j]["cheminFichier"];
+                                let chassis = reponse[j]["chassis"];
+                                let html = "";
                         
-                            if(reponse.length >0){
-                                console.log(modele);
-                                console.log(fabricant);
-                                console.log(couleur);
-                                console.log(marque);
-                                console.log(statut);
-                            }
-                            let html = "";
-                            html += `<article class="voiture_liste__voiture" 
-                            data-js-voiture
-                            data-js-voiture-id="${idVoiture}" 
-                            data-js-voiture-vin="${vin}"
-                            data-js-voiture-prixVente="${prixVente}"
-                            data-js-voiture-km="${km}" 
-                            data-js-voiture-annee="${annee}" 
-                            data-js-voiture-modele="${modele}" 
-                            data-js-voiture-prix="${prixVente}" 
-                            data-js-voiture-groupeMotopropulseur="${groupeMotopropulseur}" 
-                            data-js-voiture-marque="${marque}"
-                            data-js-voiture-fabricant="${fabricant}"
-                            data-js-voiture-statut="${statut}"
-                            data-component="Voiture"
-                            >
-                            <div class="voiture_liste__image-wrapper">
-                            <img src="${cheminFichier}" alt="" class="voiture_liste__image">
-                            </div> 
-                            <div class = "info_voiture">
-                                <h2>${marque}</h2>
-                                <h2>${modele}</h2>
-                                <h3>${prixVente}&nbsp;$</h3>
-                                <span>${fabricant}</span> 
-                                <span>${annee}</span><br>                             
-                                <span>${km} Km</span><br>               
-                                <span>${couleur}</span> <br>
-                                <span>${groupeMotopropulseur}</span><br>
-                                <span>${chassis}</span> 
-                            </div>             
-                            </article>`
-                            this._elVoitures.insertAdjacentHTML("afterbegin", html);
-                        
+                            
+                                
+                                html += `<article class="voiture_liste__voiture" 
+                                data-js-voiture
+                                data-js-voiture-id="${idVoiture}" 
+                                data-js-voiture-vin="${vin}"
+                                data-js-voiture-prixVente="${prixVente}"
+                                data-js-voiture-km="${km}" 
+                                data-js-voiture-annee="${annee}" 
+                                data-js-voiture-modele="${modele}" 
+                                data-js-voiture-prix="${prixVente}" 
+                                data-js-voiture-groupeMotopropulseur="${groupeMotopropulseur}" 
+                                data-js-voiture-marque="${marque}"
+                                data-js-voiture-fabricant="${fabricant}"
+                                data-js-voiture-statut="${statut}"
+                                data-component="Voiture"
+                                >
+                                <div class="voiture_liste__image-wrapper">
+                                <img src="${cheminFichier}" alt="" class="voiture_liste__image">
+                                </div> 
+                                <div class = "info_voiture">
+                                    <h2>${marque}</h2>
+                                    <h2>${modele}</h2>
+                                    <h3>${prixVente}&nbsp;$</h3>
+                                    <span>${fabricant}</span> 
+                                    <span>${annee}</span><br>                             
+                                    <span>${km} Km</span><br>               
+                                    <span>${couleur}</span> <br>
+                                    <span>${groupeMotopropulseur}</span><br>
+                                    <span>${chassis}</span> 
+                                </div>             
+                                </article>`
+                                this._elVoitures.insertAdjacentHTML("afterbegin", html);
                         }
+  
+                    }else{
+                        let htmlErr = "";
 
-
+                        htmlErr += `<p>Pas de voiture disponible pour cette recherche</p>`;
+                        this._elVoitures.innerHTML = htmlErr;
+                    }
 
                     } else if (xhr.status === 404) {
                         console.log('Le fichier appelé dans la méthode open() n’existe pas.');
@@ -322,9 +317,9 @@ class FiltrerPlusieursCriteres{
                     if (xhr.status === 200) {
 
                         // Traitement du DOM
-                        console.log(xhr.responseText);
+
                        let data = JSON.parse(xhr.responseText);
-                       console.log(data["fabricant"]);
+
                        
                        this._elSelectModele.innerHTML = "";
                         let html = "<option value=''></option>";
