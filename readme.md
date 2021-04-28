@@ -15,4 +15,4 @@ Trejo Silva, Giannina Jacqueline
 
 En cours.
 
-Lien vers le site : https://e1995670.webdev.cmaisonneuve.qc.ca/projetWeb2Equipe4Lebon/
+Lien vers le site : https://e1995670.webdev.cmaisonneuve.qc.ca/projet_web_2/projetWeb2Equipe4Lebon/
