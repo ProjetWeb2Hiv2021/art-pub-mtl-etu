@@ -3,7 +3,7 @@ class FiltrerUnCritere {
         this._el = el;
         this._elSelect = this._el.querySelector('select');
         this._elSubmit = this._el.querySelector('[data-js-btn]');
-        
+        this._elVoitures = document.querySelector('[data-component="VoitureListe"]');
         this.init();
     }
 
@@ -23,6 +23,7 @@ class FiltrerUnCritere {
             let value = this._elSelect.options[this._elSelect.selectedIndex].value;
             
             this.filtre(value);
+            this.gestionDetailsVoiture();
             
             /* this.callAJAX(value); */
         });
@@ -195,6 +196,15 @@ class FiltrerUnCritere {
             });
             // Envoi de la requète
             xhr.send();
+        }
+    }
+    gestionDetailsVoiture = () =>{
+    
+        let voitures = this._elVoitures.querySelectorAll('[data-component="Voiture"]');
+        for (let k = 0; k < voitures.length; k++) {
+            const voiture = voitures[k];
+            new Voiture(voiture);
+            
         }
     }
 }
