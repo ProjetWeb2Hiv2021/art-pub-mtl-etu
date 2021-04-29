@@ -63,6 +63,19 @@ INSERT INTO `voiture` (`vin`, `prixVente`, `idStatut`,`annee`, `dateArrivee`, `p
 ('AIKMD763517', 8743.75, 3, 2009, '2019-03-12', 6995, 289584, 'Gris', 1, 1, 4, 494, 1),
 ('AIKMD763518', 12500, 3,2010, '2021-04-20', 10000, 3000, 'jaune', 2, 2, 1, 495, 2);
 
+('AIKMD763519', 18875, 3, 2018, '2010-05-15', 15100, 80000, 'Blanc', 2, 2, 1, 2, 2),*/
+('AIKMD763520', 40000, 3, 2021, '2020-02-28', 32000, 65523, 'Blanc', 2, 1, 1, 9, 2),
+('AIKMD763521', 12437.5, 3, 2018, '2019-05-16', 9950, 239884, 'Rouge', 2, 1, 1, 12, 2),
+('AIKMD763522', 93750, 3, 2020, '2021-01-10', 75000, 15000, 'Blanc', 2, 1, 1, 9, 2),
+('AIKMD763523', 48550, 3, 2020, '2021-04-16', 38840, 10125, 'Gris', 2, 2, 3, 10, 2),
+('AIKMD763524', 26872.5 ,3, 2017, '2020-11-20', 21498, 119513, 'Blanc', 2, 2, 1, 479, 2),
+('AIKMD763525', 14372.5, 3,2016, '2018-08-26', 11498, 52788, 'Rouge', 2, 2, 1, 113, 2),
+('AIKMD763526', 43550, 3, 2020, '2021-01-20', 34840, 12420, 'Blanc', 2, 2, 1, 33, 2),
+('AIKMD763527', 17497.5, 3,2016, '2019-12-23', 13998, 83000, 'Noir', 2, 2, 1, 285, 2),
+('AIKMD763528', 11622.5, 3, 2015, '2020-04-15', 9298, 115825, 'Blanc', 2, 2, 1, 258, 2),
+('AIKMD763529', 14997.5, 3,2014, '2018-11-14', 11998, 112899, 'Noir', 2, 1, 1, 224, 2),
+('AIKMD763530', 25872.5, 3,2017, '2020-07-27', 20698, 75164, 'Rouge', 2, 2, 1, 156, 2);
+
 INSERT INTO `listeImage` (`idImage`, `cheminFichier`, `idVoiture`, `ordre`) VALUES
 (55, './assets/images/img11.jpg', 1, 1),
 (56, './assets/images/img12.jpg', 1, 2),
@@ -114,5 +127,46 @@ INSERT INTO `listeImage` (`idImage`, `cheminFichier`, `idVoiture`, `ordre`) VALU
 (105, './assets/images/img173.jpg', 17, 3),
 (106, './assets/images/img171.jpg', 18, 1),
 (107, './assets/images/img172.jpg', 18, 2),
-(108, './assets/images/img173.jpg', 18, 3);
+(108, './assets/images/img173.jpg', 18, 3);/
+
+(109, './assets/images/img191.jpg', 19, 1),
+(110, './assets/images/img192.jpg', 19, 2), 
+(111, './assets/images/img193.jpg', 19, 3),
+(112, './assets/images/img201.jpg', 20, 1),
+(113, './assets/images/img202.jpg', 20, 2),
+(114, './assets/images/img203.jpg', 20, 3),
+(115, './assets/images/img211.jpg', 21, 1),
+(116, './assets/images/img212.jpg', 21, 2),
+(117, './assets/images/img213.jpg', 21, 3),
+(118, './assets/images/img221.jpg', 22, 1),
+(119, './assets/images/img222.jpg', 22, 2),
+(120, './assets/images/img223.jpg', 22, 3),
+(121, './assets/images/img231.jpg', 23, 1),
+(122, './assets/images/img232.jpg', 23, 2),
+(123, './assets/images/img233.jpg', 23, 3),
+(124, './assets/images/img241.jpg', 24, 1),
+(125, './assets/images/img242.jpg', 24, 2),
+(126, './assets/images/img243.jpg', 24, 3),
+(127, './assets/images/img251.jpg', 25, 1),
+(128, './assets/images/img252.jpg', 25, 2),
+(129, './assets/images/img253.jpg', 25, 3),
+(130, './assets/images/img261.jpg', 26, 1),
+(131, './assets/images/img262.jpg', 26, 2),
+(132, './assets/images/img263.jpg', 26, 3),
+(133, './assets/images/img271.jpg', 27, 1),
+(134, './assets/images/img272.jpg', 27, 2),
+(135, './assets/images/img273.jpg', 27, 3),
+(136, './assets/images/img281.jpg', 28, 1), 
+(137, './assets/images/img282.jpg', 28, 2),
+(138, './assets/images/img283.jpg', 28, 3),
+(139, './assets/images/img291.jpg', 29, 1),
+(140, './assets/images/img292.jpg', 29, 2),
+(141, './assets/images/img293.jpg', 29, 3),
+(142, './assets/images/img301.jpg', 30, 1), 
+(143, './assets/images/img302.jpg', 30, 2),
+(144, './assets/images/img303.jpg', 30, 3); 
+
+
+
+
 
