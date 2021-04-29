@@ -185,6 +185,7 @@ class FiltrerPlusieursCriteres{
         }
     }
     populerListeVoitureRecherche = () => {
+        
         let anneeMin = Number(this._elMinAnnee.value);
         if(anneeMin==""){
             anneeMin = 1900;
@@ -229,7 +230,9 @@ class FiltrerPlusieursCriteres{
 
                        this._elVoitures.innerHTML="";
                        /* console.log(fabricant[0]["fabricant"]); */
+                       let html = "";
                        if(reponse.length >0){
+                        
                         for (let j = 0; j < reponse.length; j++) {
                                 let idVoiture = reponse[j]["idVoiture"];
                                 let vin = reponse[j]["vin"];
@@ -246,7 +249,7 @@ class FiltrerPlusieursCriteres{
                                 let couleur = reponse[j]["couleur"];
                                 let cheminFichier = reponse[j]["cheminFichier"];
                                 let chassis = reponse[j]["chassis"];
-                                let html = "";
+                                
                         
                             
                                 
@@ -280,15 +283,17 @@ class FiltrerPlusieursCriteres{
                                     <span>${chassis}</span> 
                                 </div>             
                                 </article>`
-                                this._elVoitures.insertAdjacentHTML("afterbegin", html);
-                        }
+                                
+                            }
+                            this._elVoitures.innerHTML = html;
+                            this.gestionDetailsVoiture();
   
-                    }else{
-                        let htmlErr = "";
+                        }else{
+                            let htmlErr = "";
 
-                        htmlErr += `<p>Pas de voiture disponible pour cette recherche</p>`;
-                        this._elVoitures.innerHTML = htmlErr;
-                    }
+                            htmlErr += `<p>Pas de voiture disponible pour cette recherche</p>`;
+                            this._elVoitures.innerHTML = htmlErr;
+                        }
 
                     } else if (xhr.status === 404) {
                         console.log('Le fichier appelé dans la méthode open() n’existe pas.');
@@ -348,4 +353,14 @@ class FiltrerPlusieursCriteres{
             xhr.send();
         }
     }
+    gestionDetailsVoiture = () =>{
+    
+        let voitures = this._elVoitures.querySelectorAll('[data-component="Voiture"]');
+        for (let k = 0; k < voitures.length; k++) {
+            const voiture = voitures[k];
+            new Voiture(voiture);
+            
+        }
+    }
 }
+

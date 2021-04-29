@@ -39,5 +39,35 @@
 				return 0;
 			}
 		}
+		public function ajouterUtilisateur($nomUtilisateur, $motPasse, $prenom, $nomFamille, $courriel, $dateNaissance, $noCivique,
+		 $rue, $codePostal, $telephone, $telephonePortable, $idTypeUtilisateur, $idVille, $idProvince) {
+
+			try {
+				$stmt = $this->connexion->prepare("INSERT INTO utilisateur (nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone, telephonePortable, idTypeUtilisateur, idVille, idProvince) VALUES (:nomUtilisateur, :motPasse, :prenom, :nomFamille, :courriel, :dateNaissance, :noCivique, :rue, :codePostal, :telephone, :telephonePortable, :idTypeUtilisateur, :idVille, :idProvince)");
+				
+				$stmt->bindParam(":nomUtilisateur", $nomUtilisateur);
+				$stmt->bindParam(":motPasse", $motPasse);
+				$stmt->bindParam(":prenom", $prenom);
+				$stmt->bindParam(":nomFamille", $nomFamille);
+				$stmt->bindParam(":courriel", $courriel);
+				$stmt->bindParam(":dateNaissance", $dateNaissance);
+				$stmt->bindParam(":noCivique", $noCivique);
+				$stmt->bindParam(":rue", $rue);
+				$stmt->bindParam(":codePostal", $codePostal);
+				$stmt->bindParam(":telephone", $telephone);
+				$stmt->bindParam(":telephonePortable", $telephonePortable);
+				$stmt->bindParam(":idTypeUtilisateur", $idTypeUtilisateur);
+				$stmt->bindParam(":idVille", $idVille);
+				$stmt->bindParam(":idProvince", $idProvince); 
+			
+			
+				$stmt->execute();
+
+				return 1;
+			}	
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
 	}
 ?>
