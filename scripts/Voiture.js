@@ -11,7 +11,7 @@ class Voiture {
 
         this._el.addEventListener('click', (e) => {
             e.preventDefault();
-            
+            console.log("test lyes");
         
             this.callAJAX(this._id);
             /* this.callAJAX(this._el.dataset.jsVoitureId); */
@@ -40,7 +40,7 @@ class Voiture {
                         // Traitement du DOM
                         //this._elResults.innerHTML = xhr.responseText;
                         //console.log(xhr.responseText);
-                        let elBody = this._el.parentElement.parentElement
+                        let elBody = document.querySelector('body');
                         let elFilterUn = elBody.querySelector('[data-component="FiltrerUnCritere"]');
                         let elFiltrerPlusieurs = elBody.querySelector('[data-component="FiltrerPlusieursCriteres"]');
                         let elListe = elBody.querySelector('[data-component="VoitureListe"]');

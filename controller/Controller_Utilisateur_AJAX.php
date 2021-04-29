@@ -39,6 +39,40 @@
                             echo "ERROR";
                         }
                         break;
+					case "ajoutUtilisateur":
+						if (isset($params["nomUtilisateur"]) && isset($params["motPasse"]) && isset($params["prenom"]) && isset($params["nomFamille"]) && isset($params["courriel"])
+						&& isset($params["dateNaissance"]) && isset($params["noCivique"]) && isset($params["rue"]) && isset($params["codePostal"]) && isset($params["telephone"])
+						&& isset($params["telephonePortable"]) && isset($params["idTypeUtilisateur"]) && isset($params["idVille"]) && isset($params["idProvince"])) {
+
+							$nomUtilisateur = $params["nomUtilisateur"];
+							$motPasse = $params["motPasse"];
+							$prenom = $params["prenom"];
+							$nomFamille = $params["nomFamille"];
+							$courriel = $params["courriel"];
+							$dateNaissance = $params["dateNaissance"];
+							$noCivique = $params["noCivique"];
+							$rue = $params["rue"];
+							$codePostal = $params["codePostal"];
+							$telephone = $params["telephone"];
+							$telephonePortable = $params["telephonePortable"];
+							$idTypeUtilisateur = $params["idTypeUtilisateur"];
+							$idVille = $params["idVille"];
+							$idProvince = $params["idProvince"];
+
+							$modeleUtilisateur = new Model_Utilisateur();
+							$data["utilisateur"] = $modeleUtilisateur->ajouterUtilisateur($nomUtilisateur, $motPasse, $prenom,
+																		$nomFamille, $courriel, $dateNaissance, $noCivique, $rue, $codePostal, $telephone, $telephonePortable, $idTypeUtilisateur, $idVille, $idProvince);
+
+							
+
+							
+							echo json_encode($data["utilisateur"]);
+							/* $vue = "Acceuil";
+							$this->afficheVue($vue, $data); */
+														
+						} else {													
+							echo "ERROR";
+						}
 						
 				
 				}			
