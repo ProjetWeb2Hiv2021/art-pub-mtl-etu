@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Programation interactive - tp 2</title>
+	<title>Cars are us</title>
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="./styles/styles.css">
