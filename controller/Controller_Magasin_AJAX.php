@@ -17,12 +17,12 @@
                     ne pas oublier le "default:"*/
 
 						
-					case "modelesDuFabricantSelectione":
-						if (isset($params["idFabricant"])) {
+					case "modelesDuMarqueSelectione":
+						if (isset($params["idMarque"])) {
 							
-							$idFabricant = $params["idFabricant"];
-							$modeleFabricant = new Model_Fabricant();
-							$data = $modeleFabricant->obtenirModelesFabricant($idFabricant);
+							$idMarque = $params["idMarque"];
+							$modeleMarque = new Model_Marque();
+							$data = $modeleMarque->obtenirModelesMarque($idMarque);
 							
 							
 							
@@ -34,19 +34,17 @@
 						}
 						break;
 					case "chargerListeVoitureRecherche":
-						if (isset($params["idFabricant"]) && isset($params["idModele"]) && isset($params["anneeMin"]) && isset($params["anneeMax"]) && isset($params["prixMin"]) && isset($params["prixMax"])) {
+						if (isset($params["idMarque"]) && isset($params["idModele"]) && isset($params["anneeMin"]) && isset($params["anneeMax"]) && isset($params["prixMin"]) && isset($params["prixMax"])) {
 							
-							$idFabricant = $params["idFabricant"];
+							$idMarque = $params["idMarque"];
 							$idModele = $params["idModele"];
 							$anneeMin = $params["anneeMin"];
 							$anneeMax = $params["anneeMax"];
 							$prixMin = $params["prixMin"];
 							$prixMax = $params["prixMax"];
 							$modeleVoiture = new Model_Voiture();
-							$data = $modeleVoiture->obtenirRechercheVoiture($idModele, $idFabricant, $anneeMin, $anneeMax, $prixMin, $prixMax);
-							
-							
-							
+							$data = $modeleVoiture->obtenirRechercheVoiture($idModele, $idMarque, $anneeMin, $anneeMax, $prixMin, $prixMax);
+	
 							echo json_encode($data);
 							
 														
@@ -57,8 +55,8 @@
 					case "chargerListeModeleRafraichir":
 							$modeleModele = new Model_Modele();				
 							$data["modele"] = $modeleModele->obtenirListeModele();	
-							$modeleFabricant = new Model_Fabricant();				
-							$data["fabricant"] = $modeleFabricant->obtenirListeFabricant();	
+							$modeleMarque = new Model_Marque();				
+							$data["marque"] = $modeleMarque->obtenirListeMarque();	
 							echo json_encode($data);
 
 						break;
@@ -94,12 +92,12 @@
 					case "connexionSWT":
                         
                         break;
-					case "fabricantDuModelSelectione":
+					case "marqueDuModelSelectione":
 						if (isset($params["idModele"])) {
 
 							$idModele = $params["idModele"];
 							$modeleModele = new Model_Modele();
-							$data = $modeleModele->obtenirFabricantModel($idModele);
+							$data = $modeleModele->obtenirMarqueModel($idModele);
 
 
 							echo json_encode($data);
@@ -110,7 +108,7 @@
 							echo "ERROR";
 						}
 						break;
-					case "modelesDuFabricantSelectione":
+					/* case "modelesDuFabricantSelectione":
 						if (isset($params["idFabricant"])) {
 
 							$idFabricant = $params["idFabricant"];
@@ -125,7 +123,7 @@
 						} else {													
 							echo "ERROR";
 						}
-						break;
+						break; */
 					
 				}			
             } else {

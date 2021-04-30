@@ -26,9 +26,13 @@
 				$vueFiltrePlusieurs = "FiltrerPlusieursCriteres";
 				$modelModele = new Model_Modele();
 				$data["modele"] = $modelModele ->obtenirListeModele();
-				$modelFabricant = new Model_Fabricant();
-				$data["fabricant"] = $modelFabricant ->obtenirListeFabricant();
+				$modelMarque = new Model_Marque();
+				$data["marque"] = $modelMarque ->obtenirListeMarque();
 				$this->showView($vueFiltrePlusieurs, $data);
+				$vuevedette = "VoitureVedette";
+				$modelVoitureVedette = new Model_Voiture();
+				$data["voitureVedette"] = $modelVoitureVedette ->obtenirListeVoitureVedette();
+				$this->showView($vuevedette, $data);
 				$vue = "VoitureListe";
 				$modelVoiture = new Model_Voiture();
 				$data["voiture"] = $modelVoiture ->getListeVoiture();				
