@@ -4,7 +4,7 @@ class FiltrerPlusieursCriteres{
         this._elSubmit = this._el.querySelector('[data-js-btn]');
         this._elRafraichir= this._el.querySelector('[data-js-rafraichir]');
         this._elSelectModele = this._el.querySelector('[data-js-modele]');
-        this._elSelectFabricant = this._el.querySelector('[data-js-fabricant]');
+        this._elSelectMarque = this._el.querySelector('[data-js-marque]');
         this._elInputs= this._el.querySelectorAll('input');
         this._elMinAnnee = this._el.querySelector('[data-component="anneeMin"]'); 
         this._elMaxAnnee = this._el.querySelector('[data-component="anneeMax"]'); 
@@ -31,7 +31,7 @@ class FiltrerPlusieursCriteres{
                     this._elRafraichir.classList.add('disabled');
                 } 
                  
-                if (this._elSelectFabricant.options[this._elSelectFabricant.selectedIndex].value != ""){
+                if (this._elSelectMarque.options[this._elSelectMarque.selectedIndex].value != ""){
                     this._elSubmit.classList.remove('disabled');
                     this._elRafraichir.classList.remove('disabled');
                 }else{
@@ -50,7 +50,7 @@ class FiltrerPlusieursCriteres{
                     console.log(input.value);
                 }
             });
-            this.populerSelectFabricant();
+            this.populerSelectMarque();
             this.populerSelectModele();
             this._elSubmit.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -63,10 +63,10 @@ class FiltrerPlusieursCriteres{
             this._elRafraichir.addEventListener('click', (e) => {
                 e.preventDefault();
                 if (this._elSelectModele.options[this._elSelectModele.selectedIndex].value != "") {
-                    this._elSelectFabricant.removeAttribute("disabled", "disabled");
+                    this._elSelectMarque.removeAttribute("disabled", "disabled");
                 }
                 
-                this.chargerListeModeleFabricantRafraichir();
+                this.chargerListeModeleMarqueRafraichir();
                 this._elMinAnnee.value = "";
                 this._elMaxAnnee.value = "";
                 this._elMinPrix.value = "";
@@ -79,21 +79,21 @@ class FiltrerPlusieursCriteres{
         
     }
 
-    populerSelectFabricant = () => {
+    populerSelectMarque = () => {
         this._elSelectModele.addEventListener('change', (e) => {
-            this._elSelectFabricant.removeAttribute("disabled");
-           this.fabricantDuModelSelectione(this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmodele);
+            this._elSelectMarque.removeAttribute("disabled");
+           this.marqueDuModelSelectione(this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmodele);
         });
     }
     populerSelectModele = () => {
 
-        this._elSelectFabricant.addEventListener('change', (e) => {
+        this._elSelectMarque.addEventListener('change', (e) => {
             this._elSelectModele.removeAttribute("disabled");
-            this.modelesDuFabricantSelectione(this._elSelectFabricant.options[this._elSelectFabricant.selectedIndex].dataset.jsIdfabricant);
+            this.modelesDuMarqueSelectione(this._elSelectMarque.options[this._elSelectMarque.selectedIndex].dataset.jsIdmarque);
         });
     }
 
-    fabricantDuModelSelectione = (idModel) => {
+    marqueDuModelSelectione = (idModel) => {
         let xhr;
         xhr = new XMLHttpRequest();
 
@@ -101,7 +101,7 @@ class FiltrerPlusieursCriteres{
         if (xhr) {	
             
             // Ouverture de la requète : fichier recherché
-            xhr.open('GET', 'index.php?Magasin_AJAX&action=fabricantDuModelSelectione&idModele=' +idModel);
+            xhr.open('GET', 'index.php?Magasin_AJAX&action=marqueDuModelSelectione&idModele=' +idModel);
             
             // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
             xhr.addEventListener('readystatechange', () => {
@@ -112,15 +112,15 @@ class FiltrerPlusieursCriteres{
                         // Traitement du DOM
 
                        let reponse = JSON.parse(xhr.responseText);
-                       let fabricant = reponse[0]["fabricant"];
+                       let marque = reponse[0]["marque"];
                        
-                        let listeOptionFabricant = this._elSelectFabricant.querySelectorAll('option');
-                       for (let i = 0; i < listeOptionFabricant.length; i++) {
-                           const option = listeOptionFabricant[i];
+                        let listeOptionMarque = this._elSelectMarque.querySelectorAll('option');
+                       for (let i = 0; i < listeOptionMarque.length; i++) {
+                           const option = listeOptionMarque[i];
 
-                           if(option.value === fabricant){
+                           if(option.value === marque){
                                 option.setAttribute('selected', 'selected');
-                                this._elSelectFabricant.setAttribute("disabled", "disabled");
+                                this._elSelectMarque.setAttribute("disabled", "disabled");
                            }                          
                         }
                        
@@ -136,7 +136,7 @@ class FiltrerPlusieursCriteres{
         }
     }
 
-    modelesDuFabricantSelectione = (idFabricant) => {
+    modelesDuMarqueSelectione = (idMarque) => {
         let xhr;
         xhr = new XMLHttpRequest();
 
@@ -144,7 +144,7 @@ class FiltrerPlusieursCriteres{
         if (xhr) {	
             
             // Ouverture de la requète : fichier recherché
-            xhr.open('GET', 'index.php?Magasin_AJAX&action=modelesDuFabricantSelectione&idFabricant=' +idFabricant);
+            xhr.open('GET', 'index.php?Magasin_AJAX&action=modelesDuMarqueSelectione&idMarque=' +idMarque);
             
             // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
             xhr.addEventListener('readystatechange', () => {
@@ -203,13 +203,13 @@ class FiltrerPlusieursCriteres{
         if(prixMax==""){
             prixMax = 10000000;
         }
-        let idFabricant = Number(this._elSelectFabricant.options[this._elSelectFabricant.selectedIndex].dataset.jsIdfabricant) ;
+        let idMarque = Number(this._elSelectMarque.options[this._elSelectMarque.selectedIndex].dataset.jsIdmarque) ;
         let idModele = Number(this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmodele);
-        
-        this.chargerListeVoitureRecherche(idModele, idFabricant, anneeMin, anneeMax, prixMin, prixMax);
-
+        console.log(idModele, idMarque, anneeMin, anneeMax, prixMin, prixMax);
+        this.chargerListeVoitureRecherche(idModele, idMarque, anneeMin, anneeMax, prixMin, prixMax);
+       
     }
-    chargerListeVoitureRecherche = (idModele, idFabricant, anneeMin, anneeMax, prixMin, prixMax) => {
+    chargerListeVoitureRecherche = (idModele, idMarque, anneeMin, anneeMax, prixMin, prixMax) => {
        
         let xhr;
         xhr = new XMLHttpRequest();
@@ -217,7 +217,7 @@ class FiltrerPlusieursCriteres{
         if (xhr) {	
             
             // Ouverture de la requète : fichier recherché
-            xhr.open('GET', 'index.php?Magasin_AJAX&action=chargerListeVoitureRecherche&idModele=' +idModele+'&idFabricant='+idFabricant+'&anneeMin='+anneeMin+'&anneeMax='+anneeMax+'&prixMin='+prixMin+'&prixMax='+prixMax);
+            xhr.open('GET', 'index.php?Magasin_AJAX&action=chargerListeVoitureRecherche&idModele=' +idModele+'&idMarque='+idMarque+'&anneeMin='+anneeMin+'&anneeMax='+anneeMax+'&prixMin='+prixMin+'&prixMax='+prixMax);
             
             // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
             xhr.addEventListener('readystatechange', () => {
@@ -229,7 +229,7 @@ class FiltrerPlusieursCriteres{
                        let reponse = JSON.parse(xhr.responseText);
 
                        this._elVoitures.innerHTML="";
-                       /* console.log(fabricant[0]["fabricant"]); */
+                       
                        let html = "";
                        if(reponse.length >0){
                         
@@ -304,7 +304,7 @@ class FiltrerPlusieursCriteres{
             xhr.send();
         }
     }
-    chargerListeModeleFabricantRafraichir = () => {
+    chargerListeModeleMarqueRafraichir = () => {
        
         let xhr;
         xhr = new XMLHttpRequest();
@@ -334,13 +334,13 @@ class FiltrerPlusieursCriteres{
                            html += `<option data-js-idModele="${modele["idModele"]}"  value="${modele["modele"]}">${modele["modele"]}</option>`;
                         }                       
                         this._elSelectModele.insertAdjacentHTML("afterbegin", html);
-                        this._elSelectFabricant.innerHTML = "";
-                        let htmlFabricant = "<option value=''></option>";
-                        for (let i = 0; i < data["fabricant"].length; i++) {
-                            const fabricant = data["fabricant"][i];
-                            htmlFabricant += `<option data-js-idFabricant="${fabricant["idFabricant"]}"  value="${fabricant["fabricant"]}">${fabricant["fabricant"]}</option>`;
+                        this._elSelectMarque.innerHTML = "";
+                        let htmlMarque = "<option value=''></option>";
+                        for (let i = 0; i < data["marque"].length; i++) {
+                            const marque = data["marque"][i];
+                            htmlMarque += `<option data-js-idMarque="${marque["idMarque"]}"  value="${marque["marque"]}">${marque["marque"]}</option>`;
                          }   
-                         this._elSelectFabricant.insertAdjacentHTML("afterbegin", htmlFabricant);
+                         this._elSelectMarque.insertAdjacentHTML("afterbegin", htmlMarque);
 
 
 

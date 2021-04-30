@@ -1,12 +1,13 @@
-<section data-component="VoitureListe">
- <!-- juste un prototype -->   
+<section data-component="VoitureVedette" class="swiper-container">
+ <!-- juste un prototype --> 
+ <div class="swiper-wrapper">
     <?php
     
-    if($data["voiture"]){
-        foreach ($data["voiture"] as $voiture) {
+    if($data["voitureVedette"]){
+        foreach ($data["voitureVedette"] as $voiture) {
             
     ?>
-            <article class="voiture_liste__voiture" 
+            <article class="voiture_liste__voiture swiper-slide" 
                 data-js-voiture
                 data-js-voiture-id="<?= $voiture["idVoiture"] ?>" 
                 data-js-voiture-vin="<?= $voiture["vin"] ?>"
@@ -26,15 +27,7 @@
     
                 <div class="voiture_liste__image-wrapper">
                     <img src="<?= $voiture["cheminFichier"] ?>" alt="" class="voiture_liste__image">
-                </div> 
-                <div class = "info_voiture">
-                    <h2><?= $voiture["modele"] ?></h2>
-                    <h2><?= $voiture["marque"] ?></h2>
-                    <h3><?= $voiture["prixVente"] ?>&nbsp;$</h3>
-                    <span><?= $voiture["annee"] ?></span><br>                             
-                    <span><?= $voiture["km"] ?> Km</span><br>
-                    <span><?= $voiture["groupeMotopropulseur"] ?></span><br>
-                </div>             
+                </div>        
             </article>
     <?php
             
@@ -42,11 +35,13 @@
         
     }else{
     ?>  
-        <p>pas de voitures pour le moment</p>
+        <p>pas de voitures en vedette</p>
 
     <?php
     }
     ?>
     <!-- Fin prototype -->
+    
+    </div>
 
 </section>

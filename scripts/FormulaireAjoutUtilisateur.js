@@ -46,10 +46,9 @@ class FormulaireAjoutUtilisateur{
                 console.log(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone, telephonePortable, idTypeUtilisateur, idVille, idProvince);
 
                 this.callAJAXAjoutUtilisateur(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone, telephonePortable, idTypeUtilisateur, idVille, idProvince);
-                /* setTimeout(function(){ 
+                setTimeout(function(){ 
                     document.location.href='index.php?Magasin&action'; 
-                }, 5000); */
-              
+                }, 5000);             
             }
             
         });
@@ -132,6 +131,9 @@ class FormulaireAjoutUtilisateur{
                             this._el.innerHTML = "<p>votre compte d'utilisateur a été ajouté</p>"
                         }else{
                             this._el.innerHTML = "<p>probleme ou niveau de l'ajout</p>"
+                            setTimeout(function(){ 
+                                document.location.href='index.php?Utilisateur&action=creerClient'; 
+                            }, 5000);
                         }
 
 
