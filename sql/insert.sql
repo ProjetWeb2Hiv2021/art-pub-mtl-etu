@@ -62,7 +62,6 @@ INSERT INTO `voiture` (`vin`, `prixVente`, `idStatut`,`annee`, `dateArrivee`, `p
 ('AIKMD763516', 52207.5, 3, 2018, '2019-12-23', 41766, 36574, 'Noir', 1, 1, 1, 4, 489, 1),
 ('AIKMD763517', 8743.75, 3, 2009, '2019-03-12', 6995, 289584, 'Gris', 1, 1, 1, 4, 494, 1),
 ('AIKMD763518', 12500, 3,2010, '2021-04-20', 10000, 3000, 'jaune', 1, 2, 2, 1, 495, 2);
-
 ('AIKMD763519', 18875, 3, 2018, '2010-05-15', 15100, 80000, 'Blanc', 2, 2, 1, 2, 2),*/
 ('AIKMD763520', 40000, 3, 2021, '2020-02-28', 32000, 65523, 'Blanc', 2, 1, 1, 9, 2),
 ('AIKMD763521', 12437.5, 3, 2018, '2019-05-16', 9950, 239884, 'Rouge', 2, 1, 1, 12, 2),
@@ -75,6 +74,7 @@ INSERT INTO `voiture` (`vin`, `prixVente`, `idStatut`,`annee`, `dateArrivee`, `p
 ('AIKMD763528', 11622.5, 3, 2015, '2020-04-15', 9298, 115825, 'Blanc', 2, 2, 1, 258, 2),
 ('AIKMD763529', 14997.5, 3,2014, '2018-11-14', 11998, 112899, 'Noir', 2, 1, 1, 224, 2),
 ('AIKMD763530', 25872.5, 3,2017, '2020-07-27', 20698, 75164, 'Rouge', 2, 2, 1, 156, 2);
+
 
 INSERT INTO `listeImage` (`idImage`, `cheminFichier`, `idVoiture`, `ordre`) VALUES
 (55, './assets/images/img11.jpg', 1, 1),
@@ -127,7 +127,7 @@ INSERT INTO `listeImage` (`idImage`, `cheminFichier`, `idVoiture`, `ordre`) VALU
 (105, './assets/images/img173.jpg', 17, 3),
 (106, './assets/images/img171.jpg', 18, 1),
 (107, './assets/images/img172.jpg', 18, 2),
-(108, './assets/images/img173.jpg', 18, 3);/
+(108, './assets/images/img173.jpg', 18, 3),
 
 (109, './assets/images/img191.jpg', 19, 1),
 (110, './assets/images/img192.jpg', 19, 2), 
