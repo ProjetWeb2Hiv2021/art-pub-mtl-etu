@@ -1,7 +1,7 @@
 <section data-component="VoitureVedette" class="swiper-container">
  <!-- juste un prototype --> 
  <div class="swiper-wrapper">
-<<<<<<< HEAD
+
     <?php
     
     if($data["voitureVedette"]){

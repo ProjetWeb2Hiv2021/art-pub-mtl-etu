@@ -9,6 +9,7 @@
     ?>
             <article class="voiture_liste__voiture" 
                 data-js-voiture
+                data-js-voiture-nbr
                 data-js-voiture-id="<?= $voiture["idVoiture"] ?>" 
                 data-js-voiture-vin="<?= $voiture["vin"] ?>"
                 data-js-voiture-prixVente="<?= $voiture["prixVente"] ?>"
@@ -50,7 +51,8 @@
     <?php
     }
     ?>
-    <!-- Fin prototype -->
-   
+
+    <!-- Fin prototype -->  
+
 </section>
 

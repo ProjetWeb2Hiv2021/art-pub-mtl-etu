@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 body {    
   background-color: #303030;
   color: #dc6a2b;
@@ -54,13 +54,11 @@ titre {
 }
 
 
-=======
 body {
   margin-left: 20px;
   margin-right: 20px;
 }
 
->>>>>>> 6b38ad67b31194073f01dede364e71a7cade2e29
 .VoitureListe {
   display: flex;
 }
@@ -68,6 +66,9 @@ body {
 .disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+.hidden{
+  display: none;
 }
 /*  */
 .voiture_liste__voiture {

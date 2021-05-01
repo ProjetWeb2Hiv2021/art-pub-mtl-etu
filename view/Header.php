@@ -1,6 +1,6 @@
 <header class="header ligne distribue" data-component="Header">
 	<h1>Cars are Us</h1>
-<<<<<<< HEAD
+
 <!--<img src="./assets/images/logo.svg"/>-->
 	
 		<!--<p></p>
@@ -19,9 +19,7 @@
 	
 		
 	<div class="connexion row centreV">
-=======
-	<div class="connexion ligne centreV">
->>>>>>> 6b38ad67b31194073f01dede364e71a7cade2e29
+
 		
 		<?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Administrateur") echo "<span>adm&nbsp;</span>"; ?>
 		<?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Client") echo "<span>client&nbsp;</span>"; ?>
