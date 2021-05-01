@@ -1,3 +1,8 @@
+body {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .VoitureListe {
   display: flex;
 }
@@ -25,7 +30,7 @@
 }
 
 /*Voiture détail */
-.row {
+.ligne {
   display: flex;
   flex-wrap: wrap;
 }
@@ -225,4 +230,16 @@
     display: block;
     text-align: center;
   }
+}
+
+/*carousel*/
+.box {
+  margin-right: 5px;
+  margin-left: 5px;
+
+  display: flex;
+  justify-content: center;
+}
+.box img {
+  width: 300px;
 }
