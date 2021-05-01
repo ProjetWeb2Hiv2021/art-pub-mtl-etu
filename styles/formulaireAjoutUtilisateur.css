@@ -1,7 +1,10 @@
 .FormulaireAjoutUtilisateur input,
 .FormulaireAjoutUtilisateur select {
   width: 250px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+}
+.input-wrapper {
+  margin-bottom: 15px;
 }
 .FormulaireAjoutUtilisateur {
   display: flex;
