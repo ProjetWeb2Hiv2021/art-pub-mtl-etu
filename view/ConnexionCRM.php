@@ -1,5 +1,5 @@
 <section data-component="Connexion">
-    <h1>Site Web Transactionnel</h1>
+    <h1>Système Gestion Clients</h1>
     <div data-js-component="Form">            
         <form method="post">
             <div class="row distribue">
