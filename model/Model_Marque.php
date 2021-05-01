@@ -6,10 +6,10 @@
 		}
 		
 		/* Differentes methodes CRUD marque */
-		public function obtenirListeMarque() { 
+		public function obtenirListeMarque() {
 			try {
-				$stmt = $this->connexion->query("SELECT * from marque");
-
+				
+				$stmt = $this->connexion->query("SELECT * FROM marque");
 				$stmt->execute();
 				return $stmt->fetchAll();
 
