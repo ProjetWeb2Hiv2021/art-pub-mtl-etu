@@ -11,5 +11,5 @@
 			if (componentDataSet == key) new classMapping[componentDataSet](componentElement);
 		}
 	}
-	
+	new ElderCarousel('.carousel-example');
 })();

@@ -1,12 +1,12 @@
 <section data-component="VoitureDetail">
-    <div class="row aLaFin">
+    <div class="ligne aLaFin">
         
         <a href="index.php?Utilisateur&action=connexion">Réserver</a>
         <a href="index.php?Utilisateur&action=connexion">Acheter</a>
     
     </div>
-    <div data-js-component="Form" class="row">
-        <section class="imagesVoiture row">
+    <div data-js-component="Form" class="ligne">
+        <section class="imagesVoiture ligne">
             <?php
             $listeImage = $data["listeImage"];
             //afficher les images
@@ -20,7 +20,7 @@
             ?>
         </section>
         <section class="infoVoiture" >
-            <div class="row distribue">
+            <div class="ligne distribue">
                 <label for="nom">Modele :</label>
                 <input type="text" id="modele" name="modele" required data-js-param="modele" value="<?php echo $data["voiture"]["modele"]."\" ";
                 if($data["systeme"]==="SWT"){
@@ -28,21 +28,21 @@
                 };
                 ?>>
             </div>
-            <div class="row distribue">
+            <div class="ligne distribue">
                 <label for="vin">VIN :</label>
                 <input type="text" id="vin" name="vin" required data-js-param="vin" value="<?php echo $data["voiture"]["vin"]."\" ";
                 if($data["systeme"]==="SWT"){
                     echo "disabled";
                 }; ?>>
             </div>
-            <div class="row distribue">
+            <div class="ligne distribue">
                 <label for="prixVente">Prix :</label>
                 <input type="text" id="prixVente" name="prixVente" required data-js-param="prixVente" value="<?php echo $data["voiture"]["prixVente"]."\" ";
                 if($data["systeme"]==="SWT"){
                     echo "disabled";
                 }; ?>>
             </div>
-            <div class="row distribue">
+            <div class="ligne distribue">
                 <label for="annee">Année :</label>
                 <input type="text" id="annee" name="annee" required data-js-param="annee" value="<?php echo $data["voiture"]["annee"]."\" ";
                 if($data["systeme"]==="SWT"){
@@ -50,32 +50,32 @@
                 }; ?>>
             </div>
             <?php if($data["systeme"]==="CRM") {
-                echo '<div class="row distribue">
+                echo '<div class="ligne distribue">
                         <label for="dateArrivee">Date arrivée :</label>
                         <input type="text" id="dateArrivee" name="dateArrivee" required data-js-param="dateArrivee" value="<?php echo $data["voiture"]["dateArrivee"]; ?>">
                         </div>
-                        <div class="row distribue">
+                        <div class="ligne distribue">
                         <label for="prixPaye">Prix payé :</label>
                         <input type="text" id="prixPaye" name="prixPaye" required data-js-param="prixPaye" value="<?php echo $data["voiture"]["prixPaye"]; ?>">
                         </div>';
             }
             
             ?>
-            <div class="row distribue">
+            <div class="ligne distribue">
                 <label for="km">Km :</label>
                 <input type="text" id="km" name="km" required data-js-param="km" value="<?php echo $data["voiture"]["km"]."\" ";
                 if($data["systeme"]==="SWT"){
                     echo "disabled";
                 }; ?>>
             </div>
-            <div class="row distribue">
+            <div class="ligne distribue">
                 <label for="couleur">Couleur :</label>
                 <input type="text" id="couleur" name="couleur" required data-js-param="couleur" value="<?php echo $data["voiture"]["couleur"]."\" ";
                 if($data["systeme"]==="SWT"){
                     echo "disabled";
                 }; ?>>
             </div>
-            <div class="row distribue"><label for="typeCarburant">Type Carburant :</label> 
+            <div class="ligne distribue"><label for="typeCarburant">Type Carburant :</label> 
                 <select name="typeCarburant" id="typeCarburant" 
                     <?php 
                     if($data["systeme"]==="SWT"){
@@ -99,7 +99,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="row distribue"><label for="modele">Modele :</label> 
+            <div class="ligne distribue"><label for="modele">Modele :</label> 
                 <select name="modele" id="modele"
                     <?php 
                     if($data["systeme"]==="SWT"){
@@ -122,7 +122,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="row distribue"><label for="chassis">Chassis :</label> 
+            <div class="ligne distribue"><label for="chassis">Chassis :</label> 
                 <select name="chassis" id="chassis"
                     <?php 
                     if($data["systeme"]==="SWT"){
@@ -145,7 +145,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="row distribue"><label for="transmission">Transmission :</label> 
+            <div class="ligne distribue"><label for="transmission">Transmission :</label> 
                 <select name="transmission" id="transmission"
                     <?php 
                     if($data["systeme"]==="SWT"){
@@ -168,7 +168,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="row distribue"><label for="groupeMotopropulseur">Groupe Motopropulseur :</label> 
+            <div class="ligne distribue"><label for="groupeMotopropulseur">Groupe Motopropulseur :</label> 
                 <select name="groupeMotopropulseur" id="groupeMotopropulseur"
                     <?php 
                     if($data["systeme"]==="SWT"){
@@ -192,7 +192,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="row distribue"><label for="statut">Statut :</label> 
+            <div class="ligne distribue"><label for="statut">Statut :</label> 
                 <select name="statut" id="statut"
                     <?php 
                     if($data["systeme"]==="SWT"){
