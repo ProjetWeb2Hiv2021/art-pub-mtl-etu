@@ -1,4 +1,5 @@
 <section data-component="VoitureListe">
+  
  <!-- juste un prototype -->   
     <?php
     
@@ -35,7 +36,8 @@
                     <span><?= $voiture["annee"] ?></span><br>                             
                     <span><?= $voiture["km"] ?> Km</span><br>
                     <span><?= $voiture["groupeMotopropulseur"] ?></span><br>
-                </div>             
+                </div>      
+                      
             </article>
     <?php
             
@@ -44,9 +46,13 @@
     }else{
     ?>  
         <p>pas de voitures pour le moment</p>
+       
 
     <?php
     }
     ?>
+
     <!-- Fin prototype -->  
+
 </section>
+

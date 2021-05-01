@@ -1,6 +1,7 @@
 <section data-component="VoitureVedette" class="swiper-container">
  <!-- juste un prototype --> 
  <div class="swiper-wrapper">
+
     <?php
     
     if($data["voitureVedette"]){
@@ -29,19 +30,21 @@
                     <img src="<?= $voiture["cheminFichier"] ?>" alt="" class="voiture_liste__image">
                 </div>        
             </article>
+            <hr>
     <?php
             
         }
-        
-    }else{
-    ?>  
-        <p>pas de voitures en vedette</p>
 
-    <?php
-    }
+        
+            }else{
+        ?>  
+               <p>pas de voitures en vedette</p>
+
+        <?php
+        }
     ?>
     <!-- Fin prototype -->
-    
     </div>
+</div>
 
 </section>

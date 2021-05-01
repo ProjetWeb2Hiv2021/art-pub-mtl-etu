@@ -58,17 +58,19 @@
 				if(isset($idModele) && isset($idFabricant) && isset($anneeMin) && isset($anneeMax) && isset($prixMin) && isset($prixMax)){
 					if($idModele == "NaN" && $idFabricant !== "NaN"){
 						$stmt = $this->connexion->prepare("SELECT * from voiture 
-														INNER JOIN groupemotopropulseur on groupemotopropulseur.idGroupemotopropulseur = voiture.idGroupemotopropulseur 
+														INNER JOIN groupeMotopropulseur on groupeMotopropulseur.idGroupemotopropulseur = voiture.idGroupemotopropulseur 
 														INNER JOIN chassis on chassis.idChassis = voiture.idChassis 
 														INNER JOIN statut on statut.idStatut = voiture.idStatut 
 														INNER JOIN modele on modele.idModele = voiture.idModele 
 														INNER JOIN marque on marque.idMarque = modele.idMarque 
 														INNER JOIN fabricant on fabricant.idFabricant = marque.idFabricant 
+
 														INNER JOIN listeimage on listeimage.idVoiture = voiture.idVoiture 
 														WHERE listeimage.idVoiture = voiture.idVoiture AND listeimage.ordre = 1 
 														AND marque.idFabricant = :fab AND voiture.annee BETWEEN :anmin AND :anmax AND voiture.idStatut = 3
 														AND voiture.prixVente BETWEEN :primin AND :primax
 														order by voiture.dateArrivee DESC");			
+
 						$stmt->bindParam(":fab", $idFabricant);
 						$stmt->bindParam(":anmin", $anneeMin);
 						$stmt->bindParam(":anmax", $anneeMax);
@@ -80,18 +82,21 @@
 
 					}else if($idModele == "NaN" && $idFabricant == "NaN"){
 						$stmt = $this->connexion->prepare("SELECT * from voiture
-														INNER JOIN groupemotopropulseur on groupemotopropulseur.idGroupemotopropulseur = voiture.idGroupemotopropulseur
+														INNER JOIN groupeMotopropulseur on groupeMotopropulseur.idGroupemotopropulseur = voiture.idGroupemotopropulseur
 														INNER JOIN chassis on chassis.idChassis = voiture.idChassis
 														INNER JOIN statut on statut.idStatut = voiture.idStatut
 														INNER JOIN modele on modele.idModele = voiture.idModele
 														INNER JOIN marque on marque.idMarque = modele.idMarque
 														INNER JOIN fabricant on fabricant.idFabricant = marque.idFabricant
+
 														INNER JOIN listeimage on listeimage.idVoiture = voiture.idVoiture
 														WHERE listeimage.idVoiture = voiture.idVoiture AND listeimage.ordre = 1 AND voiture.idStatut = 3
+
 														AND voiture.annee BETWEEN :anmin AND :anmax
 														AND voiture.prixVente BETWEEN :primin AND :primax
 														order by voiture.dateArrivee  DESC");
 						
+															
 						$stmt->bindParam(":anmin", $anneeMin);
 						$stmt->bindParam(":anmax", $anneeMax);
 						$stmt->bindParam(":primin", $prixMin);
@@ -102,15 +107,17 @@
 					}
 					else{
 						$stmt = $this->connexion->prepare("SELECT * from voiture
-														INNER JOIN groupemotopropulseur on groupemotopropulseur.idGroupemotopropulseur = voiture.idGroupemotopropulseur
+														INNER JOIN groupeMotopropulseur on groupeMotopropulseur.idGroupemotopropulseur = voiture.idGroupemotopropulseur
 														INNER JOIN chassis on chassis.idChassis = voiture.idChassis
 														INNER JOIN statut on statut.idStatut = voiture.idStatut
 														INNER JOIN modele on modele.idModele = voiture.idModele
 														INNER JOIN marque on marque.idMarque = modele.idMarque
 														INNER JOIN fabricant on fabricant.idFabricant = marque.idFabricant
+
 														INNER JOIN listeimage on listeimage.idVoiture = voiture.idVoiture
 														WHERE listeimage.idVoiture = voiture.idVoiture AND listeimage.ordre = 1 
 														AND voiture.idModele = :mod AND marque.idFabricant = :fab AND voiture.annee BETWEEN :anmin AND :anmax AND voiture.idStatut = 3
+
 														AND voiture.prixVente BETWEEN :primin AND :primax
 														order by voiture.dateArrivee  DESC");
 						$stmt->bindParam(":mod", $idModele);
@@ -138,7 +145,7 @@
 			
 			try {
 				$sql = 	"SELECT * from voiture v 
-												JOIN groupemotopropulseur gpm on gpm.idGroupemotopropulseur = v.idGroupemotopropulseur
+												JOIN groupeMotopropulseur gpm on gpm.idGroupemotopropulseur = v.idGroupemotopropulseur
 												JOIN chassis c on c.idChassis = v.idChassis
 												JOIN typeCarburant t on t.idTypeCarburant = v.idTypeCarburant
 												JOIN statut s on s.idStatut = v.idStatut												

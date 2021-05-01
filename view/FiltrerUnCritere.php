@@ -1,5 +1,5 @@
 <section class="FiltrerUnCritere" data-component="FiltrerUnCritere">
-	<h1>Page par defaut</h1>
+	<!--<h1>Page par defaut</h1>-->
 
 	<!-- un seul critere -->
 	<form>

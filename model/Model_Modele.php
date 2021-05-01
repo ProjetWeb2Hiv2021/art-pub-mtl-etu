@@ -111,20 +111,97 @@
 			}
 		}
 
-				//Chercher  modele dans la table voiture
-				public function chercherModeledasnVoiture($idModele) {
-					try {
-									$stmt = $this->connexion->query("SELECT count(*) cont FROM voiture where idModele='" . $idModele."'");
-									$stmt->execute();
-									//return 1;
-									return $stmt->fetch();
-									//return 1; //L'utilisateur existe dans la BD
-					
-					}
-								catch(Exception $exc) {
-									return 0;
-								}
-					}
+		//Chercher  modele dans la table voiture
+		public function chercherModeledasnVoiture($idModele) {
+			try {
+				$stmt = $this->connexion->query("SELECT count(*) cont FROM voiture where idModele='" . $idModele."'");
+				$stmt->execute();
+				//return 1;
+				return $stmt->fetch();
+				//return 1; 
+			
+			}
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
 
+		// Pour formulaire modele
+		public function obtenirModele() {
+			try {
+		
+				$stmt = $this->connexion->query("SELECT * from modele");
+				$stmt->execute();
+				return $stmt->fetchAll();
+
+			}
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
+		public function obtenirMarquePourCeModele($idModele) {
+			try {
+		
+				$stmt = $this->connexion->query("SELECT ma.idMarque, ma.marque from modele m 
+				join marque ma on m.idMarque = ma.idMarque WHERE idModele=".$idModele.";");
+				$stmt->execute();
+				return $stmt->fetch();
+
+			}
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
+		public function obtenirFabricantPourCeModele($idModele) {
+			try {
+		
+				$stmt = $this->connexion->query("SELECT f.idFabricant, ma.marque FROM modele m 
+				JOIN marque ma ON m.idMarque = ma.idMarque JOIN fabricant f ON f.idFabricant = ma.idFabricant 
+				WHERE idModele=".$idModele.";");
+				$stmt->execute();
+				return $stmt->fetch();
+
+			}
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
+		public function obtenirMarquesPourCeFabricant($idFabricant) {
+			try {
+		
+				$stmt = $this->connexion->query("SELECT ma.idMarque, f.idFabricant, ma.marque from marque ma JOIN fabricant f on ma.idFabricant = f.idFabricant WHERE f.idFabricant=".$idFabricant.";");
+				$stmt->execute();
+				return $stmt->fetchAll();
+
+			}
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
+		public function obtenirModelesPourCeFabricant($idFabricant) {
+			try {
+		
+				$stmt = $this->connexion->query("SELECT m.idModele, ma.idMarque, m.modele from modele m JOIN marque ma ON m.idMarque = ma.idMarque JOIN fabricant f on ma.idFabricant = f.idFabricant WHERE f.idFabricant=".$idFabricant.";");
+				$stmt->execute();
+				return $stmt->fetchAll();
+
+			}
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
+		
+		public function obtenirModelesPourCetteMarque($idMarque) {
+			try {
+		
+				$stmt = $this->connexion->query("SELECT m.idModele, m.modele from modele m JOIN marque ma ON m.idMarque = ma.idMarque WHERE ma.idMarque=".$idMarque.";");
+				$stmt->execute();
+				return $stmt->fetchAll();
+
+			}
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
 	}
 ?>
