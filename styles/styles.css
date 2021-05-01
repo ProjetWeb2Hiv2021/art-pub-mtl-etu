@@ -1,30 +1,28 @@
-
-body {    
+body {
   background-color: #303030;
   color: #dc6a2b;
   font-size: 16pt;
-  font-family: 'Red Rose', sans-serif;
-  
+  font-family: "Red Rose", sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 hr {
-  
   height: 1px;
   border: none;
-  background-color:  #dc6a2b;
-  
+  background-color: #dc6a2b;
 }
 
 titre {
   text-align: center;
 }
 
-#menu{
-  background-color: #292929; 
+#menu {
+  background-color: #292929;
   padding: 5px;
 }
 
-#menu ul{
+#menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -35,28 +33,22 @@ titre {
   display: inline-block;
 }
 
-#menu ul li a{
-  color:  #dc6a2b;
+#menu ul li a {
+  color: #dc6a2b;
   display: block;
   text-decoration: none;
   padding: 10px;
 }
 
-#menu ul li a:hover{
-  color:  #ffbc9815;
+#menu ul li a:hover {
+  color: #ffbc9815;
   text-decoration: none;
   /*background-color: #dc6a2b;*/
- /* color: #29292910; */
+  /* color: #29292910; */
 }
 
-.item-right{
+.item-right {
   float: right;
-}
-
-
-body {
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .VoitureListe {
@@ -67,7 +59,7 @@ body {
   opacity: 0.5;
   pointer-events: none;
 }
-.hidden{
+.hidden {
   display: none;
 }
 /*  */
@@ -99,6 +91,9 @@ body {
 }
 .distribue {
   justify-content: space-between;
+}
+.centre {
+  justify-content: center;
 }
 .aLaFin {
   justify-content: flex-end;
@@ -173,6 +168,36 @@ body {
 
 .centreV {
   align-items: center;
+}
+[data-component="Connexion"] a {
+  text-decoration: none;
+  color: black;
+}
+[data-component="Connexion"] .ligne {
+  margin-bottom: 10px;
+}
+[data-component="Connexion"] input {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+[data-component="Connexion"] {
+  background-color: #505050;
+}
+@import url("https://fonts.googleapis.com/css2?family=Red+Rose:wght@500&display=swap");
+[data-component="Connexion"],
+[data-component="Connexion"] a {
+  font-family: "Red Rose";
+  text-align: center;
+  color: #ed712b;
+}
+[data-component="Connexion"] input[type="submit"] {
+  background-color: #ed712b;
+  color: white;
+  padding: 5px 5px;
+  margin: 2px 2px;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
 }
 
 /* Système */
@@ -292,6 +317,7 @@ body {
 }
 
 /*carousel*/
+/*https://www.cssscript.com/infinite-multi-slide-elder-carousel*/
 .box {
   margin-right: 5px;
   margin-left: 5px;
@@ -300,5 +326,8 @@ body {
   justify-content: center;
 }
 .box img {
-  width: 300px;
+  width: 250px;
+}
+.carousel {
+  margin: 30px 0;
 }

@@ -18,7 +18,7 @@
 		
 	
 		
-	<div class="connexion row centreV">
+	<div class="connexion ligne centreV">
 
 		
 		<?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Administrateur") echo "<span>adm&nbsp;</span>"; ?>
