@@ -3,6 +3,9 @@ body {
   color: #dc6a2b;
   font-size: 16pt;
   font-family: "Red Rose", sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 }
 
 hr {
@@ -323,5 +326,11 @@ titre {
   justify-content: center;
 }
 .box img {
-  width: 300px;
+  width: 250px;
+}
+.carousel{
+  margin: 30px 0;
+}
+.ec__nav{
+  color:white;
 }
