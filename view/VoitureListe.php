@@ -1,4 +1,4 @@
-<section data-component="VoitureListe">
+<section data-component="VoitureListe" class="gallery gallery--4">
   
  <!-- juste un prototype -->   
     <?php

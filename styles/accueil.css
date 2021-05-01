@@ -1,0 +1,31 @@
+.gallery {
+  display: grid;
+  padding: 0 8vw;
+}
+
+.gallery--2 {
+  column-gap: 2.5vw;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 2.5vw;
+}
+.gallery--3 {
+  column-gap: 2.5vw;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 2.5vw;
+}
+.gallery--4 {
+  column-gap: 1.75vw;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 1.75vw;
+}
+
+.gallery--6 {
+  column-gap: 1.25vw;
+  grid-template-columns: repeat(6, 1fr);
+  grid-row-gap: 1.25vw;
+}
+
+.gallery__item,
+.gallery__image {
+  width: 100%;
+}

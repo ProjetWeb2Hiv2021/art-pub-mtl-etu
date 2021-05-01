@@ -18,7 +18,3 @@ DROP TABLE IF EXISTS statut;
 DROP TABLE IF EXISTS expedition;
 DROP TABLE IF EXISTS modePaiement;
 DROP TABLE IF EXISTS transmission;
-
-
-
-
