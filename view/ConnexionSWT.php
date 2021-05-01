@@ -1,15 +1,15 @@
-<section data-component="Connexion">
+<section data-component="Connexion" >
     <h1>Site Web Transactionnel</h1>
-    <div data-js-component="Form">            
-        <form method="post">
-            <div class="row distribue">
+    <div data-js-component="Form" >            
+        <form method="post" class="ligne centre">
+            <div class="ligne distribue">
               <div class="colonne">  
             
-                <div class="row distribue">
-                    <label for="nomUtilisateur">Courriel :</label>
+                <div class="ligne distribue">
+                    <label for="nomUtilisateur">Courriel ou utilisateur:</label>
                     <input type="email" id="nomUtilisateur" name="nomUtilisateur" required data-js-param="nomUtilisateur" value="">
                 </div>
-                <div class="row distribue">
+                <div class="ligne distribue">
                     <label for="motPasse">Mot de passe :</label>
                     <input type="password" id="motPasse" name="motPasse" required data-js-param="motPasse" value="">
                     <input type="hidden" name="action" value="authentifier">                    
