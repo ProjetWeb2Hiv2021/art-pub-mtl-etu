@@ -1,10 +1,10 @@
 <section data-component="Modele">
     
-    <div data-js-component="Form" class="row">
+    <div data-js-component="Form" class="ligne">
 
         <section class="infoModele" >
             
-            <div class="row distribue"><label for="fabricant">Fabricant :</label> 
+            <div class="ligne distribue"><label for="fabricant">Fabricant :</label> 
                 <select data-js-modele-fabricant name="fabricant" id="fabricant" >
                     <?php
                         
@@ -21,7 +21,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="row distribue"><label for="marque">Marque :</label> 
+            <div class="ligne distribue"><label for="marque">Marque :</label> 
                 <select data-js-modele-marque name="marque" id="marque">
                     <?php
                         $marque = $data["marque"];
@@ -37,7 +37,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="row distribue"><label for="modele">Modele :</label> 
+            <div class="ligne distribue"><label for="modele">Modele :</label> 
                 <select data-js-modele name="modele" id="modele">
                     <?php
                         $modele = $data["modele"];

@@ -26,6 +26,9 @@
 
 	<link rel="shortcut icon" href="data:," type="image/x-icon">
 	
-
+	<!-- Carousel -->
+	<link rel="stylesheet" href="dist/style.css">
+	<script src="dist/index.min.js"></script>
+	
 </head>
 <body>
