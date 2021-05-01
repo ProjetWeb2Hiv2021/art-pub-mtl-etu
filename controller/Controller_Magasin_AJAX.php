@@ -108,6 +108,22 @@
 							echo "ERROR";
 						}
 						break;
+					case "voirPlus":
+						if (isset($params["offset"])) {
+
+							$offset = $params["offset"];
+							$modeleVoiture = new Model_Voiture();
+							$data = $modeleVoiture->obtenirPlusDeVoitures($offset);
+
+
+
+							echo json_encode($data);
+
+
+						} else {													
+							echo "ERROR";
+						}
+						break;
 					/* case "modelesDuFabricantSelectione":
 						if (isset($params["idFabricant"])) {
 

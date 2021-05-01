@@ -46,9 +46,9 @@ class FormulaireAjoutUtilisateur{
                 console.log(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone, telephonePortable, idTypeUtilisateur, idVille, idProvince);
 
                 this.callAJAXAjoutUtilisateur(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone, telephonePortable, idTypeUtilisateur, idVille, idProvince);
-                setTimeout(function(){ 
-                    document.location.href='index.php?Magasin&action'; 
-                }, 5000);             
+                /* setTimeout(function(){ 
+                    document.location.href='index.php?'; 
+                }, 5000);         */     
             }
             
         });

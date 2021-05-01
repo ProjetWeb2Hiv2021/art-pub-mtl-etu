@@ -5,5 +5,7 @@ const classMapping = {
     'FormValidator': FormValidator,
     'Header': Header,
     'Voiture': Voiture,
+    'VoirPlus': VoirPlus,
     'Modele': Modele
+
 };

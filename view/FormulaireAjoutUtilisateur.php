@@ -32,6 +32,33 @@
 			<input type="password" id="password" required data-js-param="motPasse"  minlength="8"><small class="error-message" data-js-error-msg></small>
 		</div>    
 
+
+		<?php
+		if($_SESSION["typeUtilisateur"]=="Administrateur"){
+		?>
+			<div class="input-wrapper" data-js-input-wrapper>
+			<label for="typeutilisateur">Type utilisateur :</label>
+
+			<select name="typeutilisateur" data-js-typeutilisateur size=1>
+				<option value=""></option>
+				<?php
+				
+				if($data["typeUtilisateur"]){
+				foreach ($data["typeUtilisateur"] as $typeUtilisateur) {
+				?>
+					<option data-js-typeutilisateur="<?= $typeUtilisateur["idTypeUtilisateur"] ?>"  value="<?= $typeUtilisateur["idTypeUtilisateur"] ?>"><?= $typeUtilisateur["typeUtilisateur"] ?></option>
+				<?php
+					}
+				}
+				?>
+			</select>
+			<small class="error-message" data-js-error-msg></small>			
+		</div>
+
+		<div class="input-wrapper" data-js-input-wrapper>
+			<label for="telephoneportable">Telephone portable:</label>
+			<input type="tel" id="telephoneportable" name="telephonePortable" value="" data-js-param="telephonePortable" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="514-***-****" required><small class="error-message" data-js-error-msg></small>			
+		</div>
 		<div class="input-wrapper" data-js-input-wrapper>
 			<label for="nocivique">Numero civique :</label>
 			<input type="number" id="nocivique" required data-js-param="noCivique"><small class="error-message" data-js-error-msg></small>
@@ -89,30 +116,11 @@
 			<input type="tel" id="telephone" name="telephone" value="" data-js-param="telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="514-***-****" required><small class="error-message" data-js-error-msg></small>			
 		</div>
 
-		<div class="input-wrapper" data-js-input-wrapper>
-			<label for="telephoneportable">Telephone portable:</label>
-			<input type="tel" id="telephoneportable" name="telephonePortable" value="" data-js-param="telephonePortable" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="514-***-****" required><small class="error-message" data-js-error-msg></small>			
-		</div>
 
-		<div class="input-wrapper" data-js-input-wrapper>
-			<label for="typeutilisateur">Type utilisateur :</label>
 
-			<select name="typeutilisateur" data-js-typeutilisateur size=1>
-				<option value=""></option>
-				<?php
-				
-				if($data["typeUtilisateur"]){
-				foreach ($data["typeUtilisateur"] as $typeUtilisateur) {
-				?>
-					<option data-js-typeutilisateur="<?= $typeUtilisateur["idTypeUtilisateur"] ?>"  value="<?= $typeUtilisateur["idTypeUtilisateur"] ?>"><?= $typeUtilisateur["typeUtilisateur"] ?></option>
-				<?php
-					}
-				}
-				?>
-			</select>
-			<small class="error-message" data-js-error-msg></small>			
-		</div>
-
+		<?php
+		}
+		?>
 		<button data-js-btn>Soumettre</button>
 	</form>
 </section>

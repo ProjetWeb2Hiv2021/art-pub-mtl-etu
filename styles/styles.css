@@ -57,6 +57,9 @@ titre {
   opacity: 0.5;
   pointer-events: none;
 }
+.hidden {
+  display: none;
+}
 /*  */
 .voiture_liste__voiture {
   display: inline-block;

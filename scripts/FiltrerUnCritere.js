@@ -4,6 +4,7 @@ class FiltrerUnCritere {
         this._elSelect = this._el.querySelector('select');
         this._elSubmit = this._el.querySelector('[data-js-btn]');
         this._elVoitures = document.querySelector('[data-component="VoitureListe"]');
+        this.elBtnRetour = document.querySelector('[data-js-retour-acceuil]');
         this.init();
     }
 
@@ -19,13 +20,17 @@ class FiltrerUnCritere {
 
         this._elSubmit.addEventListener('click', (e) => {
             e.preventDefault();
-            
+            document.querySelector('[data-component="VoirPlus"]').classList.add("hidden");
             let value = this._elSelect.options[this._elSelect.selectedIndex].value;
+            this.elBtnRetour.classList.remove("hidden");
             
             this.filtre(value);
             this.gestionDetailsVoiture();
             
             /* this.callAJAX(value); */
+        });
+        this.elBtnRetour.addEventListener('click', (e) => {
+            document.location.href='index.php?'; 
         });
     }
 
