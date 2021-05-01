@@ -1,30 +1,26 @@
-<<<<<<< HEAD
-body {    
+body {
   background-color: #303030;
   color: #dc6a2b;
   font-size: 16pt;
-  font-family: 'Red Rose', sans-serif;
-  
+  font-family: "Red Rose", sans-serif;
 }
 
 hr {
-  
   height: 1px;
   border: none;
-  background-color:  #dc6a2b;
-  
+  background-color: #dc6a2b;
 }
 
 titre {
   text-align: center;
 }
 
-#menu{
-  background-color: #292929; 
+#menu {
+  background-color: #292929;
   padding: 5px;
 }
 
-#menu ul{
+#menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -35,32 +31,24 @@ titre {
   display: inline-block;
 }
 
-#menu ul li a{
-  color:  #dc6a2b;
+#menu ul li a {
+  color: #dc6a2b;
   display: block;
   text-decoration: none;
   padding: 10px;
 }
 
-#menu ul li a:hover{
-  color:  #ffbc9815;
+#menu ul li a:hover {
+  color: #ffbc9815;
   text-decoration: none;
   /*background-color: #dc6a2b;*/
- /* color: #29292910; */
+  /* color: #29292910; */
 }
 
-.item-right{
+.item-right {
   float: right;
 }
 
-
-=======
-body {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
->>>>>>> 6b38ad67b31194073f01dede364e71a7cade2e29
 .VoitureListe {
   display: flex;
 }
