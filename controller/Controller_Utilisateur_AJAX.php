@@ -45,7 +45,7 @@
 						&& isset($params["telephonePortable"]) && isset($params["idTypeUtilisateur"]) && isset($params["idVille"]) && isset($params["idProvince"])) {
 
 							$nomUtilisateur = $params["nomUtilisateur"];
-							$motPasse = $params["motPasse"];
+							$motPasse = password_hash($params["motPasse"], PASSWORD_DEFAULT);
 							$prenom = $params["prenom"];
 							$nomFamille = $params["nomFamille"];
 							$courriel = $params["courriel"];

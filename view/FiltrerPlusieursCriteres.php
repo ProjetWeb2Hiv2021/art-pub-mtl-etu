@@ -2,6 +2,26 @@
 
 	<!-- plusieurs criteres -->
 	<form>	
+		<h3>Filtrer voitures :</h3>
+
+		<div class="input-wrapper" data-js-input-wrapper>
+			<label>Marque :</label><br>
+			<select name="marque" data-js-marque size=1>
+			<option value=""></option>
+		<?php
+		
+		if($data["marque"]){
+        foreach ($data["marque"] as $marque) {
+		?>
+			<option data-js-idMarque="<?= $marque["idMarque"] ?>" value="<?= $marque["marque"] ?>"><?= $marque["marque"] ?></option>
+		<?php
+			}
+		}
+		?>
+			</select>
+			<small class="error-message" data-js-error-msg></small>
+		</div>
+
 		<div class="input-wrapper" data-js-input-wrapper>
 			<label>Modele :</label><br>
 			<select name="modele" data-js-modele size=1>
@@ -19,23 +39,7 @@
 			</select>
 			<small class="error-message" data-js-error-msg></small>
 		</div>
-		<div class="input-wrapper" data-js-input-wrapper>
-			<label>Fabricant :</label><br>
-			<select name="fabricant" data-js-fabricant size=1>
-			<option value=""></option>
-		<?php
 		
-		if($data["fabricant"]){
-        foreach ($data["fabricant"] as $modele) {
-		?>
-			<option data-js-idFabricant="<?= $modele["idFabricant"] ?>" value="<?= $modele["fabricant"] ?>"><?= $modele["fabricant"] ?></option>
-		<?php
-			}
-		}
-		?>
-			</select>
-			<small class="error-message" data-js-error-msg></small>
-		</div>
 		<div class="input-wrapper" data-js-input-wrapper>
 			<label>Annee :</label><br>
 			<input name="annee_min" data-js-annee data-component="anneeMin" placeholder="1900" maxlength="4" min="1900" max=<?=date('Y')?>>
@@ -48,7 +52,7 @@
 			<input type="number" data-js-prix data-component="prixMax" name="prix_max" placeholder="À" maxlength="6" mainlength="0"><br>
 			<small class="error-message" data-js-error-msg></small>
 		</div>
-		<button class="disabled" data-js-btn>Recherche</button><button class="disabled" data-js-rafraichir>Rafraichir</button>
+		<button class="disabled" data-js-btn>Filtrer</button><button class="disabled" data-js-rafraichir>Rafraichir</button>
 	</form>
 </section>
 

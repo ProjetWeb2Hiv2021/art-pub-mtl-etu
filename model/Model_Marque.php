@@ -18,10 +18,12 @@
 				return 0;
 			}
 		}
-		public function obtenirMarque() {
+		public function obtenirModelesMarque($idMarque){
 			try {
-				
-				$stmt = $this->connexion->query("SELECT * FROM marque");
+				$stmt = $this->connexion->query("SELECT modele, idModele FROM marque 
+												INNER JOIN modele on modele.idMarque = marque.idMarque
+												WHERE marque.idMarque = $idMarque");
+
 				$stmt->execute();
 				return $stmt->fetchAll();
 

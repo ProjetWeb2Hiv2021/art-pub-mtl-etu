@@ -40,7 +40,11 @@ class Voiture {
                         // Traitement du DOM
                         //this._elResults.innerHTML = xhr.responseText;
                         //console.log(xhr.responseText);
+                        //debut changement lyes
                         let elBody = document.querySelector('body');
+                        let elVoitureVedette = elBody.querySelector('[data-component="VoitureVedette"]');
+                        elVoitureVedette.parentNode.removeChild( elVoitureVedette);
+                        //fin modif lyes
                         let elFilterUn = elBody.querySelector('[data-component="FiltrerUnCritere"]');
                         let elFiltrerPlusieurs = elBody.querySelector('[data-component="FiltrerPlusieursCriteres"]');
                         let elListe = elBody.querySelector('[data-component="VoitureListe"]');
