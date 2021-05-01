@@ -1,0 +1,75 @@
+/*Voiture détail */
+.ligne {
+  display: flex;
+  flex-wrap: wrap;
+}
+.colonne {
+  display: flex;
+  flex-direction: column;
+}
+.distribue {
+  justify-content: space-between;
+}
+.centre {
+  justify-content: center;
+}
+.aLaFin {
+  justify-content: flex-end;
+}
+[data-component="VoitureDetail"] form {
+  display: flex;
+}
+
+[data-component="VoitureDetail"] a {
+  text-decoration: none;
+
+  color: black;
+}
+.infoVoiture {
+  flex: 2;
+}
+.imagesVoiture {
+  flex: 3;
+}
+[data-component="VoitureDetail"] input[disabled] {
+  opacity: 1;
+  pointer-events: none;
+  background-color: white;
+  border: 1px black solid;
+  color: black;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+
+[data-component="VoitureDetail"] select[disabled] {
+  opacity: 1;
+  pointer-events: none;
+  background-color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+  width: 170px;
+  border: 1px black solid;
+  color: black;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+
+.imagesVoiture img {
+  width: 200px;
+  margin-right: 20px;
+}
+[data-component="VoitureDetail"],
+[data-component="Connexion"] {
+  margin-right: 40px;
+  margin-left: 40px;
+}
+[data-component="VoitureDetail"] a {
+  padding: 3px;
+  background-color: #ed712b;
+  color: white;
+  margin-left: 5px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}

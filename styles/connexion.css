@@ -1,0 +1,42 @@
+/* Connexion */
+.logo > a {
+  display: inline-block;
+  padding-top: 0.2em;
+}
+.connexion img {
+  width: 2em;
+  margin-left: 0.3em;
+}
+
+.centreV {
+  align-items: center;
+}
+[data-component="Connexion"] a {
+  text-decoration: none;
+  color: black;
+}
+[data-component="Connexion"] .ligne {
+  margin-bottom: 10px;
+}
+[data-component="Connexion"] input {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+[data-component="Connexion"] {
+  background-color: #505050;
+}
+
+[data-component="Connexion"],
+[data-component="Connexion"] a {
+  text-align: center;
+  color: #ed712b;
+}
+[data-component="Connexion"] input[type="submit"] {
+  background-color: #ed712b;
+  color: white;
+  padding: 5px 5px;
+  margin: 2px 2px;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+}

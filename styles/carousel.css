@@ -1,0 +1,15 @@
+/*carousel*/
+/*https://www.cssscript.com/infinite-multi-slide-elder-carousel*/
+.box {
+  margin-right: 5px;
+  margin-left: 5px;
+
+  display: flex;
+  justify-content: center;
+}
+.box img {
+  width: 250px;
+}
+.carousel {
+  margin: 30px 0;
+}
