@@ -1,3 +1,4 @@
+<div class="filtres">
 <section class="FiltrerUnCritere" data-component="FiltrerUnCritere">
 	<!--<h1>Page par defaut</h1>-->
 
