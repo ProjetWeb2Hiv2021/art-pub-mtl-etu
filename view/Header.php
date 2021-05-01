@@ -28,8 +28,8 @@
       	
       	<span>
 		  
-		  	<a href="index.php?Utilisateur&action=connexion">
-				  <?php if(!isset($_SESSION["nomUtilisateur"])) echo "<span>Connexion</span>"; ?>
+		  	<a href="index.php?Utilisateur&action=connexion" class="ligne">
+				<?php if(!isset($_SESSION["nomUtilisateur"])) echo "<span>Connexion</span>"; ?>		  
 				<img src="./assets/images/login_f.svg" alt="Connexion" />
 			</a>
 			

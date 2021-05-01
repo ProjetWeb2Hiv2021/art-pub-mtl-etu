@@ -85,3 +85,11 @@ titre {
   border: burlywood 2px solid;
   cursor: pointer;
 }
+.connexion span {
+  color: #dc6a2b;
+  font-size: 16pt;
+  font-family: "Red Rose", sans-serif;
+}
+a.ligne {
+  align-items: center;
+}
