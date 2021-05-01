@@ -4,5 +4,6 @@ const classMapping = {
     'FormulaireAjoutUtilisateur':FormulaireAjoutUtilisateur,
     'FormValidator': FormValidator,
     'Header': Header,
-    'Voiture': Voiture
+    'Voiture': Voiture,
+    'VoirPlus': VoirPlus
 };
