@@ -22,6 +22,9 @@
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto:300,400,500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@700&display=swap" rel="stylesheet">
+
 
 	<link rel="shortcut icon" href="data:," type="image/x-icon">
 	

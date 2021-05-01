@@ -29,6 +29,7 @@
                     <img src="<?= $voiture["cheminFichier"] ?>" alt="" class="voiture_liste__image">
                 </div>        
             </article>
+            <hr>
     <?php
             
         }
