@@ -102,6 +102,12 @@ a.ligne {
 .filtres select {
   margin-right: 10px;
 }
+.filtres select {
+  height: 25px;
+}
+.filtres label {
+  line-height: 165%;
+}
 .filtres .input-wrapper {
   display: flex;
 }
@@ -124,14 +130,17 @@ a.ligne {
 }
 .filtres input[type="number"] {
   width: 80px;
+  height: 25px;
   margin-right: 5px;
 }
 .filtres [data-js-annee] {
   width: 80px;
+  height: 25px;
   margin-right: 5px;
 }
 .filtres .input-wrapper {
   margin-bottom: 0;
   margin-left: 10px;
   margin-right: 10px;
+  align-items: center;
 }
