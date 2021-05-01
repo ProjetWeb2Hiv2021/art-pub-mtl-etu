@@ -9,7 +9,7 @@
 		public function obtenirListeTypeUtilisateur() {
 			
 			try {
-				$stmt = $this->connexion->query("SELECT * from typeutilisateur;");
+				$stmt = $this->connexion->query("SELECT * from typeUtilisateur;");
 
 				$stmt->execute();
 				return $stmt->fetchAll();
