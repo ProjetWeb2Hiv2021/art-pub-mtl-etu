@@ -2,6 +2,7 @@
 @import "./connexion.css";
 @import "./systemes.css";
 @import "./carousel.css";
+@import "./formulaireAjoutUtilisateur.css";
 body {
   background-color: #303030;
   color: #dc6a2b;
