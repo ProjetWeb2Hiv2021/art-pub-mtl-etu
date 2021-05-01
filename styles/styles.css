@@ -93,3 +93,45 @@ titre {
 a.ligne {
   align-items: center;
 }
+.filtres {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.filtres label,
+.filtres select {
+  margin-right: 10px;
+}
+.filtres .input-wrapper {
+  display: flex;
+}
+
+.filtres h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.filtres button {
+  background-color: #ed712b;
+  color: white;
+  padding: 5px 5px;
+  margin: 2px 2px;
+  cursor: pointer;
+
+  border-radius: 5px;
+  width: 100px;
+  align-self: flex-end;
+}
+.filtres input[type="number"] {
+  width: 80px;
+  margin-right: 5px;
+}
+.filtres [data-js-annee] {
+  width: 80px;
+  margin-right: 5px;
+}
+.filtres .input-wrapper {
+  margin-bottom: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}

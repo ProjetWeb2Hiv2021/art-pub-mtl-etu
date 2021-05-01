@@ -1,7 +1,7 @@
 <section class="FiltrerPlusieursCriteres" data-component="FiltrerPlusieursCriteres">
 
 	<!-- plusieurs criteres -->
-	<form>	
+	<form class="ligne">	
 		<h3>Filtrer voitures :</h3>
 
 		<div class="input-wrapper" data-js-input-wrapper>
@@ -55,5 +55,6 @@
 		<button class="disabled" data-js-btn>Filtrer</button><button class="disabled" data-js-rafraichir>Rafraichir</button>
 	</form>
 </section>
+	</div>
 
 
