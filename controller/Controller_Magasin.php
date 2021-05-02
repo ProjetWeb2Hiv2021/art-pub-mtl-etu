@@ -3,7 +3,7 @@
 	
 		//la fonction qui sera appelée par le routeur
 		public function traite(array $params) {
-			
+			session_start();
 			$this->showView("Head");
 			$this->showView("Header");
 			

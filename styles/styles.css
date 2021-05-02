@@ -120,14 +120,15 @@ a.ligne {
   margin-bottom: 0;
 }
 
-.filtres button {
+.filtres button,
+button.proceed {
   background-color: #ed712b;
   color: white;
   padding: 5px 5px;
   margin: 2px 2px;
   cursor: pointer;
 
-  border-radius: 5px;
+  border-radius: 3px;
   width: 100px;
   align-self: flex-end;
 }
