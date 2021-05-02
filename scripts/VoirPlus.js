@@ -72,9 +72,9 @@ class VoirPlus {
                                 <div class="voiture_liste__image-wrapper">
                                     <img src="${reponse[j]["cheminFichier"]}" alt="" class="voiture_liste__image">
                                 </div> 
-                                <div class = "info_voiture">
-                                    <h2>${reponse[j]["modele"]}</h2>
+                                <div class = "info_voiture">                                    
                                     <h2>${reponse[j]["marque"]}</h2>
+                                    <h2>${reponse[j]["modele"]}</h2>
                                     <h3>${reponse[j]["prixVente"]}&nbsp;$</h3>
                                     <span>${reponse[j]["annee"]}</span><br>                             
                                     <span>${reponse[j]["km"]} Km</span><br>

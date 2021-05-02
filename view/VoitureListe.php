@@ -30,8 +30,9 @@
                     <img src="<?= $voiture["cheminFichier"] ?>" alt="" class="voiture_liste__image">
                 </div> 
                 <div class = "info_voiture">
-                    <h2><?= $voiture["modele"] ?></h2>
                     <h2><?= $voiture["marque"] ?></h2>
+                    <h2><?= $voiture["modele"] ?></h2>
+                    
                     <h3><?= $voiture["prixVente"] ?>&nbsp;$</h3>
                     <span><?= $voiture["annee"] ?></span><br>                             
                     <span><?= $voiture["km"] ?> Km</span><br>
