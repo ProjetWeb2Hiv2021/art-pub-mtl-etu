@@ -22,7 +22,8 @@
         <section class="infoVoiture" >
             <div class="ligne distribue">
                 <label for="nom">Modele :</label>
-                <input type="text" id="modele" name="modele" required data-js-param="modele" value="<?php echo $data["voiture"]["modele"]."\" ";
+                <input type="text" id="modele" name="modele" required data-js-param="modele" value='<?php echo $data["voiture"]["modele"];?>'
+                <?php
                 if($data["systeme"]==="SWT"){
                     echo "disabled";
                 };
@@ -30,21 +31,24 @@
             </div>
             <div class="ligne distribue">
                 <label for="vin">VIN :</label>
-                <input type="text" id="vin" name="vin" required data-js-param="vin" value="<?php echo $data["voiture"]["vin"]."\" ";
+                <input type="text" id="vin" name="vin" required data-js-param="vin" value='<?php echo $data["voiture"]["vin"];?>'
+                <?php
                 if($data["systeme"]==="SWT"){
                     echo "disabled";
                 }; ?>>
             </div>
             <div class="ligne distribue">
                 <label for="prixVente">Prix :</label>
-                <input type="text" id="prixVente" name="prixVente" required data-js-param="prixVente" value="<?php echo $data["voiture"]["prixVente"]."\" ";
+                <input type="text" id="prixVente" name="prixVente" required data-js-param="prixVente" value='<?php echo $data["voiture"]["prixVente"];?>'
+                <?php
                 if($data["systeme"]==="SWT"){
                     echo "disabled";
                 }; ?>>
             </div>
             <div class="ligne distribue">
                 <label for="annee">Année :</label>
-                <input type="text" id="annee" name="annee" required data-js-param="annee" value="<?php echo $data["voiture"]["annee"]."\" ";
+                <input type="text" id="annee" name="annee" required data-js-param="annee" value='<?php echo $data["voiture"]["annee"];?>'
+                <?php
                 if($data["systeme"]==="SWT"){
                     echo "disabled";
                 }; ?>>
@@ -63,14 +67,16 @@
             ?>
             <div class="ligne distribue">
                 <label for="km">Km :</label>
-                <input type="text" id="km" name="km" required data-js-param="km" value="<?php echo $data["voiture"]["km"]."\" ";
+                <input type="text" id="km" name="km" required data-js-param="km" value='<?php echo $data["voiture"]["km"];?>'
+                <?php
                 if($data["systeme"]==="SWT"){
                     echo "disabled";
                 }; ?>>
             </div>
             <div class="ligne distribue">
                 <label for="couleur">Couleur :</label>
-                <input type="text" id="couleur" name="couleur" required data-js-param="couleur" value="<?php echo $data["voiture"]["couleur"]."\" ";
+                <input type="text" id="couleur" name="couleur" required data-js-param="couleur" value='<?php echo $data["voiture"]["couleur"];?>'
+                <?php
                 if($data["systeme"]==="SWT"){
                     echo "disabled";
                 }; ?>>

@@ -162,7 +162,7 @@ INSERT INTO `listeimage` (`idImage`, `cheminFichier`, `idVoiture`, `ordre`) VALU
 (60, './assets/images/img303_vin_AIKMD763520_003.jpg', 20, 3),
 (61, './assets/images/img121_vin_AIKMD763521_001.jpg', 21, 1),
 (62, './assets/images/img122_vin_AIKMD763521_002.jpg', 21, 2),
-(63, './assets/images/img123_vin_AIKMD763521_003.jpg', 21, 3),
+(63, './assets/images/img123_vin_AIKMD763521_003.png', 21, 3),
 (64, './assets/images/img191_vin_AIKMD763522_001.jpg', 22, 1),
 (65, './assets/images/img192_vin_AIKMD763522_002.jpg', 22, 2),
 (66, './assets/images/img193_vin_AIKMD763522_003.jpg', 22, 3),
