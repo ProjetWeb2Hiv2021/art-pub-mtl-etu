@@ -20,20 +20,5 @@
 
 <div class="reseaux">
 
-
-
-
-</div>
-
-    
-</div>
-
-
-
-
-
-
-
-<p>adresse icons reseaux sociaux</p>
 <hr>
 </html>

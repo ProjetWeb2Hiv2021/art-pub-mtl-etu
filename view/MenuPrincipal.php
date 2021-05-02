@@ -13,7 +13,7 @@
         <hr> 
         <div class="menu">  
        <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="#">Accueil</a></li>
             <li><a href="#">Qui nous sommes</a></li>
             <li><a href="#">Contactez-nous</a></li>
             <li class="item-right"><a href="#">En</a></li>
