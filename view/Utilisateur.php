@@ -5,30 +5,44 @@
         <thead>
         <tr>
             <th>SWT</th>
-            <th>CRM</th>
+            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Administrateur"||isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Employe") echo
+            "<th>CRM</th>";
+            ?>
             
         </tr>
         </thead>
         <tbody>
         <tr>
             <td><a href="index.php">Liste Voitures</a></td>
-            <td><a href="index.php?Modele&action=connexion">Gérer Modèle</a></td>
+            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Administrateur"||isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Employe") echo
+            '<td><a href="index.php?Modele&action=connexion">Gérer Modèle</a></td>';
+            ?>
+            
             
             
         </tr>
         <tr>
             <td><a href="index.php?Magasin&action=afficheVoiture&id=19">Detail Voiture</a></td>
-            <td>Gérer Voiture</td>
+              <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Administrateur"||isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Employe") echo
+            '<td>Gérer Voiture</td>';
+            ?>
+            
             
         </tr>
         <tr>
             <td>Connexion</td>
-            <td>Connexion</td>
+            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Administrateur"||isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Employe") echo
+            '<td>Connexion</td>';
+            ?>
+            
             
         </tr>
         <tr>
             <td></td>
-            <td>Journal connexions</td>
+            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Administrateur"||isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Employe") echo
+            '<td>Journal connexions</td>';
+            ?>
+            
             
         </tr>
         
