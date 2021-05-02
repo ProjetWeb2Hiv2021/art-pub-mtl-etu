@@ -99,7 +99,7 @@ INSERT INTO `voiture`
 ('AIKMD763531', 25872.5, 3,2017, '2020-07-27', 20698, 75164,0,  'Rouge', 2, 2, 1, 156, 2);
 
 
-INSERT INTO `listeimage` (`idImage`, `cheminFichier`, `idVoiture`, `ordre`) VALUES
+INSERT INTO `listeImage` (`idImage`, `cheminFichier`, `idVoiture`, `ordre`) VALUES
 (1, './assets/images/img221_vin_AIKMD763501_001.jpg', 1, 1),
 (2, './assets/images/img222_vin_AIKMD763501_002.jpg', 1, 2),
 (3, './assets/images/img223_vin_AIKMD763501_003.jpg', 1, 3),
