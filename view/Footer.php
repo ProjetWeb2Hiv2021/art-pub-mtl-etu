@@ -21,20 +21,6 @@
 <div class="reseaux">
 
 
-
-
-</div>
-
-    
-</div>
-
-
-
-
-
-
-
-
 <hr>
 </footer>
 </body>
