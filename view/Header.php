@@ -2,23 +2,8 @@
 	<h1><a href="index.php">Cars are Us</a></h1>
 
 <!--<img src="./assets/images/logo.svg"/>-->
-	
-		<!--<p></p>
-		<div class="menu">
-        <hr>  
-        <h5>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Qui nous sommes</a></li>
-            <li><a href="#">Contactez-nous</a></li>
-            <li class="item-right"><a href="#">En</a></li>
-        </ul>
-        </h5> 
-     </div>-->
-		
-	
-		
 	<div class="connexion ligne centreV">
+
 
 		
 		<?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Administrateur") echo "<span>adm&nbsp;</span>"; ?>

@@ -53,11 +53,11 @@ INSERT INTO ville(ville) VALUES
 INSERT INTO province(province) VALUES 
 ("Alberta"), ("Colombie-Britannique"), ("Île du Prince-Édouard"), ("Manitoba"), ("Nouveau-Brunswick"), ("Nouvelle-Écosse"), ("Ontario"), ("Québec"), ("Saskatchewan"), ("Terre-Neuve"), ("Nunavut"), ("Territoires du Nord-Ouest"), ("Yukon");
 INSERT INTO typeUtilisateur(typeUtilisateur) VALUES ("Client"),("Employé"), ("Administrateur");
-INSERT INTO utilisateur(nomUtilisateur, motPasse, prenom, nomFamille, dateNaissance, noCivique, rue, codePostal, telephone, telephonePortable, idTypeUtilisateur, idVille, idProvince) 
-VALUES ("a_jolie@b.com", "$2y$10$c6VsscKww0JHToKe4PkTsO541JWfCXEDrjsPM.TvVGuymVZKPHwmC", "Angelina", "Jolie", "1975-06-04", 4545, "Beverly Hills", "90210", "5554443333", "5554443331", 1, 17, 8), 
-("s_williams@b.com", "$2y$10$c6VsscKww0JHToKe4PkTsO541JWfCXEDrjsPM.TvVGuymVZKPHwmC", "Serena", "Williams", "1981-09-26", 4545, "Beverly Hills", "90210", "5554443333", "5554443331", 1, 17, 8), 
-("k_jenner@b.com", "$2y$10$XrhsEZqYnnKETkQGQ2.4n.O5EBEVZ7J98Wczi9FLLILF6fVMNJSNu", "Kylie", "Jenner", "1997-08-10", 4545, "Beverly Hills", "90210", "5554443333", "5554443331", 3, 17, 8),
-("a_obomsawin@c.com", "$2y$10$c6VsscKww0JHToKe4PkTsO541JWfCXEDrjsPM.TvVGuymVZKPHwmC", "Alanis", "Obomsawin", "1932-08-31", 4545, "Papineau", "H2H1V4", "6666667777", "6666667778", 3, 17, 8);
+INSERT INTO utilisateur(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone, telephonePortable, idTypeUtilisateur, idVille, idProvince) 
+VALUES ("a_jolie", "$2y$10$c6VsscKww0JHToKe4PkTsO541JWfCXEDrjsPM.TvVGuymVZKPHwmC", "Angelina", "Jolie", "a_jolie@b.com", "1975-06-04", 4545, "Beverly Hills", "90210", "5554443333", "5554443331", 1, 17, 8), 
+("s_williams", "$2y$10$c6VsscKww0JHToKe4PkTsO541JWfCXEDrjsPM.TvVGuymVZKPHwmC", "Serena", "Williams", "s_williams@b.com", "1981-09-26", 4545, "Beverly Hills", "90210", "5554443333", "5554443331", 1, 17, 8), 
+("k_jenner", "$2y$10$XrhsEZqYnnKETkQGQ2.4n.O5EBEVZ7J98Wczi9FLLILF6fVMNJSNu", "Kylie", "Jenner", "k_jenner@b.com", "1997-08-10", 4545, "Beverly Hills", "90210", "5554443333", "5554443331", 3, 17, 8),
+("a_obomsawin", "$2y$10$c6VsscKww0JHToKe4PkTsO541JWfCXEDrjsPM.TvVGuymVZKPHwmC", "Alanis", "Obomsawin", "a_obomsawin@c.com", "1932-08-31", 4545, "Papineau", "H2H1V4", "6666667777", "6666667778", 3, 17, 8);
 INSERT INTO connexion(adresseIP, idUtilisateur, dateConnexion) VALUES ("192.168.0.1", 1, "2021-04-18"),("192.168.0.2", 2, "2021-04-18"), ("192.168.0.3", 3, "2021-04-18");
 INSERT INTO modePaiement(modePaiement) VALUES ("Espèces"),("Carte crédit"), ("Carte débit"), ("Virement bancaire"), ("Passerelle de paiement");
 INSERT INTO expedition(expedition) VALUES ("Livraison locale"),("Ramassage");
