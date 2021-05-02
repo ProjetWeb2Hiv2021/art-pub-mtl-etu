@@ -7,7 +7,7 @@
             
                 <div class="ligne distribue">
                     <label for="nomUtilisateur">Courriel ou utilisateur:</label>
-                    <input type="email" id="nomUtilisateur" name="nomUtilisateur" required data-js-param="nomUtilisateur" value="">
+                    <input type="text" id="nomUtilisateur" name="nomUtilisateur" required data-js-param="nomUtilisateur" value="">
                 </div>
                 <div class="ligne distribue">
                     <label for="motPasse">Mot de passe :</label>
