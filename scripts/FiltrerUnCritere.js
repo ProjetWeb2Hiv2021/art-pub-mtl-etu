@@ -73,7 +73,7 @@ class FiltrerUnCritere {
                 
             }
             console.log(listeAnnees);
-            let html = `<div>`;
+            let html = `<div class="gallery gallery--4">`;
             for (let j = 0; j < listeAnnees.length; j++) {
                 const annee = listeAnnees[j];
                 html += `<div data-je-filtre-annee=${annee}><h2>${annee}</h2>`;
