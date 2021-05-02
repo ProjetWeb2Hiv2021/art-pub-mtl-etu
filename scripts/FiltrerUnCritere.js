@@ -5,6 +5,7 @@ class FiltrerUnCritere {
         this._elSubmit = this._el.querySelector('[data-js-btn]');
         this._elVoitures = document.querySelector('[data-component="VoitureListe"]');
         this.elBtnRetour = document.querySelector('[data-js-retour-acceuil]');
+        console.log(this._elSelect);
         this.init();
     }
 
@@ -36,7 +37,8 @@ class FiltrerUnCritere {
 
     /* Methode filtrer par parametre je dois encore le refacto c est une v0 */
     filtre = (param) => {
-        let listeVoitures = document.querySelectorAll('[data-js-voiture]');
+        
+        let listeVoitures =  this._elVoitures.querySelectorAll('[data-js-voiture]');
         let listeAnnees = [];
         let listeFabricants = [];
         let listeModeles = [];  
@@ -80,7 +82,7 @@ class FiltrerUnCritere {
                 }   
                 html += `</div>`;      
             }
-            console.log(html);  
+
             let sectionVoitures= document.querySelector('[data-component="VoitureListe"]');
             sectionVoitures.innerHTML = html;          
         }else if(param === "fabricant"){

@@ -51,11 +51,18 @@
 				<input type="password" id="password" required data-js-param="motPasse"  minlength="8">
 			</div>
 			<small class="error-message" data-js-error-msg></small>
-		</div>    
+		</div> 
+		<div class="input-wrapper" data-js-input-wrapper>
+			<div class="ligne distribue">
+				<label for="telephone">Telephone:</label>
+				<input type="tel" id="telephone" name="telephone" value="" data-js-param="telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="514-***-****" required>
+			</div>
+			<small class="error-message" data-js-error-msg></small>			
+		</div>   
 
 
 		<?php
-		if($_SESSION["typeUtilisateur"]=="Administrateur"){
+		if(isset($_SESSION["typeUtilisateur"]) && $_SESSION["typeUtilisateur"]=="Administrateur"){
 		?>
 		<div class="input-wrapper" data-js-input-wrapper>
 			<div class="ligne distribue">
@@ -149,16 +156,6 @@
 			</div>
 			<small class="error-message" data-js-error-msg></small>			
 		</div>
-
-		<div class="input-wrapper" data-js-input-wrapper>
-			<div class="ligne distribue">
-				<label for="telephone">Telephone:</label>
-				<input type="tel" id="telephone" name="telephone" value="" data-js-param="telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="514-***-****" required>
-			</div>
-			<small class="error-message" data-js-error-msg></small>			
-		</div>
-
-
 
 		<?php
 		}

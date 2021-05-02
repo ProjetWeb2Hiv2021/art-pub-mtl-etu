@@ -18,7 +18,7 @@ class VoirPlus {
                 this.showMore(nombreDeVoituresAffiches);
                 
             }
-            if(document.querySelectorAll('[data-js-voiture-nbr]').length + this._nbrVoitureAcceuil  >= this._elNombreDeVoitures - 1) {
+            if(document.querySelectorAll('[data-js-voiture-nbr]').length + this._nbrVoitureAcceuil  >= this._elNombreDeVoitures) {
                 this._el.classList.add('hidden');
             }
             
@@ -73,7 +73,7 @@ class VoirPlus {
                                     <img src="${reponse[j]["cheminFichier"]}" alt="" class="voiture_liste__image">
                                 </div> 
                                 <div class = "info_voiture">
-                                    <h2>${reponse[j]["idModele"]}</h2>
+                                    <h2>${reponse[j]["modele"]}</h2>
                                     <h2>${reponse[j]["marque"]}</h2>
                                     <h3>${reponse[j]["prixVente"]}&nbsp;$</h3>
                                     <span>${reponse[j]["annee"]}</span><br>                             
@@ -99,7 +99,7 @@ class VoirPlus {
     gestionDetailsVoiture = () =>{
     
         let voitures = document.querySelectorAll('[data-component="Voiture"]');
-        console.log(voitures);
+
         for (let k = 0; k < voitures.length; k++) {
             const voiture = voitures[k];
             new Voiture(voiture);
