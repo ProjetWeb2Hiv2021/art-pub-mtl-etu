@@ -5,7 +5,7 @@
 		public function traite(array $params) {
 			
 			if (isset($params["action"])) {
-
+				session_start();
 				// Modèle et vue vides par défaut
 				$data = array();
                 $vue = "";
