@@ -1,4 +1,4 @@
-</body>
+<footer>
 <hr>
 
 <div class="adresse">
@@ -20,5 +20,8 @@
 
 <div class="reseaux">
 
+
 <hr>
+</footer>
+</body>
 </html>
