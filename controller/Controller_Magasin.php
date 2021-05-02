@@ -21,6 +21,8 @@
 			} else {
 				
 				// Action par défaut
+				$vueMenuPrincipal = "MenuPrincipal";
+				$this->showView($vueMenuPrincipal);
 				$vueFiltreUn = "FiltrerUnCritere";
 				$this->showView($vueFiltreUn);
 				$vueFiltrePlusieurs = "FiltrerPlusieursCriteres";
