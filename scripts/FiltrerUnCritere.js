@@ -27,7 +27,7 @@ class FiltrerUnCritere {
             this.elBtnRetour.classList.remove("hidden");
             
             this.filtre(value);
-            this.trier(value);
+            /*this.trier(value);*/
             this.gestionDetailsVoiture();
             
             /* this.callAJAX(value); */
@@ -72,11 +72,26 @@ class FiltrerUnCritere {
                 } 
                 
             }
-            console.log(listeAnnees);
-            let html = `<div class="gallery gallery--4">`;
+
+            //Trier le vecteur: listeAnnees par année: ordre ascendant
+            let varInt= 0;
+            for (let j = 0; j < listeAnnees.length-1; j++) {               
+                for (let i = j+1 ; i < listeVoitures.length; i++) {
+                    if(listeAnnees[j] > listeAnnees[i]){
+                        varInt = listeAnnees[j];
+                        listeAnnees[j] = listeAnnees[i];
+                        listeAnnees[i] = varInt;
+                    }                   
+                }     
+            }
+
+
+
+            //let html = `<div>`;
+            let html = ``;
             for (let j = 0; j < listeAnnees.length; j++) {
                 const annee = listeAnnees[j];
-                html += `<div data-je-filtre-annee=${annee}><h2>${annee}</h2>`;
+                //html += `<div data-je-filtre-annee=${annee}><h2>${annee}</h2>`;
                 for (let i = 0; i < listeVoitures.length; i++) {
                     const voiture = listeVoitures[i];
                     if(voiture.dataset.jsVoitureAnnee == annee){
@@ -84,7 +99,7 @@ class FiltrerUnCritere {
                     }
                     
                 }   
-                html += `</div>`;      
+               //html += `</div>`;      
             }
 
             let sectionVoitures= document.querySelector('[data-component="VoitureListe"]');
