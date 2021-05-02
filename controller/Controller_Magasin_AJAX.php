@@ -124,6 +124,7 @@
 							echo "ERROR";
 						}
 						break;
+
 					/* case "modelesDuFabricantSelectione":
 						if (isset($params["idFabricant"])) {
 
