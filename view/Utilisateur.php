@@ -11,13 +11,13 @@
         </thead>
         <tbody>
         <tr>
-            <td>Liste Voitures</td>
+            <td><a href="index.php">Liste Voitures</a></td>
             <td><a href="index.php?Modele&action=connexion">Gérer Modèle</a></td>
             
             
         </tr>
         <tr>
-            <td>Detail Voiture</td>
+            <td><a href="index.php?Magasin&action=afficheVoiture&id=19">Detail Voiture</a></td>
             <td>Gérer Voiture</td>
             
         </tr>
