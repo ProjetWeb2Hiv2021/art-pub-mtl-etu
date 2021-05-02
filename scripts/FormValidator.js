@@ -33,9 +33,13 @@ class FormValidator {
         this._codePostalRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
         this._erreurCodePostal = `le code postal saisie n'est pas valide.`;
 
+        // récupère tous les éléments input email du formulaire
+        this._allDateInputs = this._el.querySelectorAll('input[type="date"]');
+        this._erreurDate = `Vous n'avez pas l'age requis pour créer un compte .`;
+
         // Booléen, valeur qui sera retournée par la validation
         this._isValid = true;
-
+        
 
         this.initValidation();
     }
@@ -70,6 +74,7 @@ class FormValidator {
         this.gestionInputRegex(this._allEmailInputs, this._emailRegex, this._erreurMail);
         this.gestionInputRegex(this._allTelInputs, this._telRegex, this._erreurTel);
         this.gestionInputRegex(this._elcodePostal, this._codePostalRegex, this._erreurCodePostal);
+        this.gestionInputDate(this._allDateInputs, this._erreurDate);
      
     }
 
@@ -103,6 +108,40 @@ class FormValidator {
         }
     }
 
+    gestionInputDate = (el, msginput) => {
+        let elInput = el;
+        let msgErr = msginput;
+        let dateAujourdhui = new Date();
+
+        for (let i = 0, l = elInput.length; i < l; i++) {
+            let inputValue = elInput[i].value,
+                closestElWrapper = elInput[i].closest('[data-js-input-wrapper]'),
+                elErrorMsg = closestElWrapper.querySelector('[data-js-error-msg]');
+            console.log(inputValue);
+
+            if (inputValue == ""){
+                let inputDataset = elInput[i].dataset.jsParam, 
+                            // let inputName = this._allRequiredInputs[i].name,                         // Recupère la valeur de l'attribut name
+                msg = `Le champ ${inputDataset} est obligatoire.`;
+                this.addError(closestElWrapper, elErrorMsg, msg);
+            }else{
+                let dateUtilisateur = new Date(inputValue);
+                let age = this.dateDiff(dateUtilisateur, dateAujourdhui);
+                console.log(age);
+                if(age < 18){
+                    this.addError(closestElWrapper, elErrorMsg, msgErr);
+                }else{
+                    this.removeError(closestElWrapper, elErrorMsg);
+                }
+            }
+        }
+
+    } 
+    dateDiff =(d1, d2) =>
+    {
+        return new Number((d2.getTime() - d1.getTime()) / 31536000000).toFixed(0);
+    }
+
     addError = (el, elErrorMsg, msg) => {
         
         el.classList.add('error');
@@ -121,36 +160,5 @@ class FormValidator {
         return this._isValid;
     }
 
-    callUseurnameAJAX = (useurname) => {
 
-        // Déclaration de l'objet XMLHttpRequest
-        let xhr;
-        xhr = new XMLHttpRequest();
-
-        // Initialisation de la requète
-        if (xhr) {	
-            
-            // Ouverture de la requète : fichier recherché
-            xhr.open('GET', 'index.php?Utilisateur_AJAX&action=validerUsername&idFabricant=' +useurname);
-            
-            // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
-            xhr.addEventListener('readystatechange', () => {
-
-                if (xhr.readyState === 4) {							
-                    if (xhr.status === 200) {
-
-                        // Traitement du DOM
-                        let reponse = JSON.parse(xhr.responseText);
-                        console.log(reponse);
-
-
-                    } else if (xhr.status === 404) {
-                        console.log('Le fichier appelé dans la méthode open() n’existe pas.');
-                    }
-                }
-            });
-            // Envoi de la requète
-            xhr.send();
-        }
-    }
 }

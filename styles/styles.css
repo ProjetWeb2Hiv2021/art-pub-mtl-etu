@@ -68,6 +68,9 @@ titre {
 .hidden {
   display: none;
 }
+.error{
+  color: red;
+}
 /*  */
 .voiture_liste__voiture {
   display: inline-block;
