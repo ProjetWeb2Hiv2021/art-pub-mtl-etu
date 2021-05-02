@@ -235,6 +235,7 @@ class FiltrerPlusieursCriteres{
 
                         // Traitement du DOM
                        let reponse = JSON.parse(xhr.responseText);
+                       console.log(reponse);
 
                        this._elVoitures.innerHTML="";
                        
