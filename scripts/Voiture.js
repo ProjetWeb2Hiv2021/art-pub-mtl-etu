@@ -15,6 +15,7 @@ class Voiture {
         
             this.callAJAX(this._id);
             /* this.callAJAX(this._el.dataset.jsVoitureId); */
+            
         })
     }
 
@@ -44,6 +45,10 @@ class Voiture {
                         let elBody = document.querySelector('body');
                         let elVoitureVedette = elBody.querySelector('[data-component="VoitureVedette"]');
                         elVoitureVedette.parentNode.removeChild( elVoitureVedette); 
+                        let elBtnRetour = document.querySelector('[data-js-retour-acceuil]');
+                        elBtnRetour.parentNode.removeChild(elBtnRetour);
+                        let elBtnVoirPlus = document.querySelector('[data-component="VoirPlus"]');
+                        elBtnVoirPlus.parentNode.removeChild(elBtnVoirPlus);
                         //fin modif lyes
                         let elFilterUn = elBody.querySelector('[data-component="FiltrerUnCritere"]');
                         let elFiltrerPlusieurs = elBody.querySelector('[data-component="FiltrerPlusieursCriteres"]');

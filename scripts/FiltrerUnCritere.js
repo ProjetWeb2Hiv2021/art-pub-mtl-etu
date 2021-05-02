@@ -4,6 +4,8 @@ class FiltrerUnCritere {
         this._elSelect = this._el.querySelector('select');
         this._elSubmit = this._el.querySelector('[data-js-btn]');
         this._elVoitures = document.querySelector('[data-component="VoitureListe"]');
+        this.elBtnRetour = document.querySelector('[data-js-retour-acceuil]');
+        console.log(this._elSelect);
         this.init();
     }
 
@@ -19,19 +21,24 @@ class FiltrerUnCritere {
 
         this._elSubmit.addEventListener('click', (e) => {
             e.preventDefault();
-            
+            document.querySelector('[data-component="VoirPlus"]').classList.add("hidden");
             let value = this._elSelect.options[this._elSelect.selectedIndex].value;
+            this.elBtnRetour.classList.remove("hidden");
             
             this.filtre(value);
             this.gestionDetailsVoiture();
             
             /* this.callAJAX(value); */
         });
+        this.elBtnRetour.addEventListener('click', (e) => {
+            document.location.href='index.php?'; 
+        });
     }
 
     /* Methode filtrer par parametre je dois encore le refacto c est une v0 */
     filtre = (param) => {
-        let listeVoitures = document.querySelectorAll('[data-js-voiture]');
+        
+        let listeVoitures =  this._elVoitures.querySelectorAll('[data-js-voiture]');
         let listeAnnees = [];
         let listeFabricants = [];
         let listeModeles = [];  
@@ -75,7 +82,7 @@ class FiltrerUnCritere {
                 }   
                 html += `</div>`;      
             }
-            console.log(html);  
+
             let sectionVoitures= document.querySelector('[data-component="VoitureListe"]');
             sectionVoitures.innerHTML = html;          
         }else if(param === "fabricant"){

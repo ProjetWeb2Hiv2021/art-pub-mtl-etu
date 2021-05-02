@@ -1,38 +1,49 @@
-body {   
-  margin: 0; 
+
+
+
+
+
+
+
+=======
+@import "./voitureDetail.css";
+@import "./connexion.css";
+@import "./systemes.css";
+@import "./carousel.css";
+@import "./formulaireAjoutUtilisateur.css";
+@import "./accueil.css";
+body {
   background-color: #303030;
   color: #dc6a2b;
-  font-family: 'Red Rose', sans-serif;
+  font-size: 16pt;
+  font-family: "Red Rose", sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
   padding: 0;
- 
-}
-
-header{
-  width:100%;
-}
-
-#btn-menu{
-  display: none;
 }
 
 hr {
-  
-  height: 2px;
+  height: 1px;
   border: none;
-  background-color:  #dc6a2b;
-  
-}*/
-
-/****/
+  background-color: #dc6a2b;
+}
+#btn-menu{
+  display: none;
+}
+header{
+  width:100%;
+}
+titre {
+  text-align: center;
+}
 .menu{
   background-color: #292929; 
   padding: 5px;
 }
 
 
-
-
 .menu ul{
+
   list-style: none;
   margin: 0;
   padding: 0;
@@ -53,6 +64,7 @@ hr {
 
 
 
+
 .menu ul li a{
   color:  #dc6a2b;
   display: block;
@@ -61,11 +73,11 @@ hr {
   
 }
 
+
 .menu ul li a:hover{
   /*color:  #ffbc9815;*/
-  text-decoration: none;
-  background-color: #dc6a2b;
-  background-color: #ffbc9815
+  text-decoration: none;  
+  background-color: #fbc9815;
 
 }
 
@@ -82,7 +94,9 @@ hr {
 
 /*** Fin Ricardo***/
 
-
+.item-right {
+  float: right;
+}
 
 
 .VoitureListe {
@@ -92,6 +106,12 @@ hr {
 .disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+.hidden {
+  display: none;
+}
+.error{
+  color: red;
 }
 /*  */
 .voiture_liste__voiture {
@@ -111,8 +131,7 @@ hr {
   justify-content: space-around;
   flex-wrap: wrap;
   max-width: 1000px;
-  margin: auto;
- 
+  margin: auto; 
 } 
 
 .voiture_liste__image-wrapper img {
@@ -131,218 +150,68 @@ hr {
   /*border: burlywood 2px solid;*/
   cursor: pointer;
 }
-
-/*Voiture détail */
-.ligne {
+.connexion span {
+  color: #dc6a2b;
+  font-size: 16pt;
+  font-family: "Red Rose", sans-serif;
+}
+a.ligne {
+  align-items: center;
+}
+.filtres {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
-.colonne {
+.filtres label,
+.filtres select {
+  margin-right: 10px;
+}
+.filtres select {
+  height: 25px;
+}
+.filtres label {
+  line-height: 165%;
+}
+.filtres .input-wrapper {
   display: flex;
-  flex-direction: column;
-}
-.distribue {
-  justify-content: space-between;
-}
-.aLaFin {
-  justify-content: flex-end;
-}
-[data-component="VoitureDetail"] form {
-  display: flex;
 }
 
-[data-component="VoitureDetail"] a {
-  text-decoration: none;
-
-  color: black;
-}
-.infoVoiture {
-  flex: 2;
-}
-.imagesVoiture {
-  flex: 3;
-}
-[data-component="VoitureDetail"] input[disabled] {
-  opacity: 1;
-  pointer-events: none;
-  background-color: white;
-  border: 1px black solid;
-  color: black;
-  padding: 3px;
-  margin-bottom: 10px;
+.filtres h3 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-[data-component="VoitureDetail"] select[disabled] {
-  opacity: 1;
-  pointer-events: none;
-  background-color: white;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: "";
-  width: 170px;
-  border: 1px black solid;
-  color: black;
-  padding: 3px;
-  margin-bottom: 10px;
-}
-
-.imagesVoiture img {
-  width: 200px;
-  margin-right: 20px;
-}
-[data-component="VoitureDetail"],
-[data-component="Connexion"] {
-  margin-right: 40px;
-  margin-left: 40px;
-}
-[data-component="VoitureDetail"] a {
-  padding: 3px;
+.filtres button,
+button.proceed {
   background-color: #ed712b;
   color: white;
-  margin-left: 5px;
-  margin-bottom: 20px;
-  margin-top: 40px;
-}
+  padding: 5px 5px;
+  margin: 2px 2px;
+  cursor: pointer;
 
-/* Connexion */
-.logo > a {
-  display: inline-block;
-  padding-top: 0.2em;
+  border-radius: 3px;
+  width: 100px;
+  align-self: flex-end;
 }
-.connexion img {
-  width: 2em;
-  margin-left: 0.3em;
+.filtres input[type="number"] {
+  width: 80px;
+  height: 25px;
+  margin-right: 5px;
 }
-
-.centreV {
+.filtres [data-js-annee] {
+  width: 80px;
+  height: 25px;
+  margin-right: 5px;
+}
+.filtres .input-wrapper {
+  margin-bottom: 0;
+  margin-left: 10px;
+  margin-right: 10px;
   align-items: center;
 }
 
-/* Système */
-/* https://codepen.io/florantara/pen/dROvdb */
-/* Table Styles */
-
-.table-wrapper {
-  margin: 10px 70px 70px;
-  box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
-}
-
-.fl-table {
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: normal;
-  border: none;
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 100%;
-  white-space: nowrap;
-  background-color: white;
-}
-
-.fl-table td,
-.fl-table th {
-  text-align: center;
-  padding: 8px;
-}
-
-.fl-table td {
-  border-right: 1px solid #f8f8f8;
-  font-size: 16px;
-}
-
-.fl-table thead th {
-  color: #ffffff;
-  background: #4fc3a1;
-  font-size: 18px;
-}
-
-.fl-table thead th:nth-child(odd) {
-  color: #ffffff;
-  background: #324960;
-}
-
-.fl-table tr:nth-child(even) {
-  background: #f8f8f8;
-}
-
-/* Responsive */
-
-@media (max-width: 767px) {
-  .fl-table {
-    display: block;
-    width: 100%;
-  }
-  .table-wrapper:before {
-    content: "Scroll horizontally >";
-    display: block;
-    text-align: right;
-    font-size: 11px;
-    color: white;
-    padding: 0 0 10px;
-  }
-  .fl-table thead,
-  .fl-table tbody,
-  .fl-table thead th {
-    display: block;
-  }
-  .fl-table thead th:last-child {
-    border-bottom: none;
-  }
-  .fl-table thead {
-    float: left;
-  }
-  .fl-table tbody {
-    width: auto;
-    position: relative;
-    overflow-x: auto;
-  }
-  .fl-table td,
-  .fl-table th {
-    padding: 20px 0.625em 0.625em 0.625em;
-    height: 60px;
-    vertical-align: middle;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    overflow-y: auto;
-    width: 120px;
-    font-size: 13px;
-    text-overflow: ellipsis;
-  }
-  .fl-table thead th {
-    text-align: left;
-    border-bottom: 1px solid #f7f7f9;
-  }
-  .fl-table tbody tr {
-    display: table-cell;
-  }
-  .fl-table tbody tr:nth-child(odd) {
-    background: none;
-  }
-  .fl-table tr:nth-child(even) {
-    background: transparent;
-  }
-  .fl-table tr td:nth-child(odd) {
-    background: #f8f8f8;
-    border-right: 1px solid #e6e4e4;
-  }
-  .fl-table tr td:nth-child(even) {
-    border-right: 1px solid #e6e4e4;
-  }
-  .fl-table tbody td {
-    display: block;
-    text-align: center;
-  }
-}
-
-/*carousel*/
-.box {
-  margin-right: 5px;
-  margin-left: 5px;
-
-  display: flex;
-  justify-content: center;
-}
-.box img {
-  width: 300px;
+[data-component="Header"] a {
+  text-decoration: none;
+  color: #ed712b;
 }

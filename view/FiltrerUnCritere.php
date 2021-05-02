@@ -1,3 +1,4 @@
+<div class="filtres">
 <section class="FiltrerUnCritere" data-component="FiltrerUnCritere">
 	<!--<h1>Page par defaut</h1>-->
 
@@ -10,7 +11,7 @@
 			<option value="fabricant">Fabricant</option>
 			<option value="modele">Modele</option>
 		</select>
-		<button class="disabled" data-js-btn>Filtrer</button>
+		<button class="disabled" data-js-btn>Trier</button>
 	</form>
 
 </section>

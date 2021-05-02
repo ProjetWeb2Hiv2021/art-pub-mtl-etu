@@ -11,6 +11,7 @@ class FiltrerPlusieursCriteres{
         this._elMinPrix = this._el.querySelector('[data-component="prixMin"]'); 
         this._elMaxPrix = this._el.querySelector('[data-component="prixMax"]'); 
         this._elVoitures = document.querySelector('[data-component="VoitureListe"]');
+        this.elBtnRetour = document.querySelector('[data-js-retour-acceuil]');
 
 
         this.init();
@@ -55,6 +56,9 @@ class FiltrerPlusieursCriteres{
             this._elSubmit.addEventListener('click', (e) => {
                 e.preventDefault();
                 let validation = new FormValidator(this._el);
+                document.querySelector('[data-component="VoirPlus"]').classList.add("hidden");
+                this.elBtnRetour.classList.remove("hidden");
+
                 console.log(validation.isValid);
                 if (validation.isValid){
                     this.populerListeVoitureRecherche();
@@ -73,8 +77,12 @@ class FiltrerPlusieursCriteres{
                 this._elMaxPrix.value = "";
 
                 this._elSubmit.classList.add('disabled');
-                this._elRafraichir.classList.add('disabled');  
+                this._elRafraichir.classList.add('disabled');
                 
+                
+            });
+            this.elBtnRetour.addEventListener('click', (e) => {
+                document.location.href='index.php?'; 
             });
         
     }

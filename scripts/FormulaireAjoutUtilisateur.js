@@ -8,7 +8,7 @@ class FormulaireAjoutUtilisateur{
         this._elSelectTypeUtilisateur= this._el.querySelector('[data-js-typeutilisateur]');
         // récupère élément username
         this._allUsername = this._el.querySelector('[data-js-param="username"]');
-
+        this._allEmailInputs = this._el.querySelector('input[type="email"]');
 
         this.init();
     }
@@ -28,37 +28,54 @@ class FormulaireAjoutUtilisateur{
 				let nomFamille = encodeURIComponent(this._el.querySelector('[data-js-param="nomFamille"]').value);
 				let courriel = encodeURIComponent(this._el.querySelector('[data-js-param="courriel"]').value);
 				let dateNaissance = encodeURIComponent(this._el.querySelector('[data-js-param="dateNaissance"]').value);
-				let noCivique = Number(encodeURIComponent(this._el.querySelector('[data-js-param="noCivique"]').value));
-				let rue = encodeURIComponent(this._el.querySelector('[data-js-param="rue"]').value);
-				let codePostal = encodeURIComponent(this._el.querySelector('[data-js-param="codePostal"]').value);
+                let selecttypeUtilisateur = this._el.querySelector('[data-js-typeutilisateur]');
+                console.log(selecttypeUtilisateur);
+				/* */
 				let telephone = Number(encodeURIComponent(this._el.querySelector('[data-js-param="telephone"]').value));
-				let telephonePortable = Number(encodeURIComponent(this._el.querySelector('[data-js-param="telephonePortable"]').value));
+				/**/
+                /*  */
+                if(selecttypeUtilisateur == null){
+                    console.log("rani hna");
+                   /*  let paramClient = `nomUtilisateur=${nomUtilisateur}&motPasse=${motPasse}&prenom=${prenom}&nomFamille=${nomFamille}&dateNaissance=${dateNaissance}&noCivique=${noCivique}&rue=${rue}&codePostal=${codePostal}&telephone=${telephone}&telephonePortable=' + telephonePortable+  '&courriel=' + courriel + '&idTypeUtilisateur=' + idTypeUtilisateur + '&idVille=' + idVille + '&idProvince=' + idProvince`; */
+                   console.log(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, telephone);
+                    this.callAJAXAjoutUtilisateur(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance,/*  noCivique, rue, codePostal, */ telephone/* , telephonePortable, idTypeUtilisateur, idVille, idProvince */);
+                    /* setTimeout(function(){ 
+                        document.location.href='index.php?'; 
+                    }, 5000);
+ */
+                }else{
+                    let noCivique = Number(encodeURIComponent(this._el.querySelector('[data-js-param="noCivique"]').value));
+                    let rue = encodeURIComponent(this._el.querySelector('[data-js-param="rue"]').value);
+                    let codePostal = encodeURIComponent(this._el.querySelector('[data-js-param="codePostal"]').value); 
+                    let telephonePortable = Number(encodeURIComponent(this._el.querySelector('[data-js-param="telephonePortable"]').value));				
+                    let idTypeUtilisateur = Number(encodeURIComponent(selecttypeUtilisateur.options[selecttypeUtilisateur.selectedIndex].value));    
+                    let selectidVille = this._el.querySelector('[data-js-ville]');
+                    let idVille = Number(encodeURIComponent(selectidVille.options[selectidVille.selectedIndex].value));    
+                    let selectidProvince = this._el.querySelector('[data-js-province]');
+                    let idProvince = Number(encodeURIComponent(selectidProvince.options[selectidProvince.selectedIndex].value)); 
+                    console.log(this._el.querySelector('[data-js-typeutilisateur]').options[this._el.querySelector('[data-js-typeutilisateur]').selectedIndex].value);
+                    console.log(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone, telephonePortable, idTypeUtilisateur, idVille, idProvince);
+                    this.callAJAXAjoutUtilisateur(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone , telephonePortable, idTypeUtilisateur, idVille, idProvince);
+                    /* setTimeout(function(){ 
+                        document.location.href='index.php?'; 
+                    }, 5000); */
+                }
 
-				let selecttypeUtilisateur = this._el.querySelector('[data-js-typeutilisateur]');
-                let idTypeUtilisateur = Number(encodeURIComponent(selecttypeUtilisateur.options[selecttypeUtilisateur.selectedIndex].value));
-
-				let selectidVille = this._el.querySelector('[data-js-ville]');
-                let idVille = Number(encodeURIComponent(selectidVille.options[selectidVille.selectedIndex].value));
-
-				let selectidProvince = this._el.querySelector('[data-js-province]');
-                let idProvince = Number(encodeURIComponent(selectidProvince.options[selectidProvince.selectedIndex].value));
-                console.log(this._el.querySelector('[data-js-typeutilisateur]').options[this._el.querySelector('[data-js-typeutilisateur]').selectedIndex].value);
-                console.log(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone, telephonePortable, idTypeUtilisateur, idVille, idProvince);
-
-                this.callAJAXAjoutUtilisateur(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone, telephonePortable, idTypeUtilisateur, idVille, idProvince);
-                setTimeout(function(){ 
-                    document.location.href='index.php?Magasin&action'; 
-                }, 5000);             
+                  
             }
             
         });
         this._allUsername.addEventListener('blur', (e) => {
-            this.callUseurnameAJAX(this._allUsername.value);
+            let requetAjax = `validerUsername&useurname=${this._allUsername.value}`;
+            this.callUseurnameAJAX(requetAjax, this._allUsername);
         });
-        
+        this._allEmailInputs.addEventListener('blur', (e) => {
+            let requetAjax = `validerCourriel&courriel=${this._allEmailInputs.value}`;
+            this.callUseurnameAJAX(requetAjax, this._allEmailInputs);
+        });
     }
 
-    callUseurnameAJAX = (useurname) => {
+    callUseurnameAJAX = (useurname, input) => {
 
         // Déclaration de l'objet XMLHttpRequest
         let xhr;
@@ -68,21 +85,21 @@ class FormulaireAjoutUtilisateur{
         if (xhr) {	
             
             // Ouverture de la requète : fichier recherché
-            xhr.open('GET', 'index.php?Utilisateur_AJAX&action=validerUsername&useurname=' +useurname);
+            xhr.open('GET', 'index.php?Utilisateur_AJAX&action='+useurname);
             
             // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
             xhr.addEventListener('readystatechange', () => {
 
                 if (xhr.readyState === 4) {							
                     if (xhr.status === 200) {
-                        let closestElWrapper = this._allUsername.closest('[data-js-input-wrapper]');
+                        let closestElWrapper = input.closest('[data-js-input-wrapper]');
                         let elErrorMsg = closestElWrapper.querySelector('[data-js-error-msg]');
 
                         // Traitement du DOM
                         let reponse = JSON.parse(xhr.responseText);
                         if(reponse == false){
                             closestElWrapper.classList.add('error');
-                            elErrorMsg.textContent  = "Le nom d'utilisateur et deja utilise"
+                            elErrorMsg.textContent  = "Déjà utilisé"
                             this._elSubmit.setAttribute("disabled", "disabled");
                         }else{
                             if (closestElWrapper.classList.contains('error')) {
@@ -131,9 +148,9 @@ class FormulaireAjoutUtilisateur{
                             this._el.innerHTML = "<p>votre compte d'utilisateur a été ajouté</p>"
                         }else{
                             this._el.innerHTML = "<p>probleme ou niveau de l'ajout</p>"
-                            setTimeout(function(){ 
+                            /* setTimeout(function(){ 
                                 document.location.href='index.php?Utilisateur&action=creerClient'; 
-                            }, 5000);
+                            }, 5000); */
                         }
 
 
