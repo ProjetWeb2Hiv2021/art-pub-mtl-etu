@@ -5,7 +5,8 @@ class FiltrerUnCritere {
         this._elSubmit = this._el.querySelector('[data-js-btn]');
         this._elVoitures = document.querySelector('[data-component="VoitureListe"]');
         this.elBtnRetour = document.querySelector('[data-js-retour-acceuil]');
-        console.log(this._elSelect);
+
+       
         this.init();
     }
 
@@ -26,6 +27,7 @@ class FiltrerUnCritere {
             this.elBtnRetour.classList.remove("hidden");
             
             this.filtre(value);
+            this.trier(value);
             this.gestionDetailsVoiture();
             
             /* this.callAJAX(value); */
@@ -39,11 +41,13 @@ class FiltrerUnCritere {
     filtre = (param) => {
         
         let listeVoitures =  this._elVoitures.querySelectorAll('[data-js-voiture]');
+        console.log(listeVoitures.length);
         let listeAnnees = [];
         let listeFabricants = [];
         let listeModeles = [];  
         let ajouterListe = false;
         if(param === "annee"){
+
         
             for (let i = 0; i < listeVoitures.length; i++) {
                 const voiture = listeVoitures[i];
@@ -184,7 +188,7 @@ class FiltrerUnCritere {
         if (xhr) {	
             
             // Ouverture de la requète : fichier recherché
-            xhr.open('GET', 'index.php?Magasin_AJAX&action=filtrerUnCritere&column=' + param);
+            xhr.open('GET', 'index.php?Magasin_AJAX&action=' + param);
             
             // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
             xhr.addEventListener('readystatechange', () => {
