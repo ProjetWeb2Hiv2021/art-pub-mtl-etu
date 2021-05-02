@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+=======
 @import "./voitureDetail.css";
 @import "./connexion.css";
 @import "./systemes.css";
@@ -11,6 +19,7 @@ body {
   font-family: "Red Rose", sans-serif;
   margin-left: 20px;
   margin-right: 20px;
+  padding: 0;
 }
 
 hr {
@@ -18,44 +27,77 @@ hr {
   border: none;
   background-color: #dc6a2b;
 }
-
+#btn-menu{
+  display: none;
+}
+header{
+  width:100%;
+}
 titre {
   text-align: center;
 }
-
-#menu {
-  background-color: #292929;
+.menu{
+  background-color: #292929; 
   padding: 5px;
 }
 
-#menu ul {
+
+.menu ul{
+
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: center;
+  display: flex;
+ 
+  
 }
 
-#menu ul li {
+.menu li {
+  flex-grow: 1;
+  text-align: center;
+  border-right: 1px solid #dc6a2b;
+}
+
+.menu ul li {
   display: inline-block;
 }
 
-#menu ul li a {
-  color: #dc6a2b;
+
+
+
+.menu ul li a{
+  color:  #dc6a2b;
   display: block;
   text-decoration: none;
-  padding: 10px;
+  padding: 15px;
+  
 }
 
-#menu ul li a:hover {
-  color: #ffbc9815;
-  text-decoration: none;
-  /*background-color: #dc6a2b;*/
-  /* color: #29292910; */
+
+.menu ul li a:hover{
+  /*color:  #ffbc9815;*/
+  text-decoration: none;  
+  background-color: #fbc9815;
+
 }
+
+.adresse {
+  display: flex;
+  text-align: center;
+}
+
+.horaire {
+  display: flex;
+  text-align: right;
+}
+
+
+/*** Fin Ricardo***/
 
 .item-right {
   float: right;
 }
+
 
 .VoitureListe {
   display: flex;
@@ -78,14 +120,34 @@ titre {
   border-bottom: 2px solid black;
   margin-left: 10px;
   padding: 5px;
-  /* max-width: 20%; */
+  max-width: 20%;
+  width: 300px;
+  height: 500px;
 }
+
+.voiture_liste__image-wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto; 
+} 
 
 .voiture_liste__image-wrapper img {
   max-width: 100%;
 }
+
+.voiture_liste__image{
+  width: 300px;
+  height: 200px;
+  /*object-fit: contain;*/
+
+}
+
+
 .voiture_liste__voiture:hover {
-  border: burlywood 2px solid;
+  /*border: burlywood 2px solid;*/
   cursor: pointer;
 }
 .connexion span {

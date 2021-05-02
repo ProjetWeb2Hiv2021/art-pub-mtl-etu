@@ -1,5 +1,6 @@
 <section data-component="VoitureVedette" class="swiper-container">
  <!-- juste un prototype --> 
+
  <?php
  if($data["voitureVedette"]){
     echo "<h2>En vedette</h2>";
@@ -9,6 +10,7 @@
         <?php
         
         if($data["voitureVedette"]){
+
             
             foreach ($data["voitureVedette"] as $voiture) {
                 
