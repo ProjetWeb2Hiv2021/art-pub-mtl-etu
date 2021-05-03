@@ -39,6 +39,10 @@
   color: black;
   padding: 3px;
   margin-bottom: 10px;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 [data-component="VoitureDetail"] select[disabled] {
@@ -54,6 +58,9 @@
   color: black;
   padding: 3px;
   margin-bottom: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 .imagesVoiture img {
