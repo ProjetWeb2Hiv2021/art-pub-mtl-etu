@@ -14,6 +14,10 @@ body {
   margin-left: 40px;
   margin-right: 40px;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 hr {
@@ -27,6 +31,9 @@ hr {
 header {
   width: 100%;
 }
+.header a {
+  width: 200px;
+}
 titre {
   text-align: center;
 }
@@ -34,7 +41,9 @@ titre {
   background-color: #292929;
   padding: 5px;
 }*/
-
+div.header {
+  width: 100%;
+}
 .menu ul {
   list-style: none;
   margin: 0;
@@ -44,19 +53,22 @@ titre {
 
 .menu li {
   flex-grow: 1;
-  text-align: center;
+
+  justify-content: center;
   border-right: 1px solid #dc6a2b;
 }
 
 .menu ul li {
-  display: inline-block;
+  display: flex;
 }
 
 .menu ul li a {
   color: #dc6a2b;
-  display: block;
-  text-decoration: none;
+  display: flex;
+  justify-content: center;
   padding: 15px;
+  width: 100%;
+  text-decoration: none;
 }
 
 .menu ul li a:hover {

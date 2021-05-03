@@ -9,6 +9,9 @@
 .FormulaireAjoutUtilisateur {
   display: flex;
   justify-content: center;
+  width: 100%;
+  min-height: 80vh;
+  align-items: center;
 }
 .FormulaireAjoutUtilisateur form {
   width: 30%;

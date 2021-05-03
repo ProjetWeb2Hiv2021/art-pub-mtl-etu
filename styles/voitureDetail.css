@@ -1,4 +1,9 @@
 /*Voiture détail */
+[data-component="VoitureDetail"] {
+  width: 100%;
+  min-height: 80vh;
+}
+
 .ligne {
   display: flex;
   flex-wrap: wrap;
