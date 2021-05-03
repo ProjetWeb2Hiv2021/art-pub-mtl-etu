@@ -1,0 +1,43 @@
+footer .adresse,
+footer .horaire {
+  width: 380px;
+  flex-direction: column;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.adresse div {
+  text-align: left;
+}
+footer ul {
+  list-style-type: none;
+}
+footer .social {
+  display: flex;
+  flex-basis: 20%;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: #303030;
+}
+.social li {
+  background-color: #303030;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.social li {
+  padding: 0.2em 0.3em 0 0.3em;
+  border: 0px;
+}
+
+.social {
+  border-radius: 4px;
+}
+.social a {
+  display: inline-block;
+  width: 2em;
+}

@@ -6,7 +6,12 @@
     /* il serait bien d'avoir la meme architecture pour toute l'equipe*/
     /*/projetWeb2Equipe4Lebon/*/ 
 
+
+
+
+
     define("RACINE", $_SERVER["DOCUMENT_ROOT"] . "/projet_web_2/projetWeb2Equipe4Lebon/");
+
 	define("RACINEWEB", "http://" . $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . "/projet_web_2/projetWeb2Equipe4Lebon/");
     
     //define("RACINE", $_SERVER["DOCUMENT_ROOT"] . "/");

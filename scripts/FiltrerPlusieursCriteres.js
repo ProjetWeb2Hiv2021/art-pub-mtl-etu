@@ -66,7 +66,8 @@ class FiltrerPlusieursCriteres{
             });
             this._elRafraichir.addEventListener('click', (e) => {
                 e.preventDefault();
-                if (this._elSelectModele.options[this._elSelectModele.selectedIndex].value != "") {
+                document.location.href='index.php?'; 
+               /*  if (this._elSelectModele.options[this._elSelectModele.selectedIndex].value != "") {
                     this._elSelectMarque.removeAttribute("disabled", "disabled");
                 }
                 
@@ -78,12 +79,13 @@ class FiltrerPlusieursCriteres{
 
                 this._elSubmit.classList.add('disabled');
                 this._elRafraichir.classList.add('disabled');
-                
+                 */
                 
             });
             this.elBtnRetour.addEventListener('click', (e) => {
                 document.location.href='index.php?'; 
             });
+            
         
     }
 
@@ -235,6 +237,7 @@ class FiltrerPlusieursCriteres{
 
                         // Traitement du DOM
                        let reponse = JSON.parse(xhr.responseText);
+                       console.log(reponse);
 
                        this._elVoitures.innerHTML="";
                        
@@ -282,13 +285,11 @@ class FiltrerPlusieursCriteres{
                                 <div class = "info_voiture">
                                     <h2>${marque}</h2>
                                     <h2>${modele}</h2>
-                                    <h3>${prixVente}&nbsp;$</h3>
-                                    <span>${fabricant}</span> 
+                                    <h3>${prixVente}&nbsp;$</h3>                                    
                                     <span>${annee}</span><br>                             
-                                    <span>${km} Km</span><br>               
-                                    <span>${couleur}</span> <br>
+                                    <span>${km} Km</span><br>                                                   
                                     <span>${groupeMotopropulseur}</span><br>
-                                    <span>${chassis}</span> 
+                                    
                                 </div>             
                                 </article>`
                                 

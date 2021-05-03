@@ -6,7 +6,7 @@
               <div class="colonne">  
             
                 <div class="ligne distribue">
-                    <label for="nomUtilisateur">Courriel ou utilisateur:</label>
+                    <label for="nomUtilisateur">Utilisateur:</label>
                     <input type="text" id="nomUtilisateur" name="nomUtilisateur" required data-js-param="nomUtilisateur" value="">
                 </div>
                 <div class="ligne distribue">
