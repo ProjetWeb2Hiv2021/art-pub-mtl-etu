@@ -4,6 +4,7 @@
 @import "./carousel.css";
 @import "./formulaireAjoutUtilisateur.css";
 @import "./accueil.css";
+@import "./footer.css";
 body {
   background-color: #303030;
   color: #dc6a2b;
@@ -208,4 +209,3 @@ article.voiture_liste__voiture h3 {
   display: flex;
 }
 */
-

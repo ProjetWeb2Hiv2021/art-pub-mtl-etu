@@ -63,9 +63,11 @@
 														INNER JOIN statut on statut.idStatut = voiture.idStatut 
 														INNER JOIN modele on modele.idModele = voiture.idModele 
 														INNER JOIN marque on marque.idMarque = modele.idMarque 
+
 														INNER JOIN listeimage on listeimage.idVoiture = voiture.idVoiture 
 														WHERE listeimage.idVoiture = voiture.idVoiture AND listeimage.ordre = 1 
 														AND marque.idMarque = :mar AND voiture.annee BETWEEN :anmin AND :anmax AND voiture.idStatut = 3
+
 														AND voiture.prixVente BETWEEN :primin AND :primax
 														order by voiture.dateArrivee DESC");			
 
@@ -85,7 +87,9 @@
 														INNER JOIN statut on statut.idStatut = voiture.idStatut
 														INNER JOIN modele on modele.idModele = voiture.idModele
 														INNER JOIN marque on marque.idMarque = modele.idMarque
+
 														INNER JOIN listeimage on listeimage.idVoiture = voiture.idVoiture
+
 														WHERE listeimage.idVoiture = voiture.idVoiture AND listeimage.ordre = 1 AND voiture.idStatut = 3
 
 														AND voiture.annee BETWEEN :anmin AND :anmax
@@ -108,7 +112,9 @@
 														INNER JOIN statut on statut.idStatut = voiture.idStatut
 														INNER JOIN modele on modele.idModele = voiture.idModele
 														INNER JOIN marque on marque.idMarque = modele.idMarque
+
 														INNER JOIN listeimage on listeimage.idVoiture = voiture.idVoiture
+
 														WHERE listeimage.idVoiture = voiture.idVoiture AND listeimage.ordre = 1 
 														AND voiture.idModele = :mod AND voiture.annee BETWEEN :anmin AND :anmax AND voiture.idStatut = 3
 

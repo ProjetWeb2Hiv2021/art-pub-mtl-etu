@@ -24,6 +24,7 @@ class FiltrerUnCritere {
             document.querySelector('[data-component="VoirPlus"]').classList.add("hidden");
             let value = this._elSelect.options[this._elSelect.selectedIndex].value;
             this.elBtnRetour.classList.remove("hidden");
+
             let param = "";
             if(value === "annee"){
                 param = `filtrerParAnnee`;
@@ -35,6 +36,7 @@ class FiltrerUnCritere {
             console.log(param);
 
             this.callAJAX(param);
+
             this.gestionDetailsVoiture();
             
             /* this.callAJAX(value); */
@@ -43,7 +45,6 @@ class FiltrerUnCritere {
             document.location.href='index.php?'; 
         });
     }
-
 
     /* le code si dessous est juste au cas ou nous decidions de faire un appel ajax au lieu d'un tri comme plus haut */
 

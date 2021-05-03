@@ -99,7 +99,7 @@ INSERT INTO `voiture`
 ('AIKMD763531', 25872.5, 3,2017, '2020-07-27', 20698, 75164,0,  'Rouge', 2, 2, 1, 156, 2);
 
 
-INSERT INTO `listeimage` (`idImage`, `cheminFichier`, `idVoiture`, `ordre`) VALUES
+INSERT INTO `listeImage` (`idImage`, `cheminFichier`, `idVoiture`, `ordre`) VALUES
 (1, './assets/images/img221_vin_AIKMD763501_001.jpg', 1, 1),
 (2, './assets/images/img222_vin_AIKMD763501_002.jpg', 1, 2),
 (3, './assets/images/img223_vin_AIKMD763501_003.jpg', 1, 3),
@@ -162,7 +162,7 @@ INSERT INTO `listeimage` (`idImage`, `cheminFichier`, `idVoiture`, `ordre`) VALU
 (60, './assets/images/img303_vin_AIKMD763520_003.jpg', 20, 3),
 (61, './assets/images/img121_vin_AIKMD763521_001.jpg', 21, 1),
 (62, './assets/images/img122_vin_AIKMD763521_002.jpg', 21, 2),
-(63, './assets/images/img123_vin_AIKMD763521_003.jpg', 21, 3),
+(63, './assets/images/img123_vin_AIKMD763521_003.png', 21, 3),
 (64, './assets/images/img191_vin_AIKMD763522_001.jpg', 22, 1),
 (65, './assets/images/img192_vin_AIKMD763522_002.jpg', 22, 2),
 (66, './assets/images/img193_vin_AIKMD763522_003.jpg', 22, 3),

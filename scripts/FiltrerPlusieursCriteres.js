@@ -283,13 +283,11 @@ class FiltrerPlusieursCriteres{
                                 <div class = "info_voiture">
                                     <h2>${marque}</h2>
                                     <h2>${modele}</h2>
-                                    <h3>${prixVente}&nbsp;$</h3>
-                                    <span>${fabricant}</span> 
+                                    <h3>${prixVente}&nbsp;$</h3>                                    
                                     <span>${annee}</span><br>                             
-                                    <span>${km} Km</span><br>               
-                                    <span>${couleur}</span> <br>
+                                    <span>${km} Km</span><br>                                                   
                                     <span>${groupeMotopropulseur}</span><br>
-                                    <span>${chassis}</span> 
+                                    
                                 </div>             
                                 </article>`
                                 
