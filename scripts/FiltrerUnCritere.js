@@ -14,7 +14,6 @@ class FiltrerUnCritere {
         
         this._el.addEventListener('change', (e) => {
             e.preventDefault();
-            console.log("lyes1");
             if (this._elSelect.options[this._elSelect.selectedIndex].value != 0) this._elSubmit.classList.remove('disabled');
             else this._elSubmit.classList.add('disabled');
         });
@@ -25,9 +24,19 @@ class FiltrerUnCritere {
             document.querySelector('[data-component="VoirPlus"]').classList.add("hidden");
             let value = this._elSelect.options[this._elSelect.selectedIndex].value;
             this.elBtnRetour.classList.remove("hidden");
-            
-            this.filtre(value);
-            /*this.trier(value);*/
+
+            let param = "";
+            if(value === "annee"){
+                param = `filtrerParAnnee`;
+            }else if(value === "marque"){
+                param = `filtrerParMarque`;
+            }else if(value === "modele"){
+                param = `filtrerParModele`;
+            }
+            console.log(param);
+
+            this.callAJAX(param);
+
             this.gestionDetailsVoiture();
             
             /* this.callAJAX(value); */
@@ -35,160 +44,6 @@ class FiltrerUnCritere {
         this.elBtnRetour.addEventListener('click', (e) => {
             document.location.href='index.php?'; 
         });
-    }
-
-    /* Methode filtrer par parametre je dois encore le refacto c est une v0 */
-    filtre = (param) => {
-        
-        let listeVoitures =  this._elVoitures.querySelectorAll('[data-js-voiture]');
-        console.log(listeVoitures.length);
-        let listeAnnees = [];
-        let listeFabricants = [];
-        let listeModeles = [];  
-        let ajouterListe = false;
-        if(param === "annee"){
-
-        
-            for (let i = 0; i < listeVoitures.length; i++) {
-                const voiture = listeVoitures[i];
-                console.log(listeAnnees.length);
-                if(listeAnnees.length > 0){
-                    
-                    for (let j = 0; j < listeAnnees.length; j++) {
-                        const element = listeAnnees[j];
-                        if(element == voiture.dataset.jsVoitureAnnee){
-                            ajouterListe = true;
-                            
-                        }
-                        
-                    }
-                    if(ajouterListe !== true){
-                        listeAnnees.push(voiture.dataset.jsVoitureAnnee);
-                        ajouterListe = false;
-                    }
-                    ajouterListe = false;
-                }else if(listeAnnees.length == 0){
-                    listeAnnees.push(voiture.dataset.jsVoitureAnnee);                  
-                } 
-                
-            }
-
-            //Trier le vecteur: listeAnnees par ann�e: ordre ascendant
-            let varInt= 0;
-            for (let j = 0; j < listeAnnees.length-1; j++) {               
-                for (let i = j+1 ; i < listeVoitures.length; i++) {
-                    if(listeAnnees[j] > listeAnnees[i]){
-                        varInt = listeAnnees[j];
-                        listeAnnees[j] = listeAnnees[i];
-                        listeAnnees[i] = varInt;
-                    }                   
-                }     
-            }
-
-
-
-            //let html = `<div>`;
-            let html = ``;
-            for (let j = 0; j < listeAnnees.length; j++) {
-                const annee = listeAnnees[j];
-                //html += `<div data-je-filtre-annee=${annee}><h2>${annee}</h2>`;
-                for (let i = 0; i < listeVoitures.length; i++) {
-                    const voiture = listeVoitures[i];
-                    if(voiture.dataset.jsVoitureAnnee == annee){
-                        html += `${voiture.outerHTML}`;
-                    }
-                    
-                }   
-               //html += `</div>`;      
-            }
-
-            let sectionVoitures= document.querySelector('[data-component="VoitureListe"]');
-            sectionVoitures.innerHTML = html;          
-        }else if(param === "fabricant"){
-        
-            for (let i = 0; i < listeVoitures.length; i++) {
-                const voiture = listeVoitures[i];
-                console.log(listeFabricants.length);
-                if(listeFabricants.length > 0){
-                    
-                    for (let j = 0; j < listeFabricants.length; j++) {
-                        const element = listeFabricants[j];
-                        if(element == voiture.dataset.jsVoitureFabricant){
-                            ajouterListe = true;
-                            console.log("deuxeme tour");
-                        }
-                        
-                    }
-                    if(ajouterListe !== true){
-                        listeFabricants.push(voiture.dataset.jsVoitureFabricant);
-                    
-                    }
-                    ajouterListe = false;
-                }else if(listeFabricants.length == 0){
-                    listeFabricants.push(voiture.dataset.jsVoitureFabricant);                  
-                } 
-                
-            }
-            console.log(listeFabricants);
-            let html = `<div>`;
-            for (let j = 0; j < listeFabricants.length; j++) {
-                const fabricant = listeFabricants[j];
-                html += `<div data-je-filtre-fabricant=${fabricant}><h2>${fabricant}</h2>`;
-                for (let i = 0; i < listeVoitures.length; i++) {
-                    const voiture = listeVoitures[i];
-                    if(voiture.dataset.jsVoitureFabricant == fabricant){
-                        html += `${voiture.outerHTML}`;
-                    }
-                    
-                }   
-                html += `</div>`;      
-            }
-            console.log(html);  
-            let sectionVoitures= document.querySelector('[data-component="VoitureListe"]');
-            sectionVoitures.innerHTML = html;
-        }else if(param === "modele"){
-        
-            for (let i = 0; i < listeVoitures.length; i++) {
-                const voiture = listeVoitures[i];
-                console.log(listeModeles.length);
-                if(listeModeles.length > 0){
-                    
-                    for (let j = 0; j < listeModeles.length; j++) {
-                        const element = listeModeles[j];
-                        if(element == voiture.dataset.jsVoitureModele){
-                            ajouterListe = true;
-                            console.log("deuxeme tour");
-                        }
-                        
-                    }
-                    if(ajouterListe !== true){
-                        listeModeles.push(voiture.dataset.jsVoitureModele);
-                    
-                    }
-                    ajouterListe = false;
-                }else if(listeModeles.length == 0){
-                    listeModeles.push(voiture.dataset.jsVoitureModele);                  
-                } 
-                
-            }
-            console.log(listeModeles);
-            let html = `<div>`;
-            for (let j = 0; j < listeModeles.length; j++) {
-                const modele = listeModeles[j];
-                html += `<div data-je-filtre-modele=${modele}><h2>${modele}</h2>`;
-                for (let i = 0; i < listeVoitures.length; i++) {
-                    const voiture = listeVoitures[i];
-                    if(voiture.dataset.jsVoitureModele == modele){
-                        html += `${voiture.outerHTML}`;
-                    }
-                    
-                }   
-                html += `</div>`;      
-            }
-            console.log(html);  
-            let sectionVoitures= document.querySelector('[data-component="VoitureListe"]');
-            sectionVoitures.innerHTML = html;
-        }
     }
 
     /* le code si dessous est juste au cas ou nous decidions de faire un appel ajax au lieu d'un tri comme plus haut */
@@ -212,8 +67,76 @@ class FiltrerUnCritere {
                     if (xhr.status === 200) {
 
                         // Traitement du DOM
-                        this._elResults.innerHTML = xhr.responseText;
+                       
+    // Traitement du DOM
+                        let reponse = JSON.parse(xhr.responseText);
+                        console.log(reponse);
+                        this._elVoitures.innerHTML="";
+                        
+                        let html = "";
+                        if(reponse.length >0){
+                        
+                        for (let j = 0; j < reponse.length; j++) {
+                                let idVoiture = reponse[j]["idVoiture"];
+                                let vin = reponse[j]["vin"];
+                                let prixVente = reponse[j]["prixVente"];
+                                let annee = reponse[j]["annee"];
+                                let dateArrivee = reponse[j]["dateArrivee"];
+                                let km = reponse[j]["km"];
+                                let groupeMotopropulseur = reponse[j]["groupeMotopropulseur"];
+                                let marque = reponse[j]["marque"];
+                                let statut = reponse[j]["statut"];
 
+                                let modele = reponse[j]["modele"];
+                                let fabricant = reponse[j]["fabricant"];
+                                let couleur = reponse[j]["couleur"];
+                                let cheminFichier = reponse[j]["cheminFichier"];
+                                let chassis = reponse[j]["chassis"];
+                                
+                        
+                            
+                                
+                                html += `<article class="voiture_liste__voiture" 
+                                data-js-voiture
+                                data-js-voiture-id="${idVoiture}" 
+                                data-js-voiture-vin="${vin}"
+                                data-js-voiture-prixVente="${prixVente}"
+                                data-js-voiture-km="${km}" 
+                                data-js-voiture-annee="${annee}" 
+                                data-js-voiture-modele="${modele}" 
+                                data-js-voiture-prix="${prixVente}" 
+                                data-js-voiture-groupeMotopropulseur="${groupeMotopropulseur}" 
+                                data-js-voiture-marque="${marque}"
+                                data-js-voiture-fabricant="${fabricant}"
+                                data-js-voiture-statut="${statut}"
+                                data-component="Voiture"
+                                >
+                                <div class="voiture_liste__image-wrapper">
+                                <img src="${cheminFichier}" alt="" class="voiture_liste__image">
+                                </div> 
+                                <div class = "info_voiture">
+                                    <h2>${marque}</h2>
+                                    <h2>${modele}</h2>
+                                    <h3>${prixVente}&nbsp;$</h3>
+                                    <span>${fabricant}</span> 
+                                    <span>${annee}</span><br>                             
+                                    <span>${km} Km</span><br>               
+                                    <span>${couleur}</span> <br>
+                                    <span>${groupeMotopropulseur}</span><br>
+                                    <span>${chassis}</span> 
+                                </div>             
+                                </article>`
+                                
+                            }
+                            this._elVoitures.innerHTML = html;
+                            this.gestionDetailsVoiture();
+
+                        }else{
+                            let htmlErr = "";
+
+                            htmlErr += `<p>Pas de voiture disponible pour cette recherche</p>`;
+                            this._elVoitures.innerHTML = htmlErr;
+                        }
 
                     } else if (xhr.status === 404) {
                         console.log('Le fichier appelé dans la méthode open() n’existe pas.');

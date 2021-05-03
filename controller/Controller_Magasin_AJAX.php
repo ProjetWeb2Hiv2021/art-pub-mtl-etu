@@ -115,8 +115,6 @@
 							$modeleVoiture = new Model_Voiture();
 							$data = $modeleVoiture->obtenirPlusDeVoitures($offset);
 
-
-
 							echo json_encode($data);
 
 
@@ -124,24 +122,26 @@
 							echo "ERROR";
 						}
 						break;
-
-					/* case "modelesDuFabricantSelectione":
-						if (isset($params["idFabricant"])) {
-
-							$idFabricant = $params["idFabricant"];
-							$modeleFabricant = new Model_Fabricant();
-							$data = $modeleFabricant->obtenirModelesFabricant($idFabricant);
-
-
-
+					case "filtrerParAnnee":
+						
+							$modeleVoiture = new Model_Voiture();
+							$data = $modeleVoiture->obtenirVoituresParAnnee();
 							echo json_encode($data);
 
+						break;
+					case "filtrerParMarque":
 
-						} else {													
-							echo "ERROR";
-						}
-						break; */
-					
+							$modeleVoiture = new Model_Voiture();
+							$data = $modeleVoiture->obtenirVoituresParMarque();
+							echo json_encode($data);
+
+						break;
+					case "filtrerParModele":
+
+							$modeleVoiture = new Model_Voiture();
+							$data = $modeleVoiture->obtenirVoituresParModele();
+							echo json_encode($data);
+						break;
 				}			
             } else {
 				echo "ERROR ACTION";					
