@@ -5,6 +5,7 @@
 @import "./formulaireAjoutUtilisateur.css";
 @import "./accueil.css";
 @import "./footer.css";
+@import "./header.css";
 body {
   background-color: #303030;
   color: #dc6a2b;
