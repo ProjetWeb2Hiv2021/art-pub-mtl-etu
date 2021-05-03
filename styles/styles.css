@@ -11,8 +11,8 @@ body {
   color: #dc6a2b;
   font-size: 16pt;
   font-family: "Red Rose", sans-serif;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
   padding: 0;
 }
 
@@ -191,9 +191,10 @@ button.retour {
   padding: 5px 5px;
   margin: 2px 2px;
   cursor: pointer;
-
+  font-size: 15pt;
+  font-family: "Red Rose", sans-serif;
   border-radius: 3px;
-  width: 100px;
+  width: 150px;
   align-self: flex-end;
 }
 .filtres input[type="number"] {
