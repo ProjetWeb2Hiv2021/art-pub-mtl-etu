@@ -1,7 +1,7 @@
 <header class="header ligne distribue" data-component="Header">
-	<h1><a href="index.php">Cars Are Us<img src="./assets/images/logo.png" alt="Logo Cars are us"
-              /></a></h1>
-
+	<a href="index.php"><img src="./assets/images/logo.png" alt="Logo Cars are us"
+              /></a>
+<h1>Cars Are Us</h1>
 <!--<img src="./assets/images/logo.svg"/>-->
 	<div class="connexion ligne centreV">
 

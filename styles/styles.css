@@ -76,21 +76,17 @@ titre {
 }
 
 .swiper-container {
-  
   width: 100%;
   justify-content: space-around;
   flex-wrap: wrap;
   margin: auto;
   max-width: 1300px;
-  
 }
 
-.voiture_liste__image{
-
+.voiture_liste__image {
   width: 400px;
   height: 200px;
   object-fit: cover;
-
 }
 
 /*** Fin Ricardo***/
@@ -127,14 +123,20 @@ titre {
   height: 450px;
 }
 
-.voiture_liste__image-wrapper {
+/* .voiture_liste__image-wrapper {
   display: flex;
 
   justify-content: space-around;
   flex-wrap: wrap;
   height: 230px;
+} */
+.voiture_liste__image-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1000px;
 }
-
 .voiture_liste__image-wrapper img {
   max-width: 100%;
 }
