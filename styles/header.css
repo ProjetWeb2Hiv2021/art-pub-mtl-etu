@@ -1,0 +1,7 @@
+.header img {
+  display: inline-block;
+  width: 2em;
+}
+.header a {
+  display: flex;
+}

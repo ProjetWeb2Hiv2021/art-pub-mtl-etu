@@ -13,17 +13,17 @@
        <ul class="social">
             <li>
               <a href=""
-                ><img src="./assets/images/facebook.svg" alt="logo"
+                ><img src="./assets/images/facebook.svg" alt="logo facebook"
               /></a>
             </li>
             <li>
               <a href=""
-                ><img src="./assets/images/Twitter_Logo_Blue.svg" alt="logo"
+                ><img src="./assets/images/Twitter_Logo_Blue.svg" alt="logo twitter"
               /></a>
             </li>
             <li>
               <a href=""
-                ><img src="./assets/images/yt_icon_rgb.svg" alt="logo"
+                ><img src="./assets/images/yt_icon_rgb.svg" alt="logo youtube"
               /></a>
             </li>
           </ul>
