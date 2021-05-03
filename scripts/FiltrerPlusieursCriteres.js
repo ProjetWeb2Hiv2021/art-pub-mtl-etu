@@ -66,7 +66,8 @@ class FiltrerPlusieursCriteres{
             });
             this._elRafraichir.addEventListener('click', (e) => {
                 e.preventDefault();
-                if (this._elSelectModele.options[this._elSelectModele.selectedIndex].value != "") {
+                document.location.href='index.php?'; 
+               /*  if (this._elSelectModele.options[this._elSelectModele.selectedIndex].value != "") {
                     this._elSelectMarque.removeAttribute("disabled", "disabled");
                 }
                 
@@ -78,12 +79,13 @@ class FiltrerPlusieursCriteres{
 
                 this._elSubmit.classList.add('disabled');
                 this._elRafraichir.classList.add('disabled');
-                
+                 */
                 
             });
             this.elBtnRetour.addEventListener('click', (e) => {
                 document.location.href='index.php?'; 
             });
+            
         
     }
 

@@ -11,11 +11,12 @@ class FiltrerUnCritere {
     }
 
     init = (e) => {
-        
+       
         this._el.addEventListener('change', (e) => {
             e.preventDefault();
             if (this._elSelect.options[this._elSelect.selectedIndex].value != 0) this._elSubmit.classList.remove('disabled');
             else this._elSubmit.classList.add('disabled');
+
         });
 
 
@@ -118,12 +119,9 @@ class FiltrerUnCritere {
                                     <h2>${marque}</h2>
                                     <h2>${modele}</h2>
                                     <h3>${prixVente}&nbsp;$</h3>
-                                    <span>${fabricant}</span> 
                                     <span>${annee}</span><br>                             
                                     <span>${km} Km</span><br>               
-                                    <span>${couleur}</span> <br>
                                     <span>${groupeMotopropulseur}</span><br>
-                                    <span>${chassis}</span> 
                                 </div>             
                                 </article>`
                                 
