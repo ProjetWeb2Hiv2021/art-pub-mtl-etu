@@ -1,8 +1,13 @@
 .header img {
   /* display: inline-block; */
-  width: 2em;
-  height: fit-content;
+  width: 4em;
+  object-fit: scale-down;
 }
 .header a {
   display: flex;
+}
+#logo {
+  width: 5em;
+  position: relative;
+  top: 10px;
 }

@@ -29,9 +29,10 @@ class FormValidator {
         this._erreurTel = `Le numero de telephone est incorrect.`;
 
         // récupère tous les éléments input code postaldu formulaire
-        this._elcodePostal = this._el.querySelectorAll('[data-js-param="codepostal"]');
+        this._elcodePostal = this._el.querySelectorAll('[data-js-param="codePostal"]');
         this._codePostalRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
         this._erreurCodePostal = `le code postal saisie n'est pas valide.`;
+        console.log(this._elcodePostal);
 
         // récupère tous les éléments input email du formulaire
         this._allDateInputs = this._el.querySelectorAll('input[type="date"]');
@@ -73,8 +74,9 @@ class FormValidator {
         //debut Validation formulaire utilisateur
         this.gestionInputRegex(this._allEmailInputs, this._emailRegex, this._erreurMail);
         this.gestionInputRegex(this._allTelInputs, this._telRegex, this._erreurTel);
-        this.gestionInputRegex(this._elcodePostal, this._codePostalRegex, this._erreurCodePostal);
+        
         this.gestionInputDate(this._allDateInputs, this._erreurDate);
+        this.gestionInputRegex(this._elcodePostal, this._codePostalRegex, this._erreurCodePostal);
      
     }
 
@@ -122,7 +124,7 @@ class FormValidator {
             if (inputValue == ""){
                 let inputDataset = elInput[i].dataset.jsParam, 
                             // let inputName = this._allRequiredInputs[i].name,                         // Recupère la valeur de l'attribut name
-                msg = `Le champ ${inputDataset} est obligatoire.`;
+                msg = `Le champ  ${inputDataset} est obligatoire.`;
                 this.addError(closestElWrapper, elErrorMsg, msg);
             }else{
                 let dateUtilisateur = new Date(inputValue);
