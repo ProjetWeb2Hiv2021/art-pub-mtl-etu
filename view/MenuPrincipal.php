@@ -1,10 +1,6 @@
 <div class="header">
 
-<<<<<<< HEAD
     <!--<img src="./assets/images/logo_test.svg"/>-->
-=======
-    <img src="./assets/images/logo_test.svg"/>
->>>>>>> 252bd4da87f697913e1f220a64712ff5954edbe4
 	<!--<div class="titre">
 		<p><h1>Cars are Us</h1></p>
 	</div>-->
