@@ -201,12 +201,12 @@ article.voiture_liste__voiture h2,
 article.voiture_liste__voiture h3 {
   margin: 0;
 }
-/*  .triAnnee {
+.voir-plus {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
 }
- 
-[data-je-filtre-annee] {
-  display: flex;
+.retour {
+  text-align: center;
+  margin-top: 20px;
 }
-*/
