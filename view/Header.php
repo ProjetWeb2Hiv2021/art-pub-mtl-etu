@@ -1,5 +1,5 @@
 <header class="header ligne distribue" data-component="Header">
-	<a href="index.php"><img src="./assets/images/logo.png" alt="Logo Cars are us"
+	<a href="index.php"><img id="logo" src="./assets/images/logo.png" alt="Logo Cars are us"
               /></a>
 <h1>Cars Are Us</h1>
 <!--<img src="./assets/images/logo.svg"/>-->

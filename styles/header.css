@@ -6,3 +6,8 @@
 .header a {
   display: flex;
 }
+#logo{
+  width: 5em;
+  position:relative;
+  top:10px;
+}
