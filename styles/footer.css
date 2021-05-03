@@ -1,11 +1,12 @@
 footer .adresse,
 footer .horaire {
-  display: flex;
+  width: 380px;
   flex-direction: column;
 }
 footer {
   display: flex;
   justify-content: space-between;
+  padding-top: 20px;
 }
 .adresse div {
   text-align: left;
@@ -38,5 +39,5 @@ footer .social {
 }
 .social a {
   display: inline-block;
-  width: 0.9em;
+  width: 2em;
 }
