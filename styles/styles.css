@@ -73,6 +73,24 @@ titre {
   text-align: right;
 }
 
+.swiper-container {
+  
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 1300px;
+  
+}
+
+.voiture_liste__image{
+
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
+
+}
+
 /*** Fin Ricardo***/
 
 .item-right {
