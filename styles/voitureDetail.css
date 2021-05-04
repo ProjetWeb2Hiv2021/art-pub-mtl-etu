@@ -1,4 +1,9 @@
 /*Voiture détail */
+[data-component="VoitureDetail"] {
+  width: 100%;
+  min-height: 80vh;
+}
+
 .ligne {
   display: flex;
   flex-wrap: wrap;
@@ -39,7 +44,7 @@
   color: black;
   padding: 3px;
   margin-bottom: 10px;
-
+  width: 10rem;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -53,7 +58,7 @@
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: "";
-  width: 170px;
+  width: 10rem;
   border: 1px black solid;
   color: black;
   padding: 3px;

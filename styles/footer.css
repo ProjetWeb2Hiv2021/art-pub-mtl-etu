@@ -7,6 +7,7 @@ footer {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
+  width: 100%;
 }
 .adresse div {
   text-align: left;

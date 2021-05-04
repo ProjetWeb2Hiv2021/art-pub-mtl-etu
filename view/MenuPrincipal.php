@@ -1,6 +1,6 @@
 <div class="header">
 
-    <img src="./assets/images/logo_test.svg"/>
+    <!--<img src="./assets/images/logo_test.svg"/>-->
 	<!--<div class="titre">
 		<p><h1>Cars are Us</h1></p>
 	</div>-->
