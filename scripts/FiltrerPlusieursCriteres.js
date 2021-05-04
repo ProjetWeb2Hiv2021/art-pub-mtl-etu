@@ -24,6 +24,7 @@ class FiltrerPlusieursCriteres{
         /* if (validation.isValid){ */
             this._el.addEventListener('change', (e) => {
                 e.preventDefault();
+                document.querySelector('[data-component="VoirPlus"]').classList.add("hidden");
                 if (this._elSelectModele.options[this._elSelectModele.selectedIndex].value != ""){
                     this._elSubmit.classList.remove('disabled');
                     this._elRafraichir.classList.remove('disabled');
@@ -56,13 +57,16 @@ class FiltrerPlusieursCriteres{
             this._elSubmit.addEventListener('click', (e) => {
                 e.preventDefault();
                 let validation = new FormValidator(this._el);
-                document.querySelector('[data-component="VoirPlus"]').classList.add("hidden");
+                
+                console.log(document.querySelector('[data-component="VoirPlus"]'));
                 this.elBtnRetour.classList.remove("hidden");
 
                 console.log(validation.isValid);
                 if (validation.isValid){
                     this.populerListeVoitureRecherche();
+                    document.querySelector('[data-component="VoirPlus"]').classList.add("hidden");
                 }
+                
             });
             this._elRafraichir.addEventListener('click', (e) => {
                 e.preventDefault();

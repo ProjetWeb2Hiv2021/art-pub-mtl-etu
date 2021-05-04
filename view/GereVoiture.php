@@ -1,65 +1,62 @@
 
 
 <h2>Veuillez remplir les champs suivants pour ajouter une voiture</h2>
+   <form>
+  
+	<label>Inscription du voiture :</label>
+	<select name="incription_voiture" data-component="incription_voiture">
+			<option value="0">Marque</option>
+	</select>
+    <select name="incription_voiture" data-component="incription_voiture">
+			<option value="0">Modele</option>
+	</select>
+    <div class="gere_voiture">
+        <div class="incription_voiture">
+            <label for="vin">VIN:</label>
+            <input type="text" id="vin" name="vin" required data-js-param="vin" value="">
+        </div>
+        <div class="incription_voiture">
+            <label for="prixVente">Prix vente:</label>
+            <input type="text" id="prixVente" name="prixVente" required data-js-param="prixVente" value="">
+        </div>
+        <div class="incription_voiture">
+            <label for="km">KM:</label>
+            <input type="text" id="km" name="km" required data-js-param="km" value="">
+        </div>
+        <div class="incription_voiture">
+            <label for="annee">Année:</label>
+            <input type="text" id="annee" name="" required data-js-param="annee" value="">
+        </div>
+        <div class="incription_voiture">
+            <label for="idModele">Id Modele:</label>
+            <input type="text" id="idModele" name="" required data-js-param="idModele" value="">
+        </div>
+        <div class="incription_voiture">
+            <label for="couleur">Couleur:</label>
+            <input type="text" id="couleur" name="" required data-js-param="couleur" value="">
+        </div>
+        <div class="incription_voiture">
+            <label for="prixPaye">PrixPaye:</label>
+            <input type="text" id="prixPaye" name="" required data-js-param="prixPaye" value="">
+        </div>
+        <div class="incription_voiture">
+            <label for="prixPaye">PrixPaye:</label>
+            <input type="text" id="prixPaye" name="" required data-js-param="prixPaye" value="">
+        </div>
+        <select name="incription_voiture" data-component="incription_voiture">
+			<option value="0">Groupe Motopropulseur</option>
+	    </select>
+        <select name="incription_voiture" data-component="incription_voiture">
+			<option value="0">Fabricant</option>
+	    </select>
+        <select name="incription_voiture" data-component="incription_voiture">
+			<option value="0">Status</option>
+	    </select>
+    </div>
+		<button class="disabled" data-js-btn>Trier</button>
+	</form>
+
+            
    
        
-        <section class="infoModele" >
-            
-            <div class="ligne distribue"><label for="fabricant">Fabricant :</label> 
-                <select data-js-modele-fabricant name="fabricant" id="fabricant" >
-                    <?php
-                        
-                        $fabricant = $data["fabricant"];
-                        var_dump(data["leFabricant"]);
-
-                        //afficher dynamiquement une option pour chaque fabricant dans la base de données
-                        echo "<option value='0'>Choisir Fabricant</option>";
-                        foreach ($fabricant as list($idFabricant, $fabricant)) {                            
-                            echo "<option value='{$idFabricant}'>";
-                            echo "{$fabricant}";
-                            echo "</option>";
-                        }
-                    ?>    
-                </select>
-            </div>
-            <div class="ligne distribue"><label for="marque">Marque :</label> 
-                <select data-js-modele-marque name="marque" id="marque">
-                    <?php
-                        $marque = $data["marque"];
-                        //var_dump($marque);
-                        echo "<option value='0'>Choisir Marque</option>";
-                        //afficher dynamiquement une option pour chaque marque dans la base de données
-                        foreach ($marque as list($idMarque,$idFabricant, $marque)) {
-                            echo "<option value='{$idMarque}'>";
-                            
-                            echo "{$marque}";
-                            echo "</option>";
-                        }
-                    ?>    
-                </select>
-            </div>
-            <div class="ligne distribue"><label for="modele">Modele :</label> 
-                <select data-js-modele name="modele" id="modele">
-                    <?php
-                        $modele = $data["modele"];
-                        echo "<option value='0'>Choisir Modele</option>";
-                        //afficher dynamiquement une option pour chaque modele dans la base de données
-                        foreach ($modele as list($idModele, $idMarque, $modele)) {
-                            echo "<option value='{$idModele}'>";
-                            echo "{$modele}";
-                            echo "</option>";
-                        }
-                    ?>    
-                </select>
-            </div>
-            
-           
-    </div>
-
-    <div>
-        <a href="index.php">Retour à la liste</a>
-    </div>
-
-
-
     
