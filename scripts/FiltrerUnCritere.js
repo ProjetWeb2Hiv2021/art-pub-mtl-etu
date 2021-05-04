@@ -22,7 +22,7 @@ class FiltrerUnCritere {
 
         this._elSubmit.addEventListener('click', (e) => {
             e.preventDefault();
-            document.querySelector('[data-component="VoirPlus"]').classList.add("hidden");
+            
             let value = this._elSelect.options[this._elSelect.selectedIndex].value;
             this.elBtnRetour.classList.remove("hidden");
 
@@ -39,6 +39,7 @@ class FiltrerUnCritere {
             this.callAJAX(param);
 
             this.gestionDetailsVoiture();
+            document.querySelector('[data-component="VoirPlus"]').classList.add("hidden");
             
             /* this.callAJAX(value); */
         });

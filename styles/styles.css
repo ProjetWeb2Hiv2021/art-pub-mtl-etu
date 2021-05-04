@@ -98,18 +98,7 @@ titre {
 .VoitureListe {
   display: flex;
 }
-/* Ne pas supprimer */
-.disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
-.hidden {
-  display: none;
-}
-.error {
-  color: red;
-}
-/*  */
+
 .voiture_liste__voiture {
   display: flex;
   flex-direction: column;
@@ -230,3 +219,39 @@ article.voiture_liste__voiture h3 {
   text-align: center;
   margin-top: 20px;
 }
+/* menu profil */
+
+.menu_profil{
+
+  position: absolute;
+  min-width: 20%;
+  top: 6rem;
+  right: 40px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  display: none;
+
+}
+.menu_profil a{
+  max-width: 100%;
+  padding: 15px;
+}
+.menu_profil a:hover{
+  background-color:#dc6a2b;
+  color: #ffffff;
+}
+
+
+/* Ne pas supprimer */
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.hidden {
+  display: none;
+}
+.error {
+  color: red;
+}
+/*  */
