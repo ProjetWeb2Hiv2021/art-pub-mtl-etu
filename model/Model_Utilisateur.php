@@ -100,5 +100,22 @@
 			   return 0;
 		   }
 	   }
+	   public function obtenirUtilisateurNomUtilisateur($nomUtilisateur) {
+
+		try {
+			if(isset($nomUtilisateur)){
+				$stmt = $this->connexion->prepare("SELECT * from utilisateur WHERE nomUtilisateur=:nomUtilisateur");
+				$stmt->bindParam(":nomUtilisateur", $nomUtilisateur);
+				$stmt->execute();
+				return $stmt->fetchAll();
+			}		
+		}
+		catch(Exception $exc) {
+			return 0;
+		}
+		   
+	   }
 	}
+
+
 ?>

@@ -265,7 +265,7 @@ article.voiture_liste__voiture h3 {
 .menu_profil{
 
   position: absolute;
-  min-width: 20%;
+  min-width: 15%;
   top: 6rem;
   right: 40px;
   background-color: #ffffff;
@@ -275,7 +275,8 @@ article.voiture_liste__voiture h3 {
 
 }
 .menu_profil a{
-  max-width: 100%;
+  box-sizing: border-box;
+  width: 100%;
   padding: 15px;
 }
 .menu_profil a:hover{
