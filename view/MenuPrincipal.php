@@ -15,7 +15,9 @@
        <ul>
             <li><a href="#">Accueil</a></li>
             <li><a href="#">Qui nous sommes</a></li>
+            <li><a href="index.php?Magasin&action=afficherPolitique">Termes</a></li>
             <li><a href="#">Contactez-nous</a></li>
+           
             <li class="item-right"><a href="#">En</a></li>
         </ul>
         </h5> 

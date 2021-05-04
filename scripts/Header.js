@@ -7,8 +7,10 @@ class Header {
     }
 
     init = () => {
+        console.log(this._elIconeProfil);
+        console.log(this._elMenuProfil);
         
-        this._elIconeProfil.addEventListener('mouseover', () => {
+        /* this._elIconeProfil.addEventListener('mouseover', () => {
             this._elMenuProfil.style.display = "block";
 
         });
@@ -20,7 +22,7 @@ class Header {
         });
         this._elMenuProfil.addEventListener('mouseleave', () => {
             this._elMenuProfil.style.display = "none";
-        });
-    }
+        });  */
+    } 
 
 }
