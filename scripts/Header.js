@@ -2,7 +2,7 @@ class Header {
     constructor(el) {
         this._el = el;
         this._elIconeProfil = this._el.querySelector('[data-js-icone-profil]');
-        this._elMenuProfil = this._el.querySelector('[data-js-menu-profil]');
+        this._elMenuProfil = this._el.querySelector('.menu_profil');
         this.init();
     }
 
@@ -10,7 +10,7 @@ class Header {
         console.log(this._elIconeProfil);
         console.log(this._elMenuProfil);
         
-        /* this._elIconeProfil.addEventListener('mouseover', () => {
+        this._elIconeProfil.addEventListener('mouseover', () => {
             this._elMenuProfil.style.display = "block";
 
         });
@@ -22,7 +22,7 @@ class Header {
         });
         this._elMenuProfil.addEventListener('mouseleave', () => {
             this._elMenuProfil.style.display = "none";
-        });  */
+        });  
     } 
 
 }
