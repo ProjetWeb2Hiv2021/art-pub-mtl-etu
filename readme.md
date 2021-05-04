@@ -13,6 +13,6 @@ Trejo Silva, Giannina Jacqueline
 
 ## Statut
 
-En cours.
+Remise sprint 1
 
-Lien vers le site : https://e1995670.webdev.cmaisonneuve.qc.ca/projet_web_2/projetWeb2Equipe4Lebon/
+Lien vers le site : https://e1930444.webdev.cmaisonneuve.qc.ca/
