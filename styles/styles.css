@@ -6,6 +6,7 @@
 @import "./accueil.css";
 @import "./footer.css";
 @import "./header.css";
+@import "./termes.css";
 body {
   background-color: #303030;
   color: #dc6a2b;
@@ -88,23 +89,20 @@ div.header {
 }
 
 .swiper-container {
-    width: 100%;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: auto;
-    max-width: 1200px;
-    
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 1200px;
 }
 
-.voiture_liste__image{
-
-    width: 600px;
-    height: 200px;
-    object-fit: cover;
-  
+.voiture_liste__image {
+  width: 600px;
+  height: 200px;
+  object-fit: cover;
 }
 
-voiture_liste__image-wrapper{
+voiture_liste__image-wrapper {
   width: 100%;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -112,18 +110,14 @@ voiture_liste__image-wrapper{
 
   max-width: 1000px;
   align-content: center;
-  
 }
 
-
-voiture_liste__image{
-
+voiture_liste__image {
   width: 600px;
 
   height: 200px;
   object-fit: cover;
 }
-
 
 /*** Fin Ricardo***/
 
@@ -172,7 +166,6 @@ voiture_liste__image{
 
   object-fit: contain;
 }
-
 
 .voiture_liste__voiture:hover {
   /*border: burlywood 2px solid;*/
@@ -260,8 +253,7 @@ article.voiture_liste__voiture h3 {
 }
 /* menu profil */
 
-.menu_profil{
-
+.menu_profil {
   position: absolute;
   min-width: 15%;
   top: 6rem;
@@ -270,18 +262,16 @@ article.voiture_liste__voiture h3 {
   border: 1px solid black;
   opacity: 0.6;
   display: none;
-
 }
-.menu_profil a{
+.menu_profil a {
   box-sizing: border-box;
   width: 100%;
   padding: 15px;
 }
-.menu_profil a:hover{
-  background-color:#dc6a2b;
+.menu_profil a:hover {
+  background-color: #dc6a2b;
   color: #ffffff;
 }
-
 
 /* Ne pas supprimer */
 .disabled {

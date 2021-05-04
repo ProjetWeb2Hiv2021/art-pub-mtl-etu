@@ -23,13 +23,13 @@
 	
 		<div class="menu_profil" data-js-menu-profil>
 		<?php if(isset($_SESSION["typeUtilisateur"])){
+			?>
+				<a href="index.php?Utilisateur&action=profil&nomUtilisateur=<?= $_SESSION["nomUtilisateur"] ?>">Profil</a>
+				<a href="">Déconnexion</a>
+				<a href="">Commandes</a>
+				<?php
+		}
 		?>
-			<a href="index.php?Utilisateur&action=profil&nomUtilisateur=<?= $_SESSION["nomUtilisateur"] ?>">Profil</a>
-			<a href="">Déconnexion</a>
-			<a href="">Commandes</a>
-			<?php
-	}
-	?>
 		</div>	
 	
 	
