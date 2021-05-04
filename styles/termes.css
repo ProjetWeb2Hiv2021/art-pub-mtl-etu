@@ -1,3 +1,6 @@
-section {
+.politiqueVente section {
   margin: 0 40px;
+}
+.politiqueVente h1 {
+  text-align: center;
 }
