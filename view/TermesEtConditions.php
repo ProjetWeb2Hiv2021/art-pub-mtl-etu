@@ -1,9 +1,9 @@
-<main classe="politiqueVente" data-component="TermesEtConditions">
+<main class="politiqueVente" data-component="TermesEtConditions">
     <h1>Termes et conditions</h1>
     <section>
     <p>Les conditions d'utilisation suivantes énoncent les règles de base qui s'appliquent 
     aux produits et services fournis par CarsAreUs.com, qui sont susceptibles de changer 
-    à l'avenir sur avis publié en ligne ou autrement fourni par CarsAreUs.com. 
+    à l'avenir sur avis publié en ligne ou autrement par CarsAreUs.com. 
     Chaque utilisateur des services fournis s'engage à se conformer aux conditions d'utilisation. 
     Avant de passer une commande en utilisant CarsAreUs.com veuillez vous assurer de lire, 
     comprendre et accepter les conditions générales suivantes.</p>
