@@ -1,7 +1,9 @@
 <section data-component="VoitureListe" class="gallery gallery--4">
   
- <!-- juste un prototype -->   
+ <!-- juste un prototype -->  
+
     <?php
+
     
     if($data["voiture"]){
         foreach ($data["voiture"] as $voiture) {

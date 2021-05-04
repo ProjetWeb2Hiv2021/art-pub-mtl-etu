@@ -63,9 +63,9 @@
 				$this->showView($vuevedette, $data);
 				$vue = "VoitureListe";
 				$modelVoiture = new Model_Voiture();
-				$data["voiture"] = $modelVoiture ->getListeVoiture();			
+				$data["voiture"] = $modelVoiture ->getListeVoiture();		
 				$this->showView($vue, $data);
-				$data["nombrevoitures"] = $modelVoiture ->obtenirNombreVoitures();
+				$data["nombrevoitures"] = $modelVoiture ->obtenirNombreVoitures();	
 				$vuePlus = "VoirPlus";
 				$this->showView($vuePlus, $data);
 			}

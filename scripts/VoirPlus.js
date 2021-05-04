@@ -18,8 +18,12 @@ class VoirPlus {
                 this.showMore(nombreDeVoituresAffiches);
                 
             }
-            if(document.querySelectorAll('[data-js-voiture-nbr]').length + this._nbrVoitureAcceuil  >= this._elNombreDeVoitures) {
+            console.log(document.querySelectorAll('[data-js-voiture-nbr]').length + this._nbrVoitureAcceuil);
+
+            if(document.querySelectorAll('[data-js-voiture-nbr]').length + this._nbrVoitureAcceuil  >= this._elNombreDeVoitures-1) {
+                
                 this._el.classList.add('hidden');
+                console.log(this._el.classList);
             }
             
 
