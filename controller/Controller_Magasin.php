@@ -46,6 +46,15 @@
 						$vue = "TermesEtConditions";       
                         $this->showView($vue);
 						break;
+					case "afficherQui":
+						$vue = "QuiNousSommes";       
+                        $this->showView($vue);
+						break;
+					case "afficherContact":
+						$vue = "Contact";       
+                        $this->showView($vue);
+						break;
+					
 					
 				}			
 			} else {

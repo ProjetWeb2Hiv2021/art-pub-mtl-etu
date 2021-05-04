@@ -1,0 +1,10 @@
+[data-component="Contact"] {
+  min-height: 80vh;
+}
+
+[data-component="Contact"] a {
+  text-decoration: none;
+  color: #dc6a2b;
+  width: 2em;
+  display: inline-block;
+}
