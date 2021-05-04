@@ -42,6 +42,10 @@
 						$vue = "VoitureDetails";       
                         $this->showView($vue, $data);
                         break;	
+					case "afficherPolitique":
+						$vue = "TermesEtConditions";       
+                        $this->showView($vue);
+						break;
 					
 				}			
 			} else {
