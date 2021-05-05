@@ -98,14 +98,7 @@
 							$nomFamille = $params["nomFamille"];
 							$courriel = $params["courriel"];
 							$dateNaissance = $params["dateNaissance"];
-							$noCivique = $params["noCivique"];
-							$rue = $params["rue"];
-							$codePostal = $params["codePostal"];
 							$telephone = $params["telephone"];
-							$telephonePortable = $params["telephonePortable"];
-							$idTypeUtilisateur = $params["idTypeUtilisateur"];
-							$idVille = $params["idVille"];
-							$idProvince = $params["idProvince"];
 
 							$modeleUtilisateur = new Model_Utilisateur();
 							
@@ -156,20 +149,22 @@
 						
 						 } 
 						break;
-						case "supprimerUtilisateur":
-			
+					case "supprimerUtilisateur":
+		
 						if (isset($params["idUtilisateur"])){ 
-							
-							$idUtilisateur = $params["idUtilisateur"];
-
-							$modeleUtilisateur = new Model_Utilisateur();
-							
-							$data["utilisateur"] = $modeleUtilisateur->supprimerUtilisateur($idUtilisateur);
-							echo json_encode($data["utilisateur"]);
-
 						
-							} 
+						$idUtilisateur = $params["idUtilisateur"];
+
+						$modeleUtilisateur = new Model_Utilisateur();
+						
+						$data["utilisateur"] = $modeleUtilisateur->supprimerUtilisateur($idUtilisateur);
+						echo json_encode($data["utilisateur"]);
+
+					
+						} 
 						break;
+
+
 				
 				}			
             } else {

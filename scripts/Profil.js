@@ -75,6 +75,10 @@ class Profil{
                 console.log("suppr");
                 let idUtilisateur = Number(this._el.querySelector('[data-js-id]').dataset.jsId);
                 this.callAJAXASupprimerUtilisateur(idUtilisateur);
+                this._el.inneHTML = "<p>Votre compte a bien été supprimé";
+                setTimeout(function(){ 
+                    document.location.href='index.php?'; 
+                }, 5000);
             });
             
         });
