@@ -13,7 +13,14 @@
       	<span data-js-icone-profil>
 		  
 		  	<a href="index.php?Utilisateur&action=connexion" class="ligne">
-				<?php if(!isset($_SESSION["nomUtilisateur"])) echo "<span>Connexion</span>"; ?>		  
+				<?php 
+				if(!isset($_SESSION["nomUtilisateur"])){
+					echo "<span>Connexion</span>"; 
+				}else{
+					echo $_SESSION["nomUtilisateur"]; 
+				}
+				
+				?>		  
 				<img src="./assets/images/login_f.svg" alt="Connexion" />
 			</a>
 			
@@ -22,10 +29,10 @@
     </div>
 	
 		<div class="menu_profil" data-js-menu-profil>
-		<?php if(isset($_SESSION["typeUtilisateur"])){
+		<?php if(isset($_SESSION["nomUtilisateur"])){
 			?>
 				<a href="index.php?Utilisateur&action=profil&nomUtilisateur=<?= $_SESSION["nomUtilisateur"] ?>">Profil</a>
-				<a href="">Déconnexion</a>
+				<a href="index.php?Utilisateur&action=deconnexion">Déconnexion</a>
 				<a href="">Commandes</a>
 				<?php
 		}

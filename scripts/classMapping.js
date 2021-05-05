@@ -6,6 +6,7 @@ const classMapping = {
     'Header': Header,
     'Voiture': Voiture,
     'VoirPlus': VoirPlus,
+    'Profil': Profil,
     'Modele': Modele
 
 };

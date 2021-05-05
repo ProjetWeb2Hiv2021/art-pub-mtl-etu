@@ -84,7 +84,17 @@
 
 						$this->showView($vueProfil, $data);
 						break;
-			}			
+					case "deconnexion":
+						if(isset($_SESSION['nomUtilisateur']) || isset($_SESSION['typeUtilisateur'])){
+							unset($_SESSION['nomUtilisateur']);
+							unset($_SESSION['typeUtilisateur']);	
+							session_destroy();
+						}
+						header('Location: index.php');
+							
+						break;
+			
+				}		
 			} else {
 				
 				

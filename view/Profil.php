@@ -5,7 +5,7 @@
 		if($data["utilisateur"]){
 			foreach ($data["utilisateur"] as $utilisateur) {
 	?>
-		<form>
+		<form data-js-id="<?= $utilisateur["idUtilisateur"]?>">
 			<div class="input-wrapper" data-js-input-wrapper>
 				<div class="ligne distribue">
 					<label for="username">Pseudonyme :</label>
@@ -52,7 +52,7 @@
 			<div class="input-wrapper" data-js-input-wrapper>
 				<div class="ligne distribue">
 					<label for="password">Mot de passe :</label>
-					<input type="password" id="password" required data-js-param="motPasse"  minlength="8" value="<?= $utilisateur["motPasse"]?>">
+					<input type="password" id="password" required data-js-param="motPasse"  minlength="8" value="*******">
 				</div>
 				<small class="error-message" data-js-error-msg></small>
 			</div> 
@@ -140,7 +140,7 @@
 					if($data["ville"]){
 					foreach ($data["ville"] as $ville) {
 					?>
-						<option data-js-ville="<?= $ville["idVille"] ?>"  value="<?= $ville["ville"] ?>"
+						<option data-js-ville="<?= $ville["idVille"] ?>"  value="<?= $ville["idVille"] ?>"
 						<?php
 						if($ville["idVille"] == $utilisateur["idVille"]){
 							echo "selected";
@@ -189,6 +189,7 @@
 		}
 	}
 	?>
+	<button data-js-btn-supp>Supprimer</button>
 </section>
 
 

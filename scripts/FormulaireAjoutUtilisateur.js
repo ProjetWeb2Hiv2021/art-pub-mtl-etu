@@ -38,7 +38,7 @@ class FormulaireAjoutUtilisateur{
                     console.log("rani hna");
                    /*  let paramClient = `nomUtilisateur=${nomUtilisateur}&motPasse=${motPasse}&prenom=${prenom}&nomFamille=${nomFamille}&dateNaissance=${dateNaissance}&noCivique=${noCivique}&rue=${rue}&codePostal=${codePostal}&telephone=${telephone}&telephonePortable=' + telephonePortable+  '&courriel=' + courriel + '&idTypeUtilisateur=' + idTypeUtilisateur + '&idVille=' + idVille + '&idProvince=' + idProvince`; */
                    console.log(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, telephone);
-                    this.callAJAXAjoutUtilisateur(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance,/*  noCivique, rue, codePostal, */ telephone/* , telephonePortable, idTypeUtilisateur, idVille, idProvince */);
+                    this.callAJAXAjoutUtilisateurClient(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, telephone);
                     /* setTimeout(function(){ 
                         document.location.href='index.php?'; 
                     }, 5000);
@@ -148,9 +148,9 @@ class FormulaireAjoutUtilisateur{
                             this._el.innerHTML = "<p>votre compte d'utilisateur a été ajouté</p>"
                         }else{
                             this._el.innerHTML = "<p>probleme ou niveau de l'ajout</p>"
-                            /* setTimeout(function(){ 
+                            setTimeout(function(){ 
                                 document.location.href='index.php?Utilisateur&action=creerClient'; 
-                            }, 5000); */
+                            }, 5000);
                         }
 
 
@@ -162,6 +162,53 @@ class FormulaireAjoutUtilisateur{
             // Envoi de la requète
 
             xhr.send('nomUtilisateur=' + nomUtilisateur + '&motPasse=' + motPasse + '&prenom=' + prenom + '&nomFamille=' + nomFamille + '&dateNaissance=' + dateNaissance + '&noCivique=' + noCivique + '&rue=' + rue + '&codePostal=' + codePostal + '&telephone=' + telephone + '&telephonePortable=' + telephonePortable+  '&courriel=' + courriel + '&idTypeUtilisateur=' + idTypeUtilisateur + '&idVille=' + idVille + '&idProvince=' + idProvince);
+        }
+        
+    }
+    callAJAXAjoutUtilisateurClient = (nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, telephone) => {
+
+        // Déclaration de l'objet XMLHttpRequest
+        let xhr;
+        xhr = new XMLHttpRequest();
+
+        // Initialisation de la requète
+        if (xhr) {	
+            
+            // Ouverture de la requète : fichier recherché
+            xhr.open('POST', 'index.php?Utilisateur_AJAX&action=ajoutUtilisateur');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
+            // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
+            xhr.addEventListener('readystatechange', () => {
+
+                if (xhr.readyState === 4) {							
+                    if (xhr.status === 200) {
+                        let closestElWrapper = this._allUsername.closest('[data-js-input-wrapper]');
+                        let elErrorMsg = closestElWrapper.querySelector('[data-js-error-msg]');
+
+                        // Traitement du DOM
+                        let reponse = JSON.parse(xhr.responseText);
+                        if(reponse == 1){
+                            this._el.innerHTML = "<p>votre compte d'utilisateur a été ajouté</p>"
+                            setTimeout(function(){ 
+                                document.location.href='index.php?Utilisateur&action=connexion'; 
+                            }, 2000);
+                        }else{
+                            this._el.innerHTML = "<p>probleme ou niveau de l'ajout</p>"
+                            setTimeout(function(){ 
+                                document.location.href='index.php?Utilisateur&action=creerClient'; 
+                            }, 5000);
+                        }
+
+
+                    } else if (xhr.status === 404) {
+                        console.log('Le fichier appelé dans la méthode open() n’existe pas.');
+                    }
+                }
+            });
+            // Envoi de la requète
+
+            xhr.send('nomUtilisateur=' + nomUtilisateur + '&motPasse=' + motPasse + '&prenom=' + prenom + '&nomFamille=' + nomFamille + '&courriel=' + courriel + '&dateNaissance=' + dateNaissance + '&telephone=' + telephone);
         }
         
     }
