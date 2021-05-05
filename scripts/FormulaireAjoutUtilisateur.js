@@ -148,9 +148,9 @@ class FormulaireAjoutUtilisateur{
                             this._el.innerHTML = "<p>votre compte d'utilisateur a été ajouté</p>"
                         }else{
                             this._el.innerHTML = "<p>probleme ou niveau de l'ajout</p>"
-                            /* setTimeout(function(){ 
+                            setTimeout(function(){ 
                                 document.location.href='index.php?Utilisateur&action=creerClient'; 
-                            }, 5000); */
+                            }, 5000);
                         }
 
 

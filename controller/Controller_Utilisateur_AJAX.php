@@ -117,7 +117,59 @@
 							/* $vue = "Acceuil";
 							$this->afficheVue($vue, $data); */
 						}
+						break;
+					case "miseAJourUtilisateur":
+
 						
+									
+						if (isset($params["idUtilisateur"]) && isset($params["nomUtilisateur"]) && isset($params["motPasse"]) && isset($params["prenom"]) && isset($params["nomFamille"]) && isset($params["courriel"])
+						&& isset($params["dateNaissance"]) && isset($params["noCivique"]) && isset($params["rue"]) && isset($params["codePostal"]) && isset($params["telephone"])
+						&& isset($params["telephonePortable"]) && isset($params["idTypeUtilisateur"]) && isset($params["idVille"]) && isset($params["idProvince"])){ 
+							
+							if($params["motPasse"] == "*******"){
+								$motPasse = "";
+							}else{
+								$motPasse = password_hash($params["motPasse"], PASSWORD_DEFAULT);
+							}
+							$motPasse = password_hash($params["motPasse"], PASSWORD_DEFAULT);
+							$prenom = $params["prenom"];
+							$nomFamille = $params["nomFamille"];
+							$courriel = $params["courriel"];
+							$dateNaissance = $params["dateNaissance"];
+							$noCivique = $params["noCivique"];
+							$rue = $params["rue"];
+							$codePostal = $params["codePostal"];
+							$telephone = $params["telephone"];
+							$telephonePortable = $params["telephonePortable"];
+							$idTypeUtilisateur = $params["idTypeUtilisateur"];
+							$idVille = $params["idVille"];
+							$idProvince = $params["idProvince"];
+							$nomUtilisateur = $params["nomUtilisateur"];
+							$idUtilisateur = $params["idUtilisateur"];
+							echo($nomFamille);
+							$modeleUtilisateur = new Model_Utilisateur();
+							
+							$data["utilisateur"] = $modeleUtilisateur->modifierUtilisateur($idUtilisateur, $nomUtilisateur, $motPasse, $prenom, $nomFamille, $courriel, $dateNaissance, $noCivique, $rue, $codePostal, $telephone, $telephonePortable, $idTypeUtilisateur, $idVille, $idProvince);
+								
+							echo json_encode($data["utilisateur"]);
+
+						
+						 } 
+						break;
+						case "supprimerUtilisateur":
+			
+						if (isset($params["idUtilisateur"])){ 
+							
+							$idUtilisateur = $params["idUtilisateur"];
+
+							$modeleUtilisateur = new Model_Utilisateur();
+							
+							$data["utilisateur"] = $modeleUtilisateur->supprimerUtilisateur($idUtilisateur);
+							echo json_encode($data["utilisateur"]);
+
+						
+							} 
+						break;
 				
 				}			
             } else {
