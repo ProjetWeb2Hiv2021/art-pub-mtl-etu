@@ -12,6 +12,7 @@
 @import "./qui.css";
 @import "./profil.css";
 @import "./utilisateurSysteme.css";
+@import "./formulaire.css";
 
 body {
   background-color: #303030;
@@ -209,20 +210,6 @@ a.ligne {
   margin-bottom: 0;
 }
 
-.filtres button,
-button.proceed,
-button.retour{
-  background-color: #ed712b;
-  color: white;
-  padding: 5px 5px;
-  margin: 2px 2px;
-  cursor: pointer;
-  font-size: 15pt;
-  font-family: "Red Rose", sans-serif;
-  border-radius: 3px;
-  width: 150px;
-  align-self: flex-end;
-}
 .filtres input[type="number"] {
   width: 80px;
   height: 25px;

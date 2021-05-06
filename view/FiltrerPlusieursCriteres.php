@@ -7,7 +7,7 @@
 		<div class="input-wrapper" data-js-input-wrapper>
 			<label><?= TXT_MARQUE?>  :</label><br>
 			<select name="marque" data-js-marque size=1>
-			<option value=""></option>
+			<option value="">Filtrer par marque</option>
 		<?php
 		
 		if($data["marque"]){
@@ -25,7 +25,7 @@
 		<div class="input-wrapper" data-js-input-wrapper>
 			<label><?= TXT_MODELE?>  :</label><br>
 			<select name="modele" data-js-modele size=1>
-			<option value=""></option>
+			<option value="">Filtrer par modèle</option>
 		<?php
 		
 		if($data["modele"]){
