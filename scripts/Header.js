@@ -34,6 +34,24 @@ class Header {
             console.log(langue);
             document.location.href=`index.php?Magasin&action=""&langue=${langue}`;
         }); */
+		
+		        //Afficher conteur dans le header
+        var elConteur = document.getElementById("conteurVoiture");
+
+        let cont = 0;
+        if (sessionStorage.getItem('conteurVoiture'))
+        {
+            cont = parseInt(sessionStorage.getItem('conteurVoiture'));           
+        }
+            
+        // Afficher le conteur sur la page à coté du icone.
+        if (cont==0)
+            elConteur.innerHTML = "";
+        else
+            elConteur.innerHTML = cont;
+		
+		
+		
         
     } 
 
