@@ -119,7 +119,7 @@
 		<div class="input-wrapper" data-js-input-wrapper>
 			<div class="ligne distribue">
 			<label for="ville">Ville :</label>
-			<select name="ville" data-js-ville size=1>
+			<select name="ville" data-js-ville size=1 required>
 				<option value=""></option>
 				<?php
 				
@@ -139,7 +139,7 @@
 		<div class="input-wrapper" data-js-input-wrapper>
 			<div class="ligne distribue">
 			<label for="province">Province :</label>
-			<select name="province" data-js-province size=1>
+			<select name="province" data-js-province size=1 required>
 				<option value=""></option>
 				<?php
 				

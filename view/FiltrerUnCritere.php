@@ -4,14 +4,14 @@
 
 	<!-- un seul critere -->
 	<form>
-	<label>Trier voiture :</label>
+	<label><?= TXT_TRIER_VOITURE ?> :</label>
 	<select name="recherche_un_critere" data-component="recherche_un_critere">
-			<option value="0">Par</option>
-			<option value="annee">Annee</option>
-			<option value="marque">Marque</option>
-			<option value="modele">Modele</option>
+			<option value="0"><?= TXT_BY ?></option>
+			<option value="annee"><?= TXT_ANNEE ?></option>
+			<option value="marque"><?= TXT_MARQUE?></option>
+			<option value="modele"><?= TXT_MODELE?></option>
 		</select>
-		<button class="disabled" data-js-btn>Trier</button>
+		<button class="disabled" data-js-btn><?= TXT_TRIER?></button>
 	</form>
 
 </section>

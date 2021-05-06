@@ -32,7 +32,7 @@
         </div>
         <div>
             <a href="index.php">Retour à la liste</a>
-        </div>        
+        </div>    
     </div>
 </section>
 

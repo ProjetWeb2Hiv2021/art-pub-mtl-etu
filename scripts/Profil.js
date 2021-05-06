@@ -9,7 +9,7 @@ class Profil{
         this._elNomUtilisateurOrifinal = this._el.querySelector('[data-js-param="username"]').value;
         this._elCourrielOriginal = encodeURIComponent(this._el.querySelector('[data-js-param="courriel"]').value);
         this._elbtnSupp = this._el.querySelector('[data-js-btn-supp]');
-        console.log(this._elbtnSupp);
+        console.log(this._elSubmit);
         // récupère élément username
         this._allUsername = this._el.querySelector('[data-js-param="username"]');
         this._allEmailInputs = this._el.querySelector('input[type="email"]');
@@ -24,6 +24,7 @@ class Profil{
         /* if (validation.isValid){ */
         this._elSubmit.addEventListener('click', (e) => {
             e.preventDefault();
+            console.log("panier");
             let nomUtilisateur = encodeURIComponent(this._el.querySelector('[data-js-param="username"]').value);
             let courriel = encodeURIComponent(this._el.querySelector('[data-js-param="courriel"]').value);
             let validation = new FormValidator(this._el);

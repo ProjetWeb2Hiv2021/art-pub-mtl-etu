@@ -9,7 +9,9 @@
 @import "./termes.css";
 @import "./contact.css";
 @import "./qui.css";
+@import "./profil.css";
 @import "./utilisateurSysteme.css";
+
 body {
   background-color: #303030;
   color: #dc6a2b;
@@ -208,7 +210,7 @@ a.ligne {
 
 .filtres button,
 button.proceed,
-button.retour {
+button.retour{
   background-color: #ed712b;
   color: white;
   padding: 5px 5px;

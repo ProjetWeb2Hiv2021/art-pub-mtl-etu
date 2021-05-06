@@ -1,0 +1,64 @@
+
+.Profil{
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+.Profil .distribue input, .Profil .distribue select{
+  width: 40%;
+}
+
+.Profil form{
+  max-width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top:30px;
+  margin-bottom:30px;
+}
+.btnsupprofil{
+  background-color:red;
+  color: white;
+  padding: 5px 5px;
+  cursor: pointer;
+  font-size: 10pt;
+  font-family: "Red Rose", sans-serif;
+  border-radius: 3px;
+  margin-bottom:30px;
+  padding: 8px;
+  display: block;
+  margin-left: auto;
+
+}
+.Profil .btnmodifprofil {
+  background-color: #ed712b;
+  color: white;
+  padding: 5px 5px;
+  margin: 2px 2px;
+  cursor: pointer;
+  font-size: 15pt;
+  font-family: "Red Rose", sans-serif;
+  border-radius: 3px;
+  width: 150px;
+  display: block;
+  margin-top: 30px;
+  margin-left: auto;
+  
+}
+
+@media screen and (max-width: 615px) {
+  
+  .Profil .distribue{
+    flex-direction: column;
+  }
+  .Profil .distribue input, .Profil .distribue select{
+    width: 100%;
+    min-width: 200px;
+  }
+  .Profil .input-wrapper{
+    align-content: center;
+  }
+  .Profil .distribue label{
+    font-size: 14pt;
+  }
+
+}

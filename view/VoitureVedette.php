@@ -3,7 +3,7 @@
 
  <?php
  if($data["voitureVedette"]){
-    echo "<h2>En vedette</h2>";
+    echo "<h2>".TXT_VEDETTE."</h2>";
  }
  ?>
     <div class="carousel">
@@ -45,7 +45,7 @@
             
         }else{
             ?>  
-                <p>pas de voitures en vedette</p>
+                <p><?=TXT_VEDETTE_ERR ?></p>
 
             <?php
          }

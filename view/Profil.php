@@ -1,11 +1,12 @@
 <section class="Profil" data-component="Profil" data-js-component="Form">
-
+	
 	<!-- plusieurs criteres -->
 	<?php
 		if($data["utilisateur"]){
 			foreach ($data["utilisateur"] as $utilisateur) {
 	?>
 		<form data-js-id="<?= $utilisateur["idUtilisateur"]?>">
+			<button class="btnsupprofil" data-js-btn-supp>Supprimer Profil</button>
 			<div class="input-wrapper" data-js-input-wrapper>
 				<div class="ligne distribue">
 					<label for="username">Pseudonyme :</label>
@@ -133,7 +134,7 @@
 			<div class="input-wrapper" data-js-input-wrapper>
 				<div class="ligne distribue">
 				<label for="ville">Ville :</label>
-				<select name="ville" data-js-ville size=1>
+				<select name="ville" data-js-ville size=1 required>
 					<option value=""></option>
 					<?php
 					
@@ -159,7 +160,7 @@
 			<div class="input-wrapper" data-js-input-wrapper>
 				<div class="ligne distribue">
 				<label for="province">Province :</label>
-				<select name="province" data-js-province size=1>
+				<select name="province" data-js-province size=1 required>
 					<option value=""></option>
 					<?php
 					
@@ -167,7 +168,7 @@
 					foreach ($data["province"] as $province) {
 						
 					?>
-						<option data-js-province="<?= $province["idProvince"] ?>"  value="<?= $utilisateur["idProvince"] ?>"
+						<option data-js-province="<?= $province["idProvince"] ?>"  value="<?= $province["idProvince"] ?>"
 						<?php
 						if($province["idProvince"] == $utilisateur["idProvince"]){
 							echo "selected";
@@ -183,13 +184,13 @@
 				<small class="error-message" data-js-error-msg></small>			
 			</div>
 
-			<button data-js-btn>Soumettre</button>
+			<button class="btnmodifprofil" data-js-btn>Modifier</button>
 		</form>
 	<?php
 		}
 	}
 	?>
-	<button data-js-btn-supp>Supprimer</button>
+	
 </section>
 
 
