@@ -142,12 +142,12 @@
 							echo($nomFamille);
 							$modeleUtilisateur = new Model_Utilisateur();
 							
-							$data["utilisateur"] = $modeleUtilisateur->modifierUtilisateur($idUtilisateur, $nomUtilisateur, $motPasse, $prenom, $nomFamille, $courriel, $dateNaissance, $noCivique, $rue, $codePostal, $telephone, $telephonePortable, $idTypeUtilisateur, $idVille, $idProvince);
+							$data = $modeleUtilisateur->modifierUtilisateur($idUtilisateur, $nomUtilisateur, $motPasse, $prenom, $nomFamille, $courriel, $dateNaissance, $noCivique, $rue, $codePostal, $telephone, $telephonePortable, $idTypeUtilisateur, $idVille, $idProvince);
 								
-							echo json_encode($data["utilisateur"]);
+							echo json_encode($data);
 
 						
-						 } 
+						} 
 						break;
 					case "supprimerUtilisateur":
 		

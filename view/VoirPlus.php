@@ -3,10 +3,10 @@
         $nombrevoitures = $data["nombrevoitures"];
     ?>
         <div class="voir-plus" data-component="VoirPlus"  data-js-voiture-nombre = <?= $nombrevoitures["nombrevoitures"]?>>
-            <button class="proceed" data-js-voir-plus>Voir plus</button>
+            <button class="proceed" data-js-voir-plus><?= TXT_VOIRE_PLUS ?></button>
         </div>
         <div class="retour hidden" data-js-retour-acceuil>
-            <button class="retour" >Retour</button>
+            <button class="retour" ><?= TXT_RETOUR ?></button>
         </div>
         <?php
             

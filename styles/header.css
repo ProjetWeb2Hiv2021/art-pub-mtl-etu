@@ -11,3 +11,15 @@
   position: relative;
   top: 10px;
 }
+#formLangue{
+  position: absolute;
+  margin-left: 10%;
+}
+#formLangue select{
+  background-color: bisque;
+  padding: 5px;
+}
+#formLangue button {
+  background-color: green;
+  padding: 5px;
+}

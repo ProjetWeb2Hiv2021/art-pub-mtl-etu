@@ -13,10 +13,10 @@
         <hr> 
         <div class="menu">  
        <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="index.php?Magasin&action=afficherQui">Qui nous sommes</a></li>
-            <li><a href="index.php?Magasin&action=afficherPolitique">Termes</a></li>
-            <li><a href="index.php?Magasin&action=afficherContact">Contactez-nous</a></li>
+            <li><a href="#"><?= TXT_ACCUEIL ?></a></li>
+            <li><a href="index.php?Magasin&action=afficherQui"><?= TXT_QUI ?></a></li>
+            <li><a href="index.php?Magasin&action=afficherPolitique"><?= TXT_TERMES?></a></li>
+            <li><a href="index.php?Magasin&action=afficherContact"><?= TXT_CONTACT?></a></li>
            
             <li class="item-right"><a href="#">En</a></li>
         </ul>

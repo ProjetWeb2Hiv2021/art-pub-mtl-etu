@@ -1,13 +1,13 @@
 <footer>
 
     <div class="adresse">
-        <div class="direction">2563 Saint Laurent Est</div>
+        <div class="direction"><?= TXT_ADRESSE?></div>
 
-        <div class="ville">Montréal - Québec</div>
+        <div class="ville"><?= TXT_ADRESS_VILLE?></div>
 
-        <div class="codepostal">H2M J4T</div>
+        <div class="codepostal"><?= TXT_ADRESS_CODE_POSTAL?></div>
 
-        <div class="telephone">Téléphone: 514 514-5555</div>
+        <div class="telephone"><?= TXT_TELEPHONE?></div>
     </div>
    <div class="reseaux">
        <ul class="social">
@@ -29,11 +29,11 @@
           </ul>
 </div>
     <div class="horaire">
-        <div class="semaine">Lundi au Mercredi: 9.00 à 17.00</div>
+        <div class="semaine"><?= TXT_OUVERTURE_SEMAINE?></div>
 
-        <div class="semaine-l">Jeudi au Vendredi: 11.00 à 21.00</div>
+        <div class="semaine-l"><?= TXT_OUVERTURE_JEUDI?></div>
 
-        <div class="weekend">Samedi et Dimanche: 10.00 à 17.00</div>
+        <div class="weekend"><?= TXT__OUVERTURE_SAMEDI?></div>
 
  
 </footer>
