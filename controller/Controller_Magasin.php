@@ -60,7 +60,10 @@
 						$vue = "Contact";       
                         $this->showView($vue);
 						break;
-					
+					case "Confirmation":
+						$vue = "Confirmation";
+						$this->showView($vue);
+						break;						
 					
 				}			
 			} else {
