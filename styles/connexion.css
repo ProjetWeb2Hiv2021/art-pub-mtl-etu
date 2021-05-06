@@ -38,12 +38,3 @@
   text-align: center;
   color: #ed712b;
 }
-[data-component="Connexion"] input[type="submit"] {
-  background-color: #ed712b;
-  color: white;
-  padding: 5px 5px;
-  margin: 2px 2px;
-  cursor: pointer;
-  text-shadow: 1px 1px 1px #000;
-  border-radius: 10px;
-}

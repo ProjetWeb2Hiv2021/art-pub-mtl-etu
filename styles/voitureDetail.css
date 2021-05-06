@@ -77,23 +77,3 @@
   margin-right: 40px;
   margin-left: 40px;
 }
-[data-component="VoitureDetail"] a {
-  padding: 3px;
-  background-color: #ed712b;
-  color: white;
-  margin-left: 5px;
-  margin-bottom: 20px;
-  margin-top: 40px;
-}
-
-
-[data-component="VoitureDetail"] button {
-  padding: 3px;
-  background-color: #ed712b;
-  color: white;
-  margin-left: 5px;
-  margin-bottom: 20px;
-  margin-top: 40px;
-  font-size: 16pt;
-  font-family: "Red Rose", sans-serif;
-}

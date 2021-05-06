@@ -6,6 +6,12 @@
               <div class="colonne">  
             
                 <div class="row distribue">
+                    <label class="field field_v2">
+                        <input class="field__input" type="email" id="nomUtilisateur" name="nomUtilisateur" required data-js-param="nomUtilisateur" value="" placeholder="Courriel">
+                        <span class="field__label-wrap">
+                            <span class="field__label">Courriel :</span>
+                        </span>
+                    </label> 
                     <label for="nomUtilisateur">Courriel :</label>
                     <input type="email" id="nomUtilisateur" name="nomUtilisateur" required data-js-param="nomUtilisateur" value="">
                 </div>
