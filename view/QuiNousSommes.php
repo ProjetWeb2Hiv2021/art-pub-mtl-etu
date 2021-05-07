@@ -1,9 +1,9 @@
 <main class="qui" data-component="QuiNousSommes">
-    <h1>À propos de nous</h1>
+    <h1><?=TXT__QUI_H1?></h1>
     <section>
-    <p>En affaire depuis 15 ans, nous sommes fiers d'offrir des véhicules abordables au plus grand nombre.</p>
+    <p><?=TXT__QUI_P1?></p>
     
-    <p>Venez nous voir nous sommes sympathiques.</p>
+    <p><?=TXT__QUI_P2?></p>
     </section>
     
 </main>
