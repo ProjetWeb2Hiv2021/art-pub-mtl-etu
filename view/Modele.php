@@ -4,7 +4,7 @@
 
         <section class="infoModele" >
             
-            <div class="ligne distribue"><label for="fabricant">Fabricant :</label> 
+            <div class="ligne distribue"><label for="fabricant"><?=TXT__MODELE_FABRICANT?></label> 
                 <select data-js-modele-fabricant name="fabricant" id="fabricant" >
                     <?php
                         
@@ -21,7 +21,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="ligne distribue"><label for="marque">Marque :</label> 
+            <div class="ligne distribue"><label for="marque"><?=TXT__MODELE_MARQUE?></label> 
                 <select data-js-modele-marque name="marque" id="marque">
                     <?php
                         $marque = $data["marque"];
@@ -37,7 +37,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="ligne distribue"><label for="modele">Modele :</label> 
+            <div class="ligne distribue"><label for="modele"><?=TXT__MODELE_MODELE?></label> 
                 <select data-js-modele name="modele" id="modele">
                     <?php
                         $modele = $data["modele"];
@@ -56,7 +56,7 @@
     </div>
 
     <div>
-        <a href="index.php">Retour à la liste</a>
+        <a href="index.php"><?=TXT__MODELE_MRETOUR?></a>
     </div>
 </section>
 

@@ -1,17 +1,20 @@
 <section data-component="VoitureDetail">
     <div class="ligne aLaFin">       
 
+
         <?php 
         
-        if(!isset($_SESSION["nomUtilisateur"])) echo '<a href="index.php?Utilisateur&action=connexion">Ajouter panier</a>';
+        if(!isset($_SESSION["nomUtilisateur"])) echo '<a href="index.php?Utilisateur&action=connexion">'.TXT__DETAIL_AJOUT.'</a>';
            else 
            {
             // Vérifier si la voiture est en stock
             if(isset($data["voiture"])&&$data["voiture"]["idStatut"] == 3){
-                echo '<button  data-js-btn >Ajouter panier</button>';
+                echo '<button  data-js-btn >'.TXT__DETAIL_AJOUT.'</button>';
+
+
             }
             else
-                 echo '<button  data-js-btn disabled>Ajouter panier</button>';
+                 echo '<button  data-js-btn disabled>'.TXT__DETAIL_AJOUT.'</button>';
 
            }
             ?>	
@@ -49,7 +52,7 @@
         ?>
          >
             <div class="ligne distribue">
-                <label for="nom">Modele :</label>
+                <label for="nom"><?=TXT__DETAIL_MOD?></label>
 
                 <input type="text" id="modele" name="modele" required data-js-param="modele" value='<?php 
                 if(isset($data["voiture"]))echo $data["voiture"]["modele"];?>'
@@ -61,7 +64,7 @@
                 ?>>
             </div>
             <div class="ligne distribue">
-                <label for="vin">VIN :</label>
+                <label for="vin"><?=TXT__DETAIL_VIN?></label>
 
                 <input type="text" id="vin" name="vin" required data-js-param="vin" value='<?php if($data["systeme"]="SWT" && isset($data["voiture"])) echo $data["voiture"]["vin"];?>'
 
@@ -71,7 +74,7 @@
                 }; ?>>
             </div>
             <div class="ligne distribue">
-                <label for="prixVente">Prix :</label>
+                <label for="prixVente"><?=TXT__DETAIL_PRIX?></label>
 
                 <input type="text" id="prixVente" name="prixVente" required data-js-param="prixVente" value='<?php if($data["systeme"]="SWT" && isset($data["voiture"])) echo $data["voiture"]["prixVente"];?>'
 
@@ -81,8 +84,11 @@
                 }; ?>>
             </div>
             <div class="ligne distribue">
-                <label for="annee">Année :</label>
+
+                <label for="annee"><?=TXT__DETAIL_ANN?> :</label>
                 <input type="text" id="annee" name="annee" required data-js-param="annee" value='<?php if($data["systeme"]="SWT" && isset($data["voiture"])) echo $data["voiture"]["annee"];?>'
+
+                
 
                 <?php
                 
@@ -104,7 +110,7 @@
             
             ?>
             <div class="ligne distribue">
-                <label for="km">Km :</label>
+                <label for="km"><?=TXT__DETAIL_KM?></label>
 
                 <input type="text" id="km" name="km" required data-js-param="km" value='<?php if($data["systeme"]="SWT" && isset($data["voiture"])) echo $data["voiture"]["km"];?>'
 
@@ -114,7 +120,7 @@
                 }; ?>>
             </div>
             <div class="ligne distribue">
-                <label for="couleur">Couleur :</label>
+                <label for="couleur"><?=TXT__DETAIL_COUL?></label>
 
                 <input type="text" id="couleur" name="couleur" required data-js-param="couleur" value="<?php if($data["systeme"]="SWT" && isset($data["voiture"])) echo $data["voiture"]["couleur"]?>";
 
@@ -124,7 +130,7 @@
                     echo "disabled";
                 }; ?>>
             </div>
-            <div class="ligne distribue"><label for="typeCarburant">Type Carburant :</label> 
+            <div class="ligne distribue"><label for="typeCarburant"><?=TXT__DETAIL_TYPE_CAR?></label> 
                 <select name="typeCarburant" id="typeCarburant" 
                     <?php 
                     
@@ -157,7 +163,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="ligne distribue"><label for="modele">Modele :</label> 
+            <div class="ligne distribue"><label for="modele"><?=TXT__DETAIL_MOD?></label> 
                 <select name="modele" id="modele"
                     <?php 
                     if($leSysteme==="SWT"){
@@ -183,7 +189,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="ligne distribue"><label for="chassis">Chassis :</label> 
+            <div class="ligne distribue"><label for="chassis"><?=TXT__DETAIL_CHASS?></label> 
                 <select name="chassis" id="chassis"
                     <?php 
                     if($leSysteme==="SWT"){
@@ -206,7 +212,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="ligne distribue"><label for="transmission">Transmission :</label> 
+            <div class="ligne distribue"><label for="transmission"><?=TXT__DETAIL_TRANS?></label> 
                 <select name="transmission" id="transmission"
                     <?php 
                     if($leSysteme==="SWT"){
@@ -229,7 +235,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="ligne distribue"><label for="groupeMotopropulseur">Groupe Motopropulseur :</label> 
+            <div class="ligne distribue"><label for="groupeMotopropulseur"><?=TXT__DETAIL_GROUP?></label> 
                 <select name="groupeMotopropulseur" id="groupeMotopropulseur"
                     <?php 
                     if($leSysteme==="SWT"){
@@ -253,11 +259,14 @@
                     ?>    
                 </select>
             </div>
+
             <?php if($leSysteme!=="SGC"){
 
             
-                echo '<div class="ligne distribue"><label for="statut">Statut :</label> 
+                echo '<div class="ligne distribue"><label for="statut">'.TXT__DETAIL_STAT.' :</label> 
                     <select name="statut" id="statut" data-js-param="statut"';
+
+
                         
                         if($leSysteme==="SWT"){
                             echo "disabled";
@@ -286,7 +295,7 @@
     </div>
 
     <div>
-        <a href="index.php">Retour à la liste</a>
+        <a href="index.php"><?=TXT__DETAIL_RETOUR?></a>
     </div>
 </section>
 
