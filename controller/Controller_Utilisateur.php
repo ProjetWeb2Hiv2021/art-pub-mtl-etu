@@ -5,8 +5,7 @@
 		public function traite(array $params) {
 			// Initialiser la vue et la session
             $vue = "";
-            session_start();
-
+            session_start();			
 			$this->showView("Head");
 			$this->showView("Header");
 			

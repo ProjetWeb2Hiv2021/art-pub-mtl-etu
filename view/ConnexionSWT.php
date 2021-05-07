@@ -1,3 +1,4 @@
+<main data-component="Connexion-SWT">
 <section data-component="Connexion" >
     <h1><?=TXT__SWT_TRANSACTIONNEL?></h1>
     <div data-js-component="Form" >            
@@ -37,6 +38,7 @@
         </div>    
     </div>
 </section>
+</main>
 
 
     

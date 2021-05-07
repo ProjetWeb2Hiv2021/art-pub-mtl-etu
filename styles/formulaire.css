@@ -183,7 +183,7 @@ effect 2
   transition-delay: 0;
 }
 
-/* Select https://codepen.io/raubaca/pen/VejpQP */
+/* https://freefrontend.com/css-select-boxes/ Select https://codepen.io/raubaca/pen/VejpQP */
 /* Reset Select */
 select {
   -webkit-appearance: none;
@@ -212,7 +212,7 @@ select::-ms-expand {
   border-radius: 0.25em;
 }
 select {
-  flex: 1;
+  /* flex: 1; */
   padding: 0 0.5em;
   color: #303030;
   cursor: pointer;

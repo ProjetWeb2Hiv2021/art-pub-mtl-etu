@@ -1,12 +1,12 @@
 <?php
-	class Controller_Modele extends BaseController {
+	class Controller_Voiture extends BaseController {
 	
 		//la fonction qui sera appelée par le routeur
 		public function traite(array $params) {
 			// Initialiser la vue et la session
             $vue = "";
             session_start();
-
+			$data["systeme"]="SGC";
 			$this->showView("Head");
 			$this->showView("Header");
 			
@@ -21,16 +21,29 @@
                     ne pas oublier le "default:"*/
                     case "connexion":
                         if(isset($_SESSION["nomUtilisateur"])&&isset($_SESSION["typeUtilisateur"])&&$_SESSION["typeUtilisateur"] ==="Administrateur"||$_SESSION["typeUtilisateur"] ==="Employe"){
-                            $vue="Modele";
-                            $modeleModele = new Model_Modele();
+                            $vue="VoitureDetails";
+                            
 							
-				            $data["modele"] = $modeleModele ->obtenirModele();
+
+				            
+							$data["systeme"]="SGC";
+							$modeleTypeCarburant = new Model_TypeCarburant();				
+							$data["typeCarburant"] = $modeleTypeCarburant->obtenirListeTypeCarburant();		
+							//var_dump("typeCarburant", $data["typeCarburant"]);
+							$modeleModele = new Model_Modele();				
+							$data["modele"] = $modeleModele->obtenirListeModele();
+							//var_dump("modele", $data["modele"]);
+							$modeleChassis = new Model_Chassis();				
+							$data["chassis"] = $modeleChassis->obtenirListeChassis();	
+							$modeleTransmission = new Model_Transmission();				
+							$data["transmission"] = $modeleTransmission->obtenirListeTransmission();	
+							//var_dump("transmission", $data["transmission"]);
+							$modeleStatut = new Model_Statut();				
 							
-                            $modeleMarque = new Model_Marque();
-				            $data["marque"] = $modeleMarque ->obtenirListeMarque();
-                            $modeleFabricant = new Model_Fabricant();
-				            $data["fabricant"] = $modeleFabricant ->obtenirListeFabricant();
-							
+							//var_dump("statut", $data["statut"]);
+							$modeleGpm = new Model_GroupeMotopropulseur();				
+							$data["groupeMotopropulseur"] = $modeleGpm->obtenirListeGpm();	
+							//var_dump("systeme", $data["systeme"]);
                             $this->showView($vue, $data);
 
                         }else{
@@ -57,6 +70,7 @@
 								//var_dump($modeleTypeUtilisateur->obtenirTypeUtilisateur($_REQUEST["nomUtilisateur"]));
 								$_SESSION["typeUtilisateur"] = $modeleTypeUtilisateur->obtenirTypeUtilisateur($_REQUEST["nomUtilisateur"])["typeUtilisateur"];
 								$vue = "Utilisateur";
+                                
 								// Afficher la vue compléter les champs
 								$this->showView($vue, $data);
 								var_dump($_SESSION);
@@ -73,11 +87,12 @@
 						}
                         break;
 					default:
-					// Retourner au formulaire de connexion
-								$vue = "ConnexionCRM";  						
-								$this->showView($vue, $data);
-								break;
-			
+					    // Retourner au formulaire de connexion
+                        $vue = "ConnexionCRM";  						
+  
+                        $this->showView($vue, $data);
+                        break;
+    
 			}			
 			} else {
 				// Retourner au formulaire de connexion

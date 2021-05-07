@@ -36,10 +36,11 @@
 .imagesVoiture {
   flex: 3;
 }
-[data-component="VoitureDetail"] input[disabled] {
+[data-component="VoitureDetail"] input[disabled],
+[data-component="VoitureDetail"] input {
   opacity: 1;
   pointer-events: none;
-  background-color: white;
+
   border: 1px black solid;
   color: black;
   padding: 3px;
@@ -50,10 +51,10 @@
   -webkit-box-sizing: border-box;
 }
 
-[data-component="VoitureDetail"] select[disabled] {
+[data-component="VoitureDetail"] select[disabled],
+[data-component="VoitureDetail"] select {
   opacity: 1;
-  pointer-events: none;
-  background-color: white;
+
   -webkit-appearance: none;
   -moz-appearance: none;
   text-indent: 1px;
