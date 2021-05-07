@@ -1,11 +1,13 @@
 CREATE TABLE chassis (
 	idChassis TINYINT UNSIGNED AUTO_INCREMENT, 
-	chassis VARCHAR(100) NOT NULL,
+	chassisfr VARCHAR(100) NOT NULL,
+	chassisen VARCHAR(100),
 	PRIMARY KEY (idChassis)
 )ENGINE=InnoDB;
 CREATE TABLE typeCarburant (
 	idTypeCarburant TINYINT UNSIGNED AUTO_INCREMENT, 
-	typeCarburant VARCHAR(100) NOT NULL,
+	typeCarburantfr VARCHAR(100) NOT NULL,
+	typeCarburanten VARCHAR(100),
 	PRIMARY KEY (idTypeCarburant)
 )ENGINE=InnoDB;
 CREATE TABLE groupeMotopropulseur (
@@ -35,12 +37,14 @@ CREATE TABLE modele (
 )ENGINE=InnoDB;
 CREATE TABLE transmission (
 	idTransmission TINYINT UNSIGNED AUTO_INCREMENT, 
-	transmission VARCHAR(100) NOT NULL,
+	transmissionfr VARCHAR(100) NOT NULL,
+	transmissionen VARCHAR(100),
 	PRIMARY KEY (idTransmission)
 )ENGINE=InnoDB;	
 CREATE TABLE statut (
 	idStatut TINYINT UNSIGNED AUTO_INCREMENT, 
-	statut VARCHAR(100) NOT NULL,
+	statutfr VARCHAR(100) NOT NULL,
+	statuten VARCHAR(100),
 	PRIMARY KEY (idStatut)
 )ENGINE=InnoDB;
 CREATE TABLE voiture (
@@ -51,7 +55,8 @@ CREATE TABLE voiture (
 	dateArrivee DATE NOT NULL,
 	prixPaye MEDIUMINT NOT NULL, 
 	km MEDIUMINT NOT NULL, 
-	couleur VARCHAR(50) NOT NULL,
+	couleurfr VARCHAR(50) NOT NULL,
+	couleuren VARCHAR(50) NOT NULL,
 	vedette int(1) NOT NULL DEFAULT 0,
 	idGroupeMotopropulseur TINYINT UNSIGNED NOT NULL,
 	idTypeCarburant TINYINT UNSIGNED NOT NULL,
@@ -87,7 +92,8 @@ CREATE TABLE province (
 )ENGINE=InnoDB;
 CREATE TABLE typeUtilisateur (
 	idTypeUtilisateur TINYINT UNSIGNED AUTO_INCREMENT, 
-	typeUtilisateur VARCHAR(100) NOT NULL,
+	typeUtilisateurfr VARCHAR(100) NOT NULL,
+	typeUtilisateuren VARCHAR(100),
 	PRIMARY KEY (idTypeUtilisateur)
 )ENGINE=InnoDB;
 CREATE TABLE utilisateur (
@@ -120,12 +126,14 @@ CREATE TABLE connexion (
 )ENGINE=InnoDB;
 CREATE TABLE modePaiement (
 	idModePaiement TINYINT UNSIGNED AUTO_INCREMENT, 
-	modePaiement VARCHAR(100) NOT NULL,
+	modePaiementfr VARCHAR(100) NOT NULL,
+	modePaiementen VARCHAR(100),
 	PRIMARY KEY (idModePaiement)
 )ENGINE=InnoDB;
 CREATE TABLE expedition (
 	idExpedition TINYINT UNSIGNED AUTO_INCREMENT, 
-	expedition VARCHAR(100) NOT NULL,
+	expeditionfr VARCHAR(100) NOT NULL,
+	expeditionen VARCHAR(100),
 	PRIMARY KEY (idExpedition)
 )ENGINE=InnoDB;
 CREATE TABLE commande (

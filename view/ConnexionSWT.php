@@ -1,7 +1,16 @@
 <section data-component="Connexion" >
+    <?php 
+    if($_COOKIE['lang']){
+        $lang = $_COOKIE['lang'];
+    }else{
+        $lang ="fr";
+
+    }
+
+    ?>
     <h1><?=TXT__SWT_TRANSACTIONNEL?></h1>
     <div data-js-component="Form" >            
-        <form method="post" class="ligne centre">
+        <form method="post" class="ligne centre" action="index.php?Utilisateur&action=authentifier">
             <div class="ligne distribue">
               <div class="colonne">  
             
@@ -13,7 +22,7 @@
                 <div class="ligne distribue">
                     <label for="motPasse"><?=TXT__CRM_MP?> :</label>
                     <input type="password" id="motPasse" name="motPasse" required data-js-param="motPasse" value="">
-
+                    <input type="hidden" name="lang" value="<?=$lang?>"> 
                     <input type="hidden" name="action" value="authentifier">                    
                 </div>                
             </div>

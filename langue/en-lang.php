@@ -76,7 +76,7 @@ define('TXT__MODELE_MARQUE', 'Mark :');
 define('TXT__MODELE_MODELE', 'Model :');
 define('TXT__MODELE_MRETOUR', 'back to the list');
 /* vue PROFIL*/
-define('TXT__PROFIL_MODIFIER', 'back to the list');
+define('TXT__PROFIL_MODIFIER', 'EDIT');
 define('TXT__PROFIL_SUPP', 'Delete Profile');
 /* vue QUI SOMMES NOUS*/
 define('TXT__QUI_H1', 'About Us');
