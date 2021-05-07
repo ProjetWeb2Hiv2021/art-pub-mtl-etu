@@ -25,7 +25,7 @@
         <tr>
             <td><a href="index.php?Magasin&action=afficheVoiture&id=19">Detail Voiture</a></td>
               <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Administrateur"||isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Employe") echo
-            '<td>Gérer Voiture</td>';
+            '<td><a href="index.php?Voiture&action=connexion">Gérer Voiture</a></td>';
             ?>
             
             

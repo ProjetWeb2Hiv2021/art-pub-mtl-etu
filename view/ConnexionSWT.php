@@ -1,3 +1,4 @@
+<main data-component="Connexion-SWT">
 <section data-component="Connexion" >
     <h1>Site Web Transactionnel</h1>
     <div data-js-component="Form" >            
@@ -44,6 +45,7 @@
         </div>    
     </div>
 </section>
+</main>
 
 
     
