@@ -3,6 +3,13 @@
 
 	<!-- langue -->
 	<?php
+		if(isset($_COOKIE['lang'])) {
+		
+			//Si oui, on créer une variable $lang avec pour valeur celle du cookie.
+			$lang = $_COOKIE['lang'];
+
+		}
+
 		if(isset($_GET['l'])) {
  
 			$lang = $_GET['l'];
@@ -14,7 +21,7 @@
 			//Puis on créé le cookie
 			setcookie("lang", $lang, time() + $expire);
 			//Puis on redirige vers l'accueil  
-		}else{
+		}else if(!isset($_GET['l']) && !isset($_COOKIE['lang'])){
 			$lang = "fr";
 		  
 			//même système que tout à l'heure :
@@ -25,6 +32,7 @@
 			setcookie("lang", $lang, time() + $expire);
 
 		}
+		
 
 		//On définit la durée du cookie (avant son expiration)
 		$expire = 365*24*3600;
@@ -83,9 +91,9 @@
 		<div class="menu_profil" data-js-menu-profil>
 		<?php if(isset($_SESSION["nomUtilisateur"])){
 			?>
-				<a href="index.php?Utilisateur&action=profil&nomUtilisateur=<?= $_SESSION["nomUtilisateur"] ?>">Profil</a>
-				<a href="index.php?Utilisateur&action=deconnexion">Déconnexion</a>
-				<a href="">Commandes</a>
+				<a href="index.php?Utilisateur&action=profil&nomUtilisateur=<?= $_SESSION["nomUtilisateur"] ?>"><?=TXT__HEADER_PROFIL?></a>
+				<a href="index.php?Utilisateur&action=deconnexion"><?=TXT__HEADER_DECO?></a>
+				<a href=""><?=TXT__HEADER_COM?></a>
 				<?php
 		}
 		?>

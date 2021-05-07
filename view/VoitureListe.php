@@ -48,7 +48,7 @@
         
     }else{
     ?>  
-        <p>pas de voitures pour le moment</p>
+        <p><?=TXT__VOITURE_LISTE_ERR?></p>
        
 
     <?php

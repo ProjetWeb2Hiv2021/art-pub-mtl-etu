@@ -1,8 +1,8 @@
 <section data-component="VoitureDetail">
     <div class="ligne aLaFin">
         
-        <a href="index.php?Utilisateur&action=connexion">Réserver</a>
-        <a href="index.php?Utilisateur&action=connexion">Acheter</a>
+        <a href="index.php?Utilisateur&action=connexion"><?=TXT__DETAIL_RESERVER?></a>
+        <a href="index.php?Utilisateur&action=connexion"><?=TXT__DETAIL_ACHETER?></a>
     
     </div>
     <div data-js-component="Form" class="ligne">
@@ -21,7 +21,7 @@
         </section>
         <section class="infoVoiture" >
             <div class="ligne distribue">
-                <label for="nom">Modele :</label>
+                <label for="nom"><?=TXT__DETAIL_MOD?></label>
 
                 <input type="text" id="modele" name="modele" required data-js-param="modele" value='<?php echo $data["voiture"]["modele"];?>'
 
@@ -32,7 +32,7 @@
                 ?>>
             </div>
             <div class="ligne distribue">
-                <label for="vin">VIN :</label>
+                <label for="vin"><?=TXT__DETAIL_VIN?></label>
 
                 <input type="text" id="vin" name="vin" required data-js-param="vin" value='<?php echo $data["voiture"]["vin"];?>'
 
@@ -42,7 +42,7 @@
                 }; ?>>
             </div>
             <div class="ligne distribue">
-                <label for="prixVente">Prix :</label>
+                <label for="prixVente"><?=TXT__DETAIL_PRIX?></label>
 
                 <input type="text" id="prixVente" name="prixVente" required data-js-param="prixVente" value='<?php echo $data["voiture"]["prixVente"];?>'
 
@@ -52,7 +52,7 @@
                 }; ?>>
             </div>
             <div class="ligne distribue">
-                <label for="annee">Année :</label>
+                <label for="annee"><?=TXT__DETAIL_ANN?></label>
                 <input type="text" id="annee" name="annee" required data-js-param="annee" value='<?php echo $data["voiture"]["annee"];?>'
 
                 <?php
@@ -73,7 +73,7 @@
             
             ?>
             <div class="ligne distribue">
-                <label for="km">Km :</label>
+                <label for="km"><?=TXT__DETAIL_KM?></label>
 
                 <input type="text" id="km" name="km" required data-js-param="km" value='<?php echo $data["voiture"]["km"];?>'
 
@@ -83,7 +83,7 @@
                 }; ?>>
             </div>
             <div class="ligne distribue">
-                <label for="couleur">Couleur :</label>
+                <label for="couleur"><?=TXT__DETAIL_COUL?></label>
 
                 <input type="text" id="couleur" name="couleur" required data-js-param="couleur" value="<?php echo $data["voiture"]["couleur"]?>";
 
@@ -92,7 +92,7 @@
                     echo "disabled";
                 }; ?>>
             </div>
-            <div class="ligne distribue"><label for="typeCarburant">Type Carburant :</label> 
+            <div class="ligne distribue"><label for="typeCarburant"><?=TXT__DETAIL_TYPE_CAR?></label> 
                 <select name="typeCarburant" id="typeCarburant" 
                     <?php 
                     if($data["systeme"]==="SWT"){
@@ -116,7 +116,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="ligne distribue"><label for="modele">Modele :</label> 
+            <div class="ligne distribue"><label for="modele"><?=TXT__DETAIL_MOD?></label> 
                 <select name="modele" id="modele"
                     <?php 
                     if($data["systeme"]==="SWT"){
@@ -139,7 +139,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="ligne distribue"><label for="chassis">Chassis :</label> 
+            <div class="ligne distribue"><label for="chassis"><?=TXT__DETAIL_CHASS?></label> 
                 <select name="chassis" id="chassis"
                     <?php 
                     if($data["systeme"]==="SWT"){
@@ -162,7 +162,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="ligne distribue"><label for="transmission">Transmission :</label> 
+            <div class="ligne distribue"><label for="transmission"><?=TXT__DETAIL_TRANS?></label> 
                 <select name="transmission" id="transmission"
                     <?php 
                     if($data["systeme"]==="SWT"){
@@ -185,7 +185,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="ligne distribue"><label for="groupeMotopropulseur">Groupe Motopropulseur :</label> 
+            <div class="ligne distribue"><label for="groupeMotopropulseur"><?=TXT__DETAIL_GROUP?></label> 
                 <select name="groupeMotopropulseur" id="groupeMotopropulseur"
                     <?php 
                     if($data["systeme"]==="SWT"){
@@ -209,7 +209,7 @@
                     ?>    
                 </select>
             </div>
-            <div class="ligne distribue"><label for="statut">Statut :</label> 
+            <div class="ligne distribue"><label for="statut"><?=TXT__DETAIL_STAT?></label> 
                 <select name="statut" id="statut"
                     <?php 
                     if($data["systeme"]==="SWT"){
@@ -237,7 +237,7 @@
     </div>
 
     <div>
-        <a href="index.php">Retour à la liste</a>
+        <a href="index.php"><?=TXT__DETAIL_RETOUR?></a>
     </div>
 </section>
 
