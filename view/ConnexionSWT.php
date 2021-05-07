@@ -1,3 +1,4 @@
+<main data-component="Connexion-SWT">
 <section data-component="Connexion" >
     <?php 
     if($_COOKIE['lang']){
@@ -46,6 +47,7 @@
         </div>    
     </div>
 </section>
+</main>
 
 
     
