@@ -87,7 +87,12 @@
 		</span>
 		
     </div>
-	
+	<div>
+		<label id="conteurVoiture"> </label>
+		<a href="index.php?Magasin&action=Confirmation">
+					<img src="./assets/images/carShop.svg"  class="image__car">
+		</a>
+	</div>				
 		<div class="menu_profil" data-js-menu-profil>
 		<?php if(isset($_SESSION["nomUtilisateur"])){
 			?>

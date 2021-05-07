@@ -150,6 +150,8 @@ define('TXT__DETAIL_TRANS', 'Transmission :');
 define('TXT__DETAIL_GROUP', 'Groupe Motopropulseur :');
 define('TXT__DETAIL_STAT', 'Statut :');
 define('TXT__DETAIL_RETOUR', 'Retour à la liste');
+define('TXT__DETAIL_AJOUT', 'Ajouter panier');
+
 /* vue  VOITURE LISTE*/
 define('TXT__VOITURE_LISTE_ERR', 'pas de voitures pour le moment');
 

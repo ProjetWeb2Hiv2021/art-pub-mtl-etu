@@ -1,16 +1,27 @@
 <section data-component="VoitureDetail">
     <div class="ligne aLaFin">
         
-        <a href="index.php?Utilisateur&action=connexion"><?=TXT__DETAIL_RESERVER?></a>
-        <a href="index.php?Utilisateur&action=connexion"><?=TXT__DETAIL_ACHETER?></a>
-    
+
+
+        <?php if(!isset($_SESSION["nomUtilisateur"])) echo '<a href="index.php?Utilisateur&action=connexion">Ajouter panier</a>';
+           else 
+           {
+            // Vérifier si la voiture est en stock
+            if($data["voiture"]["idStatut"] == 3){
+                echo '<button  data-js-btn >'.TXT__DETAIL_AJOUT.'</button>';
+            }
+            else
+                 echo '<button  data-js-btn disabled>'.TXT__DETAIL_AJOUT.'</button>';
+
+           }
+            ?>	
+
     </div>
     <div data-js-component="Form" class="ligne">
         <section class="imagesVoiture ligne">
             <?php
             $listeImage = $data["listeImage"];
-            //afficher les images
-            //var_dump($listeImage);
+
             foreach ($listeImage as list($idImage, $cheminFichier, $idVoiture, $ordre)) {
                 echo "<div>";
                 echo "<p>Image : {$ordre}</p>";
@@ -209,8 +220,9 @@
                     ?>    
                 </select>
             </div>
-            <div class="ligne distribue"><label for="statut"><?=TXT__DETAIL_STAT?></label> 
-                <select name="statut" id="statut"
+
+            <div class="ligne distribue"><label for="statut"><?=TXT__DETAIL_STAT?> :</label> 
+                <select name="statut" id="statut" data-js-param="statut"
                     <?php 
                     if($data["systeme"]==="SWT"){
                         echo "disabled";

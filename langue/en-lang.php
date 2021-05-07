@@ -148,6 +148,7 @@ define('TXT__DETAIL_TRANS', 'Transmission :');
 define('TXT__DETAIL_GROUP', 'Powertrain :');
 define('TXT__DETAIL_STAT', 'Status :');
 define('TXT__DETAIL_RETOUR', 'back to the list');
+define('TXT__DETAIL_AJOUT', 'Add basket');
 /* vue  VOITURE LISTE*/
 define('TXT__VOITURE_LISTE_ERR', 'no cars at the moment');
 

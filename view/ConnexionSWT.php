@@ -6,12 +6,14 @@
               <div class="colonne">  
             
                 <div class="ligne distribue">
+
                     <label for="nomUtilisateur"><?=TXT__SWT_UTILISATEUR?>:</label>
                     <input type="text" id="nomUtilisateur" name="nomUtilisateur" required data-js-param="nomUtilisateur" value="">
                 </div>
                 <div class="ligne distribue">
                     <label for="motPasse"><?=TXT__CRM_MP?> :</label>
                     <input type="password" id="motPasse" name="motPasse" required data-js-param="motPasse" value="">
+
                     <input type="hidden" name="action" value="authentifier">                    
                 </div>                
             </div>
