@@ -2,6 +2,7 @@
 	
 	<!-- plusieurs criteres -->
 	<?php
+	 $lang =$_COOKIE['lang']; 
 		if($data["utilisateur"]){
 			foreach ($data["utilisateur"] as $utilisateur) {
 	?>
@@ -86,7 +87,11 @@
 								echo "selected";
 							}
 							?>	
-							><?= $typeUtilisateur["typeUtilisateur"] ?></option>
+							><?php if($lang == "en" && $typeUtilisateur["typeUtilisateuren"]){
+								$typeUtilisateur["typeUtilisateuren"];
+							}else{
+								$typeUtilisateur["typeUtilisateurfr"];
+							} ?></option>
 						<?php
 							}
 						}

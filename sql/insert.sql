@@ -1,11 +1,11 @@
-INSERT INTO chassis(chassis) VALUES 
-("Voiture avec hayon"), ("Coupé"), ("Décapotable"), ("Fourgonnette");
-INSERT INTO typeCarburant(typeCarburant) VALUES 
-("Diesel"), ("Essence");
+INSERT INTO chassis(chassisfr, chassisen) VALUES 
+("Voiture avec hayon", "Car with hatchback"), ("Coupé", "Chopped off"), ("Décapotable", "Convertible"), ("Fourgonnette", "Minivan");
+INSERT INTO typeCarburant(typeCarburantfr, typeCarburanten) VALUES 
+("Diesel", "Diesel"), ("Essence", "Essence");
 INSERT INTO groupeMotopropulseur(groupeMotopropulseur) VALUES 
 ("4x4"), ("4x2");
-INSERT INTO transmission(transmission) VALUES 
-("Manuelle"), ("Automatique");
+INSERT INTO transmission(transmissionfr, transmissionen) VALUES 
+("Manuelle", "Manual"), ("Automatique", "Automatic");
 INSERT INTO fabricant(fabricant) VALUES 
 ("Fiat Chrysler Canada Inc."), 
 ("Ford of Canada Ltd."), 
@@ -52,51 +52,51 @@ INSERT INTO ville(ville) VALUES
 ("Québec");
 INSERT INTO province(province) VALUES 
 ("Alberta"), ("Colombie-Britannique"), ("Île du Prince-Édouard"), ("Manitoba"), ("Nouveau-Brunswick"), ("Nouvelle-Écosse"), ("Ontario"), ("Québec"), ("Saskatchewan"), ("Terre-Neuve"), ("Nunavut"), ("Territoires du Nord-Ouest"), ("Yukon");
-INSERT INTO typeUtilisateur(typeUtilisateur) VALUES ("Client"),("Employé"), ("Administrateur");
+INSERT INTO typeUtilisateur(typeUtilisateurfr, typeUtilisateuren) VALUES ("Client", "Customer"),("Employé", "Employee"), ("Administrateur", "Administrator");
 INSERT INTO utilisateur(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone, telephonePortable, idTypeUtilisateur, idVille, idProvince) 
 VALUES ("a_jolie", "$2y$10$c6VsscKww0JHToKe4PkTsO541JWfCXEDrjsPM.TvVGuymVZKPHwmC", "Angelina", "Jolie", "a_jolie@b.com", "1975-06-04", 4545, "Beverly Hills", "90210", "5554443333", "5554443331", 1, 17, 8), 
 ("s_williams", "$2y$10$c6VsscKww0JHToKe4PkTsO541JWfCXEDrjsPM.TvVGuymVZKPHwmC", "Serena", "Williams", "s_williams@b.com", "1981-09-26", 4545, "Beverly Hills", "90210", "5554443333", "5554443331", 1, 17, 8), 
 ("k_jenner", "$2y$10$XrhsEZqYnnKETkQGQ2.4n.O5EBEVZ7J98Wczi9FLLILF6fVMNJSNu", "Kylie", "Jenner", "k_jenner@b.com", "1997-08-10", 4545, "Beverly Hills", "90210", "5554443333", "5554443331", 3, 17, 8),
 ("a_obomsawin", "$2y$10$c6VsscKww0JHToKe4PkTsO541JWfCXEDrjsPM.TvVGuymVZKPHwmC", "Alanis", "Obomsawin", "a_obomsawin@c.com", "1932-08-31", 4545, "Papineau", "H2H1V4", "6666667777", "6666667778", 3, 17, 8);
 INSERT INTO connexion(adresseIP, idUtilisateur, dateConnexion) VALUES ("192.168.0.1", 1, "2021-04-18"),("192.168.0.2", 2, "2021-04-18"), ("192.168.0.3", 3, "2021-04-18");
-INSERT INTO modePaiement(modePaiement) VALUES ("Espèces"),("Carte crédit"), ("Carte débit"), ("Virement bancaire"), ("Passerelle de paiement");
-INSERT INTO expedition(expedition) VALUES ("Livraison locale"),("Ramassage");
-INSERT INTO statut(statut) VALUES ("Réservé"),("Facturé"),("En Stock");
+INSERT INTO modePaiement(modePaiementfr, modePaiementen) VALUES ("Espèces", "Cash"),("Carte crédit", "Credit card"), ("Carte débit", "Debit card"), ("Virement bancaire", "Bank transfer"), ("Passerelle de paiement", "Payment gateway");
+INSERT INTO expedition(expeditionfr, expeditionen) VALUES ("Livraison locale", "Local delivery"),("Ramassage", "Pickup");
+INSERT INTO statut(statutfr, statuten) VALUES ("Réservé", "Reserve"),("Facturé", "Bill"),("En Stock", "In stock");
 INSERT INTO commande(idUtilisateur, idModePaiement, idExpedition, idStatut, dateCommande) VALUES (1, 2, 1, 1, "2021-04-20"), (2, 3, 2, 2, "2021-04-20"), (3, 4, 1, 1, "2021-04-22");
 INSERT INTO facture(idCommande) VALUES (2);
 INSERT INTO `voiture` 
-(`vin`, `prixVente`, `idStatut`,`annee`, `dateArrivee`, `prixPaye`, `km`, `vedette`,`couleur`, `idGroupeMotopropulseur`, `idTypeCarburant`, `idChassis`, `idModele`, `idTransmission`) VALUES
-('AIKMD763501', 23375, 3, 2017, '2019-03-12', 18700, 100000, 0, 'Rouge', 2, 1, 3, 1, 2),
-('AIKMD763502', 3250, 3, 2004, '2020-03-12', 2600, 261670, 0, 'Argent', 2, 2, 1, 11, 1),
-('AIKMD763503', 3687.5, 3, 2008, '2019-08-10', 2950, 239884, 0, 'Gris', 2, 1, 1, 23, 1),
-('AIKMD763504', 15000, 3, 2018, '2019-11-10', 12000, 15000, 0, 'Blanc', 1, 2, 1, 73, 1),
-('AIKMD763505', 4375, 3, 2006, '2019-05-01', 3500, 154000, 0, 'Bleu', 2, 2, 1, 116, 1),
-('AIKMD763506', 15780, 3, 2017, '2019-07-01', 14000, 15922, 0,'Bleu', 2, 2, 1, 268, 1),
-('AIKMD763507', 13125, 3, 2019, '2020-06-03', 10500, 27121, 0, 'Noir', 1, 2, 4, 251, 1),
-('AIKMD763508', 12250, 3, 2017, '2020-11-20', 9800, 75405, 0, 'Gris', 2, 2, 4, 285, 1),
-('AIKMD763509', 22500, 3, 2019, '2018-08-26', 18000, 114944, 0, 'Ultra noir', 1, 2, 1, 327, 2),
-('AIKMD763510', 13687.5, 3, 2013, '2017-01-25', 10950, 98420, 0, 'Rouge', 1, 1, 1, 333, 1),
-('AIKMD763511', 21250, 3, 2017, '2019-12-23', 17000, 70500, 1, 'Blanc', 1, 1, 4, 356, 1),
-('AIKMD763512', 60000, 3, 2017, '2020-04-15', 48000, 14550, 1, 'Brun', 1, 2, 4, 407, 1),
-('AIKMD763513', 6243.75, 3, 2011, '2020-11-14', 4995, 201223, 1, 'Gris', 1, 1, 4, 427, 1),
-('AIKMD763514', 12250, 3, 2004, '2018-07-24', 9800, 220000, 1, 'Noir', 2, 1, 3, 444, 1),
-('AIKMD763515', 16082.5, 3, 2015, '2019-03-12', 12866, 105978, 1, 'Rouge', 1, 1, 1, 471, 1),
-('AIKMD763516', 26187.5, 3, 2017, '2019-04-28', 20950, 45000, 1, 'Gris', 1, 1, 1, 479, 1),
-('AIKMD763517', 52207.5, 3, 2018, '2019-12-23', 41766, 36574, 1, 'Gris', 1, 1, 4, 489, 1),
-('AIKMD763518', 8743.75, 3, 2009, '2019-03-12', 6995, 289584, 1, 'Gris', 1, 1, 4, 494, 1),
-('AIKMD763519', 12500, 3,2010, '2021-04-20', 10000, 3000,1,  'Gris', 2, 2, 1, 495, 2),
-('AIKMD763520', 18875, 3, 2018, '2010-05-15', 15100, 80000,0,  'Blanc', 2, 2, 1, 2, 2),
-('AIKMD763521', 40000, 3, 2021, '2020-02-28', 32000, 65523,0,  'Blanc', 2, 1, 1, 9, 2),
-('AIKMD763522', 12437.5, 3, 2018, '2019-05-16', 9950, 239884,0,  'Rouge', 2, 1, 1, 12, 2),
-('AIKMD763523', 93750, 3, 2020, '2021-01-10', 75000, 15000, 0, 'Blanc', 2, 1, 1, 9, 2),
-('AIKMD763524', 48550, 3, 2020, '2021-04-16', 38840, 10125, 0, 'Gris', 2, 2, 3, 10, 2),
-('AIKMD763525', 26872.5 ,3, 2017, '2020-11-20', 21498, 119513,0,  'Bleu', 2, 2, 1, 479, 2),
-('AIKMD763526', 14372.5, 3,2016, '2018-08-26', 11498, 52788, 0, 'Rouge', 2, 2, 1, 113, 2),
-('AIKMD763527', 43550, 3, 2020, '2021-01-20', 34840, 12420, 0, 'Blanc', 2, 2, 1, 33, 2),
-('AIKMD763528', 17497.5, 3,2016, '2019-12-23', 13998, 83000, 0, 'Noir', 2, 2, 1, 285, 2),
-('AIKMD763529', 11622.5, 3, 2015, '2020-04-15', 9298, 115825, 0, 'Blanc', 2, 2, 1, 258, 2),
-('AIKMD763530', 14997.5, 3,2014, '2018-11-14', 11998, 112899,0,  'Noir', 2, 1, 1, 224, 2),
-('AIKMD763531', 25872.5, 3,2017, '2020-07-27', 20698, 75164,0,  'Rouge', 2, 2, 1, 156, 2);
+(`vin`, `prixVente`, `idStatut`,`annee`, `dateArrivee`, `prixPaye`, `km`, `vedette`,`couleurfr`,`couleuren`, `idGroupeMotopropulseur`, `idTypeCarburant`, `idChassis`, `idModele`, `idTransmission`) VALUES
+('AIKMD763501', 23375, 3, 2017, '2019-03-12', 18700, 100000, 0, 'Rouge', 'Red', 2, 1, 3, 1, 2),
+('AIKMD763502', 3250, 3, 2004, '2020-03-12', 2600, 261670, 0, 'Argent', 'Silver', 2, 2, 1, 11, 1),
+('AIKMD763503', 3687.5, 3, 2008, '2019-08-10', 2950, 239884, 0, 'Gris', 'Grey', 2, 1, 1, 23, 1),
+('AIKMD763504', 15000, 3, 2018, '2019-11-10', 12000, 15000, 0, 'Blanc', 'White', 1, 2, 1, 73, 1),
+('AIKMD763505', 4375, 3, 2006, '2019-05-01', 3500, 154000, 0, 'Bleu', 'Blue', 2, 2, 1, 116, 1),
+('AIKMD763506', 15780, 3, 2017, '2019-07-01', 14000, 15922, 0,'Bleu', 'Blue', 2, 2, 1, 268, 1),
+('AIKMD763507', 13125, 3, 2019, '2020-06-03', 10500, 27121, 0, 'Noir', 'Black', 1, 2, 4, 251, 1),
+('AIKMD763508', 12250, 3, 2017, '2020-11-20', 9800, 75405, 0, 'Gris', 'Grey', 2, 2, 4, 285, 1),
+('AIKMD763509', 22500, 3, 2019, '2018-08-26', 18000, 114944, 0, 'Ultra noir', 'Ultra black', 1, 2, 1, 327, 2),
+('AIKMD763510', 13687.5, 3, 2013, '2017-01-25', 10950, 98420, 0, 'Rouge', 'Red', 1, 1, 1, 333, 1),
+('AIKMD763511', 21250, 3, 2017, '2019-12-23', 17000, 70500, 1, 'Blanc', 'White', 1, 1, 4, 356, 1),
+('AIKMD763512', 60000, 3, 2017, '2020-04-15', 48000, 14550, 1, 'Brun', 'Brown', 1, 2, 4, 407, 1),
+('AIKMD763513', 6243.75, 3, 2011, '2020-11-14', 4995, 201223, 1, 'Gris', 'Grey', 1, 1, 4, 427, 1),
+('AIKMD763514', 12250, 3, 2004, '2018-07-24', 9800, 220000, 1, 'Noir', 'Black', 2, 1, 3, 444, 1),
+('AIKMD763515', 16082.5, 3, 2015, '2019-03-12', 12866, 105978, 1, 'Rouge', 'Red', 1, 1, 1, 471, 1),
+('AIKMD763516', 26187.5, 3, 2017, '2019-04-28', 20950, 45000, 1, 'Gris', 'Grey', 1, 1, 1, 479, 1),
+('AIKMD763517', 52207.5, 3, 2018, '2019-12-23', 41766, 36574, 1, 'Gris', 'Grey', 1, 1, 4, 489, 1),
+('AIKMD763518', 8743.75, 3, 2009, '2019-03-12', 6995, 289584, 1, 'Gris', 'Grey', 1, 1, 4, 494, 1),
+('AIKMD763519', 12500, 3,2010, '2021-04-20', 10000, 3000,1,  'Gris', 'Grey', 2, 2, 1, 495, 2),
+('AIKMD763520', 18875, 3, 2018, '2010-05-15', 15100, 80000,0,  'Blanc', 'White', 2, 2, 1, 2, 2),
+('AIKMD763521', 40000, 3, 2021, '2020-02-28', 32000, 65523,0,  'Blanc', 'White', 2, 1, 1, 9, 2),
+('AIKMD763522', 12437.5, 3, 2018, '2019-05-16', 9950, 239884,0,  'Rouge', 'Red', 2, 1, 1, 12, 2),
+('AIKMD763523', 93750, 3, 2020, '2021-01-10', 75000, 15000, 0, 'Blanc', 'Red', 2, 1, 1, 9, 2),
+('AIKMD763524', 48550, 3, 2020, '2021-04-16', 38840, 10125, 0, 'Gris', 'Red', 2, 2, 3, 10, 2),
+('AIKMD763525', 26872.5 ,3, 2017, '2020-11-20', 21498, 119513,0,  'Bleu', 'Blue', 2, 2, 1, 479, 2),
+('AIKMD763526', 14372.5, 3,2016, '2018-08-26', 11498, 52788, 0, 'Rouge', 'Red', 2, 2, 1, 113, 2),
+('AIKMD763527', 43550, 3, 2020, '2021-01-20', 34840, 12420, 0, 'Blanc', 'White', 2, 2, 1, 33, 2),
+('AIKMD763528', 17497.5, 3,2016, '2019-12-23', 13998, 83000, 0, 'Noir', 'Black', 2, 2, 1, 285, 2),
+('AIKMD763529', 11622.5, 3, 2015, '2020-04-15', 9298, 115825, 0, 'Blanc', 'White', 2, 2, 1, 258, 2),
+('AIKMD763530', 14997.5, 3,2014, '2018-11-14', 11998, 112899,0,  'Noir', 'Black', 2, 1, 1, 224, 2),
+('AIKMD763531', 25872.5, 3,2017, '2020-07-27', 20698, 75164,0,  'Rouge', 'Red', 2, 2, 1, 156, 2);
 
 
 INSERT INTO `listeImage` (`idImage`, `cheminFichier`, `idVoiture`, `ordre`) VALUES

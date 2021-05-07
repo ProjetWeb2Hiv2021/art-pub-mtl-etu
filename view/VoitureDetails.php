@@ -1,5 +1,15 @@
 <section data-component="VoitureDetail">
-    <div class="ligne aLaFin">       
+
+    <div class="ligne aLaFin">
+    <?php  
+        if($_COOKIE['lang']){
+            $lang = $_COOKIE['lang'];
+        }else{
+            $lang ="fr";
+
+        } 
+    ?>    
+
 
 
         <?php 
@@ -122,7 +132,17 @@
             <div class="ligne distribue">
                 <label for="couleur"><?=TXT__DETAIL_COUL?></label>
 
-                <input type="text" id="couleur" name="couleur" required data-js-param="couleur" value="<?php if($data["systeme"]="SWT" && isset($data["voiture"])) echo $data["voiture"]["couleur"]?>";
+
+                <input type="text" id="couleur" name="couleur" required data-js-param="couleur" value="
+                <?php 
+                if($data["systeme"]="SWT" && isset($data["voiture"])){
+                    if($data["voiture"]["couleur$lang"]){
+                        echo $data["voiture"]["couleur$lang"];
+                    }else{
+                        echo $data["voiture"]["couleurfr"];
+                    }
+                }                   
+                ?>";
 
                 <?php
                 
@@ -140,13 +160,14 @@
                     ?>
                     >
                     <?php
+
                           
                          $typeCarburant = $data["typeCarburant"];
                         //afficher dynamiquement une option pour chaque typeCarburant dans la base de données
                         if($leSysteme==="SGC"){
                             echo "<option value>Type carburant</option>";
                         }
-                        foreach ($typeCarburant as list($idTypeCarburant, $typeCarburant)) {
+                        foreach ($typeCarburant as list($idTypeCarburant, $typeCarburantfr, $typeCarburanten)) {
                             
                             echo "<option value='{$idTypeCarburant}'";
                             if(isset($data["voiture"])&&$idTypeCarburant==$data["voiture"]["idTypeCarburant"]){
@@ -155,7 +176,11 @@
                             
                             
                             echo ">";
-                            echo "{$typeCarburant}";
+                            if($lang == "en" && $typeCarburanten){
+                                echo "{$typeCarburanten}";
+                            }else{
+                                echo "{$typeCarburantfr}";
+                            }
                             echo "</option>";
                         }  
 
@@ -200,13 +225,18 @@
                     <?php
                         $chassis = $data["chassis"];
                         //afficher dynamiquement une option pour chaque chassis dans la base de données
-                        foreach ($chassis as list($idChassis, $chassis)) {
+                        foreach ($chassis as list($idChassis, $chassisfr, $chassisen)) {
                             echo "<option value='{$idChassis}'";
                             if(isset($data["voiture"])&&$idChassis==$data["voiture"]["idChassis"]){
                                 echo " selected";
                             }
                             echo ">";
-                            echo "{$chassis}";
+                            if($lang == "en" && $chassisen){
+                                echo "{$chassisen}";
+                            }else{
+                                echo "{$chassisfr}";
+                            }
+                            
                             echo "</option>";
                         }
                     ?>    
@@ -223,13 +253,17 @@
                     <?php
                         $transmission = $data["transmission"];
                         //afficher dynamiquement une option pour chaque transmission dans la base de données
-                        foreach ($transmission as list($idTransmission, $transmission)) {
+                        foreach ($transmission as list($idTransmission, $transmissionfr, $transmissionen)) {
                             echo "<option value='{$idChassis}'";
                             if(isset($data["voiture"])&&$idTransmission==$data["voiture"]["idTransmission"]){
                                 echo " selected";
                             }
                             echo ">";
-                            echo "{$transmission}";
+                            if($lang == "en" && $transmissionen){
+                                echo "{$transmissionen}";
+                            }else{
+                                echo "{$transmissionfr}";
+                            }
                             echo "</option>";
                         }
                     ?>    
@@ -277,13 +311,17 @@
                             $statut = $data["statut"];
                             
                             //afficher dynamiquement une option pour chaque statut dans la base de données
-                            foreach ($statut as list($idStatut, $statut)) {
+                            foreach ($statut as list($idStatut, $statutfr, $statuten)) {
                                 echo "<option value='{$idStatut}'";
-                                if(isset($data["voiture"])&&$idStatut==$data["voiture"]["idStatut"]){
+                                if($idStatut==$data["voiture"]["idStatut"]){
                                     echo " selected";
                                 }
                                 echo ">";
-                                echo "{$statut}";
+                                if($lang == "en" && $statuten){
+                                    echo "{$statuten}";
+                                }else{
+                                    echo "{$statutfr}";
+                                }
                                 echo "</option>";
                             }
                             
@@ -291,6 +329,7 @@
                 echo "</div>";
             }
             ?>
+
         </section>        
     </div>
 

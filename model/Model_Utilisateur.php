@@ -92,7 +92,7 @@
 		   }
 	   }
 	   public function obtenirUtilisateurNomUtilisateur($nomUtilisateur) {
-
+		$lang =$_COOKIE['lang'];
 			try {
 				if(isset($nomUtilisateur)){
 					$stmt = $this->connexion->prepare("SELECT * from utilisateur WHERE nomUtilisateur=:nomUtilisateur");

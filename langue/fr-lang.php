@@ -78,7 +78,7 @@ define('TXT__MODELE_MARQUE', 'Marque :');
 define('TXT__MODELE_MODELE', 'Modele :');
 define('TXT__MODELE_MRETOUR', 'Retour à la liste');
 /* vue PROFIL*/
-define('TXT__PROFIL_MODIFIER', 'Retour à la liste');
+define('TXT__PROFIL_MODIFIER', 'Modifier');
 define('TXT__PROFIL_SUPP', 'Supprimer Profil');
 /* vue QUI SOMMES NOUS*/
 define('TXT__QUI_H1', 'À propos de nous');

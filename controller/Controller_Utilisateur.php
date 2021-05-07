@@ -25,7 +25,8 @@
 					case "authentifier":
                         //var_dump($_REQUEST);
 						// Vérifier qu'on a bien un utilisateur et un mot de passe
-						if(isset($_REQUEST["nomUtilisateur"], $_REQUEST["motPasse"]))
+						$lang =$_COOKIE['lang'];
+						if(isset($_REQUEST["nomUtilisateur"], $_REQUEST["motPasse"], $_REQUEST["lang"]))
 						{
 							// obtenir le modele
 							$modeleUtilisateur = new Model_Utilisateur();
@@ -38,7 +39,7 @@
 								// Définir le champ usager de la variable session comme l'usager courant
 								$_SESSION["nomUtilisateur"] = $_REQUEST["nomUtilisateur"];
 								//var_dump($modeleTypeUtilisateur->obtenirTypeUtilisateur($_REQUEST["nomUtilisateur"]));
-								$_SESSION["typeUtilisateur"] = $modeleTypeUtilisateur->obtenirTypeUtilisateur($_REQUEST["nomUtilisateur"])["typeUtilisateur"];
+								$_SESSION["typeUtilisateur"] = $modeleTypeUtilisateur->obtenirTypeUtilisateur($_REQUEST["nomUtilisateur"]);
 								$vue = "Utilisateur";
 								// Afficher la vue compléter les champs
 								$this->showView($vue, $data);

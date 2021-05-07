@@ -65,10 +65,22 @@
 	<!--<img src="./assets/images/logo.svg"/>-->
 	<div class="connexion ligne centreV">
 
-		<?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Administrateur") echo "<span>adm&nbsp;</span>"; ?>
-		<?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Client") echo "<span>client&nbsp;</span>"; ?>
-		<?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]=="Employe") echo "<span>emp&nbsp;</span>";  ?>
+		<?php 
+		/* var_dump($_SESSION["typeUtilisateur"]); */
+			if(isset($_SESSION["typeUtilisateur"])){
+				if ($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur" || $_SESSION["typeUtilisateur"]["typeUtilisateuren"]=="Administrator") {
+					echo "<span>adm&nbsp;</span>";
+				}else if ($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Client" || $_SESSION["typeUtilisateur"]["typeUtilisateuren"]=="Customer") {
+					echo "<span>client&nbsp;</span>";
+				}else if ($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employe" || $_SESSION["typeUtilisateur"]["typeUtilisateuren"]=="Employee") {
+						echo "<span>emp&nbsp;</span>";
+				}
+			}
+			
+		?>
+
 		
+		 
       	
       	<span data-js-icone-profil>
 		  
