@@ -63,7 +63,31 @@
 					case "Confirmation":
 						$vue = "Confirmation";
 						$this->showView($vue);
-						break;						
+						break;
+						case "accueil":	
+							$vueMenuPrincipal = "MenuPrincipal";
+							$this->showView($vueMenuPrincipal);
+							$vueFiltreUn = "FiltrerUnCritere";
+							$this->showView($vueFiltreUn);
+							$vueFiltrePlusieurs = "FiltrerPlusieursCriteres";
+							$modelModele = new Model_Modele();
+							$data["modele"] = $modelModele ->obtenirListeModele();
+							$modelMarque = new Model_Marque();
+							$data["marque"] = $modelMarque ->obtenirListeMarque();
+							$this->showView($vueFiltrePlusieurs, $data);
+							$vuevedette = "VoitureVedette";
+							$modelVoitureVedette = new Model_Voiture();
+							$data["voitureVedette"] = $modelVoitureVedette ->obtenirListeVoitureVedette();
+							$this->showView($vuevedette, $data);
+							$vue = "VoitureListe";
+							$modelVoiture = new Model_Voiture();
+							$data["voiture"] = $modelVoiture ->getListeVoiture();		
+							$this->showView($vue, $data);
+							$data["nombrevoitures"] = $modelVoiture ->obtenirNombreVoitures();	
+							$vuePlus = "VoirPlus";
+							$this->showView($vuePlus, $data);
+							break;	
+									
 					
 				}			
 			} else {
