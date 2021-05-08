@@ -21,8 +21,6 @@
 
 	<script type="text/javascript" src="./scripts/Profil.js"></script>
 
-	<script type="text/javascript" src="./scripts/MenuPrincipal.js"></script>
-
 	<script type="text/javascript" src="./scripts/Header.js"></script>
 	<script type="text/javascript" src="./scripts/VoitureDetail.js"></script>
 	<script type="text/javascript" src="./scripts/ConfirmationList.js"></script>														 
