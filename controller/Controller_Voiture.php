@@ -20,12 +20,8 @@
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
                     case "connexion":
-                        if(isset($_SESSION["nomUtilisateur"])&&isset($_SESSION["typeUtilisateur"])&&$_SESSION["typeUtilisateur"] ==="Administrateur"||$_SESSION["typeUtilisateur"] ==="Employe"){
+                        if(isset($_SESSION["nomUtilisateur"])&&isset($_SESSION["typeUtilisateur"])&&$_SESSION["typeUtilisateur"]["typeUtilisateurfr"] ==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"] ==="Employe"){
                             $vue="VoitureDetails";
-                            
-							
-
-				            
 							$data["systeme"]="SGC";
 							$modeleTypeCarburant = new Model_TypeCarburant();				
 							$data["typeCarburant"] = $modeleTypeCarburant->obtenirListeTypeCarburant();		
@@ -86,6 +82,23 @@
 
 						}
                         break;
+					case "insererVoiture":
+						var_dump("test");
+						if (isset($params["vin"]) && 
+						isset($params["prixVente"]) && 
+						isset($params["annee"]) && 
+						isset($params["dateArrivee"]) && 
+						isset($params["prixPaye"]) && 
+						isset($params["km"]) && 
+						isset($params["couleurfr"]) && 
+						isset($params["couleuren"]) && 						
+						isset($params["idGroupeMotopropulseur"]) && 
+						isset($params["idTypeCarburant"]) && 
+						isset($params["idChassis"]) && 
+						isset($params["idModele"]) && 
+						isset($params["idTransmission"]))
+
+						break;
 					default:
 					    // Retourner au formulaire de connexion
                         $vue = "ConnexionCRM";  						
