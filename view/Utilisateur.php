@@ -1,13 +1,23 @@
 <main class="UtilisateurSystemes">
+<?php
+    if($_COOKIE['lang']){
+        $lang = $_COOKIE['lang'];
+    }else{
+        $lang ="fr";
 
+    } 
+    ?>
  <h2><?=TXT__UTILISATEUR_ACC?></h2>
 <div class="table-wrapper">
     <table class="fl-table">
         <thead>
         <tr>
             <th>SWT</th>
-            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"||isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employe") echo
-            "<th>CRM</th>";
+            <?php 
+            var_dump($_SESSION);
+            if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"||
+             $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employe") echo
+            "<th>SGC</th>";
             ?>
             
         </tr>
@@ -15,7 +25,8 @@
         <tbody>
         <tr>
             <td><a href="index.php"><?=TXT__UTILISATEUR_MOD?></a></td>
-            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"||isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employe") echo
+            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"||
+            isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employe") echo
             '<td><a href="index.php?Modele&action=connexion">'.TXT__UTILISATEUR_MOD.'</a></td>';
             ?>
             

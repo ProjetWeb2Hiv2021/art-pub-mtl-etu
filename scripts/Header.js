@@ -6,7 +6,7 @@ class Header {
         this._elMenuProfil = this._el.querySelector('.menu_profil');
         this._elSelectLangue = this._el.querySelector('[data-js-langue]');
         this._elbtnForm = this._el.querySelector('[data-js-btn]');
-        console.log(this._elSelectLangue);
+        //console.log(this._elSelectLangue);
 
         this.init();
     }

@@ -1,15 +1,18 @@
 class VoitureDetail {
     constructor(el) {
         this._el = el;
+        this._systeme = this._el.dataset.jsSysteme;
         this._elSubmit = this._el.querySelector('[data-js-btn]');
         this.init();
     }
 
     init = (e) => {
-        console.log('Confirmation init test');
+        
 
         this._elSubmit.addEventListener('click', (e) => {
-            e.preventDefault(); console.log('Produit ajouter au panier');
+            e.preventDefault();
+            
+            console.log('Produit ajouter au panier');
             let modele = this._el.querySelector('[data-js-modele]').value;
             
 
