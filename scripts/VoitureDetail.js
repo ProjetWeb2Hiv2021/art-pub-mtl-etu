@@ -1,24 +1,29 @@
 class VoitureDetail {
     constructor(el) {
         this._el = el;
+        this._systeme = this._el.dataset.jsSysteme;
         this._elSubmit = this._el.querySelector('[data-js-btn]');
         this.init();
     }
 
     init = (e) => {
-        console.log('Confirmation init test');
+        
 
         this._elSubmit.addEventListener('click', (e) => {
-            e.preventDefault(); console.log('Produit ajouter au panier');
+            e.preventDefault();
+            
+            console.log('Produit ajouter au panier');
+            let modele = this._el.querySelector('[data-js-modele]').value;
+            
 
-            let modele = this._el.querySelector('[data-js-param="modele"]').value;
+            
             let vin = this._el.querySelector('[data-js-param="vin"]').value;
             let prix = this._el.querySelector('[data-js-param="prixVente"]').value;
             let annee = this._el.querySelector('[data-js-param="annee"]').value;
             let km = this._el.querySelector('[data-js-param="km"]').value;
-            let couleur = this._el.querySelector('[data-js-param="couleur"]').value;
+            let couleur = this._el.querySelector('[data-js-param="couleurfr"]').value;
             let liste = this._el.querySelector('[data-js-param="statut"]');
-            let vStatus = liste.options[liste.selectedIndex].value;
+            //let vStatus = liste.options[liste.selectedIndex].value;
 
             this.ajouterNouvelObjet(modele, vin,prix,annee,km,couleur);
 

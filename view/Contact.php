@@ -1,18 +1,18 @@
 <main data-component="Contact">
-    <h1>Contactez nous</h1>
+    <h1><?=TXT__CONTACT_CONTACTEZ_NOUS?></h1>
     <section>
-    <p>Par téléphone : 514-514-5555</p>
+    <p><?=TXT__CONTACT_PAR_TEL?></p>
     
-    <p>Par <a href=”mailto:vente@carsareus.com>courriel</a></p>
+    <p><?=TXT__CONTACT_PAR?> <a href=”mailto:vente@carsareus.com>courriel</a></p>
 
-    <p>Via <a href=""
+    <p><?=TXT__CONTACT_VIA?> <a href=""
                 ><img src="./assets/images/facebook.svg" alt="logo facebook"
               /></a></p>
 
-    <p>Adresse : <br>
-    2563 Saint Laurent Est<br>
-    Montréal QC<br>
-    H2M J4T<br>
+    <p><?=TXT__CONTACT_ADRESSE?> <br>
+    <?=TXT_ADRESSE?><br>
+    <?=TXT_ADRESS_VILLE?><br>
+    <?=TXT_ADRESS_CODE_POSTAL?><br>
     </p>
     
 </main>

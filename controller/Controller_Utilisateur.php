@@ -5,8 +5,7 @@
 		public function traite(array $params) {
 			// Initialiser la vue et la session
             $vue = "";
-            session_start();
-
+            session_start();			
 			$this->showView("Head");
 			$this->showView("Header");
 			
@@ -20,13 +19,20 @@
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
                     case "connexion":
-                        $vue = "ConnexionSWT";  						
-						$this->showView($vue);
+						if(isset($_SESSION["typeUtilisateur"])&&($_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]==="Administrateur"||$_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]==="Employe")){							
+							$vue = "Utilisateur";
+							$this->showView($vue);
+						}else{
+							$vue = "ConnexionSWT";  													
+							$this->showView($vue);
+						}
+                        
                         break;
 					case "authentifier":
                         //var_dump($_REQUEST);
 						// Vérifier qu'on a bien un utilisateur et un mot de passe
-						if(isset($_REQUEST["nomUtilisateur"], $_REQUEST["motPasse"]))
+						$lang =$_COOKIE['lang'];
+						if(isset($_REQUEST["nomUtilisateur"], $_REQUEST["motPasse"], $_REQUEST["lang"]))
 						{
 							// obtenir le modele
 							$modeleUtilisateur = new Model_Utilisateur();
@@ -34,12 +40,12 @@
 							$authentifie = $modeleUtilisateur->authentification($_REQUEST["nomUtilisateur"],$_REQUEST["motPasse"]);
 							// Si c'est le cas 
 							if($authentifie)
-							{
+							{	
 								$modeleTypeUtilisateur = new Model_TypeUtilisateur();
 								// Définir le champ usager de la variable session comme l'usager courant
 								$_SESSION["nomUtilisateur"] = $_REQUEST["nomUtilisateur"];
 								//var_dump($modeleTypeUtilisateur->obtenirTypeUtilisateur($_REQUEST["nomUtilisateur"]));
-								$_SESSION["typeUtilisateur"] = $modeleTypeUtilisateur->obtenirTypeUtilisateur($_REQUEST["nomUtilisateur"])["typeUtilisateur"];
+								$_SESSION["typeUtilisateur"][] = $modeleTypeUtilisateur->obtenirTypeUtilisateur($_REQUEST["nomUtilisateur"]);
 								$vue = "Utilisateur";
 								// Afficher la vue compléter les champs
 								$this->showView($vue, $data);
