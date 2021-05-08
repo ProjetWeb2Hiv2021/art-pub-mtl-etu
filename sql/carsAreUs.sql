@@ -63,7 +63,7 @@ CREATE TABLE voiture (
 	idChassis TINYINT UNSIGNED NOT NULL,
 	idModele SMALLINT UNSIGNED NOT NULL, 
 	idTransmission TINYINT UNSIGNED NOT NULL,
-	idStatut TINYINT UNSIGNED NOT NULL,
+	idStatut TINYINT UNSIGNED NOT NULL DEFAULT 3,
 	PRIMARY KEY (idVoiture),
 	FOREIGN KEY (idTypeCarburant) REFERENCES typeCarburant(idTypeCarburant),
 	FOREIGN KEY (idModele) REFERENCES modele(idModele),
