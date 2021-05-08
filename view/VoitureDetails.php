@@ -24,14 +24,7 @@
 
             }
             else {
-                echo '<button  data-js-btn ';
-                if($leSysteme==="SWT") 
-                    echo 'disabled>'.TXT__DETAIL_AJOUT;
-                else{
-                    echo '>'.TXT__DETAIL_ENREG;
-                }
-
-                echo '</button>';
+                echo '<button  data-js-btn disabled>'.TXT__DETAIL_AJOUT.'</button>';                
             }
         }   
     
@@ -76,7 +69,7 @@
             <div class="ligne distribue">
                 <label for="km"><?=TXT__DETAIL_KM?> :</label>
 
-                <input type="text" id="km" name="km" required data-js-param="km" value='<?php if($leSysteme==="SWT" && isset($data["voiture"])) echo $data["voiture"]["km"];?>' disabled class='sansPointeur'>
+                <input type="text" id="km" name="km" required data-js-param="km" value='<?php echo $data["voiture"]["km"];?>' disabled class='sansPointeur'>
             </div>
             <div class="ligne distribue">
                 <label for="couleurfr"><?=TXT__DETAIL_COULFR?> :</label>

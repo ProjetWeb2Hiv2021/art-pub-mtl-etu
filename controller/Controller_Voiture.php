@@ -20,8 +20,8 @@
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
                     case "connexion":
-                        if(isset($_SESSION["nomUtilisateur"])&&isset($_SESSION["typeUtilisateur"])&&$_SESSION["typeUtilisateur"]["typeUtilisateurfr"] ==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"] ==="Employe"){
-                            $vue="VoitureDetails";
+                        if(isset($_SESSION["nomUtilisateur"])&&isset($_SESSION["typeUtilisateur"])&&$_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"] ==="Administrateur"||$_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"] ==="Employe"){
+                            $vue="VoitureDetailsSGC";
 							$data["systeme"]="SGC";
 							$modeleTypeCarburant = new Model_TypeCarburant();				
 							$data["typeCarburant"] = $modeleTypeCarburant->obtenirListeTypeCarburant();		
@@ -35,7 +35,7 @@
 							$data["transmission"] = $modeleTransmission->obtenirListeTransmission();	
 							//var_dump("transmission", $data["transmission"]);
 							$modeleStatut = new Model_Statut();				
-							
+							$data["statut"] = $modeleStatut->obtenirListeStatut();
 							//var_dump("statut", $data["statut"]);
 							$modeleGpm = new Model_GroupeMotopropulseur();				
 							$data["groupeMotopropulseur"] = $modeleGpm->obtenirListeGpm();	

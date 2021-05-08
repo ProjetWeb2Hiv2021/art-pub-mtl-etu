@@ -151,6 +151,7 @@ define('TXT__DETAIL_TRANS', 'Transmission');
 define('TXT__DETAIL_GROUP', 'Groupe Motopropulseur');
 define('TXT__DETAIL_STAT', 'Statut');
 define('TXT__DETAIL_RETOUR', 'Retour à la liste');
+define('TXT__DETAIL_SYSTEME', 'Retour aux systèmes');
 define('TXT__DETAIL_AJOUT', 'Ajouter panier');
 define('TXT__DETAIL_ENREG', 'Enregistrer');
 
