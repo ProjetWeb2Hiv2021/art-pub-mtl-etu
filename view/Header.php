@@ -10,9 +10,9 @@
 
 		}
 
-		if(isset($_GET['l'])) {
+		if(isset($_GET['lang'])) {
  
-			$lang = $_GET['l'];
+			$lang = $_GET['lang'];
 		  
 			//même système que tout à l'heure :
 			//On définit la durée du cookie (avant son expiration)
@@ -21,7 +21,7 @@
 			//Puis on créé le cookie
 			setcookie("lang", $lang, time() + $expire);
 			//Puis on redirige vers l'accueil  
-		}else if(!isset($_GET['l']) && !isset($_COOKIE['lang'])){
+		}else if(!isset($_GET['lang']) && !isset($_COOKIE['lang'])){
 			$lang = "fr";
 		  
 			//même système que tout à l'heure :
@@ -50,17 +50,6 @@
 		}
 
 	?>
- 
-
-	<form id="formLangue" method="get" >
-		<select name="l" data-js-langue>
-			<option value="fr" selected="selected">Français</option>
-			<option value="en">English</option>
-		</select>                    
-		<button data-js-btn>Soumettre</button>
-	</form>
-
-
 	<h1>Cars Are Us</h1>
 	<!--<img src="./assets/images/logo.svg"/>-->
 	<div class="connexion ligne centreV">
