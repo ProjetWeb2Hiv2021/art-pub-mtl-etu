@@ -24,7 +24,7 @@
 			
 			try {
 				
-				$stmt = $this->connexion->prepare("SELECT t.typeUtilisateurfr from typeUtilisateur t JOIN utilisateur u ON t.idTypeUtilisateur = u.idUtilisateur WHERE u.nomUtilisateur =:nomUtilisateur;");
+				$stmt = $this->connexion->prepare("SELECT t.typeUtilisateurfr from typeUtilisateur t JOIN utilisateur u ON t.idTypeUtilisateur = u.idTypeUtilisateur WHERE u.nomUtilisateur =:nomUtilisateur;");
 				
 				
                 $stmt->bindParam(":nomUtilisateur",$nomUtilisateur);
