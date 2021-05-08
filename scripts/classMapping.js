@@ -9,6 +9,6 @@ const classMapping = {
     'Profil': Profil,
     'Modele': Modele,
     'VoitureDetail': VoitureDetail,
-    'ConfirmationList' : ConfirmationList										 
+    'ConfirmationList' : ConfirmationList							 
 
 };

@@ -139,14 +139,14 @@ define('TXT__DETAIL_ACHETER', 'Buy');
 define('TXT__DETAIL_MOD', 'Model :');
 define('TXT__DETAIL_VIN', 'VIN :');
 define('TXT__DETAIL_PRIX', 'Price :');
-define('TXT__DETAIL_ANN', 'Year :');
+define('TXT__DETAIL_ANN', 'Year ');
 define('TXT__DETAIL_KM', 'Km :');
 define('TXT__DETAIL_COUL', 'Color :');
 define('TXT__DETAIL_TYPE_CAR', 'Fuel type :');
 define('TXT__DETAIL_CHASS', 'Frame :');
 define('TXT__DETAIL_TRANS', 'Transmission :');
 define('TXT__DETAIL_GROUP', 'Powertrain :');
-define('TXT__DETAIL_STAT', 'Status :');
+define('TXT__DETAIL_STAT', 'Status ');
 define('TXT__DETAIL_RETOUR', 'back to the list');
 define('TXT__DETAIL_AJOUT', 'Add basket');
 /* vue  VOITURE LISTE*/

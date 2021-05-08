@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" data-component="MenuPrincipal">
 
     <!--<img src="./assets/images/logo_test.svg"/>-->
 	<!--<div class="titre">
@@ -9,7 +9,13 @@
         <h5>
         <input type="checkbox" id="btn-menu">
         <label for="btn-menu"><img src="icon-menu-512_bl.png" alt =""> </label>-->
-         
+        <?php
+            if(isset($_GET['lang']) && $_GET['lang'] == "en"){
+                $lang = "fr";
+            }else{
+                $lang ="en";
+            } 
+        ?>
         <hr> 
         <div class="menu">  
        <ul>
@@ -18,7 +24,7 @@
             <li><a href="index.php?Magasin&action=afficherPolitique"><?= TXT_TERMES?></a></li>
             <li><a href="index.php?Magasin&action=afficherContact"><?= TXT_CONTACT?></a></li>
            
-            <li class="item-right"><a href="#">En</a></li>
+            <li class="item-right" data-js-langue><a href="index.php?Magasin&action=accueil&lang=<?=$lang?>"><?=$lang?></a></li>
         </ul>
         </h5> 
             <hr>     
