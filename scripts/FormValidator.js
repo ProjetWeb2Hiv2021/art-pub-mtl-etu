@@ -37,6 +37,11 @@ class FormValidator {
         // récupère tous les éléments input email du formulaire
         this._allDateInputs = this._el.querySelectorAll('input[type="date"]');
         this._erreurDate = `Vous n'avez pas l'age requis pour créer un compte .`;
+        //fin Validation formulaire utilisateur
+
+        //debut Validation formulaire VoitureSGC
+        this._allRequiredInputsSGC = this._el.querySelectorAll('[required]');
+
 
         // Booléen, valeur qui sera retournée par la validation
         this._isValid = true;

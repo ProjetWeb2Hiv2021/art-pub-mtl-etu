@@ -19,8 +19,14 @@
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
                     case "connexion":
-                        $vue = "ConnexionSWT";  						
-						$this->showView($vue);
+						if(isset($_SESSION["typeUtilisateur"])&&($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"]==="Employe")){							
+							$vue = "Utilisateur";
+							$this->showView($vue);
+						}else{
+							$vue = "ConnexionSWT";  													
+							$this->showView($vue);
+						}
+                        
                         break;
 					case "authentifier":
                         //var_dump($_REQUEST);

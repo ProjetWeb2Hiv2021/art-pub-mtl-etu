@@ -138,19 +138,21 @@ define('TXT__UTILISATEUR_JOUR', 'Journal connexions');
 /* vue DETAILS VOITURE*/
 define('TXT__DETAIL_RESERVER', 'Réserver');
 define('TXT__DETAIL_ACHETER', 'Acheter');
-define('TXT__DETAIL_MOD', 'Modele :');
-define('TXT__DETAIL_VIN', 'VIN :');
-define('TXT__DETAIL_PRIX', 'Prix :');
-define('TXT__DETAIL_ANN', 'Année :');
-define('TXT__DETAIL_KM', 'Km :');
-define('TXT__DETAIL_COUL', 'Couleur :');
-define('TXT__DETAIL_TYPE_CAR', 'Type Carburant :');
-define('TXT__DETAIL_CHASS', 'Chassis :');
-define('TXT__DETAIL_TRANS', 'Transmission :');
-define('TXT__DETAIL_GROUP', 'Groupe Motopropulseur :');
-define('TXT__DETAIL_STAT', 'Statut :');
+define('TXT__DETAIL_MOD', 'Modele');
+define('TXT__DETAIL_VIN', 'VIN');
+define('TXT__DETAIL_PRIX', 'Prix');
+define('TXT__DETAIL_ANN', 'Année');
+define('TXT__DETAIL_KM', 'Km');
+define('TXT__DETAIL_COULFR', 'CouleurFR');
+define('TXT__DETAIL_COULEN', 'CouleurEN');
+define('TXT__DETAIL_TYPE_CAR', 'Type Carburant');
+define('TXT__DETAIL_CHASS', 'Chassis');
+define('TXT__DETAIL_TRANS', 'Transmission');
+define('TXT__DETAIL_GROUP', 'Groupe Motopropulseur');
+define('TXT__DETAIL_STAT', 'Statut');
 define('TXT__DETAIL_RETOUR', 'Retour à la liste');
 define('TXT__DETAIL_AJOUT', 'Ajouter panier');
+define('TXT__DETAIL_ENREG', 'Enregistrer');
 
 /* vue  VOITURE LISTE*/
 define('TXT__VOITURE_LISTE_ERR', 'pas de voitures pour le moment');
