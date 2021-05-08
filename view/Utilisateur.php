@@ -24,7 +24,7 @@
         </thead>
         <tbody>
         <tr>
-            <td><a href="index.php"><?=TXT__UTILISATEUR_MOD?></a></td>
+            <td><a href="index.php"><?=TXT__UTILISATEUR_LISTV?></a></td>
             <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé") echo
             '<td><a href="index.php?Modele&action=connexion">'.TXT__UTILISATEUR_MOD.'</a></td>';
             ?>

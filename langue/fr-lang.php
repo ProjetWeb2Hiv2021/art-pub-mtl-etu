@@ -143,7 +143,7 @@ define('TXT__DETAIL_VIN', 'VIN');
 define('TXT__DETAIL_PRIX', 'Prix');
 define('TXT__DETAIL_ANN', 'Année');
 define('TXT__DETAIL_KM', 'Km');
-define('TXT__DETAIL_COULFR', 'CouleurFR');
+define('TXT__DETAIL_COULFR', 'Couleur');
 define('TXT__DETAIL_COULEN', 'CouleurEN');
 define('TXT__DETAIL_TYPE_CAR', 'Type Carburant');
 define('TXT__DETAIL_CHASS', 'Chassis');

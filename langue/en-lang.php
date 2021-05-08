@@ -142,7 +142,7 @@ define('TXT__DETAIL_PRIX', 'Price');
 define('TXT__DETAIL_ANN', 'Year');
 define('TXT__DETAIL_KM', 'Km');
 define('TXT__DETAIL_COULFR', 'ColorFR');
-define('TXT__DETAIL_COULEN', 'ColorEN');
+define('TXT__DETAIL_COULEN', 'Color');
 define('TXT__DETAIL_TYPE_CAR', 'Fuel type');
 define('TXT__DETAIL_CHASS', 'Frame');
 define('TXT__DETAIL_TRANS', 'Transmission');

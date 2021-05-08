@@ -80,14 +80,13 @@
             </div>
             <div class="ligne distribue">
                 <label for="couleurfr"><?=TXT__DETAIL_COULFR?> :</label>
-                <input type="text" id="couleurfr" name="couleurfr" required data-js-param="couleurfr" value="
-                    <?php                     
+                <input type="text" id="couleurfr" name="couleurfr" required data-js-param="couleurfr" value="<?php                     
                         if($data["voiture"]["couleur$lang"]){
                             echo $data["voiture"]["couleur$lang"];
                         }else{
                             echo $data["voiture"]["couleurfr"];
                         }   
-                        echo "disabled class='sansPointeur'";                 
+                        echo "\" disabled class='sansPointeur'";                 
                     ?>">
             </div>
             <div class="ligne distribue"><label for="typeCarburant"><?=TXT__DETAIL_TYPE_CAR?> :</label> 
