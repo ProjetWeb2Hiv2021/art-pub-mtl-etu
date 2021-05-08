@@ -4,7 +4,7 @@
 
     <?php
 
-    if($_COOKIE['lang']){
+    if(isset($_COOKIE['lang'])){
         $lang = $_COOKIE['lang'];
     }else{
         $lang ="fr";
