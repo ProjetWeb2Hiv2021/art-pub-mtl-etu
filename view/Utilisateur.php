@@ -1,5 +1,12 @@
 <main class="UtilisateurSystemes">
+<?php
+    if($_COOKIE['lang']){
+        $lang = $_COOKIE['lang'];
+    }else{
+        $lang ="fr";
 
+    } 
+    ?>
  <h2><?=TXT__UTILISATEUR_ACC?></h2>
 <div class="table-wrapper">
     <?php var_dump($_SESSION["typeUtilisateur"]) ?>
