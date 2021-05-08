@@ -1,0 +1,47 @@
+/*Voiture détail */
+[data-component="VoitureDetailSGC"] {
+  width: 100%;
+  min-height: 80vh;
+}
+
+[data-component="VoitureDetailSGC"] form {
+  display: flex;
+}
+
+[data-component="VoitureDetailSGC"] a {
+  text-decoration: none;
+}
+
+[data-component="VoitureDetailSGC"] .input-wrapper {
+  margin-bottom: 0;
+}
+
+[data-component="VoitureDetailSGC"] input {
+  opacity: 1;
+  background-color: white;
+  border: 1px black solid;
+  color: black;
+  padding: 3px;
+  margin-bottom: 10px;
+  width: 10rem;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+[data-component="VoitureDetailSGC"] select {
+  opacity: 1;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+  width: 10rem;
+  border: 1px black solid;
+  color: black;
+  padding: 3px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}

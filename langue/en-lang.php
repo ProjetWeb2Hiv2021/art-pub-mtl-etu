@@ -149,6 +149,7 @@ define('TXT__DETAIL_TRANS', 'Transmission');
 define('TXT__DETAIL_GROUP', 'Powertrain');
 define('TXT__DETAIL_STAT', 'Status');
 define('TXT__DETAIL_RETOUR', 'back to the list');
+define('TXT__DETAIL_SYSTEME', 'Back to systems');
 define('TXT__DETAIL_AJOUT', 'Add basket');
 define('TXT__DETAIL_ENREG', 'Save');
 /* vue  VOITURE LISTE*/

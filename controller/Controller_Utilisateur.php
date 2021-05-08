@@ -19,7 +19,7 @@
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
                     case "connexion":
-						if(isset($_SESSION["typeUtilisateur"])&&($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"]==="Employe")){							
+						if(isset($_SESSION["typeUtilisateur"])&&($_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]==="Administrateur"||$_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]==="Employe")){							
 							$vue = "Utilisateur";
 							$this->showView($vue);
 						}else{
