@@ -109,8 +109,7 @@ class VoitureDetailSGC {
     viderChamps = () => {
         this._elVIN.value = "";
         this._elPrixVente.value = "";
-        this._elAnnee.value = "";
-        this._elDateArrivee.value = "";
+        this._elAnnee.value = "";        
         this._elPrixPaye.value = "";
         this._elKm.value = "";
         this._elCouleurfr.value = "";
