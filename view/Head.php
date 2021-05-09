@@ -1,6 +1,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<title>Cars are us</title>
 
 	<!-- Styles -->
@@ -39,9 +40,7 @@
 	<script type="text/javascript" src="./scripts/TypeCarburant.js"></script>
 	<script type="text/javascript" src="./scripts/FormulaireAjoutTypeCarburant.js"></script>
 	<script type="text/javascript" src="./scripts/FormulaireMisAjourTypeCarburant.js"></script>
-													 
 
-	
 	<script type="text/javascript" src="./scripts/classMapping.js"></script>
 	<script type="text/javascript" src="./scripts/script.js" defer></script>
 
@@ -56,6 +55,8 @@
 	<!-- Carousel -->
 	<link rel="stylesheet" href="dist/style.css">
 	<script src="dist/index.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	
 </head>
 <body>
