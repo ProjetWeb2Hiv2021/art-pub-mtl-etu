@@ -37,5 +37,6 @@
 
  
 </footer>
+<div class="bg-ruedas"></div>
 </body>
 </html>

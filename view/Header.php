@@ -106,14 +106,7 @@
 		}
 
 	?>
-	<h1>Cars Are Us</h1>
-	<div>
-		<label id="conteurVoiture"> </label>
-		<a href="index.php?Magasin&action=Confirmation">
-					<img src="./assets/images/carShop.svg"  class="image__car">
-		</a>
-	</div>	
-	<!--<img src="./assets/images/logo.svg"/>-->
+	<h1>Cars Are Us</h1>	
 	<div class="connexion ligne centreV">
 	
       	<span data-js-icone-profil>
