@@ -1,5 +1,5 @@
 (() => {
-
+	new ElderCarousel('.carousel');
     let components = document.querySelectorAll('[data-component]');
 
 	for (let i = 0, l = components.length; i < l; i++) {
@@ -11,6 +11,6 @@
 			if (componentDataSet == key) new classMapping[componentDataSet](componentElement);
 		}
 	}
-	new ElderCarousel('.carousel');
+	
 	
 })();

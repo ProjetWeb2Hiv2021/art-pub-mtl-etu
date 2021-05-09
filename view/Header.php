@@ -81,11 +81,11 @@
 					<?php 
 					 	
 						if(isset($_SESSION["typeUtilisateur"])){
-							if ($_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur") {
+							if ($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur") {
 								echo "<span>adm&nbsp;</span>";
-							}else if ($_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Client") {
+							}else if ($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Client") {
 								echo "<span>client&nbsp;</span>";
-							}else if ($_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé") {
+							}else if ($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") {
 									echo "<span>emp&nbsp;</span>";
 							}
 						}
