@@ -1,4 +1,4 @@
-class VoitureDetailSGC {
+class FormulaireAjoutVoiture {
     constructor(el) {
         this._el = el;
         

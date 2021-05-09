@@ -133,6 +133,8 @@ define('TXT__UTILISATEUR_LISTV', 'Liste Voitures');
 define('TXT__UTILISATEUR_MOD', 'Gérer Modèle');
 define('TXT__UTILISATEUR_DV', 'Detail Voiture');
 define('TXT__UTILISATEUR_GV', 'Gérer Voiture');
+define('TXT__UTILISATEUR_AV', 'Ajouter Voiture');
+define('TXT__UTILISATEUR_MV', 'Modifier Voiture');
 define('TXT__UTILISATEUR_CON', 'Connexion');
 define('TXT__UTILISATEUR_JOUR', 'Journal connexions');
 /* vue DETAILS VOITURE*/

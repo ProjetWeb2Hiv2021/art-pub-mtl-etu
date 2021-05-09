@@ -1,4 +1,4 @@
-<section data-component="VoitureDetailSGC">
+<section data-component="FormulaireAjoutVoiture">
 
     <div class="ligne aLaFin">
         <?php  

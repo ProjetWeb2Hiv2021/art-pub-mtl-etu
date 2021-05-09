@@ -131,6 +131,8 @@ define('TXT__UTILISATEUR_LISTV', 'Car List');
 define('TXT__UTILISATEUR_MOD', 'Manage Model');
 define('TXT__UTILISATEUR_DV', 'Car Detail');
 define('TXT__UTILISATEUR_GV', 'Manage Car');
+define('TXT__UTILISATEUR_AV', 'Add Car');
+define('TXT__UTILISATEUR_MV', 'Update Car');
 define('TXT__UTILISATEUR_CON', 'Log in');
 define('TXT__UTILISATEUR_JOUR', 'Connection log');
 /* vue DETAILS VOITURE*/
