@@ -48,6 +48,7 @@
 
 			}
 			catch(Exception $exc) {
+				echo($exc->getMessage());
 				return 0;
 			}
 		}
@@ -133,7 +134,7 @@
 				}
 			}
 			catch(Exception $exc) {
-				var_dump($exc->getMessage());
+				
 
 				return 0;
 			}
@@ -162,8 +163,7 @@
 				return $stmt->fetch();
 
 			}
-			catch(Exception $exc) {
-				var_dump($exc->getMessage());
+			catch(Exception $exc) {			
 
 				return 0;
 			}
@@ -241,6 +241,42 @@
 												order by modele.modele ASC");
 				$stmt->execute();
 				return $stmt->fetchAll();
+		}
+		public function ajouterVoiture($vin, $prixVente, $annee, $dateArrivee, $prixPaye, $km, $couleurfr, $couleuren, $vedette, $idTypeCarburant,
+                            $idModele, $idChassis, $idTransmission, $idGroupeMotopropulseur, $idStatut) {
+
+			try {
+				$stmt = $this->connexion->prepare("INSERT INTO voiture (vin, prixVente, annee, dateArrivee, prixPaye, km, couleurfr, 
+					couleuren, vedette,
+                    idTypeCarburant, idModele, idChassis, idTransmission, idGroupeMotopropulseur, idStatut) 
+					VALUES (:vin, :prixVente, 
+					:annee, :dateArrivee, :prixPaye, :km, :couleurfr, :couleuren, :vedette,
+                    :idTypeCarburant, :idModele, :idChassis, :idTransmission, :idGroupeMotopropulseur, :idStatut)");
+				
+				$stmt->bindParam(":vin", $vin);
+				$stmt->bindParam(":prixVente", $prixVente);
+				$stmt->bindParam(":annee", $annee);
+				$stmt->bindParam(":dateArrivee", $dateArrivee);
+				$stmt->bindParam(":prixPaye", $prixPaye);
+				$stmt->bindParam(":km", $km);
+				$stmt->bindParam(":couleurfr", $couleurfr);
+				$stmt->bindParam(":couleuren", $couleuren);
+				$stmt->bindParam(":vedette", $vedette);
+				$stmt->bindParam(":idTypeCarburant", $idTypeCarburant);
+				$stmt->bindParam(":idModele", $idModele);
+				$stmt->bindParam(":idChassis", $idChassis);
+				$stmt->bindParam(":idTransmission", $idTransmission);
+				$stmt->bindParam(":idGroupeMotopropulseur", $idGroupeMotopropulseur);
+				$stmt->bindParam(":idStatut", $idStatut);				
+
+				$stmt->execute();
+
+				return 1;
+			}	
+			catch(Exception $exc) {
+				/* echo $exc->getMessage(); */
+				return 0;
+			}
 		}
 		
 	}

@@ -9,7 +9,7 @@
 
             }     
         ?>    
-        <button  data-js-btn disabled><?=TXT__DETAIL_ENREG?></button>
+        <button  data-js-btn><?=TXT__DETAIL_ENREG?></button>
     </div>
     <div data-js-component="Form" class="ligne">
         
@@ -33,7 +33,7 @@
             <div class="input-wrapper" data-js-input-wrapper>
                 <div class="ligne distribue">
                     <label for="vin"><?=TXT__DETAIL_VIN?> :</label>
-                    <input type="text" id="vin" name="vin" required data-js-param="vin" value=''>
+                    <input type="text" id="vin" name="vin" required data-js-param="vin" value='abc'>
                 </div>
                 <small class="error-message" data-js-error-msg></small>
 		    </div> 
@@ -41,7 +41,7 @@
                 <div class="ligne distribue">
                     <label for="prixVente"><?=TXT__DETAIL_PRIX?> :</label>
 
-                    <input type="text" id="prixVente" name="prixVente" required data-js-param="prixVente" value=''>
+                    <input type="text" id="prixVente" name="prixVente" required data-js-param="prixVente" value='12500'>
                 </div>
                 <small class="error-message" data-js-error-msg></small>
 		    </div> 
@@ -49,7 +49,7 @@
                 <div class="ligne distribue">
 
                     <label for="annee"><?=TXT__DETAIL_ANN?> :</label>
-                    <input type="text" id="annee" name="annee" required data-js-param="annee" value=''>
+                    <input type="text" id="annee" name="annee" required data-js-param="annee" value='2016'>
                 </div>
                 <small class="error-message" data-js-error-msg></small>
 		    </div> 
@@ -60,7 +60,7 @@
                 </div>
                 <div class="ligne distribue">
                     <label for="prixPaye">Prix payé :</label>
-                    <input type="text" id="prixPaye" name="prixPaye" required data-js-param="prixPaye" value="">
+                    <input type="text" id="prixPaye" name="prixPaye" required data-js-param="prixPaye" value="10000">
                 </div>
                 <small class="error-message" data-js-error-msg></small>
             </div> 
@@ -68,14 +68,14 @@
                 <div class="ligne distribue">
                     <label for="km"><?=TXT__DETAIL_KM?> :</label>
 
-                    <input type="text" id="km" name="km" required data-js-param="km" value=''>
+                    <input type="text" id="km" name="km" required data-js-param="km" value='68000'>
                 </div>
                 <small class="error-message" data-js-error-msg></small>
 		    </div>
             <div class="input-wrapper" data-js-input-wrapper>
                 <div class="ligne distribue">
                     <label for="couleurfr"><?=TXT__DETAIL_COULFR?> :</label>
-                    <input type="text" id="couleurfr" name="couleurfr" required data-js-param="couleurfr" value="">
+                    <input type="text" id="couleurfr" name="couleurfr" required data-js-param="couleurfr" value="Blanc">
                 </div>
                 <small class="error-message" data-js-error-msg></small>
 		    </div>
@@ -84,7 +84,14 @@
             <div class="input-wrapper" data-js-input-wrapper>
                 <div class="ligne distribue">
                     <label for="couleuren"><?=TXT__DETAIL_COULEN?></label>
-                    <input type="text" id="couleuren" name="couleuren" required data-js-param="couleuren" value="">
+                    <input type="text" id="couleuren" name="couleuren" required data-js-param="couleuren" value="White">
+                </div>
+                <small class="error-message" data-js-error-msg></small>
+            </div>
+            <div class="input-wrapper" data-js-input-wrapper>
+                <div class="ligne distribue">
+                    <label for="vedette"><?=TXT__DETAIL_VEDETTE?></label>
+                    <input type="checkbox" id="vedette" name="vedette" required data-js-param="vedette" value="1">
                 </div>
                 <small class="error-message" data-js-error-msg></small>
             </div>
@@ -157,7 +164,7 @@
                             //afficher dynamiquement une option pour chaque transmission dans la base de données                            
                             echo "<option value>".TXT__DETAIL_TRANS."</option>";                            
                             foreach ($transmission as list($idTransmission, $transmissionfr, $transmissionen)) {
-                                echo "<option value='{$idChassis}'>";
+                                echo "<option value='{$idTransmission}'>";
                                 if($lang == "en" && $transmissionen){
                                     echo "{$transmissionen}";
                                 }else{
@@ -189,7 +196,7 @@
 		    </div>
             <div class="input-wrapper" data-js-input-wrapper>
                 <div class="ligne distribue"><label for="statut"><?=TXT__DETAIL_STAT?> :</label> 
-                    <select name="statut" id="statut" data-js-param="statut">
+                    <select name="statut" id="statut" data-js-statut>
                         <?php
                     
                         $statut = $data["statut"];
@@ -218,6 +225,8 @@
     <div>
         <a href="index.php?Utilisateur&action=connexion"><?=TXT__DETAIL_SYSTEME?></a>
     </div>
+    <div data-js-resultat>
+                    </div>
 </section>
 
 

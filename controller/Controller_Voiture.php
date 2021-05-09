@@ -20,7 +20,7 @@
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
                     case "connexion":
-                        if(isset($_SESSION["nomUtilisateur"])&&isset($_SESSION["typeUtilisateur"])&&$_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"] ==="Administrateur"||$_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"] ==="Employe"){
+                        if(isset($_SESSION["nomUtilisateur"])&&isset($_SESSION["typeUtilisateur"])&&$_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"] ==="Administrateur"||$_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"] ==="Employé"){
                             $vue="VoitureDetailsSGC";
 							$data["systeme"]="SGC";
 							$modeleTypeCarburant = new Model_TypeCarburant();				
@@ -43,7 +43,7 @@
                             $this->showView($vue, $data);
 
                         }else{
-                            $vue = "ConnexionCRM";  						
+                            $vue = "ConnexionSWT";  						
 						    $this->showView($vue);
                         }
                         
@@ -69,7 +69,7 @@
                                 
 								// Afficher la vue compléter les champs
 								$this->showView($vue, $data);
-								var_dump($_SESSION);
+								//var_dump($_SESSION);
 								
 							}else
 							{                        
@@ -83,7 +83,7 @@
 						}
                         break;
 					case "insererVoiture":
-						var_dump("test");
+						//var_dump("test");
 						if (isset($params["vin"]) && 
 						isset($params["prixVente"]) && 
 						isset($params["annee"]) && 
