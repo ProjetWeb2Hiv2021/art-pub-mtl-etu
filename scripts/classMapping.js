@@ -9,7 +9,7 @@ const classMapping = {
     'Profil': Profil,
     'Modele': Modele,
     'VoitureDetail': VoitureDetail,
-    'VoitureDetailSGC': VoitureDetailSGC,
+    'FormulaireAjoutVoiture': FormulaireAjoutVoiture,
     'ConfirmationList' : ConfirmationList,
     'GroupeMotopropulseur' : GroupeMotopropulseur,
     'FormulaireAjoutMotoPropulseur' : FormulaireAjoutMotoPropulseur,

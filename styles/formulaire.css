@@ -1,7 +1,7 @@
 button,
 input[type="submit"],
 [data-component="VoitureDetail"] a,
-[data-component="VoitureDetailSGC"] a {
+[data-component="FormulaireAjoutVoiture"] a {
   border: 0;
   line-height: 2.5;
   padding: 0 20px;
