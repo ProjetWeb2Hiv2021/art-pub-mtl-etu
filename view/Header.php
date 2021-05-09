@@ -51,12 +51,13 @@
 
 	?>
 	<h1>Cars Are Us</h1>
-	<div>
-		<label id="conteurVoiture"> </label>
-		<a href="index.php?Magasin&action=Confirmation">
-					<img src="./assets/images/carShop.svg"  class="image__car">
-		</a>
-	</div>	
+	<div class="ligne centreV">
+		<div>
+			<label id="conteurVoiture"> </label>
+			<a href="index.php?Magasin&action=Confirmation">
+						<img src="./assets/images/carShop.svg"  class="image__car">
+			</a>
+		</div>	
 	<!--<img src="./assets/images/logo.svg"/>-->
 	<div class="connexion ligne centreV">
 	
@@ -103,17 +104,17 @@
 		?>
 		
     </div>
-	<div class="menu_profil" data-js-menu-profil>
-		<?php if(isset($_SESSION["nomUtilisateur"])){
+		<div class="menu_profil" data-js-menu-profil>
+			<?php if(isset($_SESSION["nomUtilisateur"])){
+				?>
+					<a href="index.php?Utilisateur&action=profil&nomUtilisateur=<?= $_SESSION["nomUtilisateur"] ?>"><?=TXT__HEADER_PROFIL?></a>
+					<a href="index.php?Utilisateur&action=deconnexion"><?=TXT__HEADER_DECO?></a>
+					<a href=""><?=TXT__HEADER_COM?></a>
+					<?php
+			}
 			?>
-				<a href="index.php?Utilisateur&action=profil&nomUtilisateur=<?= $_SESSION["nomUtilisateur"] ?>"><?=TXT__HEADER_PROFIL?></a>
-				<a href="index.php?Utilisateur&action=deconnexion"><?=TXT__HEADER_DECO?></a>
-				<a href=""><?=TXT__HEADER_COM?></a>
-				<?php
-		}
-		?>
 		</div>	
-			
+	</div>
 
 	
 	

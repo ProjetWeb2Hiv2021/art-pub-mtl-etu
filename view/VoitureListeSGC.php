@@ -1,5 +1,6 @@
+<h2>Choisir la voiture à mettre à jour</h2>
 <section data-component="VoitureListeSGC" class="gallery gallery--4">
-  
+   
  
 
     <?php
