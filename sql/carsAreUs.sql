@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS `chassis` (
   `chassisen` varchar(100) DEFAULT NULL,
   `statut` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`idChassis`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS `typeCarburant` (
   `idTypeCarburant` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -12,14 +12,14 @@ CREATE TABLE IF NOT EXISTS `typeCarburant` (
   `typeCarburanten` varchar(100) DEFAULT NULL,
   `statut` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`idTypeCarburant`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS `groupeMotopropulseur` (
   `idGroupeMotopropulseur` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
   `groupeMotopropulseur` varchar(100) NOT NULL,
   `statut` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`idGroupeMotopropulseur`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB;
 
 CREATE TABLE fabricant (
 	idFabricant TINYINT UNSIGNED AUTO_INCREMENT, 
