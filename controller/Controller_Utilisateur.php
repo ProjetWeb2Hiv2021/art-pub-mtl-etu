@@ -19,7 +19,7 @@
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
                     case "connexion":
-						if(isset($_SESSION["typeUtilisateur"])&&($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"]==="Employe")){							
+						if(isset($_SESSION["typeUtilisateur"])&&($_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]==="Administrateur"||$_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]==="Employé")){							
 							$vue = "Utilisateur";
 							$this->showView($vue);
 						}else{
@@ -40,12 +40,12 @@
 							$authentifie = $modeleUtilisateur->authentification($_REQUEST["nomUtilisateur"],$_REQUEST["motPasse"]);
 							// Si c'est le cas 
 							if($authentifie)
-							{
+							{	
 								$modeleTypeUtilisateur = new Model_TypeUtilisateur();
 								// Définir le champ usager de la variable session comme l'usager courant
 								$_SESSION["nomUtilisateur"] = $_REQUEST["nomUtilisateur"];
 								//var_dump($modeleTypeUtilisateur->obtenirTypeUtilisateur($_REQUEST["nomUtilisateur"]));
-								$_SESSION["typeUtilisateur"] = $modeleTypeUtilisateur->obtenirTypeUtilisateur($_REQUEST["nomUtilisateur"]);
+								$_SESSION["typeUtilisateur"][] = $modeleTypeUtilisateur->obtenirTypeUtilisateur($_REQUEST["nomUtilisateur"]);
 								$vue = "Utilisateur";
 								// Afficher la vue compléter les champs
 								$this->showView($vue, $data);
@@ -91,13 +91,13 @@
 						$this->showView($vueProfil, $data);
 						break;
 					case "deconnexion":
-						if(isset($_SESSION['nomUtilisateur']) || isset($_SESSION['typeUtilisateur'])){
-							unset($_SESSION['nomUtilisateur']);
-							unset($_SESSION['typeUtilisateur']);	
+						if(isset($_SESSION['nomUtilisateur'])){
 							session_destroy();
+							unset($_SESSION['nomUtilisateur']);
+							unset($_SESSION['typeUtilisateur']);
+							header('Location: index.php?Magasin&action=accueil');
 						}
-						header('Location: index.php');
-							
+	
 						break;
 					case "gererUtilisateurs":
 						

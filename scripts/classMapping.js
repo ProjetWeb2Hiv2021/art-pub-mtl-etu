@@ -11,6 +11,17 @@ const classMapping = {
     'VoitureDetail': VoitureDetail,
     'ConfirmationList' : ConfirmationList,
     "GestionUtilisateurs":GestionUtilisateurs,
-    "GestionModeles":GestionModeles							 
+    "GestionModeles":GestionModeles,						 
+    'VoitureDetailSGC': VoitureDetailSGC,
+    'GroupeMotopropulseur' : GroupeMotopropulseur,
+    'FormulaireAjoutMotoPropulseur' : FormulaireAjoutMotoPropulseur,
+    'FormulaireMisAjourMotoPropulseur' :FormulaireMisAjourMotoPropulseur,
+    'Chassis' : Chassis,
+    'FormulaireAjoutChassis' : FormulaireAjoutChassis,
+    'FormulaireMisAjourChassis' :FormulaireMisAjourChassis,
+    'TypeCarburant' : TypeCarburant,
+    'FormulaireAjoutTypeCarburant' : FormulaireAjoutTypeCarburant,
+    'FormulaireMisAjourTypeCarburant' :FormulaireMisAjourTypeCarburant
+
 
 };

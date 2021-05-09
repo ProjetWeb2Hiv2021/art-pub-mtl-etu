@@ -5,6 +5,7 @@
     }else{
         $lang ="en";
     } 
+
 ?>
 
 <div class="table-wrapper" data-component="GestionModeles">

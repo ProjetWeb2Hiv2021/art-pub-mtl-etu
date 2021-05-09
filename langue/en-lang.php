@@ -143,13 +143,15 @@ define('TXT__DETAIL_PRIX', 'Price');
 define('TXT__DETAIL_ANN', 'Year');
 define('TXT__DETAIL_KM', 'Km');
 define('TXT__DETAIL_COULFR', 'ColorFR');
-define('TXT__DETAIL_COULEN', 'ColorEN');
+define('TXT__DETAIL_COULEN', 'Color');
+define('TXT__DETAIL_VEDETTE', 'Spotlight');
 define('TXT__DETAIL_TYPE_CAR', 'Fuel type');
 define('TXT__DETAIL_CHASS', 'Frame');
 define('TXT__DETAIL_TRANS', 'Transmission');
 define('TXT__DETAIL_GROUP', 'Powertrain');
 define('TXT__DETAIL_STAT', 'Status');
 define('TXT__DETAIL_RETOUR', 'back to the list');
+define('TXT__DETAIL_SYSTEME', 'Back to systems');
 define('TXT__DETAIL_AJOUT', 'Add basket');
 define('TXT__DETAIL_ENREG', 'Save');
 /* vue  VOITURE LISTE*/

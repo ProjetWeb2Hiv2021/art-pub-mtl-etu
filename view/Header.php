@@ -79,13 +79,13 @@
 				?>
 					<div data-js-utilisateur-connecte style="cursor: pointer;">
 					<?php 
-					/* var_dump($_SESSION["typeUtilisateur"]); */
+					 	
 						if(isset($_SESSION["typeUtilisateur"])){
-							if ($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur") {
+							if ($_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur") {
 								echo "<span>adm&nbsp;</span>";
-							}else if ($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Client") {
+							}else if ($_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Client") {
 								echo "<span>client&nbsp;</span>";
-							}else if ($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employe") {
+							}else if ($_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé") {
 									echo "<span>emp&nbsp;</span>";
 							}
 						}

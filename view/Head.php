@@ -27,7 +27,23 @@
 
 	<script type="text/javascript" src="./scripts/Header.js"></script>
 	<script type="text/javascript" src="./scripts/VoitureDetail.js"></script>
+
+	<script type="text/javascript" src="./scripts/VoitureDetailSGC.js"></script>
 	<script type="text/javascript" src="./scripts/ConfirmationList.js"></script>														 
+		
+	<script type="text/javascript" src="./scripts/GroupeMotopropulseur.js"></script>
+	<script type="text/javascript" src="./scripts/FormulaireAjoutMotoPropulseur.js"></script>
+	<script type="text/javascript" src="./scripts/FormulaireMisAjourMotoPropulseur.js"></script>
+	<script type="text/javascript" src="./scripts/Chassis.js"></script>
+	<script type="text/javascript" src="./scripts/FormulaireAjoutChassis.js"></script>
+	<script type="text/javascript" src="./scripts/FormulaireMisAjourChassis.js"></script>
+
+
+	<script type="text/javascript" src="./scripts/TypeCarburant.js"></script>
+	<script type="text/javascript" src="./scripts/FormulaireAjoutTypeCarburant.js"></script>
+	<script type="text/javascript" src="./scripts/FormulaireMisAjourTypeCarburant.js"></script>
+													 
+
 	
 	<script type="text/javascript" src="./scripts/classMapping.js"></script>
 	<script type="text/javascript" src="./scripts/script.js" defer></script>

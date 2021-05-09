@@ -62,7 +62,7 @@
 
 
 		<?php
-		if(isset($_SESSION["typeUtilisateur"]) && $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"){
+		if(isset($_SESSION["typeUtilisateur"]) && $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"){
 		?>
 		<div class="input-wrapper" data-js-input-wrapper>
 			<div class="ligne distribue">

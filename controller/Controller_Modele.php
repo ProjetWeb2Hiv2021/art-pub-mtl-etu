@@ -73,7 +73,7 @@
 						}
                         break;
 					case "gererModeles":
-						if(isset($_SESSION["nomUtilisateur"]) && $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]  ==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"]  ==="Employe"){
+						if(isset($_SESSION["nomUtilisateur"]) && $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]  ==="Administrateur"||$_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]  ==="Employe"){
 							$vue="GestionModeles";
 							$modeleModele = new Model_Modele();
 							
