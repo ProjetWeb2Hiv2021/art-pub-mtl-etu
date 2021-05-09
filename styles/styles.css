@@ -13,6 +13,7 @@
 @import "./profil.css";
 @import "./utilisateurSysteme.css";
 @import "./formulaire.css";
+@import "./formulaireAjoutVoiture.css";
 @import "./voitureDetailSGC.css";
 @import "./custom-k.css";
 
@@ -41,9 +42,7 @@ hr {
 header {
   width: 100%;
 }
-.header a {
-  width: 200px;
-}
+
 titre {
   text-align: center;
 }
