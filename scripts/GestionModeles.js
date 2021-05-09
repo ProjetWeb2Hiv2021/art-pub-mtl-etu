@@ -6,23 +6,33 @@ class GestionModeles{
         this._elSelectFabricant = this._el.querySelector('[data-js-fabricant]');
         this._elSelectStatus = this._el.querySelector('[data-js-status]');
         this._elModif = this._el.querySelector('[data-js-mod]');
-        this._elSuprim = this._el.querySelector('[data-js-sup]');
+        
         console.log(this._elSelectStatus);
         this._elSelectFabricant.setAttribute("disabled", "disabled");
+        this.elModeleAmodifier = this._el.querySelector('[data-js-modelemodif]');
+
         this.actuModeleStatus();
         /* traitement de l'ajout */
         this._elAjout = this._el.querySelector('[data-js-ajoutmodel]');
+
         this._elSelectMarqueAjout =  this._elAjout.querySelector('[data-js-marque]');
         this._elSelectFabricantAjout = this._elAjout.querySelector('[data-js-fabricant]');
-
+        this._btnAjoutModele = this._elAjout.querySelector('[data-js-ajoutmod]');
+        this._elSelectFabricantAjout.setAttribute("disabled", "disabled");
+        this._elSelectStatusAjout = this._elAjout.querySelector('[data-js-status]');
+        console.log(this._btnAjoutModele );
+        
 
         this.init();
     }
     init = (e) => {
+        this.elModeleAmodifier.value= this._elSelectModele.options[this._elSelectModele.selectedIndex].value;
         this._elSelectModele.addEventListener('change', (e) => {
             
             this.actuModeleStatus();
             let idMarque = this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmarque;
+            let elModeleAmodifier = this._el.querySelector('[data-js-modelemodif]');
+            elModeleAmodifier.value= this._elSelectModele.options[this._elSelectModele.selectedIndex].value;
             let listeOptionMarque = this._elSelectMarque.querySelectorAll('option');
             for (let i = 0; i < listeOptionMarque.length; i++) {
                 
@@ -48,22 +58,48 @@ class GestionModeles{
         });
         this._elModif.addEventListener('click', (e) => {
             let idModele = this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmarque;
+            let nouvelleValeurModel = this._el.querySelector('[data-js-modelemodif]').value;
             let idMarque = this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmarque;
             let idFabricant = this._elSelectMarque.options[this._elSelectMarque.selectedIndex].dataset.jsIdfabricant;
             let status = this._elSelectStatus.options[this._elSelectStatus.selectedIndex].value;
-            console.log(status);
+            
             let path = "miseAJourModele";
-            let requete = `'idModele='${idModele}'&idMarque='${idMarque}'&idFabricant='${idFabricant}'&status='${status}`
-            /* this.callAJAXAMiseAJourModele(requete, path); */
+            let requete = `idModele=${idModele}&nouvelleValeurModel=${nouvelleValeurModel}&idMarque=${idMarque}&status=${status}`;
+            console.log(requete);
+            this.callAJAX(requete, path);
         });
-        this._elModif.addEventListener('click', (e) => {
-            let idModele = this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmarque;
-            let path = "supprimerModele";
-            let requete = `'idModele='${idModele}`
-            /* this.callAJAXAMiseAJourModele(requete, path); */
+
+        /* ajout  modele*/
+        this._btnAjoutModele.addEventListener('click', (e) => {
+            let modele = this._elAjout.querySelector('[data-js-modele]').value;
+            let idMarque =  this._elSelectMarqueAjout.options[this._elSelectMarqueAjout.selectedIndex].value;
+            let idFabricant = this._elSelectFabricantAjout.options[this._elSelectFabricantAjout.selectedIndex].value;
+            let status = this._elSelectStatusAjout.options[this._elSelectStatusAjout.selectedIndex].value;
+            console.log(modele, idMarque, idFabricant, status);
+            let path = "ajouterModele";
+            let requete = `modele=${modele}&idMarque=${idMarque}&status=${status}`;
+            console.log(requete);
+            this.callAJAX(requete, path);
+            
+        });
+        this._elSelectMarqueAjout.addEventListener('change', (e) => {
+            console.log("change");
+
+            let idFabricant = this._elSelectMarqueAjout.options[this._elSelectMarqueAjout.selectedIndex].dataset.jsIdfabricant;
+            let listeOptionFabricantAjout = this._elSelectFabricantAjout.querySelectorAll('option');
+            for (let j = 0; j < listeOptionFabricantAjout.length; j++) {
+                
+                const option = listeOptionFabricantAjout[j];
+                option.removeAttribute('selected');
+                if(option.value === idFabricant){
+                    option.setAttribute('selected', 'selected');
+                }
+
+            }
+          
         });
     }
-    callAJAXA = (requete, path) => {
+    callAJAX = (requete, path) => {
 
         // Déclaration de l'objet XMLHttpRequest
         let xhr;
@@ -88,7 +124,7 @@ class GestionModeles{
             });
             // Envoi de la requète
 
-            xhr.send(requete);
+            xhr.send(`${requete}`);
         }
         
     }

@@ -46,13 +46,18 @@
 							break;
 						case "miseAJourModele":
 							$modeleModele = new Model_Modele();			
-							$lesModeles = $modeleModele->miseAJourModele($params["idModele"],$params["idMarque"],$params["idFabricant"],$params["status"]);
-							$modeleMarque = new Model_Marque();			
-							$lesModeles = $modeleMarque->miseAJourMarque($params["idMarque"],$params["idFabricant"]);
-							$data["marque"] = $lesModeles;					
+							$lesModeles = $modeleModele->miseAJourModele($params["idModele"], $params["nouvelleValeurModel"], $params["idMarque"],$params["status"]);
+							$data["modeleajour"] = $lesModeles;					
 							
 							echo json_encode($data);
 							break;	
+						case "ajouterModele":
+							$modeleModele = new Model_Modele();			
+							$lesModeles = $modeleModele->ajouterModele($params["modele"], $params["idMarque"],$params["status"]);
+							$data["modeleajouter"] = $lesModeles;					
+							
+							echo json_encode($data);
+							break;
 			}			
 			} else {
 				echo "ERROR ACTION";

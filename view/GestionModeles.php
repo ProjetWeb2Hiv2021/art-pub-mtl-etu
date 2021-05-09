@@ -9,7 +9,7 @@
 ?>
 
 <div class="table-wrapper" data-component="GestionModeles">
-<h2><?=TXT__UTILISATEUR_ACC?></h2>
+<h2><?=TXT__GESTIONU_GESMOD?></h2>
     
     <table class="fl-table">
         <thead>
@@ -17,21 +17,16 @@
             <th><?=TXT_MODELE?></th>
             <th><?=TXT__MODELE_MARQUE?></th>
             <th><?=TXT__MODELE_FABRICANT?></th>
-            <th><?=TXT__MODELE_FABRICANT?></th>
             <th><?=TXT__DETAIL_STAT?></th>
+            <th><?=TXT__GESTIONU_ACT?></th>
         </tr>
         </thead>
         <tbody>
             
-            
-    
-            <tr data-js-id="" data-js-utilisateur>
-                
-                <td>
-                <div class="input-wrapper" data-js-input-wrapper>
+            <tr>
+            <div class="input-wrapper" data-js-input-wrapper>
                 <select name="modele" data-js-modele size=1>
-		
-                <?php 
+            <?php 
                 if($data["modele"]){
                     foreach ($data["modele"] as $modele) {
                     ?>
@@ -44,6 +39,16 @@
                     </select>
                     <small class="error-message" data-js-error-msg></small>
                 </div>
+
+                </td>  
+            </tr>
+    
+            <tr data-js-id="" data-js>
+                
+                <td>
+                <div class="input-wrapper" data-js-input-wrapper>
+                        <input data-js-modelemodif type="text" required>
+                    </div>
 
                 </td>  
                 <td> 
@@ -95,7 +100,6 @@
                  
                 <td>
                     <button data-js-mod><?=TXT__PROFIL_MODIFIER?></button>
-                    <button data-js-sup><?=TXT__PROFIL_SUPP?></button>
                 </td>  
 
             </tr>
@@ -103,7 +107,7 @@
         
         <tbody>
     </table>
-    <button><a href="index.php?Utilisateur&action=creerClient"><?=TXT__GESTIONU_AJMOD?></a></button>
+    <h2><?=TXT__GESTIONU_AJMOD?></h2>
     <div data-js-ajoutmodel>
         <table class="fl-table">
             <thead>
@@ -111,8 +115,8 @@
                 <th><?=TXT_MODELE?></th>
                 <th><?=TXT__MODELE_MARQUE?></th>
                 <th><?=TXT__MODELE_FABRICANT?></th>
-                <th><?=TXT__MODELE_FABRICANT?></th>
                 <th><?=TXT__DETAIL_STAT?></th>
+                <th><?=TXT__GESTIONU_ACT?></th>
             </tr>
             </thead>
             <tbody>
@@ -122,7 +126,7 @@
                     
                     <td>
                     <div class="input-wrapper" data-js-input-wrapper>
-                        <input type="text">
+                        <input data-js-modele type="text" required>
                     </div>
 
                     </td>  
@@ -174,8 +178,7 @@
                     </td> 
                     
                     <td>
-                        <button data-js-mod><?=TXT__PROFIL_MODIFIER?></button>
-                        <button data-js-sup><?=TXT__PROFIL_SUPP?></button>
+                        <button data-js-ajoutmod><?=TXT__GESTIONU_AJMOD?></button>
                     </td>  
 
                 </tr>
@@ -183,6 +186,6 @@
             
             <tbody>
         </table>
-        <button><a href="index.php?Utilisateur&action=creerClient"><?=TXT__GESTIONU_AJMOD?></a></button>
+
     </div>
 </div>

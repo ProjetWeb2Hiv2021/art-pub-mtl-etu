@@ -163,5 +163,8 @@ define('TXT__VOITURE_LISTE_ERR', 'pas de voitures pour le moment');
 /* vue  Gestion Utilisateurs*/
 define('TXT__GESTIONU_GER', 'Gestion');
 /* vue  Gestion MODELE*/
-define('TXT__GESTIONU_AJMOD', 'Ajouter modele');
+define('TXT__GESTIONU_ACT', 'Action');
+define('TXT__GESTIONU_AJMOD', 'Ajouter nouveau modele');
+define('TXT__GESTIONU_SUPP', 'Supprimer modele');
+define('TXT__GESTIONU_GESMOD', 'Gestion des modeles');
 ?>
