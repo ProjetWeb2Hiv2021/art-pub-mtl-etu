@@ -23,6 +23,7 @@
 
 	<script type="text/javascript" src="./scripts/Header.js"></script>
 	<script type="text/javascript" src="./scripts/VoitureDetail.js"></script>
+	<script type="text/javascript" src="./scripts/VoitureDetailSGC.js"></script>
 	<script type="text/javascript" src="./scripts/ConfirmationList.js"></script>														 
 	
 	<script type="text/javascript" src="./scripts/classMapping.js"></script>
