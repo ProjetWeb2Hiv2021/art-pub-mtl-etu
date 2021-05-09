@@ -162,4 +162,6 @@ define('TXT__DETAIL_ENREG', 'Enregistrer');
 define('TXT__VOITURE_LISTE_ERR', 'pas de voitures pour le moment');
 /* vue  Gestion Utilisateurs*/
 define('TXT__GESTIONU_GER', 'Gestion');
+/* vue  Gestion MODELE*/
+define('TXT__GESTIONU_AJMOD', 'Ajouter modele');
 ?>

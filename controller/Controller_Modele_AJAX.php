@@ -44,7 +44,15 @@
 							
 							echo json_encode($data);
 							break;
-			
+						case "miseAJourModele":
+							$modeleModele = new Model_Modele();			
+							$lesModeles = $modeleModele->miseAJourModele($params["idModele"],$params["idMarque"],$params["idFabricant"],$params["status"]);
+							$modeleMarque = new Model_Marque();			
+							$lesModeles = $modeleMarque->miseAJourMarque($params["idMarque"],$params["idFabricant"]);
+							$data["marque"] = $lesModeles;					
+							
+							echo json_encode($data);
+							break;	
 			}			
 			} else {
 				echo "ERROR ACTION";
