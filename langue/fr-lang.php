@@ -52,20 +52,20 @@ define('TXT__CONTACT_VIA', 'VIA');
 define('TXT__CONTACT_ADRESSE', 'Adresse :');
 
 /* vue FORMULAIRE AJOUT UTILISATEUR*/
-define('TXT__FAU_PSEUDO', 'Pseudonyme :');
-define('TXT__FAU_NOM', 'Nom :');
-define('TXT__FAU_PRENOM', 'Prenom :');
-define('TXT__FAU_DATEN', 'Date de naissance :');
-define('TXT__FAU_COURRIEL', 'Courriel :');
-define('TXT__FAU_MP', 'Mot de passe :');
-define('TXT__FAU_TEL', 'Telephone :');
-define('TXT__FAU_TY_UTI', 'Type utilisateur :');
-define('TXT__FAU_TEL_POR', 'Telephone portable :');
-define('TXT__FAU_NC', 'Numero civique :');
-define('TXT__FAU_RUE', 'Rue :');
-define('TXT__FAU_CP', 'Code Postal :');
-define('TXT__FAU_VILLE', 'Ville :');
-define('TXT__FAU_PROVINCE', 'Province :');
+define('TXT__FAU_PSEUDO', 'Pseudonyme ');
+define('TXT__FAU_NOM', 'Nom ');
+define('TXT__FAU_PRENOM', 'Prenom ');
+define('TXT__FAU_DATEN', 'Date de naissance ');
+define('TXT__FAU_COURRIEL', 'Courriel ');
+define('TXT__FAU_MP', 'Mot de passe ');
+define('TXT__FAU_TEL', 'Telephone ');
+define('TXT__FAU_TY_UTI', 'Type utilisateur ');
+define('TXT__FAU_TEL_POR', 'Telephone portable ');
+define('TXT__FAU_NC', 'Numero civique ');
+define('TXT__FAU_RUE', 'Rue ');
+define('TXT__FAU_CP', 'Code Postal ');
+define('TXT__FAU_VILLE', 'Ville ');
+define('TXT__FAU_PROVINCE', 'Province ');
 define('TXT__FAU_SOUMETTRE', 'Soumettre');
 
 /* vue HEADER*/
@@ -135,6 +135,8 @@ define('TXT__UTILISATEUR_DV', 'Detail Voiture');
 define('TXT__UTILISATEUR_GV', 'Gérer Voiture');
 define('TXT__UTILISATEUR_CON', 'Connexion');
 define('TXT__UTILISATEUR_JOUR', 'Journal connexions');
+define('TXT__UTILISATEUR_GER_UTI', 'Gestion des utilisateur');
+
 /* vue DETAILS VOITURE*/
 define('TXT__DETAIL_RESERVER', 'Réserver');
 define('TXT__DETAIL_ACHETER', 'Acheter');
@@ -156,5 +158,6 @@ define('TXT__DETAIL_ENREG', 'Enregistrer');
 
 /* vue  VOITURE LISTE*/
 define('TXT__VOITURE_LISTE_ERR', 'pas de voitures pour le moment');
-
+/* vue  Gestion Utilisateurs*/
+define('TXT__GESTIONU_GER', 'Gestion');
 ?>

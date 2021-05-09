@@ -92,7 +92,7 @@
 		   }
 	   }
 	   public function obtenirUtilisateurNomUtilisateur($nomUtilisateur) {
-		$lang =$_COOKIE['lang'];
+			
 			try {
 				if(isset($nomUtilisateur)){
 					$stmt = $this->connexion->prepare("SELECT * from utilisateur WHERE nomUtilisateur=:nomUtilisateur");
@@ -159,7 +159,24 @@
 		 catch(Exception $exc) {
 			 return 0;
 		 }
-	 }
+	 	}
+/* 		public function obtenirListeUtilisateurs() {
+			try {
+				if(isset($nomUtilisateur)){
+					$stmt = $this->connexion->prepare("SELECT * from utilisateur 
+														JOIN typeutilisateur ON utilisateur.idTypeUtilisateur = typeutilisateur.idTypeUtilisateur
+														JOIN ville ON utilisateur.idVille = ville.idVille
+														JOIN ville ON utilisateur.idVille = ville.idVille");
+					$stmt->bindParam(":nomUtilisateur", $nomUtilisateur);
+					$stmt->execute();
+					return $stmt->fetchAll();
+				}		
+			}catch(Exception $exc) {
+				return 0;
+			}
+	
+		} */
+	 
 
 	}
 

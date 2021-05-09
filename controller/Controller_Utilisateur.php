@@ -99,6 +99,23 @@
 						header('Location: index.php');
 							
 						break;
+					case "gererUtilisateurs":
+						
+							$vueProfil = "GestionUtilisateurs";
+							$modelVille= new Model_Ville();
+							$data["ville"] = $modelVille ->obtenirListeVille();
+							$modelProvince = new Model_Province();
+							$data["province"] = $modelProvince ->obtenirListeProvince();
+							$modelTypeUtilisateur = new Model_TypeUtilisateur();
+							$data["typeUtilisateur"] = $modelTypeUtilisateur ->obtenirListeTypeUtilisateur();							
+							$modeleUtilisateur = new Model_Utilisateur();
+							$data["utilisateurs"] = $modeleUtilisateur ->obtenirListeUtilisateur();
+							$this->showView($vueProfil, $data);
+
+						
+						
+							
+						break;
 			
 				}		
 			} else {
