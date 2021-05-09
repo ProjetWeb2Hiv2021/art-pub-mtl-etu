@@ -9,6 +9,7 @@ const classMapping = {
     'Profil': Profil,
     'Modele': Modele,
     'VoitureDetail': VoitureDetail,
+    'VoitureDetailSGC': VoitureDetailSGC,
     'ConfirmationList' : ConfirmationList,
     'GroupeMotopropulseur' : GroupeMotopropulseur,
     'FormulaireAjoutMotoPropulseur' : FormulaireAjoutMotoPropulseur,
@@ -19,4 +20,5 @@ const classMapping = {
     'TypeCarburant' : TypeCarburant,
     'FormulaireAjoutTypeCarburant' : FormulaireAjoutTypeCarburant,
     'FormulaireMisAjourTypeCarburant' :FormulaireMisAjourTypeCarburant
+
 };

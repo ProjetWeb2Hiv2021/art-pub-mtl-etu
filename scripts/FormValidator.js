@@ -32,7 +32,7 @@ class FormValidator {
         this._elcodePostal = this._el.querySelectorAll('[data-js-param="codePostal"]');
         this._codePostalRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
         this._erreurCodePostal = `le code postal saisie n'est pas valide.`;
-        console.log(this._elcodePostal);
+        //console.log(this._elcodePostal);
 
         // récupère tous les éléments input email du formulaire
         this._allDateInputs = this._el.querySelectorAll('input[type="date"]');
