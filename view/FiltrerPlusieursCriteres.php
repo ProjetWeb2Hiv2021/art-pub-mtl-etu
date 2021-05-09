@@ -52,7 +52,10 @@
 			<input type="number" data-js-prix data-component="prixMax" name="prix_max" placeholder="À" maxlength="6" mainlength="0"><br>
 			<small class="error-message" data-js-error-msg></small>
 		</div>
-		<button class="disabled" data-js-btn><?= TXT_FILTRER?></button><button class="disabled" data-js-rafraichir><?= TXT_RAFRAICHIR?></button>
+		<div class="box-btn_filter">
+			<button class="disabled" data-js-btn><?= TXT_FILTRER?></button>
+			<button class="disabled" data-js-rafraichir><?= TXT_RAFRAICHIR?></button>
+		</div>
 	</form>
 </section>
 	</div>

@@ -1,0 +1,429 @@
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.bg-ruedas {  
+  background-image: url(../assets/images/penu_f_50.png);
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: 50% bottom;
+  box-sizing: border-box;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+}
+
+/***** section header *****/
+.box-shop {
+  box-sizing: border-box;
+  display: flex;
+  height: 60px;
+  margin-left: 4px;
+  max-width: 60px;
+}
+.box-shop img {
+  width: 100%;
+}
+
+.menu ul li:first-child {
+  border-left: 1px solid #dc6a2b;
+}
+.box-panier {
+  align-items: center;
+  display: flex;
+  width: 50px;
+}
+.box-panier a {
+  width: 100%;
+  height: 50%;
+}
+
+/***** section filters*****/
+.FiltrerUnCritere form {
+  margin: 1.5rem 0 1rem;
+}
+.filtres [data-js-annee] {
+  max-width: 65px;
+}
+.filtres button,
+button.proceed,
+button.retour {
+  border: none;
+}
+.filtres button {
+  height: 40px;
+}
+div.filtres select {
+  border-radius: 4px;
+  height: 39px;
+}
+.ligne div.input-wrapper input {
+  border-radius: 4px;
+  border: none;
+  height: 39px;
+  padding-left: 6px;
+}
+
+/***** section  vendette*****/
+section.swiper-container {
+  margin: 2rem auto 4rem;
+}
+div.ec div.ec__nav {
+  border-color: rgba(237, 113, 43, 0.9);
+  height: 16px;
+  width: 16px;
+}
+.box img {
+  background: #fff;
+  padding: 0px 6px;
+  border-radius: 4px;
+}
+
+/***** section  gallery*****/
+article.voiture_liste__voiture h2,
+article.voiture_liste__voiture h3,
+article.voiture_liste__voiture span {
+  margin-bottom: 7px !important;
+}
+article.voiture_liste__voiture {
+  background-color: rgba(237, 113, 43, 0.9);
+  border-radius: 2px;
+  border: none;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  padding: 8px 16px;
+  height: auto;
+  margin-left: 0;
+  max-width: 300px;
+  width: 100%;
+}
+.info_voiture {
+  color: #303030;
+  padding: 8px 0 0;
+}
+
+.label-liste {
+  font-size: 1.1rem;
+  margin: 0;
+}
+.info_voiture h2,
+.info_voiture h3,
+.info_voiture span {
+  background-color: #e5e5e5;
+  border-radius: 2px;
+  display: block;
+  font-size: 1.5rem;
+  line-height: 20px;
+  padding: 4px 6px;
+}
+div.voiture_liste__image-wrapper {
+  background-color: #fff;
+  max-width: 270px;
+  margin: auto;
+  width: 100%;
+}
+.voiture_liste__image-wrapper img {
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.menu-section {
+  display: none;
+}
+
+/* media queries */
+
+@media screen and (max-width: 1700px) {
+  form.ligne {
+    justify-content: space-between;
+  }
+  form.ligne h3 {
+    margin-bottom: 0.75rem;
+    width: 100%;
+  }
+  .box-btn_filter {
+    padding-top: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  /* header */
+  a.ligne {
+    justify-content: flex-end;
+  }
+  .box-shop {
+    max-width: 50px;
+    height: 50px;
+  }
+  .box-shop img {
+    margin: 0;
+  }
+  .menu ul li a {
+    font-size: 16px;
+  }
+
+  /* filter */
+  .FiltrerUnCritere {
+    width: 80%;
+  }
+  .FiltrerUnCritere form {
+    justify-content: center;
+  }
+  .FiltrerUnCritere select {
+    max-width: 25%;
+  }
+  div.filtres .input-wrapper {
+    justify-content: flex-end;
+    margin: 0 0 16px 10px;
+    width: 47%;
+  }
+  .ligne div.input-wrapper input {
+    font-size: 14px;
+    padding-left: 6px;
+    width: 32%;
+  }
+  .filtres [data-js-annee] {
+    max-width: 100%;
+  }
+  .filtres form select {
+    border-radius: 4px;
+    height: 39px;
+    font-size: 14px;
+    margin-right: 5px;
+    width: 65%;
+  }
+
+  /* en vendette */
+  .box img {
+    height: 140px;
+    max-width: 170px;
+  }
+  div.ec .ec__nav--prev {
+    left: -20px;
+    top: 45%;
+  }
+  div.ec .ec__nav--next {
+    right: -20px;
+    top: 45%;
+  }
+
+  /* .gallery */
+  .gallery--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .label-liste {
+    font-size: 14px;
+  }
+
+  .bg-ruedas {
+    box-sizing: border-box;
+    background-image: url(../assets/images/penu_f.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0 100%;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .box img {
+    height: 120px;
+    max-width: 130px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  html body {
+    font-size: 16px;
+    margin: 0;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  /* menu */
+  .menu-section {
+    display: block;
+  }
+  .menu-section nav {
+    padding: 0 25px;
+  }
+  .menu ul {
+    flex-direction: column;
+  }
+  .menu li {
+    border: solid 1px #dc6a2b;
+  }
+  .header hr {
+    display: none;
+  }
+  header.ligne a {
+    margin: auto;
+    order: 2;
+    width: initial;
+  }
+  header.ligne h1 {
+    text-align: center;
+  }
+  .distribue {
+    flex-direction: column;
+  }
+  .centreV {
+    display: none;
+  }
+  div.header {
+    background: black;
+    left: 0;
+    left: -120%;
+    position: absolute;
+    top: 70px;
+    transition: all 0.5s ease-in-out;
+    width: 112% !important;
+    z-index: 1;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+  }
+  .menu-toggle.on .one {
+    -moz-transform: rotate(45deg) translate(7px, 7px);
+    -ms-transform: rotate(45deg) translate(7px, 7px);
+    -webkit-transform: rotate(45deg) translate(7px, 7px);
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+  .menu-toggle.on .two {
+    opacity: 0;
+  }
+  .menu-toggle.on .three {
+    -moz-transform: rotate(-45deg) translate(8px, -10px);
+    -ms-transform: rotate(-45deg) translate(8px, -10px);
+    -webkit-transform: rotate(-45deg) translate(8px, -10px);
+    transform: rotate(-45deg) translate(8px, -10px);
+  }
+
+  .one,
+  .two,
+  .three {
+    width: 95%;
+    height: 3px;
+    background: #c1692b;
+    margin: 9px auto;
+    backface-visibility: hidden;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin: 4em auto;
+    text-align: center;
+  }
+  nav ul.hidden {
+    transition: all 0.3s;
+    transform: translateY(-120%);
+  }
+  nav ul a {
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    text-decoration: none;
+    color: white;
+    line-height: 1.5;
+    width: 100%;
+    display: block;
+  }
+  nav ul li {
+    border-bottom: solid 1px #ab5511;
+    font-size: 20px;
+    padding: 1rem;
+  }
+  nav ul li:last-child {
+    border: none;
+    padding: 1.5rem 0;
+  }
+  nav ul a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .menu-section.on {
+    z-index: 10;
+    width: 100%;
+    height: 120%;
+    display: block;
+    background-color: #120902;
+    position: absolute;
+    position: fixed;
+  }
+
+  .centreV-k {
+    display: flex;
+    justify-content: center;
+  }
+  .box-panier {
+    position: absolute;
+    right: 12px;
+    top: 26px;
+  }
+  div.box-panier a {
+    width: 32px;
+  }
+
+  /* filter */
+  div.filtres .input-wrapper {
+    width: 100%;
+  }
+  .FiltrerUnCritere {
+    width: 100%;
+  }
+  .btn-trier {
+    height: 37px;
+    max-width: 100px;
+    width: 100%;
+  }
+  button.retour {
+    height: 39px;
+    max-width: 75px;
+    width: 100%;
+  }
+  .filtres button {
+    width: 49%;
+  }
+
+  /* vedette */
+  .box {
+    height: 80px;
+  }
+  .box img {
+    height: 100%;
+    max-width: 80px;
+  }
+  div.ec .ec__nav--prev,
+  div.ec .ec__nav--next {
+    top: 40%;
+  }
+
+  /* .gallery */
+  .gallery--3 {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+  article.voiture_liste__voiture {
+    margin: 0 auto 0.5rem;
+    width: 100%;
+  }
+}
