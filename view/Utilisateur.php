@@ -59,6 +59,26 @@
             
         </tr>
         
+        <tr>
+            <td></td>
+            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé") echo
+            '<td><a href="index.php?GroupeMotopropulseur&action=connexion">Gérer GroupeMotopropulseur</a></td>';
+            ?>           
+        </tr>
+
+        <tr>
+            <td></td>
+            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé") echo
+            '<td><a href="index.php?Chassis&action=connexion">Gérer Chassis</a></td>';
+            ?>           
+        </tr>
+
+        <tr>
+            <td></td>
+            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé") echo
+            '<td><a href="index.php?TypeCarburant&action=connexion">Gérer TypeCarburant</a></td>';
+            ?>           
+        </tr>			
         <tbody>
     </table>
 </div>

@@ -1,20 +1,26 @@
-CREATE TABLE chassis (
-	idChassis TINYINT UNSIGNED AUTO_INCREMENT, 
-	chassisfr VARCHAR(100) NOT NULL,
-	chassisen VARCHAR(100),
-	PRIMARY KEY (idChassis)
-)ENGINE=InnoDB;
-CREATE TABLE typeCarburant (
-	idTypeCarburant TINYINT UNSIGNED AUTO_INCREMENT, 
-	typeCarburantfr VARCHAR(100) NOT NULL,
-	typeCarburanten VARCHAR(100),
-	PRIMARY KEY (idTypeCarburant)
-)ENGINE=InnoDB;
-CREATE TABLE groupeMotopropulseur (
-	idGroupeMotopropulseur TINYINT UNSIGNED AUTO_INCREMENT, 
-	groupeMotopropulseur VARCHAR(100) NOT NULL,
-	PRIMARY KEY (idGroupeMotopropulseur)
-)ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS `chassis` (
+  `idChassis` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `chassisfr` varchar(100) NOT NULL,
+  `chassisen` varchar(100) DEFAULT NULL,
+  `statut` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`idChassis`)
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS `typeCarburant` (
+  `idTypeCarburant` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `typeCarburantfr` varchar(100) NOT NULL,
+  `typeCarburanten` varchar(100) DEFAULT NULL,
+  `statut` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`idTypeCarburant`)
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS `groupeMotopropulseur` (
+  `idGroupeMotopropulseur` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `groupeMotopropulseur` varchar(100) NOT NULL,
+  `statut` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`idGroupeMotopropulseur`)
+) ENGINE=InnoDB;
+
 CREATE TABLE fabricant (
 	idFabricant TINYINT UNSIGNED AUTO_INCREMENT, 
 	fabricant VARCHAR(100) NOT NULL,
