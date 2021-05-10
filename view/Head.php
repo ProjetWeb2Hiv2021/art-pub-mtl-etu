@@ -24,8 +24,9 @@
 	<script type="text/javascript" src="./scripts/GestionUtilisateurs.js"></script>
 
 	<script type="text/javascript" src="./scripts/GestionModeles.js"></script>
+	<script type="text/javascript" src="./scripts/GestionMarque.js"></script>
 
-	<script type="text/javascript" src="./scripts/Header.js"></script>
+
 	<script type="text/javascript" src="./scripts/VoitureDetail.js"></script>
 
 	<script type="text/javascript" src="./scripts/VoitureDetailSGC.js"></script>
@@ -44,7 +45,7 @@
 	<script type="text/javascript" src="./scripts/FormulaireMisAjourTypeCarburant.js"></script>
 													 
 
-	
+	<script type="text/javascript" src="./scripts/Header.js"></script>
 	<script type="text/javascript" src="./scripts/classMapping.js"></script>
 	<script type="text/javascript" src="./scripts/script.js" defer></script>
 

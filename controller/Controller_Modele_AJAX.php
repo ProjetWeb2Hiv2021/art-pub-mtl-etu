@@ -58,6 +58,19 @@
 							
 							echo json_encode($data);
 							break;
+						case "miseAJourMarque":
+							$modeleMarque = new Model_Marque();			
+							$lesMarques = $modeleMarque->miseAJourMarque($params["idMarque"], $params["nouvelleValeurMarque"], $params["idFabricant"],$params["statut"]);
+							$data["marqueajour"] = $lesMarques;					
+							
+							echo json_encode($data);
+							break;
+						case "ajouterMarque":
+							$modeleMarque = new Model_Marque();			
+							$lesMarques = $modeleMarque->ajouterMarque($params["marque"], $params["idFabricant"], $params["statut"]);
+							$data["marqueajouter"] = $lesMarques;	
+							echo json_encode($data);
+							break;
 			}			
 			} else {
 				echo "ERROR ACTION";

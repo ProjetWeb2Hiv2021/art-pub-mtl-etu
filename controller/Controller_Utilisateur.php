@@ -19,7 +19,7 @@
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
                     case "connexion":
-						if(isset($_SESSION["typeUtilisateur"])&&($_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]==="Administrateur"||$_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]==="Employé")){							
+						if(isset($_SESSION["typeUtilisateur"])&&($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"]==="Employé")){							
 							$vue = "Utilisateur";
 							$this->showView($vue);
 						}else{
@@ -31,7 +31,7 @@
 					case "authentifier":
                         //var_dump($_REQUEST);
 						// Vérifier qu'on a bien un utilisateur et un mot de passe
-						$lang =$_COOKIE['lang'];
+
 						if(isset($_REQUEST["nomUtilisateur"], $_REQUEST["motPasse"], $_REQUEST["lang"]))
 						{
 							// obtenir le modele

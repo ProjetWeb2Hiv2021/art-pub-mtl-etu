@@ -10,7 +10,7 @@
 
 <div class="table-wrapper" data-component="GestionModeles">
 <h2><?=TXT__GESTIONU_GESMOD?></h2>
-    
+    <div data-js-reponse></div>
     <table class="fl-table">
         <thead>
         <tr>

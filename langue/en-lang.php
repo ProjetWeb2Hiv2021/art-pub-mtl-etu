@@ -163,7 +163,11 @@ define('TXT__GESTIONU_ACT', 'Action');
 define('TXT__GESTIONU_AJMOD', 'Add new model');
 define('TXT__GESTIONU_SUPP', 'Delete model');
 define('TXT__GESTIONU_GESMOD', 'Model management');
-
+/* vue  Gestion MODELE*/
+define('TXT__GESTIONUME_ACT', 'Action');
+define('TXT__GESTIONUME_MODIF', 'Edit mark');
+define('TXT__GESTIONUME_AJMOD', 'Add new brand');
+define('TXT__GESTIONUME_GESMOD', 'Trademark management');
 
 
 

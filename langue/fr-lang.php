@@ -167,4 +167,9 @@ define('TXT__GESTIONU_ACT', 'Action');
 define('TXT__GESTIONU_AJMOD', 'Ajouter nouveau modele');
 define('TXT__GESTIONU_SUPP', 'Supprimer modele');
 define('TXT__GESTIONU_GESMOD', 'Gestion des modeles');
+/* vue  Gestion MODELE*/
+define('TXT__GESTIONUME_ACT', 'Action');
+define('TXT__GESTIONUME_MODIF', 'Modifier marque');
+define('TXT__GESTIONUME_AJMOD', 'Ajouter nouvelle marque');
+define('TXT__GESTIONUME_GESMOD', 'Gerer marques');
 ?>

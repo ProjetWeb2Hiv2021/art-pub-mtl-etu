@@ -21,7 +21,8 @@ const classMapping = {
     'FormulaireMisAjourChassis' :FormulaireMisAjourChassis,
     'TypeCarburant' : TypeCarburant,
     'FormulaireAjoutTypeCarburant' : FormulaireAjoutTypeCarburant,
-    'FormulaireMisAjourTypeCarburant' :FormulaireMisAjourTypeCarburant
+    'FormulaireMisAjourTypeCarburant' :FormulaireMisAjourTypeCarburant,
+    'GestionMarque':GestionMarque
 
 
 };

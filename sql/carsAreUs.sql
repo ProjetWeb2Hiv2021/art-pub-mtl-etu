@@ -24,12 +24,14 @@ CREATE TABLE IF NOT EXISTS `groupeMotopropulseur` (
 CREATE TABLE fabricant (
 	idFabricant TINYINT UNSIGNED AUTO_INCREMENT, 
 	fabricant VARCHAR(100) NOT NULL,
+	`statut` int(11) NOT NULL DEFAULT '1',
 	PRIMARY KEY (idFabricant)
 )ENGINE=InnoDB;
 CREATE TABLE marque (
 	idMarque TINYINT UNSIGNED AUTO_INCREMENT, 
 	idFabricant TINYINT UNSIGNED NOT NULL,
 	marque VARCHAR(100) NOT NULL,
+	`statut` int(11) NOT NULL DEFAULT '1',
 	PRIMARY KEY (idMarque),
 	FOREIGN KEY (idFabricant) REFERENCES fabricant(idFabricant)
 )ENGINE=InnoDB;

@@ -10,7 +10,8 @@ class GestionModeles{
         console.log(this._elSelectStatus);
         this._elSelectFabricant.setAttribute("disabled", "disabled");
         this.elModeleAmodifier = this._el.querySelector('[data-js-modelemodif]');
-
+        this._elreponse = this._el.querySelector('[data-js-reponse]')
+        console.log(this._elreponse);
         this.actuModeleStatus();
         /* traitement de l'ajout */
         this._elAjout = this._el.querySelector('[data-js-ajoutmodel]');
@@ -20,7 +21,7 @@ class GestionModeles{
         this._btnAjoutModele = this._elAjout.querySelector('[data-js-ajoutmod]');
         this._elSelectFabricantAjout.setAttribute("disabled", "disabled");
         this._elSelectStatusAjout = this._elAjout.querySelector('[data-js-status]');
-        console.log(this._btnAjoutModele );
+        
         
 
         this.init();
@@ -67,6 +68,8 @@ class GestionModeles{
             let requete = `idModele=${idModele}&nouvelleValeurModel=${nouvelleValeurModel}&idMarque=${idMarque}&status=${status}`;
             console.log(requete);
             this.callAJAX(requete, path);
+
+ 
         });
 
         /* ajout  modele*/
@@ -117,7 +120,18 @@ class GestionModeles{
 
                 if (xhr.readyState === 4) {							
                     if (xhr.status === 200) {
-                       
+                        let reponse = JSON.parse(xhr.responseText);
+                        
+                        if(reponse["modeleajour"]){
+
+                            this._elreponse.innerHTML = "le modele a bien été mis à jour";
+                            
+                        }else if(reponse["modeleajouter"]){
+                            this._elreponse.innerHTML = "le modele a bien a bien été ajouté";
+                        };
+                        setTimeout(() => {
+                            this._elreponse.innerHTML= "";
+                        }, 4000);
                        
                     }
                 }
