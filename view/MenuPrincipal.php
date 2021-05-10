@@ -32,7 +32,7 @@
 
 </div>
 
-<script> /* script para el menu en movil */
+<script> /* script pour l'affichage du menu dans le mode cellulaire */
 $(".menu-toggle").on('click', function() {
   $(this).toggleClass("on");
   $('.menu-section').toggleClass("on");
