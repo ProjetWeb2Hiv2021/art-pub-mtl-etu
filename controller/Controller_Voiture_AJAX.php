@@ -45,9 +45,22 @@
                             
 							$modeleVoiture = new Model_Voiture();
 							
-							$data["voiture"] = $modeleVoiture->ajouterVoiture($vin, $prixVente, $annee, $dateArrivee, $prixPaye, 
-                            $km, $couleurfr, $couleuren, $vedette, $idTypeCarburant,
-                            $idModele, $idChassis, $idTransmission, $idGroupeMotopropulseur, $idStatut);
+							$data["voiture"] = $modeleVoiture->ajouterVoiture(
+                                $vin, 
+                                $prixVente, 
+                                $annee, 
+                                $dateArrivee, 
+                                $prixPaye, 
+                                $km, 
+                                $couleurfr, 
+                                $couleuren, 
+                                $vedette, 
+                                $idGroupeMotopropulseur,
+                                $idTypeCarburant,
+                                $idChassis, 
+                                $idModele,  
+                                $idTransmission,  
+                                $idStatut);
                             
 							echo json_encode($data["voiture"]);
 
@@ -83,8 +96,22 @@
                             $id = $params["id"];
 							$modeleVoiture = new Model_Voiture();
 							
-							$data = $modeleVoiture->modifierVoiture($vin, $prixVente, $annee, $dateArrivee, $prixPaye, $km, $couleurfr, $couleuren, $vedette, $idTypeCarburant,
-                            $idModele, $idChassis, $idTransmission, $idGroupeMotopropulseur, $idStatut, $id);
+							$data = $modeleVoiture->modifierVoiture($vin, 
+                                $prixVente, 
+                                $annee, 
+                                $dateArrivee, 
+                                $prixPaye, 
+                                $km, 
+                                $couleurfr, 
+                                $couleuren, 
+                                $vedette, 
+                                $idGroupeMotopropulseur,
+                                $idTypeCarburant,
+                                $idChassis, 
+                                $idModele,  
+                                $idTransmission,  
+                                $idStatut, 
+                                $id);
 								
 							echo json_encode($data);
 

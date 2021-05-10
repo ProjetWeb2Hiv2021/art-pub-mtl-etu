@@ -3,6 +3,9 @@
   width: 100%;
   min-height: 80vh;
 }
+[data-component="FormulaireAjoutVoiture"] button {
+  width: fit-content;
+}
 
 [data-component="FormulaireAjoutVoiture"] form {
   display: flex;
