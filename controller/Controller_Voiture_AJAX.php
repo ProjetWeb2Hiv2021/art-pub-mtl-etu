@@ -53,7 +53,7 @@
 
 						}
 						break;
-					case "miseAJourVoiture":
+					case "modifierVoiture":
 
 						
 									
@@ -63,7 +63,7 @@
                         isset($params["vedette"]) && 
                         isset($params["idTypeCarburant"]) && isset($params["idModele"])	&& 
                         isset($params["idChassis"]) && isset($params["idTransmission"]) && 
-                        isset($params["idGroupeMotopropulseur"]) && isset($params["idStatut"])){ 
+                        isset($params["idGroupeMotopropulseur"]) && isset($params["idStatut"])&& isset($params["id"])){ 
 							
 							$vin = $params["vin"];
 							$prixVente = $params["prixVente"];
@@ -80,10 +80,11 @@
                             $idTransmission = $params["idTransmission"];
                             $idGroupeMotopropulseur = $params["idGroupeMotopropulseur"];
                             $idStatut = $params["idStatut"];
+                            $id = $params["id"];
 							$modeleVoiture = new Model_Voiture();
 							
 							$data = $modeleVoiture->modifierVoiture($vin, $prixVente, $annee, $dateArrivee, $prixPaye, $km, $couleurfr, $couleuren, $vedette, $idTypeCarburant,
-                            $idModele, $idChassis, $idTransmission, $idGroupeMotopropulseur, $idStatut);
+                            $idModele, $idChassis, $idTransmission, $idGroupeMotopropulseur, $idStatut, $id);
 								
 							echo json_encode($data);
 

@@ -8,8 +8,8 @@ class VoitureDetail {
 
     init = (e) => {
         
-
-        this._elSubmit.addEventListener('click', (e) => {
+        console.log(this._el);
+         this._elSubmit.addEventListener('click', (e) => {
             e.preventDefault();
             
             console.log('Produit ajouter au panier');

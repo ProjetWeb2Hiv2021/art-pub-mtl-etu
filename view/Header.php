@@ -91,9 +91,12 @@
 		
 
 		//On définit la durée du cookie (avant son expiration)
-		$expire = 365*24*3600;
-		//Puis on créé le cookie
-		setcookie("lang", $lang, time() + $expire);
+		if(!isset($_COOKIE['lang'])){
+			$expire = 365*24*3600;
+			//Puis on créé le cookie
+			setcookie("lang", $lang, time() + $expire);
+		}
+		
 		switch($lang) {
 			//Si lang=fr on inclut le fichier de langue française
 			case 'fr':

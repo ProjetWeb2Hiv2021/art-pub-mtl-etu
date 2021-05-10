@@ -45,7 +45,7 @@
         <tr>
             <td>Connexion</td>
             <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
-            '<td><a href="index.php?Voiture&action=modifier">'.TXT__UTILISATEUR_MV.'</td>';
+            '<td><a href="index.php?Voiture&action=listeAModifier">'.TXT__UTILISATEUR_MV.'</td>';
             ?>
             
             

@@ -48,7 +48,7 @@
 
 			}
 			catch(Exception $exc) {
-				echo($exc->getMessage());
+				
 				return 0;
 			}
 		}
@@ -275,6 +275,53 @@
 			}	
 			catch(Exception $exc) {
 				/* echo $exc->getMessage(); */
+				return 0;
+			}
+		}
+		public function modifierVoiture($vin, $prixVente, $annee, $dateArrivee, $prixPaye, $km, $couleurfr, $couleuren, $vedette, $idTypeCarburant,
+                            $idModele, $idChassis, $idTransmission, $idGroupeMotopropulseur, $idStatut, $id) {
+
+			try {
+				$stmt = $this->connexion->prepare("	 UPDATE voiture 
+														SET vin=:vin, 
+															prixVente=:prixVente, 
+															annee=:annee, 
+															dateArrivee=:dateArrivee, 
+															prixPaye=:prixPaye, 
+															km=:km, 
+															couleurfr=:couleurfr, 
+															couleuren=:couleuren, 
+															vedette=:vedette,
+                    										idTypeCarburant=:idTypeCarburant, 
+															idModele=:idModele, 
+															idChassis=:idChassis, 
+															idTransmission=:idTransmission, 
+															idGroupeMotopropulseur=:idGroupeMotopropulseur, 
+															idStatut=:idStatut 
+													  WHERE idVoiture=".$id.";");
+				
+				$stmt->bindParam(":vin", $vin);
+				$stmt->bindParam(":prixVente", $prixVente);
+				$stmt->bindParam(":annee", $annee);
+				$stmt->bindParam(":dateArrivee", $dateArrivee);
+				$stmt->bindParam(":prixPaye", $prixPaye);
+				$stmt->bindParam(":km", $km);
+				$stmt->bindParam(":couleurfr", $couleurfr);
+				$stmt->bindParam(":couleuren", $couleuren);
+				$stmt->bindParam(":vedette", $vedette);
+				$stmt->bindParam(":idTypeCarburant", $idTypeCarburant);
+				$stmt->bindParam(":idModele", $idModele);
+				$stmt->bindParam(":idChassis", $idChassis);
+				$stmt->bindParam(":idTransmission", $idTransmission);
+				$stmt->bindParam(":idGroupeMotopropulseur", $idGroupeMotopropulseur);
+				$stmt->bindParam(":idStatut", $idStatut);				
+								
+				$stmt->execute();
+
+				return 1;
+			}	
+			catch(Exception $exc) {
+				/* echo($exc->getMessage()); */
 				return 0;
 			}
 		}
