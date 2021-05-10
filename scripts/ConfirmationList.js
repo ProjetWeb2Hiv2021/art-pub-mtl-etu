@@ -38,12 +38,12 @@ class ConfirmationList {
                         myTable+="<td style='width: 100px; color: red; text-align: right;'><button style='font-size: 10pt;margin-bottom: 30pt;' data-js-btnSuprimmer>Supprimer</button></td>";
 
                         for (let i = 0, l = data.length; i < l; i++) {
-                              myTable+="<tr><td style='width: 200px;text-align: center;' data-js-vin>"+ data[i].vin + "</td>";
-                              myTable+="<td style='width: 100px;text-align: right;'data-js-modele> "+data[i].modele+ "</td>";
-                              myTable+="<td style='width: 200px;text-align: right;' data-js-km>"+ data[i].km + "</td>";
-                              myTable+="<td style='width: 100px;text-align: right;'data-js-annee> "+data[i].annee+ "</td>";
-                              myTable+="<td style='width: 200px;text-align: right;' data-js-couleur>"+ data[i].couleur + "</td>";
-                              myTable+="<td style='width: 100px;text-align: right;'data-js-prix> "+Intl.NumberFormat('fr-CA').format(data[i].prix)+ "</td>";
+                              myTable+="<tr data-js-idVoiture="+ data[i].idVoiture + "><td data-js-vin style='width: 200px;text-align: center;' data-js-vin>"+ data[i].vin + "</td>";
+                              myTable+="<td data-js-modele style='width: 100px;text-align: right;'data-js-modele> "+data[i].modele+ "</td>";
+                              myTable+="<td data-js-km style='width: 200px;text-align: right;' data-js-km>"+ data[i].km + "</td>";
+                              myTable+="<td data-js-annee style='width: 100px;text-align: right;'data-js-annee> "+data[i].annee+ "</td>";
+                              myTable+="<td data-js-couleur style='width: 200px;text-align: right;' data-js-couleur>"+ data[i].couleur + "</td>";
+                              myTable+="<td data-js-prix style='width: 100px;text-align: right;'data-js-prix> "+Intl.NumberFormat('fr-CA').format(data[i].prix)+ "</td>";
                               myTable+="<td style='width: 100px;text-align: right;'> "+'<input type="checkbox"  data-js-sup value="' +i+'"></input>'+ "</td>";
 
                               

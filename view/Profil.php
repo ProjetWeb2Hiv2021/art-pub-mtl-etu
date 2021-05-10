@@ -190,7 +190,13 @@
 				<small class="error-message" data-js-error-msg></small>			
 			</div>
 
-			<button class="btnmodifprofil" data-js-btn><?=TXT__PROFIL_MODIFIER?></button>
+			<button class="btnmodifprofil" data-js-btn 
+			<?php
+				if(isset($data["commande"])){
+					echo "data-js-commande=1";
+				}
+			?>
+			><?=TXT__PROFIL_MODIFIER?></button>
 		</form>
 	<?php
 		}

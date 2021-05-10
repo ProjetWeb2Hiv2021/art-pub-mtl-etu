@@ -24,8 +24,11 @@ class VoitureDetail {
             let couleur = this._el.querySelector('[data-js-param="couleurfr"]').value;
             let liste = this._el.querySelector('[data-js-param="statut"]');
             //let vStatus = liste.options[liste.selectedIndex].value;
+            // id voiture 
+            let idVoiture = this._el.querySelector('[data-js-idvoiture]').dataset.jsIdvoiture;
 
-            this.ajouterNouvelObjet(modele, vin,prix,annee,km,couleur);
+            this.ajouterNouvelObjet(idVoiture, modele, vin,prix,annee,km,couleur);
+            console.log(idVoiture);
 
         });
 
@@ -33,7 +36,7 @@ class VoitureDetail {
     }
 
 
-    ajouterNouvelObjet = (modele, vin,prix,annee,km,couleur) => {
+    ajouterNouvelObjet = (idVoiture, modele, vin,prix,annee,km,couleur) => {
 
  
         let objet = {},
@@ -60,6 +63,7 @@ class VoitureDetail {
 
         //
         if(sw==0){
+            objet.idVoiture = idVoiture;
             objet.modele = modele;
             objet.vin = vin;
             objet.prix  = prix;
