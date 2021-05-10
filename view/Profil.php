@@ -68,7 +68,8 @@
 
 
 			<?php
-			if(isset($_SESSION["typeUtilisateur"]) && $_SESSION["typeUtilisateur"]=="Administrateur"){
+
+			if(isset($_SESSION["typeUtilisateur"]) && $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"){
 			?>
 			<div class="input-wrapper" data-js-input-wrapper>
 				<div class="ligne distribue">
@@ -88,9 +89,9 @@
 							}
 							?>	
 							><?php if($lang == "en" && $typeUtilisateur["typeUtilisateuren"]){
-								$typeUtilisateur["typeUtilisateuren"];
+								echo $typeUtilisateur["typeUtilisateuren"];
 							}else{
-								$typeUtilisateur["typeUtilisateurfr"];
+								echo $typeUtilisateur["typeUtilisateurfr"];
 							} ?></option>
 						<?php
 							}

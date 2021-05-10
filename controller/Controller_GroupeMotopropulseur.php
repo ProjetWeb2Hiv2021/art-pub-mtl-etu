@@ -20,7 +20,7 @@
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
                     case "connexion":
-                        if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé"){
+                        if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé"){
                             $vue="GroupeMotopropulseur";
                             $groupeMotopropulseur = new Model_GroupeMotopropulseur();
 							
@@ -36,7 +36,7 @@
                         
                         break;
 						case "ajoutMotopropulseur":
-							if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé"){
+							if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé"){
 								$vue="FormulaireAjoutPropulseur";
 /* 								$groupeMotopropulseur = new Model_GroupeMotopropulseur();
 								
@@ -52,7 +52,7 @@
 							
 							break;
 							case "misAjourMotopropulseur":
-								if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé"){
+								if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé"){
 									$vue="FormulaireMisAjourPropulseur";
 									$id = $_GET["id"];
 	 								$groupeMotopropulseur = new Model_GroupeMotopropulseur();

@@ -31,7 +31,7 @@
 					case "authentifier":
                         //var_dump($_REQUEST);
 						// Vérifier qu'on a bien un utilisateur et un mot de passe
-						$lang =$_COOKIE['lang'];
+
 						if(isset($_REQUEST["nomUtilisateur"], $_REQUEST["motPasse"], $_REQUEST["lang"]))
 						{
 							// obtenir le modele
@@ -91,13 +91,28 @@
 						$this->showView($vueProfil, $data);
 						break;
 					case "deconnexion":
-						if(isset($_SESSION['nomUtilisateur']) || isset($_SESSION['typeUtilisateur'])){
-							unset($_SESSION['nomUtilisateur']);
-							unset($_SESSION['typeUtilisateur']);	
+						if(isset($_SESSION['nomUtilisateur'])){
 							session_destroy();
+							unset($_SESSION['nomUtilisateur']);
+							unset($_SESSION['typeUtilisateur']);
+							header('Location: index.php?Magasin&action=accueil');
 						}
-						header('Location: index.php');
-							
+	
+						break;
+					case "gererUtilisateurs":
+						
+							$vueProfil = "GestionUtilisateurs";
+							$modelVille= new Model_Ville();
+							$data["ville"] = $modelVille ->obtenirListeVille();
+							$modelProvince = new Model_Province();
+							$data["province"] = $modelProvince ->obtenirListeProvince();
+							$modelTypeUtilisateur = new Model_TypeUtilisateur();
+							$data["typeUtilisateur"] = $modelTypeUtilisateur ->obtenirListeTypeUtilisateur();							
+							$modeleUtilisateur = new Model_Utilisateur();
+							$data["utilisateurs"] = $modeleUtilisateur ->obtenirListeUtilisateur();
+							$this->showView($vueProfil, $data);
+
+		
 						break;
 			
 				}		

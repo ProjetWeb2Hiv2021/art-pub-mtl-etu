@@ -80,11 +80,7 @@
 					$stmt = $this->connexion->prepare("UPDATE modele SET status=0 WHERE idModele=".$id);
 					$stmt->execute();
 				}
-				else
-				{	
-						$stmt = $this->connexion->prepare("DELETE FROM modele WHERE idModele=" . $id);
-						$stmt->execute();
-				}
+				
 				//return $stmt->rowCount();
 				return 1;
 
@@ -199,6 +195,35 @@
 				return $stmt->fetchAll();
 
 			}
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
+		public function miseAJourModele($idModele, $nouvelleValeurModels, $idMarque,$status){
+			try {
+				$stmt = $this->connexion->prepare("UPDATE modele SET idMarque=:idMarque,modele=:model,status=:status WHERE idModele=:idModele");
+				$stmt->bindParam(":idModele", $idModele);
+				$stmt->bindParam(":idMarque", $idMarque);
+				$stmt->bindParam(":model", $nouvelleValeurModels);
+				$stmt->bindParam(":status", $status);
+				$stmt->execute();
+
+				return 1;
+			}	
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
+		public function ajouterModele($model, $idMarque, $status) {		
+			try {
+				$stmt = $this->connexion->prepare("INSERT INTO modele (modele, idMarque, status) VALUES (:model, :idMarque, :status)");
+				$stmt->bindParam(":idMarque", $idMarque);
+				$stmt->bindParam(":model", $model);
+				$stmt->bindParam(":status", $status);
+				$stmt->execute();
+				/* return $this->connexion->lastInsertId(); */
+				return 1;
+			}	
 			catch(Exception $exc) {
 				return 0;
 			}

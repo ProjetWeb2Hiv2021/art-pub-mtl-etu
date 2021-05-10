@@ -44,7 +44,33 @@
 							
 							echo json_encode($data);
 							break;
-			
+						case "miseAJourModele":
+							$modeleModele = new Model_Modele();			
+							$lesModeles = $modeleModele->miseAJourModele($params["idModele"], $params["nouvelleValeurModel"], $params["idMarque"],$params["status"]);
+							$data["modeleajour"] = $lesModeles;					
+							
+							echo json_encode($data);
+							break;	
+						case "ajouterModele":
+							$modeleModele = new Model_Modele();			
+							$lesModeles = $modeleModele->ajouterModele($params["modele"], $params["idMarque"],$params["status"]);
+							$data["modeleajouter"] = $lesModeles;					
+							
+							echo json_encode($data);
+							break;
+						case "miseAJourMarque":
+							$modeleMarque = new Model_Marque();			
+							$lesMarques = $modeleMarque->miseAJourMarque($params["idMarque"], $params["nouvelleValeurMarque"], $params["idFabricant"],$params["statut"]);
+							$data["marqueajour"] = $lesMarques;					
+							
+							echo json_encode($data);
+							break;
+						case "ajouterMarque":
+							$modeleMarque = new Model_Marque();			
+							$lesMarques = $modeleMarque->ajouterMarque($params["marque"], $params["idFabricant"], $params["statut"]);
+							$data["marqueajouter"] = $lesMarques;	
+							echo json_encode($data);
+							break;
 			}			
 			} else {
 				echo "ERROR ACTION";

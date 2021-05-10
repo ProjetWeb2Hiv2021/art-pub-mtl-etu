@@ -50,20 +50,20 @@ define('TXT__CONTACT_VIA', 'VIA');
 define('TXT__CONTACT_ADRESSE', 'Address :');
 
 /* vue FORMULAIRE AJOUT UTILISATEUR*/
-define('TXT__FAU_PSEUDO', 'Pseudonym :');
-define('TXT__FAU_NOM', 'Last name :');
-define('TXT__FAU_PRENOM', 'First name :');
-define('TXT__FAU_DATEN', 'Date of Birth :');
-define('TXT__FAU_COURRIEL', 'Email :');
-define('TXT__FAU_MP', 'Mot de passe :');
-define('TXT__FAU_TEL', 'Phone :');
-define('TXT__FAU_TY_UTI', 'User type :');
-define('TXT__FAU_TEL_POR', 'Cellphone :');
-define('TXT__FAU_NC', 'Civic number :');
-define('TXT__FAU_RUE', 'Street :');
+define('TXT__FAU_PSEUDO', 'Pseudonym ');
+define('TXT__FAU_NOM', 'Last name ');
+define('TXT__FAU_PRENOM', 'First name ');
+define('TXT__FAU_DATEN', 'Date of Birth ');
+define('TXT__FAU_COURRIEL', 'Email ');
+define('TXT__FAU_MP', 'Mot de passe ');
+define('TXT__FAU_TEL', 'Phone ');
+define('TXT__FAU_TY_UTI', 'User type ');
+define('TXT__FAU_TEL_POR', 'Cellphone ');
+define('TXT__FAU_NC', 'Civic number ');
+define('TXT__FAU_RUE', 'Street ');
 define('TXT__FAU_CP', 'Postal code :');
-define('TXT__FAU_VILLE', 'City :');
-define('TXT__FAU_PROVINCE', 'Province :');
+define('TXT__FAU_VILLE', 'City ');
+define('TXT__FAU_PROVINCE', 'Province ');
 define('TXT__FAU_SOUMETTRE', 'Soumettre');
 
 /* vue HEADER*/
@@ -135,6 +135,7 @@ define('TXT__UTILISATEUR_AV', 'Add Car');
 define('TXT__UTILISATEUR_MV', 'Update Car');
 define('TXT__UTILISATEUR_CON', 'Log in');
 define('TXT__UTILISATEUR_JOUR', 'Connection log');
+define('TXT__UTILISATEUR_GER_UTI', 'Gestion des utilisateurs');
 /* vue DETAILS VOITURE*/
 define('TXT__DETAIL_RESERVER', 'Reserve');
 define('TXT__DETAIL_ACHETER', 'Buy');
@@ -157,9 +158,18 @@ define('TXT__DETAIL_AJOUT', 'Add basket');
 define('TXT__DETAIL_ENREG', 'Save');
 /* vue  VOITURE LISTE*/
 define('TXT__VOITURE_LISTE_ERR', 'no cars at the moment');
-
-
-
+/* vue  Gestion Utilisateurs*/
+define('TXT__GESTIONU_GER', 'Management');
+/* vue  Gestion MODELE*/
+define('TXT__GESTIONU_ACT', 'Action');
+define('TXT__GESTIONU_AJMOD', 'Add new model');
+define('TXT__GESTIONU_SUPP', 'Delete model');
+define('TXT__GESTIONU_GESMOD', 'Model management');
+/* vue  Gestion MODELE*/
+define('TXT__GESTIONUME_ACT', 'Action');
+define('TXT__GESTIONUME_MODIF', 'Edit mark');
+define('TXT__GESTIONUME_AJMOD', 'Add new brand');
+define('TXT__GESTIONUME_GESMOD', 'Trademark management');
 
 
 

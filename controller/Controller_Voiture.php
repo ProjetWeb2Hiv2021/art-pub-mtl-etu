@@ -19,6 +19,12 @@
 				switch($params["action"]) {
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
+
+/*                     case "connexion":
+                        if(isset($_SESSION["nomUtilisateur"])&&isset($_SESSION["typeUtilisateur"])&&$_SESSION["typeUtilisateur"]["typeUtilisateurfr"] ==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"] ==="Employé"){
+                            $vue="VoitureDetailsSGC";
+							$data["systeme"]="SGC"; */
+
                     case "ajout":
                         if(isset($_SESSION["nomUtilisateur"])&&isset($_SESSION["typeUtilisateur"])&&$_SESSION["typeUtilisateur"]["typeUtilisateurfr"] ==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"] ==="Employé"){
                             $vue="FormulaireAjoutVoiture";
