@@ -32,6 +32,37 @@
 				return 0;
 			}
 		}
+
+		public function miseAJourMarque($idMarque, $nouvelleValeurMarque, $idFabricant, $statut){
+			try {
+				$stmt = $this->connexion->prepare("UPDATE marque SET idFabricant=:idFabricant,marque=:nouvelleValeurMarque,statut=:statut WHERE idMarque=:idMarque");
+				$stmt->bindParam(":idMarque", $idMarque);
+				$stmt->bindParam(":idFabricant", $idFabricant);
+				$stmt->bindParam(":nouvelleValeurMarque", $nouvelleValeurMarque);
+				$stmt->bindParam(":statut", $statut);
+				$stmt->execute();
+
+				return 1;
+			}	
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
+		
+		public function ajouterMarque($marque, $idFabricant, $statut){
+			try {
+				$stmt = $this->connexion->prepare("INSERT INTO marque (marque, idFabricant, statut) VALUES (:marque, :idFabricant, :statut)");
+				$stmt->bindParam(":marque", $marque);
+				$stmt->bindParam(":idFabricant", $idFabricant);
+				$stmt->bindParam(":statut", $statut);
+				$stmt->execute();
+				/* return $this->connexion->lastInsertId(); */
+				return 1;
+			}	
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
 		
 	}
 ?>

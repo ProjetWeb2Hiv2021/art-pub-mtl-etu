@@ -72,6 +72,43 @@
 
 						}
                         break;
+					case "gererModeles":
+						if(isset($_SESSION["nomUtilisateur"]) && $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]  ==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"]  ==="Employe"){
+							$vue="GestionModeles";
+							$modeleModele = new Model_Modele();
+							
+							$data["modele"] = $modeleModele ->obtenirModele();
+							
+							$modeleMarque = new Model_Marque();
+							$data["marque"] = $modeleMarque ->obtenirListeMarque();
+							$modeleFabricant = new Model_Fabricant();
+							$data["fabricant"] = $modeleFabricant ->obtenirListeFabricant();
+							
+							$this->showView($vue, $data);
+
+						}else{
+							$vue = "ConnexionCRM";  						
+							$this->showView($vue);
+						}
+						
+						break;
+						case "gererMarques":
+							if(isset($_SESSION["nomUtilisateur"]) && $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]  ==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"]  ==="Employe"){
+								$vue="GestionMarque";								
+								$modeleMarque = new Model_Marque();
+								$data["marque"] = $modeleMarque ->obtenirListeMarque();
+								$modeleFabricant = new Model_Fabricant();
+								$data["fabricant"] = $modeleFabricant ->obtenirListeFabricant();
+								
+								$this->showView($vue, $data);
+	
+							}else{
+								$vue = "ConnexionCRM";  						
+								$this->showView($vue);
+							}
+							
+							break;
+
 					default:
 					// Retourner au formulaire de connexion
 								$vue = "ConnexionCRM";  						

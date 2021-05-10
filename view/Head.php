@@ -22,14 +22,22 @@
 
 	<script type="text/javascript" src="./scripts/Profil.js"></script>
 
-	<script type="text/javascript" src="./scripts/Header.js"></script>
+	<script type="text/javascript" src="./scripts/GestionUtilisateurs.js"></script>
+
+	<script type="text/javascript" src="./scripts/GestionModeles.js"></script>
+	<script type="text/javascript" src="./scripts/GestionMarque.js"></script>
+
+
 	<script type="text/javascript" src="./scripts/VoitureDetail.js"></script>
 
+
+	<!-- <script type="text/javascript" src="./scripts/VoitureDetailSGC.js"></script> -->
+	<script type="text/javascript" src="./scripts/ConfirmationList.js"></script>														 
+		
 	<script type="text/javascript" src="./scripts/FormulaireAjoutVoiture.js"></script>
 	<script type="text/javascript" src="./scripts/FormulaireModifierVoiture.js"></script>
 
 
-	<script type="text/javascript" src="./scripts/ConfirmationList.js"></script>		
 	<script type="text/javascript" src="./scripts/GroupeMotopropulseur.js"></script>
 	<script type="text/javascript" src="./scripts/FormulaireAjoutMotoPropulseur.js"></script>
 	<script type="text/javascript" src="./scripts/FormulaireMisAjourMotoPropulseur.js"></script>
@@ -41,6 +49,10 @@
 	<script type="text/javascript" src="./scripts/TypeCarburant.js"></script>
 	<script type="text/javascript" src="./scripts/FormulaireAjoutTypeCarburant.js"></script>
 	<script type="text/javascript" src="./scripts/FormulaireMisAjourTypeCarburant.js"></script>
+
+													 
+
+	<script type="text/javascript" src="./scripts/Header.js"></script>
 
 	<script type="text/javascript" src="./scripts/classMapping.js"></script>
 	<script type="text/javascript" src="./scripts/script.js" defer></script>
