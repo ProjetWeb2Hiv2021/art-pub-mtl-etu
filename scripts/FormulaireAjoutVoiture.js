@@ -3,7 +3,8 @@ class FormulaireAjoutVoiture {
         this._el = el;
         
         this._elSubmit = this._el.querySelector('[data-js-btn]');
-        
+        this._elSubmitImage = this._el.querySelector('[data-js-btn-aj-img]');
+        this._elFormVoiture = this._el.querySelector('[data-js-component="Form"]');
         this._elVIN = this._el.querySelector('[data-js-param="vin"]');
         this._elPrixVente = this._el.querySelector('[data-js-param="prixVente"]');
         this._elAnnee = this._el.querySelector('[data-js-param="annee"]');
@@ -31,8 +32,8 @@ class FormulaireAjoutVoiture {
         
         this._elSubmit.addEventListener('click', (e) => {
             e.preventDefault();
-            
-            let validation = new FormValidator(this._el);
+            console.log(this._elSelectStatut.options[this._elSelectStatut.selectedIndex].value);
+             let validation = new FormValidator(this._el);
             if (validation.isValid) {
                 let vin = encodeURIComponent(this._elVIN.value);
                 let prixVente = encodeURIComponent(this._el.querySelector('[data-js-param="prixVente"]').value);
@@ -42,7 +43,7 @@ class FormulaireAjoutVoiture {
                 let km = encodeURIComponent(this._el.querySelector('[data-js-param="km"]').value);
                 let couleurfr = encodeURIComponent(this._el.querySelector('[data-js-param="couleurfr"]').value);
                 let couleuren = encodeURIComponent(this._el.querySelector('[data-js-param="couleuren"]').value);
-                let vedette = encodeURIComponent(this._el.querySelector('[data-js-param="vedette"]').value);
+                let vedette = encodeURIComponent(this._el.querySelector('[data-js-param="vedette"]').checked ? 1 : 0);
                 let idTypeCarburant = Number(encodeURIComponent(this._elSelectTypeCarburant.options[this._elSelectTypeCarburant.selectedIndex].value));
                 let idModele = Number(encodeURIComponent(this._elSelectModele.options[this._elSelectModele.selectedIndex].value));
                 let idChassis = Number(encodeURIComponent(this._elSelectChassis.options[this._elSelectChassis.selectedIndex].value));    
@@ -50,17 +51,44 @@ class FormulaireAjoutVoiture {
                 let idGroupeMotopropulseur = Number(encodeURIComponent(this._elSelectGMP.options[this._elSelectGMP.selectedIndex].value));
                 let idStatut = Number(encodeURIComponent(this._elSelectStatut.options[this._elSelectStatut.selectedIndex].value));
                 
-                this.callAJAXAjoutVoiture(vin, prixVente, annee, dateArrivee, prixPaye, km, couleurfr, couleuren, vedette,
-                    idTypeCarburant, idModele, idChassis, idTransmission, idGroupeMotopropulseur, idStatut);
-            }
+                this.callAJAXAjoutVoiture(
+                    vin,
+                    prixVente,
+                    annee,
+                    dateArrivee,
+                    prixPaye,
+                    km,
+                    couleurfr,
+                    couleuren,
+                    vedette,
+                    idGroupeMotopropulseur,
+                    idTypeCarburant,
+                    idChassis,
+                    idModele,
+                    idTransmission,
+                    idStatut);
+            } 
         });
 
 
     }
 
 
-    callAJAXAjoutVoiture = (vin, prixVente, annee, dateArrivee, prixPaye, km, couleurfr, couleuren, vedette, idTypeCarburant,
-        idModele, idChassis, idTransmission, idGroupeMotopropulseur) => {
+    callAJAXAjoutVoiture = (vin,
+                    prixVente,
+                    annee,
+                    dateArrivee,
+                    prixPaye,
+                    km,
+                    couleurfr,
+                    couleuren,
+                    vedette,
+                    idGroupeMotopropulseur,
+                    idTypeCarburant,
+                    idChassis,
+                    idModele,
+                    idTransmission,
+                    idStatut) => {
         
         // Déclaration de l'objet XMLHttpRequest
         let xhr;
@@ -82,7 +110,7 @@ class FormulaireAjoutVoiture {
                         
                         // Traitement du DOM
                         /* console.log("test"); */
-                          let reponse = JSON.parse(xhr.responseText);
+                       /*  let reponse = JSON.parse(xhr.responseText);
                         
                         if(reponse == 1){
                             this._elResultat.innerHTML = "<p>La voiture a été ajoutée</p>";
@@ -90,7 +118,7 @@ class FormulaireAjoutVoiture {
                             this._elResultat.innerHTML = "<p>probleme ou niveau de l'ajout</p>";
                         }   
 
-                        this.viderChamps();
+                        this.viderChamps(); */
                         
                     } else if (xhr.status === 404) {
                         console.log('Le fichier appelé dans la méthode open() n’existe pas.');
@@ -99,10 +127,22 @@ class FormulaireAjoutVoiture {
             });
             // Envoi de la requète
 
-            xhr.send('vin=' + vin + '&prixVente=' + prixVente + '&annee=' + annee + '&dateArrivee=' + dateArrivee + '&prixPaye=' + prixPaye + '&km=' + km + '&couleurfr=' + couleurfr + '&couleuren='
-                + couleuren + '&vedette=' + vedette + '&idTypeCarburant=' + idTypeCarburant + '&idModele=' +
-                idModele + '&idChassis=' + idChassis + '&idTransmission=' + idTransmission + '&idGroupeMotopropulseur=' +  idGroupeMotopropulseur + '&idStatut=' +
-                this._idStatut);
+            xhr.send(
+                'vin=' + vin +
+                '&prixVente=' + prixVente +
+                '&annee=' + annee +
+                '&dateArrivee=' + dateArrivee +
+                '&prixPaye=' + prixPaye +
+                '&km=' + km +
+                '&couleurfr=' + couleurfr +
+                '&couleuren=' + couleuren +
+                '&vedette=' + vedette +
+                '&idGroupeMotopropulseur=' + idGroupeMotopropulseur +
+                '&idTypeCarburant=' + idTypeCarburant +
+                '&idChassis=' + idChassis +
+                '&idModele=' + idModele +                
+                '&idTransmission=' + idTransmission +                
+                '&idStatut=' + idStatut);
         }
         
     }
