@@ -1,7 +1,8 @@
 button,
 input[type="submit"],
 [data-component="VoitureDetail"] a,
-[data-component="FormulaireAjoutVoiture"] a {
+[data-component="FormulaireAjoutVoiture"] a,
+[data-component="FormulaireModifierVoiture"] a {
   border: 0;
   line-height: 2.5;
   padding: 0 20px;
@@ -21,8 +22,14 @@ input[type="submit"],
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
     inset -2px -2px 3px rgba(0, 0, 0, 0.6);
   display: inline-block;
+  text-decoration: none;
 }
 
+[data-component="VoitureDetail"] [data-js-component="Form"],
+[data-component="FormulaireAjoutVoiture"] [data-js-component="Form"],
+[data-component="FormulaireModifierVoiture"] [data-js-component="Form"] {
+  margin: 10px 0;
+}
 button:hover,
 input[type="submit"]:hover,
 [data-component="VoitureDetail"] a:hover {

@@ -26,6 +26,7 @@
 	<script type="text/javascript" src="./scripts/VoitureDetail.js"></script>
 
 	<script type="text/javascript" src="./scripts/FormulaireAjoutVoiture.js"></script>
+	<script type="text/javascript" src="./scripts/FormulaireModifierVoiture.js"></script>
 
 
 	<script type="text/javascript" src="./scripts/ConfirmationList.js"></script>		

@@ -8,10 +8,6 @@
   display: flex;
 }
 
-[data-component="FormulaireAjoutVoiture"] a {
-  text-decoration: none;
-}
-
 [data-component="FormulaireAjoutVoiture"] .input-wrapper {
   margin-bottom: 0;
 }

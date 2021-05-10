@@ -1,22 +1,18 @@
+<h2>Choisir la voiture à mettre à jour</h2>
 <section data-component="VoitureListeSGC" class="gallery gallery--4">
-  
- 
-
+   
     <?php
 
     if(isset($_COOKIE['lang'])){
         $lang = $_COOKIE['lang'];
     }else{
         $lang ="fr";
-
     } 
-    
-
     
     if($data["voiture"]){
         foreach ($data["voiture"] as $voiture) {
             
-    ?>
+        ?>
             <article class="voiture_liste__voiture" 
                 data-js-voiture
                 data-js-voiture-nbr
@@ -50,20 +46,17 @@
                 </div>      
                       
             </article>
-    <?php
+        <?php
             
         }
         
     }else{
     ?>  
-        <p><?=TXT__VOITURE_LISTE_ERR?></p>
-       
+        <p><?=TXT__VOITURE_LISTE_ERR?></p>       
 
     <?php
     }
-    ?>
-
-    
+    ?>    
 
 </section>
 

@@ -91,9 +91,12 @@
 		
 
 		//On définit la durée du cookie (avant son expiration)
-		$expire = 365*24*3600;
-		//Puis on créé le cookie
-		setcookie("lang", $lang, time() + $expire);
+		if(!isset($_COOKIE['lang'])){
+			$expire = 365*24*3600;
+			//Puis on créé le cookie
+			setcookie("lang", $lang, time() + $expire);
+		}
+		
 		switch($lang) {
 			//Si lang=fr on inclut le fichier de langue française
 			case 'fr':
@@ -106,7 +109,10 @@
 		}
 
 	?>
-	<h1>Cars Are Us</h1>	
+	<h1>Cars Are Us</h1>
+	<div class="ligne centreV">
+	
+	<!--<img src="./assets/images/logo.svg"/>-->
 	<div class="connexion ligne centreV">
 	
       	<span data-js-icone-profil>
@@ -165,15 +171,16 @@
 
 	<div class="menu_profil" data-js-menu-profil>
 		<?php if(isset($_SESSION["nomUtilisateur"])){
+
 			?>
-				<a href="index.php?Utilisateur&action=profil&nomUtilisateur=<?= $_SESSION["nomUtilisateur"] ?>"><?=TXT__HEADER_PROFIL?></a>
-				<a href="index.php?Utilisateur&action=deconnexion"><?=TXT__HEADER_DECO?></a>
-				<a href=""><?=TXT__HEADER_COM?></a>
-				<?php
-		}
-		?>
+			<a href="index.php?Utilisateur&action=profil&nomUtilisateur=<?= $_SESSION["nomUtilisateur"] ?>"><?=TXT__HEADER_PROFIL?></a>
+					<a href="index.php?Utilisateur&action=deconnexion"><?=TXT__HEADER_DECO?></a>
+					<a href=""><?=TXT__HEADER_COM?></a>
+					<?php
+			}
+			?>
 		</div>	
-			
+	</div>
 
 	
 	

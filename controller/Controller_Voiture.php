@@ -48,7 +48,7 @@
                         }
                         
                         break;
-					case "modifier":
+					case "listeAModifier":
                         
 						$vueMenuPrincipal = "MenuPrincipal";
 						$this->showView($vueMenuPrincipal);
@@ -69,7 +69,35 @@
 						$this->showView($vuePlus, $data);
 						
                         break;
-					
+					case "modifier":
+						$modeleVoiture = new Model_Voiture();						
+                        $data["voiture"] = $modeleVoiture->obtenirVoiture($params["id"]); 						
+						$modeleTypeCarburant = new Model_TypeCarburant();				
+						$data["typeCarburant"] = $modeleTypeCarburant->obtenirListeTypeCarburant();		
+						
+						$modeleModele = new Model_Modele();				
+						$data["modele"] = $modeleModele->obtenirListeModele();
+						
+						$modeleChassis = new Model_Chassis();				
+						$data["chassis"] = $modeleChassis->obtenirListeChassis();	
+						$modeleTransmission = new Model_Transmission();				
+						$data["transmission"] = $modeleTransmission->obtenirListeTransmission();	
+						
+						$modeleStatut = new Model_Statut();				
+						$data["statut"] = $modeleStatut->obtenirListeStatut();	
+						
+						$modeleGpm = new Model_GroupeMotopropulseur();				
+						$data["groupeMotopropulseur"] = $modeleGpm->obtenirListeGpm();	
+						
+                        
+						$modeleListeImage = new Model_ListeImage();						
+                        $data["listeImage"] = $modeleListeImage->obtenirListeImage($params["id"]); 						
+						
+						
+						$vue = "FormulaireModifierVoiture";       
+                        $this->showView($vue, $data);
+						
+						break;
 					default:
 					    // Retourner au formulaire de connexion
                         $vue = "ConnexionSWT";  						
