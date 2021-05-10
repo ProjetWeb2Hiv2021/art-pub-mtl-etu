@@ -160,7 +160,7 @@
                         //afficher dynamiquement une option pour chaque transmission dans la base de données
                         
                         foreach ($transmission as list($idTransmission, $transmissionfr, $transmissionen)) {
-                            echo "<option value='{$idChassis}'";
+                            echo "<option value='{$idTransmission}'";
                             if(isset($data["voiture"])&&$idTransmission==$data["voiture"]["idTransmission"]){
                                 echo " selected";
                             }
