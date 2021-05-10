@@ -28,6 +28,7 @@
             <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
             '<td><a href="index.php?Modele&action=gererModeles">'.TXT__UTILISATEUR_MOD.'</a></td>';
             ?>         
+
             
         </tr>
         <tr>
@@ -42,7 +43,7 @@
             <td><a href="index.php?Magasin&action=afficheVoiture&id=19"><?=TXT__UTILISATEUR_DV?></a></td>
               <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
 
-            '<td><a href="index.php?Voiture&action=connexion">'.TXT__UTILISATEUR_GV.'</a></td>';
+            '<td><a href="index.php?Voiture&action=ajout">'.TXT__UTILISATEUR_AV.'</a></td>';
 
             ?>
             
@@ -51,7 +52,11 @@
         <tr>
             <td>Connexion</td>
             <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
+
             '<td>'.TXT__UTILISATEUR_CON.'</td>';
+
+            '<td><a href="index.php?Voiture&action=listeAModifier">'.TXT__UTILISATEUR_MV.'</td>';
+
             ?>
             
             
@@ -63,13 +68,6 @@
             ?>
             
             
-        </tr>
-        <tr>
-            <td></td>
-            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur") echo
-            '<td><a href="index.php?Utilisateur&action=gererUtilisateurs">'.TXT__UTILISATEUR_GER_UTI.'</td>';
-            ?>
-                    
         </tr>
         <tr>
             <td></td>

@@ -1,6 +1,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<title>Cars are us</title>
 
 	<!-- Styles -->
@@ -29,9 +30,14 @@
 
 	<script type="text/javascript" src="./scripts/VoitureDetail.js"></script>
 
-	<script type="text/javascript" src="./scripts/VoitureDetailSGC.js"></script>
+
+	<!-- <script type="text/javascript" src="./scripts/VoitureDetailSGC.js"></script> -->
 	<script type="text/javascript" src="./scripts/ConfirmationList.js"></script>														 
 		
+	<script type="text/javascript" src="./scripts/FormulaireAjoutVoiture.js"></script>
+	<script type="text/javascript" src="./scripts/FormulaireModifierVoiture.js"></script>
+
+
 	<script type="text/javascript" src="./scripts/GroupeMotopropulseur.js"></script>
 	<script type="text/javascript" src="./scripts/FormulaireAjoutMotoPropulseur.js"></script>
 	<script type="text/javascript" src="./scripts/FormulaireMisAjourMotoPropulseur.js"></script>
@@ -43,9 +49,11 @@
 	<script type="text/javascript" src="./scripts/TypeCarburant.js"></script>
 	<script type="text/javascript" src="./scripts/FormulaireAjoutTypeCarburant.js"></script>
 	<script type="text/javascript" src="./scripts/FormulaireMisAjourTypeCarburant.js"></script>
+
 													 
 
 	<script type="text/javascript" src="./scripts/Header.js"></script>
+
 	<script type="text/javascript" src="./scripts/classMapping.js"></script>
 	<script type="text/javascript" src="./scripts/script.js" defer></script>
 
@@ -60,6 +68,8 @@
 	<!-- Carousel -->
 	<link rel="stylesheet" href="dist/style.css">
 	<script src="dist/index.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	
 </head>
 <body>

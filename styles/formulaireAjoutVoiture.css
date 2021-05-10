@@ -1,22 +1,18 @@
 /*Voiture détail */
-[data-component="VoitureDetailSGC"] {
+[data-component="FormulaireAjoutVoiture"] {
   width: 100%;
   min-height: 80vh;
 }
 
-[data-component="VoitureDetailSGC"] form {
+[data-component="FormulaireAjoutVoiture"] form {
   display: flex;
 }
 
-[data-component="VoitureDetailSGC"] a {
-  text-decoration: none;
-}
-
-[data-component="VoitureDetailSGC"] .input-wrapper {
+[data-component="FormulaireAjoutVoiture"] .input-wrapper {
   margin-bottom: 0;
 }
 
-[data-component="VoitureDetailSGC"] input {
+[data-component="FormulaireAjoutVoiture"] input {
   opacity: 1;
   background-color: white;
   border: 1px black solid;
@@ -29,7 +25,7 @@
   -webkit-box-sizing: border-box;
 }
 
-[data-component="VoitureDetailSGC"] select {
+[data-component="FormulaireAjoutVoiture"] select {
   opacity: 1;
 
   -webkit-appearance: none;

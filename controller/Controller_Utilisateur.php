@@ -112,9 +112,7 @@
 							$data["utilisateurs"] = $modeleUtilisateur ->obtenirListeUtilisateur();
 							$this->showView($vueProfil, $data);
 
-						
-						
-							
+		
 						break;
 			
 				}		

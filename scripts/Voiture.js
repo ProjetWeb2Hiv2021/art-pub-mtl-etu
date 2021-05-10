@@ -11,8 +11,15 @@ class Voiture {
 
         this._el.addEventListener('click', (e) => {
             e.preventDefault();
+            
+            
+            if (this._el.parentElement.dataset.component === "VoitureListe") {
+                document.location.href = 'index.php?Magasin&action=afficheVoiture&id=' + this._id;
+            } else if (this._el.parentElement.dataset.component === "VoitureListeSGC") {
+                document.location.href='index.php?Voiture&action=modifier&id=' + this._id; 
+            }
             /* this.callAJAX(this._id); */
-            document.location.href='index.php?Magasin&action=afficheVoiture&id=' + this._id;
+           /*  document.location.href='index.php?Magasin&action=afficheVoiture&id=' + this._id; */
             /* this.callAJAX(this._el.dataset.jsVoitureId); */
             
         })

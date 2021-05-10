@@ -13,7 +13,9 @@
 @import "./profil.css";
 @import "./utilisateurSysteme.css";
 @import "./formulaire.css";
-@import "./voitureDetailSGC.css";
+@import "./formulaireAjoutVoiture.css";
+@import "./custom-k.css";
+@import "./voitureListeSGC.css";
 
 body {
   background-color: #303030;
@@ -40,9 +42,7 @@ hr {
 header {
   width: 100%;
 }
-.header a {
-  width: 200px;
-}
+
 titre {
   text-align: center;
 }

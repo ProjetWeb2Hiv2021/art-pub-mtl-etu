@@ -1,22 +1,18 @@
-<section data-component="VoitureListe" class="gallery gallery--3">
-  
- <!-- juste un prototype -->  
-
+<h2>Choisir la voiture à mettre à jour</h2>
+<section data-component="VoitureListeSGC" class="gallery gallery--4">
+   
     <?php
 
     if(isset($_COOKIE['lang'])){
         $lang = $_COOKIE['lang'];
     }else{
         $lang ="fr";
-
     } 
-    
-
     
     if($data["voiture"]){
         foreach ($data["voiture"] as $voiture) {
             
-    ?>
+        ?>
             <article class="voiture_liste__voiture" 
                 data-js-voiture
                 data-js-voiture-nbr
@@ -40,35 +36,27 @@
                     <img src="<?= $voiture["cheminFichier"] ?>" alt="" class="voiture_liste__image">
                 </div> 
                 <div class = "info_voiture">
-                    <p class="label-liste">Marque:</p>
                     <h2><?= $voiture["marque"] ?></h2>
-                    <p class="label-liste">Modele:</p>
                     <h2><?= $voiture["modele"] ?></h2>
-                    <p class="label-liste">Prix</p>
+                    
                     <h3><?= $voiture["prixVente"] ?>&nbsp;$</h3>
-                    <p class="label-liste">Année</p>
-                    <span><?= $voiture["annee"] ?></span>
-                    <p class="label-liste">Kilométrage</p>                         
-                    <span><?= $voiture["km"] ?> Km</span>
-                    <p class="label-liste">Groupe Motopropulseur</p>
-                    <span><?= $voiture["groupeMotopropulseur"] ?></span>
+                    <span><?= $voiture["annee"] ?></span><br>                             
+                    <span><?= $voiture["km"] ?> Km</span><br>
+                    <span>"<?=$voiture["groupeMotopropulseur"]?>"</span><br>
                 </div>      
                       
             </article>
-    <?php
+        <?php
             
         }
         
     }else{
     ?>  
-        <p><?=TXT__VOITURE_LISTE_ERR?></p>
-       
+        <p><?=TXT__VOITURE_LISTE_ERR?></p>       
 
     <?php
     }
-    ?>
-
-    <!-- Fin prototype -->  
+    ?>    
 
 </section>
 

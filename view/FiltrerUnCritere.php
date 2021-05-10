@@ -11,7 +11,8 @@
 			<option value="marque"><?= TXT_MARQUE?></option>
 			<option value="modele"><?= TXT_MODELE?></option>
 		</select>
-		<button class="disabled" data-js-btn><?= TXT_TRIER?></button>
+		<button class="btn-trier disabled" data-js-btn>Trier</button> 
+		<!-- <button class="disabled" data-js-btn><?= TXT_TRIER?></button> -->
 	</form>
 
 </section>

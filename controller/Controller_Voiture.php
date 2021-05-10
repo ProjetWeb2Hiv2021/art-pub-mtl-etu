@@ -19,10 +19,16 @@
 				switch($params["action"]) {
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
-                    case "connexion":
+
+/*                     case "connexion":
                         if(isset($_SESSION["nomUtilisateur"])&&isset($_SESSION["typeUtilisateur"])&&$_SESSION["typeUtilisateur"]["typeUtilisateurfr"] ==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"] ==="Employé"){
                             $vue="VoitureDetailsSGC";
-							$data["systeme"]="SGC";
+							$data["systeme"]="SGC"; */
+
+                    case "ajout":
+                        if(isset($_SESSION["nomUtilisateur"])&&isset($_SESSION["typeUtilisateur"])&&$_SESSION["typeUtilisateur"]["typeUtilisateurfr"] ==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"] ==="Employé"){
+                            $vue="FormulaireAjoutVoiture";
+							
 							$modeleTypeCarburant = new Model_TypeCarburant();				
 							$data["typeCarburant"] = $modeleTypeCarburant->obtenirListeTypeCarburant();		
 							//var_dump("typeCarburant", $data["typeCarburant"]);
@@ -48,60 +54,59 @@
                         }
                         
                         break;
-					case "authentifier":
-                        //var_dump($_REQUEST);
-						// Vérifier qu'on a bien un utilisateur et un mot de passe
-						if(isset($_REQUEST["nomUtilisateur"], $_REQUEST["motPasse"]))
-						{
-							// obtenir le modele
-							$modeleUtilisateur = new Model_Utilisateur();
-							// Vérifier si le mot de passe encrypte et celui fourni sont bien égaux
-							$authentifie = $modeleUtilisateur->authentification($_REQUEST["nomUtilisateur"],$_REQUEST["motPasse"]);
-							// Si c'est le cas 
-							if($authentifie)
-							{
-								$modeleTypeUtilisateur = new Model_TypeUtilisateur();
-								// Définir le champ utilisateur de la variable session comme l'utilisateur courant
-								$_SESSION["nomUtilisateur"] = $_REQUEST["nomUtilisateur"];
-								//var_dump($modeleTypeUtilisateur->obtenirTypeUtilisateur($_REQUEST["nomUtilisateur"]));
-								$_SESSION["typeUtilisateur"] = $modeleTypeUtilisateur->obtenirTypeUtilisateur($_REQUEST["nomUtilisateur"])["typeUtilisateur"];
-								$vue = "Utilisateur";
-                                
-								// Afficher la vue compléter les champs
-								$this->showView($vue, $data);
-								//var_dump($_SESSION);
-								
-							}else
-							{                        
-								// Sinon ajouter le message expliquant l'erreur
-								$data["message"] = "Combinaison 'nom d'utilisateur' / 'mot de passe' invalide.";                        
-								// Retourner au formulaire de connexion
-								$vue = "ConnexionCRM";  						
-								$this->showView($vue, $data);
-							}
-
-						}
+					case "listeAModifier":
+                        
+						$vueMenuPrincipal = "MenuPrincipal";
+						$this->showView($vueMenuPrincipal);
+						$vueFiltreUn = "FiltrerUnCritere";
+						$this->showView($vueFiltreUn);
+						$vueFiltrePlusieurs = "FiltrerPlusieursCriteres";
+						$modelModele = new Model_Modele();
+						$data["modele"] = $modelModele ->obtenirListeModele();
+						$modelMarque = new Model_Marque();
+						$data["marque"] = $modelMarque ->obtenirListeMarque();
+						$this->showView($vueFiltrePlusieurs, $data);						
+						$vue="VoitureListeSGC";
+						$modelVoiture = new Model_Voiture();
+						$data["voiture"] = $modelVoiture ->getListeVoiture();		
+						$this->showView($vue, $data);
+						$data["nombrevoitures"] = $modelVoiture ->obtenirNombreVoitures();	
+						$vuePlus = "VoirPlus";
+						$this->showView($vuePlus, $data);
+						
                         break;
-					case "insererVoiture":
-						//var_dump("test");
-						if (isset($params["vin"]) && 
-						isset($params["prixVente"]) && 
-						isset($params["annee"]) && 
-						isset($params["dateArrivee"]) && 
-						isset($params["prixPaye"]) && 
-						isset($params["km"]) && 
-						isset($params["couleurfr"]) && 
-						isset($params["couleuren"]) && 						
-						isset($params["idGroupeMotopropulseur"]) && 
-						isset($params["idTypeCarburant"]) && 
-						isset($params["idChassis"]) && 
-						isset($params["idModele"]) && 
-						isset($params["idTransmission"]))
-
+					case "modifier":
+						$modeleVoiture = new Model_Voiture();						
+                        $data["voiture"] = $modeleVoiture->obtenirVoiture($params["id"]); 						
+						$modeleTypeCarburant = new Model_TypeCarburant();				
+						$data["typeCarburant"] = $modeleTypeCarburant->obtenirListeTypeCarburant();		
+						
+						$modeleModele = new Model_Modele();				
+						$data["modele"] = $modeleModele->obtenirListeModele();
+						
+						$modeleChassis = new Model_Chassis();				
+						$data["chassis"] = $modeleChassis->obtenirListeChassis();	
+						$modeleTransmission = new Model_Transmission();				
+						$data["transmission"] = $modeleTransmission->obtenirListeTransmission();	
+						
+						$modeleStatut = new Model_Statut();				
+						$data["statut"] = $modeleStatut->obtenirListeStatut();	
+						
+						$modeleGpm = new Model_GroupeMotopropulseur();				
+						$data["groupeMotopropulseur"] = $modeleGpm->obtenirListeGpm();	
+						
+                        
+						$modeleListeImage = new Model_ListeImage();						
+                        $data["listeImage"] = $modeleListeImage->obtenirListeImage($params["id"]); 						
+						
+						
+						$vue = "FormulaireModifierVoiture";       
+                        $this->showView($vue, $data);
+						
 						break;
 					default:
 					    // Retourner au formulaire de connexion
-                        $vue = "ConnexionCRM";  						
+                        $vue = "ConnexionSWT";  						
   
                         $this->showView($vue, $data);
                         break;
@@ -109,7 +114,7 @@
 			}			
 			} else {
 				// Retourner au formulaire de connexion
-				$vue = "ConnexionCRM";  						
+				$vue = "ConnexionSWT";  						
 				$this->showView($vue, $data);
 
 			}
