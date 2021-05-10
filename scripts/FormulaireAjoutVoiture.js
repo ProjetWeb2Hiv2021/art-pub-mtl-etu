@@ -110,7 +110,7 @@ class FormulaireAjoutVoiture {
                         
                         // Traitement du DOM
                         /* console.log("test"); */
-                       /*  let reponse = JSON.parse(xhr.responseText);
+                        let reponse = JSON.parse(xhr.responseText);
                         
                         if(reponse == 1){
                             this._elResultat.innerHTML = "<p>La voiture a été ajoutée</p>";
@@ -118,7 +118,7 @@ class FormulaireAjoutVoiture {
                             this._elResultat.innerHTML = "<p>probleme ou niveau de l'ajout</p>";
                         }   
 
-                        this.viderChamps(); */
+                        this.viderChamps(); 
                         
                     } else if (xhr.status === 404) {
                         console.log('Le fichier appelé dans la méthode open() n’existe pas.');
