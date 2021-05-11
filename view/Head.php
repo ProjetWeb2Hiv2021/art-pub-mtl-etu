@@ -59,6 +59,7 @@
 	<script type="text/javascript" src="./scripts/classMapping.js"></script>
 	<script type="text/javascript" src="./scripts/script.js" defer></script>
 
+	<script type="text/javascript" src="./scripts/Mobile.js" defer></script>
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto:300,400,500&display=swap" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -70,8 +71,6 @@
 	<!-- Carousel -->
 	<link rel="stylesheet" href="dist/style.css">
 	<script src="dist/index.min.js"></script>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	
 </head>
 <body>
