@@ -22,8 +22,8 @@ class FormulaireAjoutVoiture {
         this._elSelectGMP = this._el.querySelector('[data-js-gmp]');
         this._elSelectStatut = this._el.querySelector('[data-js-statut]');
         this._elResultat = this._el.querySelector('[data-js-resultat]');
-        
-        
+        this._elFormVoiture = this._el.querySelector('[data-js-component="Form"]');
+        this._elFormImage = this._el.querySelector('[data-component-form-image]');
         this.init();
     }
 
@@ -32,8 +32,8 @@ class FormulaireAjoutVoiture {
         
         this._elSubmit.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log(this._elSelectStatut.options[this._elSelectStatut.selectedIndex].value);
-             let validation = new FormValidator(this._el);
+            //console.log(this._elFormVoiture);
+            let validation = new FormValidator(this._elFormVoiture);
             if (validation.isValid) {
                 let vin = encodeURIComponent(this._elVIN.value);
                 let prixVente = encodeURIComponent(this._el.querySelector('[data-js-param="prixVente"]').value);
@@ -69,7 +69,12 @@ class FormulaireAjoutVoiture {
                     idStatut);
             } 
         });
+        this._elSubmitImage.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log(this._elFormImage);
+            let validation = new FormValidator(this._elFormImage);
 
+        });
 
     }
 
@@ -111,12 +116,12 @@ class FormulaireAjoutVoiture {
                         // Traitement du DOM
                         /* console.log("test"); */
                         let reponse = JSON.parse(xhr.responseText);
-                        
-                        if(reponse == 1){
+                        console.log(reponse);
+                        if(reponse != 0){
                             this._elResultat.innerHTML = "<p>La voiture a été ajoutée</p>";
                         }else{
                             this._elResultat.innerHTML = "<p>probleme ou niveau de l'ajout</p>";
-                        }   
+                        }    
 
                         this.viderChamps(); 
                         

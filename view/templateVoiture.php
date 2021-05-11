@@ -12,18 +12,18 @@
     
     <div class="ligne">
         <section class="imagesVoiture ligne">
-            <form action="upload.php" method="post" enctype="multipart/form-data" data-component-form-image>
+            <form action="index.php?Voiture&action=ajouterImage&id=19" method="post" enctype="multipart/form-data" data-component-form-image>
                 <div class="input-wrapper" data-js-input-wrapper>
-                <div class="colonne centreV">
-                    <div class="ligne distribue">
-                    <label for="fichierATeleverser">Image à téléverser :</label>
-                    <input type="file" id="fichierATeleverser" name="fichierATeleverser" data-js-param="fichierATeleverser">
-                    <small class="error-message" data-js-error-msg></small>
-                    
+                    <div class="colonne centreV">
+                        <div class="ligne distribue">
+                        <label for="fichierATeleverser">Image à téléverser :</label>
+                        <input type="file" id="fichierATeleverser" name="fichierATeleverser" data-js-param="fichierATeleverser">
+                        <small class="error-message" data-js-error-msg></small>
+                        
+                        </div>
+                        <button data-js-btn-aj-img><?=TXT__AJIMG_AJOUT_IMG?></button>
+                        </div>
                     </div>
-                    <button data-js-btn-aj-img><?=TXT__AJIMG_AJOUT_IMG?></button>
-                    </div>
-                </div>
             </form>
             <?php
                 if(isset($data["listeImage"])){    
