@@ -53,7 +53,7 @@
             <td>Connexion</td>
             <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
 
-            '<td>'.TXT__UTILISATEUR_CON.'</td>';
+            
 
             '<td><a href="index.php?Voiture&action=listeAModifier">'.TXT__UTILISATEUR_MV.'</td>';
 

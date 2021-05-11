@@ -1,6 +1,7 @@
 <h2>Choisir la voiture à mettre à jour</h2>
-<section data-component="VoitureListeSGC" class="gallery gallery--4">
-   
+
+<section data-component="VoitureListe" class="gallery gallery--4">
+    
     <?php
 
     if(isset($_COOKIE['lang'])){
@@ -59,4 +60,5 @@
     ?>    
 
 </section>
+
 

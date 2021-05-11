@@ -159,6 +159,8 @@ define('TXT__DETAIL_RETOUR', 'Retour à la liste');
 define('TXT__DETAIL_SYSTEME', 'Retour aux systèmes');
 define('TXT__DETAIL_AJOUT', 'Ajouter panier');
 define('TXT__DETAIL_ENREG', 'Enregistrer');
+/* vue  AJOUT IMAGE*/
+define('TXT__AJIMG_AJOUT_IMG', 'Ajouter');
 
 /* vue  VOITURE LISTE*/
 define('TXT__VOITURE_LISTE_ERR', 'pas de voitures pour le moment');
