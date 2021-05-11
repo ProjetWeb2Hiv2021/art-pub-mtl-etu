@@ -150,8 +150,21 @@ class Profil{
 
                 if (xhr.readyState === 4) {							
                     if (xhr.status === 200) {
+
+                       let html = "<div data-js-reponse style='text-align:center;color:green'>Votre profil a bien été modifié ."
                        
-                       
+                       this._el.insertAdjacentHTML("beforeend", html);
+                       this._elSubmit.setAttribute("disabled", "disabled");
+                       setTimeout(() => {
+                        
+                            this._elSubmit.removeAttribute("disabled");
+                            this._el.querySelector('[data-js-reponse]').remove();
+                            console.log(this._el.querySelector('[data-js-commande]'));
+                            if(this._el.querySelector('[data-js-commande]')){
+                                window.location.href = `index.php?Magasin&action=commande&nomUtilisateur=${this._elNomUtilisateurOrifinal}`;
+                            } 
+                        }, 4000);
+
                     }
                 }
             });
