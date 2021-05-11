@@ -6,6 +6,8 @@ class FormValidator {
         this._allAnneeInputs = this._el.querySelectorAll('[data-js-annee]');
         this._anneeRegex = /^(19[5-9]\d|20[0-4]\d|2050)$/;
         this._erreurAnnee = `Veuillez entrer une annee valide svp .`;
+        // récupère tous les éléments input radio required du formulaire
+        this._allRequiredRadioWrappers = this._el.querySelectorAll('[data-js-radio="required"]');
 
         // récupère tous les éléments annee du formulaire
         this._allPrixInputs = this._el.querySelectorAll('[data-js-prix]');
@@ -75,7 +77,7 @@ class FormValidator {
                 this.removeError(closestElWrapper, elErrorMsg);
             }
         }
-
+        this.btnRadioValidation();
         //debut Validation formulaire utilisateur
         this.gestionInputRegex(this._allEmailInputs, this._emailRegex, this._erreurMail);
         this.gestionInputRegex(this._allTelInputs, this._telRegex, this._erreurTel);
@@ -92,7 +94,7 @@ class FormValidator {
         let msgErr = msginput;
         let inputRegex = regex;
 
-
+       
         for (let i = 0, l = elInput.length; i < l; i++) {
             let inputValue = elInput[i].value,
                 closestElWrapper = elInput[i].closest('[data-js-input-wrapper]'),
@@ -166,6 +168,27 @@ class FormValidator {
     get isValid() {
         return this._isValid;
     }
+    // validation des champs radio required
+    btnRadioValidation = () => {
+        for (let i = 0, l = this._allRequiredRadioWrappers.length; i < l; i++) {
+            let elRadios = this._allRequiredRadioWrappers[i].querySelectorAll('input[type="radio"]'),
+                elErrorMsg = this._allRequiredRadioWrappers[i].querySelector('[data-js-error-msg]'),
+                isChecked = false;
 
+            for (let n = 0, m = elRadios.length; n < m; n++) {
+                if (elRadios[n].checked) isChecked = true;
+            }
+
+            if (isChecked) {
+                if (this._allRequiredRadioWrappers[i].classList.contains('error')) {
+                    this.removeError(this._allRequiredRadioWrappers[i], elErrorMsg);
+                }
+            } else {
+                let inputDataset = this._allRequiredRadioWrappers[i].dataset.jsInput,
+                    msg = `Une option ${inputDataset} doit être sélectionnée.`;;
+                this.addError(this._allRequiredRadioWrappers[i], elErrorMsg, msg);
+            }
+        }
+    }
 
 }

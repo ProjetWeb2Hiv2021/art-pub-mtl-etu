@@ -112,9 +112,7 @@
 						}
 						break;
 					case "miseAJourUtilisateur":
-
-						
-									
+								
 						if (isset($params["idUtilisateur"]) && isset($params["nomUtilisateur"]) && isset($params["motPasse"]) && isset($params["prenom"]) && isset($params["nomFamille"]) && isset($params["courriel"])
 						&& isset($params["dateNaissance"]) && isset($params["noCivique"]) && isset($params["rue"]) && isset($params["codePostal"]) && isset($params["telephone"])
 						&& isset($params["telephonePortable"]) && isset($params["idTypeUtilisateur"]) && isset($params["idVille"]) && isset($params["idProvince"])){ 
@@ -163,6 +161,21 @@
 					
 						} 
 						break;
+					case "verifierEnregistrement":
+	
+						if (isset($params["nomUtilisateur"])){ 
+						
+						$nomUtilisateur = $params["nomUtilisateur"];
+
+						$modeleUtilisateur = new Model_Utilisateur();
+						
+						$data["utilisateur"] = $modeleUtilisateur->obtenirUtilisateurNomUtilisateur($nomUtilisateur);
+						echo json_encode($data["utilisateur"]);
+
+					
+						} 
+						break;
+					
 					
 
 

@@ -50,7 +50,9 @@
 	<script type="text/javascript" src="./scripts/FormulaireAjoutTypeCarburant.js"></script>
 	<script type="text/javascript" src="./scripts/FormulaireMisAjourTypeCarburant.js"></script>
 
-													 
+	<script type="text/javascript" src="./scripts/Acheter.js"></script>	
+	
+	<script type="text/javascript" src="./scripts/FormulaireCommande.js"></script>	
 
 	<script type="text/javascript" src="./scripts/Header.js"></script>
 

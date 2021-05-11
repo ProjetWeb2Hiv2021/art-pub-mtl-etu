@@ -86,6 +86,9 @@
 							$modeleUtilisateur = new Model_Utilisateur();
 							$data["utilisateur"] = $modeleUtilisateur ->obtenirUtilisateurNomUtilisateur($params["nomUtilisateur"]);
 						}
+						if(isset($params["commande"])){
+							$data["commande"] = 1;
+						}
 						
 
 						$this->showView($vueProfil, $data);

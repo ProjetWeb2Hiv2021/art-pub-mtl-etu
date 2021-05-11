@@ -49,7 +49,7 @@
             ?>
         </section>
         
-        <section class="infoVoiture">
+        <section class="infoVoiture" data-js-idvoiture="<?=$data["voiture"]["idVoiture"]?>">
             
             <div class="ligne distribue">
                 <label for="vin"><?=TXT__DETAIL_VIN?> :</label>

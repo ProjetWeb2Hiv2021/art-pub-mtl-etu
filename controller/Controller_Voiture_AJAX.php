@@ -127,14 +127,20 @@
                             $modeleVoiture = new Model_Voiture();
                             
                             $data["voiture"] = $modeleVoiture->supprimerVoiture($idVoiture);
-                            echo json_encode($data["voiture"]);
-
-					
+                            echo json_encode($data["voiture"]);					
 						} 
 						break;
+                    case "voitureParId":
+                        if (isset($params["idVoiture"])){ 
+						
+                            $idVoiture = $params["idVoiture"];
 
-
-				
+                            $modeleVoiture = new Model_Voiture();
+                            
+                            $data["voiture"] = $modeleVoiture->obtenirVoiture($idVoiture);
+                            echo json_encode($data["voiture"]);					
+						} 
+                        break;		
 				}			
             } else {
 				echo "ERROR ACTION";					
