@@ -91,9 +91,11 @@
 							$vueMenuPrincipal = "MenuPrincipal";
 							$this->showView($vueMenuPrincipal);
 							$vue = "FormulaireCommande";
-							$this->showView($vue);
+							
 							$modelVoiture = new Model_Voiture();
 							$data["voiture"] = $modelVoiture ->getListeVoiture();
+							$data["nomUtilisateur"] = $params["nomUtilisateur"];
+							$this->showView($vue, $data);
 
 
 							break;		

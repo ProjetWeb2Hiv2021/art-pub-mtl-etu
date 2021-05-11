@@ -1,4 +1,4 @@
-<section class="" data-component="FormulaireCommande" data-js-component="Form">
+<section class="" data-component="FormulaireCommande" data-js-component="Form" data-js-nomutilisateur="<?= $data["nomUtilisateur"]?>">
 
 	<!-- plusieurs criteres -->
 	<form style="background-color: rgba(0, 0, 0, 0.5);">

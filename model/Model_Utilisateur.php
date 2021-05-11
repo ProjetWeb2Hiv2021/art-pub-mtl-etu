@@ -101,7 +101,6 @@
 					$stmt->bindParam(":nomUtilisateur", $nomUtilisateur);
 					$stmt->execute();
 					return $stmt->fetchAll();
-					return 1;
 				}		
 			}
 			catch(Exception $exc) {

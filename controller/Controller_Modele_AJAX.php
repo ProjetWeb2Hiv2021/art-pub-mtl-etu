@@ -71,6 +71,7 @@
 							$data["marqueajouter"] = $lesMarques;	
 							echo json_encode($data);
 							break;
+						
 			}			
 			} else {
 				echo "ERROR ACTION";
