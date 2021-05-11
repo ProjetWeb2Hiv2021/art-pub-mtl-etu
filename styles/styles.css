@@ -16,6 +16,7 @@
 @import "./formulaireAjoutVoiture.css";
 @import "./custom-k.css";
 @import "./voitureListeSGC.css";
+@import "./formulaireCommande.css";
 
 body {
   background-color: #303030;

@@ -50,8 +50,8 @@ INSERT INTO ville(ville) VALUES
 ("Whitehorse"), 
 ("Montréal"), 
 ("Québec");
-INSERT INTO province(province) VALUES 
-("Alberta"), ("Colombie-Britannique"), ("Île du Prince-Édouard"), ("Manitoba"), ("Nouveau-Brunswick"), ("Nouvelle-Écosse"), ("Ontario"), ("Québec"), ("Saskatchewan"), ("Terre-Neuve"), ("Nunavut"), ("Territoires du Nord-Ouest"), ("Yukon");
+INSERT INTO province(province, tvp, tvs, tvh) VALUES 
+("Alberta", 0,5,0), ("Colombie-Britannique",7,5,0), ("Île du Prince-Édouard",0,0,15), ("Manitoba",7,5,0), ("Nouveau-Brunswick",0,0,15), ("Nouvelle-Écosse",0,0,15), ("Ontario",0,0,13), ("Québec",9.975,5,0), ("Saskatchewan",6,15,0), ("Terre-Neuve",0,0,15), ("Nunavut",0,5,0), ("Territoires du Nord-Ouest",0,5,0), ("Yukon",0,5,0);
 INSERT INTO typeUtilisateur(typeUtilisateurfr, typeUtilisateuren) VALUES ("Client", "Customer"),("Employé", "Employee"), ("Administrateur", "Administrator");
 INSERT INTO utilisateur(nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone, telephonePortable, idTypeUtilisateur, idVille, idProvince) 
 VALUES ("a_jolie", "$2y$10$c6VsscKww0JHToKe4PkTsO541JWfCXEDrjsPM.TvVGuymVZKPHwmC", "Angelina", "Jolie", "a_jolie@b.com", "1975-06-04", 4545, "Beverly Hills", "90210", "5554443333", "5554443331", 1, 17, 8), 

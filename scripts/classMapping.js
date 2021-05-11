@@ -24,7 +24,10 @@ const classMapping = {
     'TypeCarburant' : TypeCarburant,
     'FormulaireAjoutTypeCarburant' : FormulaireAjoutTypeCarburant,
     'FormulaireMisAjourTypeCarburant' :FormulaireMisAjourTypeCarburant,
-    'GestionMarque':GestionMarque
+    'GestionMarque':GestionMarque,
+    'Acheter' :Acheter,
+    'FormulaireCommande' :FormulaireCommande
+
 
 
 };

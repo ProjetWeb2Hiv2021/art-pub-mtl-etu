@@ -95,7 +95,9 @@
 			
 			try {
 				if(isset($nomUtilisateur)){
-					$stmt = $this->connexion->prepare("SELECT * from utilisateur WHERE nomUtilisateur=:nomUtilisateur");
+					$stmt = $this->connexion->prepare("SELECT * from utilisateur 
+													JOIN province ON utilisateur.idProvince = province.Idprovince
+													WHERE nomUtilisateur=:nomUtilisateur");
 					$stmt->bindParam(":nomUtilisateur", $nomUtilisateur);
 					$stmt->execute();
 					return $stmt->fetchAll();

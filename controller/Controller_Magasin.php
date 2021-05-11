@@ -86,8 +86,19 @@
 							$data["nombrevoitures"] = $modelVoiture ->obtenirNombreVoitures();	
 							$vuePlus = "VoirPlus";
 							$this->showView($vuePlus, $data);
-							break;	
-									
+							break;
+						case "commande":	
+							$vueMenuPrincipal = "MenuPrincipal";
+							$this->showView($vueMenuPrincipal);
+							$vue = "FormulaireCommande";
+							
+							$modelVoiture = new Model_Voiture();
+							$data["voiture"] = $modelVoiture ->getListeVoiture();
+							$data["nomUtilisateur"] = $params["nomUtilisateur"];
+							$this->showView($vue, $data);
+
+
+							break;		
 					
 				}			
 			} else {
