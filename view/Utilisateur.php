@@ -40,7 +40,7 @@
             
         </tr>
         <tr>
-            <td>Connexion</td>
+            <td></td>
               <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
 
             '<td><a href="index.php?Voiture&action=ajout">'.TXT__UTILISATEUR_AV.'</a></td>';
@@ -55,16 +55,8 @@
 
             
 
-            '<td><a href="index.php?Voiture&action=listeAModifier">'.TXT__UTILISATEUR_MV.'</td>';
+            '<td><a href="index.php?Voiture&action=listeAModifier">'.TXT__UTILISATEUR_MV.'</a></td>';
 
-            ?>
-            
-            
-        </tr>
-        <tr>
-            <td></td>
-            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
-            '<td>'.TXT__UTILISATEUR_JOUR.'</td>';
             ?>
             
             
@@ -72,23 +64,24 @@
         <tr>
             <td></td>
             <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur") echo
-            '<td><a href="index.php?Utilisateur&action=gererUtilisateurs">'.TXT__UTILISATEUR_GER_UTI.'</td>';
+            '<td><a href="index.php?Utilisateur&action=gererUtilisateurs">'.TXT__UTILISATEUR_GER_UTI.'</a></td>';
             ?>
+            
+            
+        </tr>
+        <tr>
+            <td></td>
+            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
+            '<td><a href="index.php?GroupeMotopropulseur&action=connexion">Gérer GroupeMotopropulseur</a></td>';
+            ?> 
                     
         </tr>
         
         <tr>
             <td></td>
-            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
-            '<td><a href="index.php?GroupeMotopropulseur&action=connexion">Gérer GroupeMotopropulseur</a></td>';
-            ?>           
-        </tr>
-
-        <tr>
-            <td></td>
-            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
+             <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
             '<td><a href="index.php?Chassis&action=connexion">Gérer Chassis</a></td>';
-            ?>           
+            ?>          
         </tr>
 
         <tr>
@@ -96,7 +89,9 @@
             <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
             '<td><a href="index.php?TypeCarburant&action=connexion">Gérer TypeCarburant</a></td>';
             ?>           
-        </tr>			
+        </tr>
+
+        		
         <tbody>
     </table>
 </div>
