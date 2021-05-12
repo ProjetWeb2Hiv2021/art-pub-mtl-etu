@@ -20,7 +20,7 @@
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
                     case "connexion":
-                        if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé"){
+                        if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé"){
                             $vue="TypeCarburant";
                             $typeCarburant = new Model_TypeCarburant();							
 				            $data["typeCarburant"] = $typeCarburant ->obtenirListeTypeCarburant();							
@@ -32,7 +32,7 @@
 
                         break;
 						case "ajoutTypeCarburant":
-							if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé"){
+							if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé"){
 								$vue="FormulaireAjoutTypeCarburant";
 /* 								$groupeMotopropulseur = new Model_GroupeMotopropulseur();
 								
@@ -48,7 +48,7 @@
 							
 							break;
 							case "misAjourTypeCarburant":
-								if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé"){
+								if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé"){
 									$vue="FormulaireMisAjourTypeCarburant";										  
 									$id = $_GET["id"];
 	 								$typeCarburant = new Model_TypeCarburant();

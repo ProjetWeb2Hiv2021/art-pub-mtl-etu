@@ -177,4 +177,7 @@ define('TXT__GESTIONUME_ACT', 'Action');
 define('TXT__GESTIONUME_MODIF', 'Modifier marque');
 define('TXT__GESTIONUME_AJMOD', 'Ajouter nouvelle marque');
 define('TXT__GESTIONUME_GESMOD', 'Gerer marques');
+/* formulaire commande */
+define('TXT__FORMCOM_MPAI', 'Methode de maiement');
+define('TXT__FORMCOM_EXP', 'Expedition');
 ?>
