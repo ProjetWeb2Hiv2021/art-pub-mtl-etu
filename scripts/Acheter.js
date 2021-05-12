@@ -60,7 +60,6 @@ class Acheter {
                             const utilisateur = reponse[i];
                             if(utilisateur['noCivique'] == "" || utilisateur['rue'] == "" || utilisateur['codePostal'] == "" 
                             || utilisateur['telephonePortable'] == ""  || utilisateur['idVille']== ""  || utilisateur['idProvince']== "" ){
-                                console.log("incomplet");
                                 window.location.href = `index.php?Utilisateur&action=profil&nomUtilisateur=${this._elNomUtilisateur}&commande=encours`;                                                             
                             }else{
                                 window.location.href = `index.php?Magasin&action=commande&nomUtilisateur=${this._elNomUtilisateur}`;
