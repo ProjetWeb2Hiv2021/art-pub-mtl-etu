@@ -32,7 +32,7 @@
             
         </tr>
         <tr>
-            <td><a href="index.php"><?=TXT__UTILISATEUR_LISTV?></a></td>
+            <td><a href="index.php?Magasin&action=afficheVoiture&id=19"><?=TXT__UTILISATEUR_DV?></a></td>
 
             <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
             '<td><a href="index.php?Modele&action=gererMarques">'.TXT__GESTIONUME_GESMOD.'</a></td>';
@@ -40,7 +40,7 @@
             
         </tr>
         <tr>
-            <td><a href="index.php?Magasin&action=afficheVoiture&id=19"><?=TXT__UTILISATEUR_DV?></a></td>
+            <td>Connexion</td>
               <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
 
             '<td><a href="index.php?Voiture&action=ajout">'.TXT__UTILISATEUR_AV.'</a></td>';
@@ -50,7 +50,7 @@
             
         </tr>
         <tr>
-            <td>Connexion</td>
+            <td></td>
             <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
 
             
