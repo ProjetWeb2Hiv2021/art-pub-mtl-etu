@@ -161,6 +161,7 @@ define('TXT__DETAIL_AJOUT', 'Ajouter panier');
 define('TXT__DETAIL_ENREG', 'Enregistrer');
 /* vue  AJOUT IMAGE*/
 define('TXT__AJIMG_AJOUT_IMG', 'Ajouter');
+define('TXT__AJIMG_ORD', 'Ordre');
 
 /* vue  VOITURE LISTE*/
 define('TXT__VOITURE_LISTE_ERR', 'pas de voitures pour le moment');

@@ -158,6 +158,7 @@ define('TXT__DETAIL_AJOUT', 'Add basket');
 define('TXT__DETAIL_ENREG', 'Save');
 /* vue  VOITURE AJOUT IMAGE*/
 define('TXT__AJIMG_AJOUT_IMG', 'Add');
+define('TXT__AJIMG_ORD', 'Order');
 /* vue  VOITURE LISTE*/
 define('TXT__VOITURE_LISTE_ERR', 'no cars at the moment');
 /* vue  Gestion Utilisateurs*/
