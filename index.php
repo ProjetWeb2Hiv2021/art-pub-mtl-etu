@@ -5,17 +5,10 @@
 	*/
     
     define("RACINE", $_SERVER["DOCUMENT_ROOT"] . "/projet_web_2/projetWeb2Equipe4Lebon/");
-<<<<<<< HEAD
 	define("RACINEWEB", "http://" . $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . "/projet_web_2/projetWeb2Equipe4Lebon/");           
      
     /* define("RACINE", $_SERVER["DOCUMENT_ROOT"] . "/");
 	define("RACINEWEB", "http://" . $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . "/");            */
-=======
-	define("RACINEWEB", "http://" . $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . "/projet_web_2/projetWeb2Equipe4Lebon/");     
-     
-    /* define("RACINE", $_SERVER["DOCUMENT_ROOT"] . "/");
-	define("RACINEWEB", "http://" . $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . "/");     */
->>>>>>> 50adc624de1effe576710f9d8e9cdf807cfc8d5b
     
 
 	
