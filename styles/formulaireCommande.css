@@ -1,3 +1,43 @@
+
+.formulaireCommande{
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.formulaireCommande form{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 200px;
+  background-color: rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+}
+.formulaireCommande form div{
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.formulaireCommande form button{
+  max-width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.formulaireCommande .input-wrapper{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 25px;
+
+
+}
+.formulaireCommande .input-wrapper input, .formulaireCommande .input-wrapper label{
+  margin-left: 20px;
+  margin-top: 20px;
+}
 [data-js-recap]{
   max-width: 100%;
   margin-top: 50px;
@@ -15,15 +55,27 @@
   max-width: 70%;
 
 }
-
-.prixTaxe{
-  display: flex;
-  align-self: flex-end;
-
-}
 [data-js-taxe]{
   display: flex;
   flex-direction: column;
   
+}
+[data-js-taxe] div{
+  width: 40%;
+}
+.prixTaxe{
+  display: flex;
+  margin-top: 20px;
+  margin-left: auto;
+}
+
+[data-js-taxe]{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+[data-js-totaltvh], [data-js-totaltvp], [data-js-totaltvs], [data-js-totalfacture], [data-js-totalshiping]{
+  margin-left: 50px;
 }
 

@@ -27,7 +27,9 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-
+[data-component="FormulaireAjoutVoiture"] input[type="file"] {
+  width: fit-content;
+}
 [data-component="FormulaireAjoutVoiture"] select {
   opacity: 1;
 

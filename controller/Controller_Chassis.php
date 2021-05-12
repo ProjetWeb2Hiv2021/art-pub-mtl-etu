@@ -20,7 +20,7 @@
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
                     case "connexion":
-                        if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé"){
+                        if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé"){
                             $vue="Chassis";
                             $chassis = new Model_Chassis();							
 				            $data["chassis"] = $chassis ->obtenirListeChassis();							
@@ -33,7 +33,7 @@
 
                         break;
 						case "ajoutChassis":
-							if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé"){
+							if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé"){
 								$vue="FormulaireAjoutChassis";
 /* 								$groupeMotopropulseur = new Model_GroupeMotopropulseur();
 								
@@ -49,7 +49,7 @@
 							
 							break;
 							case "misAjourChassis":
-								if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"][0]["typeUtilisateurfr"]=="Employé"){
+								if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé"){
 									$vue="FormulaireMisAjourChassis";										  
 									$id = $_GET["id"];
 	 								$chassis = new Model_Chassis();

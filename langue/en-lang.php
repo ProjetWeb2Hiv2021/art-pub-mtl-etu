@@ -158,6 +158,7 @@ define('TXT__DETAIL_AJOUT', 'Add basket');
 define('TXT__DETAIL_ENREG', 'Save');
 /* vue  VOITURE AJOUT IMAGE*/
 define('TXT__AJIMG_AJOUT_IMG', 'Add');
+define('TXT__AJIMG_ORD', 'Order');
 /* vue  VOITURE LISTE*/
 define('TXT__VOITURE_LISTE_ERR', 'no cars at the moment');
 /* vue  Gestion Utilisateurs*/
@@ -172,7 +173,9 @@ define('TXT__GESTIONUME_ACT', 'Action');
 define('TXT__GESTIONUME_MODIF', 'Edit mark');
 define('TXT__GESTIONUME_AJMOD', 'Add new brand');
 define('TXT__GESTIONUME_GESMOD', 'Trademark management');
-
+/* formulaire commande */
+define('TXT__FORMCOM_MPAI', 'Method of housing');
+define('TXT__FORMCOM_EXP', 'Shipping');
 
 
 

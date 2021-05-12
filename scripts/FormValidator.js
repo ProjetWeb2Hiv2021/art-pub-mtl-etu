@@ -54,6 +54,7 @@ class FormValidator {
 
 
     initValidation = () => {
+        this. btnRadioValidation();
 
        // Validation des champs
        //debut Validation filtre plusieurs criteres
@@ -84,6 +85,7 @@ class FormValidator {
         
         this.gestionInputDate(this._allDateInputs, this._erreurDate);
         this.gestionInputRegex(this._elcodePostal, this._codePostalRegex, this._erreurCodePostal);
+        ;
      
     }
 
@@ -171,6 +173,7 @@ class FormValidator {
     // validation des champs radio required
     btnRadioValidation = () => {
         for (let i = 0, l = this._allRequiredRadioWrappers.length; i < l; i++) {
+            console.log(this._allRequiredRadioWrappers);
             let elRadios = this._allRequiredRadioWrappers[i].querySelectorAll('input[type="radio"]'),
                 elErrorMsg = this._allRequiredRadioWrappers[i].querySelector('[data-js-error-msg]'),
                 isChecked = false;

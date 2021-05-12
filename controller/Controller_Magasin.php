@@ -91,10 +91,12 @@
 							$vueMenuPrincipal = "MenuPrincipal";
 							$this->showView($vueMenuPrincipal);
 							$vue = "FormulaireCommande";
-							
-							$modelVoiture = new Model_Voiture();
-							$data["voiture"] = $modelVoiture ->getListeVoiture();
 							$data["nomUtilisateur"] = $params["nomUtilisateur"];
+							$modelModepaiement=  new Model_Modepaiement;
+							$data["modepaiement"] = $modelModepaiement ->obtenirListeModepaiement();
+							$modelExpedition= new Model_Expedition();
+							$data["expedition"] = $modelExpedition ->obtenirListeExpedition();
+
 							$this->showView($vue, $data);
 
 
