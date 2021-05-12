@@ -7,15 +7,16 @@ class FormulaireCommande{
         this._elNomUtilisateur = this._el.dataset.jsNomutilisateur;
         this._elCarteCredit = this._el.querySelector('[data-js-carte]');
         this._elMPaiment= this._el.querySelector('[data-js-paiment]');
-        this._elPayPal= this._el.querySelector('[data-js-paypal]');
+        
 
         this._elProce = this._el.querySelector('[data-js-btnProceder]');
 
         this.el_FormCarteCredit = this._el.querySelector('[data-js-paimentform]');
         this.el_Btncommander3 = this._el.querySelector('[data-js-btncommander3]');
+        
 
         console.log(this._elCarteCredit);
-        this.el_FormCarteCredit.style.display ="none";
+  
         // récupère élément username
 
         this.init();
@@ -31,6 +32,7 @@ class FormulaireCommande{
         this._elSubmit.addEventListener('click', (e) => {
             e.preventDefault();
             this.afficherRecapCommande();
+           
             
         });
 
@@ -44,9 +46,9 @@ class FormulaireCommande{
         if (validation.isValid){
             
 
-            this._elForm.style.display ="none";
+            this._elForm.querySelector('[data-js-submit]').style.display ="none";
             let html = "<div data-js-recap class=''><div>"
-            this._el.insertAdjacentHTML("beforeend", html);
+            this._elForm.insertAdjacentHTML("afterend", html);
 
             /* populer information utilisateur */
             let paramUtilisateur = `nomUtilisateur=${this._elNomUtilisateur}`;
@@ -62,16 +64,17 @@ class FormulaireCommande{
                 let path =`Voiture_AJAX&action=voitureParId`;
                 this.callAJAXA(param, path);                     
             }
+            /* revenir etape precedente */
+            
 
 
-
-        this._elProce.addEventListener('click', (e) => {
+        /* this._elProce.addEventListener('click', (e) => {
             e.preventDefault();
 
             this._elProce.classList.add('hidden');
             let recap = this._el.querySelector('[data-js-recap]');
             recap.classList.add('hidden');
-            //Afficher le boutton payment par paypal
+            
             let payement = document.querySelector('[data-js-payement]');
                             
             payement.classList.remove('hidden');
@@ -79,7 +82,7 @@ class FormulaireCommande{
             let eltotaltvs = "" + document.querySelector('[data-js-prix]').dataset.jsPrix;
             let elQuantite = document.querySelector('[data-js-quantite]');
             elQuantite.innerHTML = Intl.NumberFormat('fr-CA').format(eltotaltvs) + "$";
-        });
+        }); */
 
         }else{
             console.log("Non valide");
@@ -116,17 +119,14 @@ class FormulaireCommande{
                                             </div>
                                         </div>`;
 
-
-                            let recap = this._el.querySelector('[data-js-recap]');
+                            let recap = this._el.querySelector('[data-js-utilisateur]');
                             recap.insertAdjacentHTML("beforeend", html);
                               //Afficher le boutton payment par paypal
 /*                             let payement = document.querySelector('[data-js-payement]');
                             
                              payement.classList.remove('hidden'); */
-                             this._elProce.classList.remove('hidden');
+                             /* this._elProce.classList.remove('hidden'); */
 
-                            let elinfoClient = this._el.querySelector('[data-js-utilisateur]');
-                            elinfoClient.insertAdjacentHTML("afterend", html);
 
                             
                             /* calcul prix facture */
@@ -134,7 +134,8 @@ class FormulaireCommande{
                             this. gesionbtncommander2();
                             /* gestion du btn pour le paiement */
                             this.gesionbtncommander3(); 
-
+                            /* gestion btn retour */
+                            this.gestionBtnRetour();
 
                         }
                         
@@ -160,10 +161,12 @@ class FormulaireCommande{
                                                     <div class="prixTaxe" data-js-shiping='${shipping}' ><div>Livraison: </div><div data-js-totalshiping></div></div>
                                                     <div class="prixTaxe" data-js-total><div>TOTAL :</div><div data-js-totalfacture></div></div>
                                                 </div>
-                                                <button  data-js-payer>Commander 2/3</button>`;
+                                                <button data-js-payer id="btn2"><a href="#btn3">Commander 2/3</a></button>
+                                                <a data-js-retour>Retour</a>`;
 
                             let recap = this._el.querySelector('[data-js-recap]');
                             recap.insertAdjacentHTML("afterbegin", htmlUtilisateur);
+
           
                         }
                         
@@ -265,9 +268,10 @@ class FormulaireCommande{
 
         
         btnPayer.addEventListener('click', () => {
-            recap.style.display ="none";
             this.el_FormCarteCredit.style.display = "block";
+            btnPayer.style.display = "none";
         });
+        
     }
     gesionbtncommander3 = () =>{
         /* input radio mode de paiement */
@@ -293,6 +297,7 @@ class FormulaireCommande{
                 let idVoiture = this._el.querySelector('[data-js-voiturcommande').dataset.jsVoiturecommande;
                 let totalCommande = Number(this._el.querySelector('[data-js-totalfacture]').innerHTML);
                 console.log(this._el.querySelector('[data-js-totalfacture]'));
+                let idModedePiement = "";
                 let idExpedition = "";
                 for (let j = 0; j < this._elExpedition.length; j++) {
                     const livraison = this._elExpedition[j];
@@ -300,7 +305,6 @@ class FormulaireCommande{
                         idExpedition = livraison.value;
                     }
                 }
-                let idModedePiement = "";
                 for (let k = 0; k < optionDePaiement.length; k++) {
                     const option = optionDePaiement[k];
                     
@@ -309,10 +313,36 @@ class FormulaireCommande{
                         idModedePiement = option.value;
                     }
                 }
-                console.log("id utilisateur = ",idUtilisateur, "id mode paiment = ",idModedePiement,"id expedition = ", idExpedition, "total commande = ",totalCommande);
+
+                if(idModedePiement !== "5"){
+                    
+                    console.log("id utilisateur = ",idUtilisateur, "id mode paiment = ",idModedePiement,"id expedition = ", idExpedition, "total commande = ",totalCommande);
+                }else{
+                   /*  Gannina */
+                   this.el_Btncommander3.style.display ="none";
+                   /*  */
+
+
+
+
+
+                   
+                }
+                
+                
             }
             
         });
+    }
+    gestionBtnRetour =() =>{
+        let el_Btnretour = this._el.querySelector('[data-js-retour]');
+        console.log(el_Btnretour);
+        el_Btnretour.addEventListener('click', (e) => {
+            
+            window.location.reload("index.php?Magasin&action=Confirmation");
+            
+        });
+        
     }
       
 }
