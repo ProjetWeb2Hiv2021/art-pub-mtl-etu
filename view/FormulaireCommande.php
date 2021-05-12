@@ -1,6 +1,7 @@
 <section class="formulaireCommande" data-component="FormulaireCommande" data-js-component="Form" data-js-nomutilisateur="<?= $data["nomUtilisateur"]?>">
 
 	
+
 	<form data-js-livraisonform>
 
 	<?php
@@ -79,6 +80,68 @@
 	<button  data-js-btncommander3>Commander 3/3</button>
 	</form>
 
+
 </section>
 
+<section>
 
+
+<script src="https://www.paypal.com/sdk/js?client-id=test&currency=CAD"></script>
+
+<!-- Include the PayPal JavaScript SDK -->
+<div  class="hidden payementDesc"  data-js-payement>   
+	<div>
+			<h1>!Dernière étape</h1>
+			<p> Payer la quantité final par paypal
+				<h4 data-js-quantite> 300</h4>
+					<!-- Set up a container element for the button -->
+					<div id="paypal-button-container"></div>
+			</p>
+			<p> Les voitures seront disponibles une fois que vous avez fait le payement
+				<strong>(Plus d'information: caruse@yahoo.com)
+							
+				</strong>
+			</p>
+</div>
+	<script>
+		// Render the PayPal button into #paypal-button-container
+		paypal.Buttons({
+			env: 'sandbox', // Optional: specify 'sandbox' environment
+			client: {
+			sandbox:    'ATlHtKh_utdnQ_wd-x91mInf3gaYJtS2KB0f4b5ewKZrhotDvxID2ROyQQiYaFhf8p4-DMH4ShaNFKfm',
+			production: 'xxxxxxxxx'          
+		},  
+		style: {
+			size: 'responsive',
+			label :'checkout'
+		},
+/* 		funding: {
+			disallowed: [ paypal.FUNDING.CREDIT ]
+		}, */
+			// Set up the transaction
+			createOrder: function(data, actions) {
+				let eltotaltvs = "" + document.querySelector('[data-js-prix]').dataset.jsPrix;
+				//console.log(eltotaltvs);
+				return actions.order.create({
+					purchase_units: [{
+						amount: {
+							//value: '88.44'
+							value: eltotaltvs
+						}
+					}]
+				});
+			},
+
+			// Finalize the transaction
+			onApprove: function(data, actions) {
+				return actions.order.capture().then(function(details) {
+					// Show a success message to the buyer
+					alert('Transaction completed by ' + details.payer.name.given_name + '!');
+					console.log(data);
+					document.location.href='index.php?Magasin&action=confPayement'; 
+				});
+			}
+		}).render('#paypal-button-container');
+	</script>		
+</div>
+</section>

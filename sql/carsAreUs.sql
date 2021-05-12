@@ -147,19 +147,20 @@ CREATE TABLE expedition (
 	expeditionen VARCHAR(100),
 	PRIMARY KEY (idExpedition)
 )ENGINE=InnoDB;
-CREATE TABLE commande (
-	idCommande INT UNSIGNED AUTO_INCREMENT, 
-	dateCommande DATE NOT NULL,
-	idUtilisateur MEDIUMINT UNSIGNED NOT NULL,
-	idModePaiement TINYINT UNSIGNED NOT NULL,
-	idExpedition TINYINT UNSIGNED NOT NULL,
-	idStatut TINYINT UNSIGNED NOT NULL,
-	PRIMARY KEY (idCommande),
-	FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(idUtilisateur),
-	FOREIGN KEY (idModePaiement) REFERENCES modePaiement(idModePaiement),
-	FOREIGN KEY (idExpedition) REFERENCES expedition(idExpedition),
-	FOREIGN KEY (idStatut) REFERENCES statut(idStatut)
-)ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS `commande` (
+  `idCommande` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `dateCommande` date NOT NULL,
+  `idUtilisateur` mediumint(8) UNSIGNED NOT NULL,
+  `idModePaiement` tinyint(3) UNSIGNED NOT NULL,
+  `idExpedition` tinyint(3) UNSIGNED NOT NULL,
+  `idStatut` tinyint(3) UNSIGNED NOT NULL,
+  `statutPayment` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`idCommande`),
+  KEY `idUtilisateur` (`idUtilisateur`),
+  KEY `idModePaiement` (`idModePaiement`),
+  KEY `idExpedition` (`idExpedition`),
+  KEY `idStatut` (`idStatut`)
+) ENGINE=InnoDB;
 CREATE TABLE ligneCommande (
 	idCommande INT UNSIGNED NOT NULL AUTO_INCREMENT,	
 	idVoiture SMALLINT UNSIGNED NOT NULL,

@@ -10,7 +10,7 @@ define('TXT_BY', 'By');
 define('TXT_TRIER', 'Sort');
 define('TXT_FILTRER_VOITURES', 'Filter cars');
 define('TXT_FILTRER', 'Filter');
-define('TXT_MARQUE', 'Mark');
+define('TXT_MARQUE', 'Make');
 define('TXT_MODELE', 'Model');
 define('TXT_ANNEE', 'Year');
 define('TXT_PRIX', 'Price');
@@ -38,7 +38,7 @@ define('TXT__CRM_INVITE', 'Guest');
 define('TXT__CRM_RETOUR_LIST', 'back to the list');
 
 /* vue Connexion SWT*/
-define('TXT__SWT_TRANSACTIONNEL', 'Transactional Website');
+define('TXT__SWT_TRANSACTIONNEL', 'E-commerce Website');
 define('TXT__SWT_UTILISATEUR', 'User');
 
 /* vue CONTACT*/
