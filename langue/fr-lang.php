@@ -10,7 +10,7 @@ define('TXT_BY', 'Par');
 define('TXT_TRIER', 'Trier');
 define('TXT_FILTRER_VOITURES', 'Filtrer voitures');
 define('TXT_FILTRER', 'Filtrer');
-define('TXT_MARQUE', 'marque');
+define('TXT_MARQUE', 'Marque');
 define('TXT_MODELE', 'Modele');
 define('TXT_ANNEE', 'Annee');
 define('TXT_PRIX', 'Prix');
@@ -137,7 +137,7 @@ define('TXT__UTILISATEUR_AV', 'Ajouter Voiture');
 define('TXT__UTILISATEUR_MV', 'Modifier Voiture');
 define('TXT__UTILISATEUR_CON', 'Connexion');
 define('TXT__UTILISATEUR_JOUR', 'Journal connexions');
-define('TXT__UTILISATEUR_GER_UTI', 'Gestion des utilisateur');
+define('TXT__UTILISATEUR_GER_UTI', 'Gestion des utilisateurs');
 
 /* vue DETAILS VOITURE*/
 define('TXT__DETAIL_RESERVER', 'Réserver');

@@ -40,17 +40,11 @@
                     <img src="<?= $voiture["cheminFichier"] ?>" alt="" class="voiture_liste__image">
                 </div> 
                 <div class = "info_voiture">
-                    <p class="label-liste">Marque:</p>
-                    <h2><?= $voiture["marque"] ?></h2>
-                    <p class="label-liste">Modele:</p>
-                    <h2><?= $voiture["modele"] ?></h2>
-                    <p class="label-liste">Prix</p>
-                    <h3><?= $voiture["prixVente"] ?>&nbsp;$</h3>
-                    <p class="label-liste">Année</p>
-                    <span><?= $voiture["annee"] ?></span>
-                    <p class="label-liste">Kilométrage</p>                         
-                    <span><?= $voiture["km"] ?> Km</span>
-                    <p class="label-liste">Groupe Motopropulseur</p>
+                    
+                    <h2><?= $voiture["marque"]." ".$voiture["modele"]; ?></h2>
+                    <h3><?= number_format($voiture["prixVente"], 0, ',', ' '); ?>&nbsp;$</h3>                    
+                    <span><?= $voiture["annee"]; ?></span>                                        
+                    <span><?= number_format($voiture["km"], 0, ',', ' '); ?> Km</span>
                     <span><?= $voiture["groupeMotopropulseur"] ?></span>
                 </div>      
                       
