@@ -8,6 +8,7 @@ class FormulaireCommande{
         this._elCarteCredit = this._el.querySelector('[data-js-carte]');
         this._elMPaiment= this._el.querySelector('[data-js-paiment]');
         this._elPayPal= this._el.querySelector('[data-js-paypal]');
+        this._elProce = this._el.querySelector('[data-js-btnProceder]');
         console.log(this._elCarteCredit);
         // récupère élément username
 
@@ -20,7 +21,7 @@ class FormulaireCommande{
         // appel le script de validation front-end
         
         /* if (validation.isValid){ */
-        
+
         this._elSubmit.addEventListener('click', (e) => {
             e.preventDefault();
             
@@ -107,6 +108,21 @@ class FormulaireCommande{
             
         });
 
+        this._elProce.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            this._elProce.classList.add('hidden');
+            let recap = this._el.querySelector('[data-js-recap]');
+            recap.classList.add('hidden');
+            //Afficher le boutton payment par paypal
+            let payement = document.querySelector('[data-js-payement]');
+                            
+            payement.classList.remove('hidden');
+
+            let eltotaltvs = "" + document.querySelector('[data-js-prix]').dataset.jsPrix;
+            let elQuantite = document.querySelector('[data-js-quantite]');
+            elQuantite.innerHTML = Intl.NumberFormat('fr-CA').format(eltotaltvs) + "$";
+        });
     }
 
     callAJAXA = (param, path) => {
@@ -140,7 +156,11 @@ class FormulaireCommande{
 
                             let recap = this._el.querySelector('[data-js-recap]');
                             recap.insertAdjacentHTML("beforeend", html);
+                              //Afficher le boutton payment par paypal
+/*                             let payement = document.querySelector('[data-js-payement]');
                             
+                             payement.classList.remove('hidden'); */
+                             this._elProce.classList.remove('hidden');
                             
                         }
                         if(reponse[0].nomFamille && reponse[0].telephone){
@@ -179,6 +199,7 @@ class FormulaireCommande{
     }
     
     calculTotal = () => {
+    
         let recap = this._el.querySelector('[data-js-recap]');
         let elTvh = recap.querySelector('[data-js-tvh]').dataset.jsTvh;
         let elTvp = recap.querySelector('[data-js-tvp]').dataset.jsTvp;
@@ -214,6 +235,8 @@ class FormulaireCommande{
         eltotaltvh.innerHTML = totalTvh;
         eltotaltvp.innerHTML = totalTvp;
         eltotaltvs.innerHTML = totalTvs;
+        console.log("Test total")
+        console.log(elTprixHT);
     }
  
 
