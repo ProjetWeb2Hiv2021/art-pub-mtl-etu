@@ -96,6 +96,8 @@
   flex-direction: column;
   
 }
+
 [data-js-totaltvh], [data-js-totaltvp], [data-js-totaltvs], [data-js-totalfacture], [data-js-totalshiping]{
   margin-left: 50px;
 }
+

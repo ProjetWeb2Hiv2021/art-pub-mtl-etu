@@ -101,7 +101,19 @@
 
 
 							break;		
-					
+
+						case "confPayement":
+							$vueMenuPrincipal = "MenuPrincipal";
+							$this->showView($vueMenuPrincipal);
+								$vue = "FormulaireConfirmationPayment";
+
+
+								
+								$this->showView($vue);
+								break;							
+
+
+							
 				}			
 			} else {
 				/* gesion de langue */

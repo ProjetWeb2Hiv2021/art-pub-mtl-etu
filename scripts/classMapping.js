@@ -26,7 +26,8 @@ const classMapping = {
     'FormulaireMisAjourTypeCarburant' :FormulaireMisAjourTypeCarburant,
     'GestionMarque':GestionMarque,
     'Acheter' :Acheter,
-    'FormulaireCommande' :FormulaireCommande
+    'FormulaireCommande' :FormulaireCommande,
+    'FormulaireConfPaye' : FormulaireConfPaye
 
 
 
