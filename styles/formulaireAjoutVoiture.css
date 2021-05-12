@@ -1,7 +1,9 @@
 /*Voiture détail */
 [data-component="FormulaireAjoutVoiture"] {
+  max-width: 1440px;
   width: 100%;
   min-height: 80vh;
+  padding: 20px;
 }
 [data-component="FormulaireAjoutVoiture"] button {
   width: fit-content;

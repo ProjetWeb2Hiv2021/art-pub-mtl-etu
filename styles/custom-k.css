@@ -283,8 +283,7 @@ div.voiture_liste__image-wrapper {
   margin-bottom: 3rem;
 }
 .Profil .distribue input,
-.Profil .distribue select,
-[data-component="Connexion"] input {
+.Profil .distribue select {
   border-radius: 6px;
   border: none;
   padding: 10px;
