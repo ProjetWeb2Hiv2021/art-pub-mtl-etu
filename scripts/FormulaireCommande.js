@@ -128,7 +128,7 @@ class FormulaireCommande{
                                                     <div class="prixTaxe" data-js-tvs='${reponse[0].tvs}'><div>TVS: ${reponse[0].tvs} % </div><div data-js-totaltvs></div></div>
                                                     <div class="prixTaxe" data-js-shiping='${shipping}' ><div>Livraison: </div><div data-js-totalshiping></div></div>
                                                     <div class="prixTaxe" data-js-total><div>TOTAL :</div><div data-js-totalfacture></div></div>
-                                                <div>
+                                                </div>
                                                 <button  data-js-payer>Commander 2/3</button>`;
 
                             let recap = this._el.querySelector('[data-js-recap]');
@@ -176,11 +176,11 @@ class FormulaireCommande{
         totalTvs = (Number(prixVente)*Number(elTvs))/100;
         totalFacture = (Number(prixVente) +totalTvh+totalTvp+totalTvs+totalShiping);
         
-        eltotaltvh.innerHTML = (Number(eltotaltvh.innerHTML) + totalTvh);
-        eltotaltvp.innerHTML = (Number(eltotaltvp.innerHTML) + totalTvp);
-        eltotaltvs.innerHTML = (Number(eltotaltvs.innerHTML) + totalTvs);
-        elTotal.innerHTML = (Number(elTotal.innerHTML) + totalFacture);
-        eltotalShiping.innerHTML = (Number(eltotalShiping.innerHTML) + totalShiping);
+        eltotaltvh.innerHTML = (Number(eltotaltvh.innerHTML) + totalTvh).toFixed(2);
+        eltotaltvp.innerHTML = (Number(eltotaltvp.innerHTML) + totalTvp).toFixed(2);
+        eltotaltvs.innerHTML = (Number(eltotaltvs.innerHTML) + totalTvs).toFixed(2);
+        elTotal.innerHTML = (Number(elTotal.innerHTML) + totalFacture).toFixed(2);
+        eltotalShiping.innerHTML = (Number(eltotalShiping.innerHTML) + totalShiping).toFixed(2);
     }
  
     gestionChoixCarte = () =>{
@@ -257,6 +257,8 @@ class FormulaireCommande{
                 /* let totalFacture = totalCommande; */
                 let idUtilisateur = this._el.querySelector('[data-js-utilisateur]').dataset.jsUtilisateur;
                 let idVoiture = this._el.querySelector('[data-js-voiturcommande').dataset.jsVoiturecommande;
+                let totalCommande = Number(this._el.querySelector('[data-js-totalfacture]').innerHTML);
+                console.log(this._el.querySelector('[data-js-totalfacture]'));
                 let idExpedition = "";
                 for (let j = 0; j < this._elExpedition.length; j++) {
                     const livraison = this._elExpedition[j];
@@ -273,7 +275,7 @@ class FormulaireCommande{
                         idModedePiement = option.value;
                     }
                 }
-                console.log("id utilisateur = ",idUtilisateur, "id mode paiment = ",idModedePiement,"id expedition = ", idExpedition, "id voiture = ");
+                console.log("id utilisateur = ",idUtilisateur, "id mode paiment = ",idModedePiement,"id expedition = ", idExpedition, "total commande = ",totalCommande);
             }
             
         });
