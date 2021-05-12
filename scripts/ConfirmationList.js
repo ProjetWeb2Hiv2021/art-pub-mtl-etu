@@ -97,7 +97,7 @@ class ConfirmationList {
             }
         }
 
-                    
+               
         // Afficher le conteur sur la page à coté du icone.
         if (cont==0)
             elConteur.innerHTML = "";

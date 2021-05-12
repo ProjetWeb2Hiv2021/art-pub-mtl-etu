@@ -6,11 +6,11 @@
 
 	<?php
    
-	 if(isset($_COOKIE['lang'])){
-		 $lang = $_COOKIE['lang'];
-	 }else{
-		 $lang ="fr";
-	 } 	 
+	if(isset($_COOKIE['lang'])){
+		$lang = $_COOKIE['lang'];
+	}else{
+		$lang ="fr";
+	} 	 
 	
 	if($data["expedition"]){
 		?>
@@ -45,9 +45,9 @@
 
 	
 	?>
-		<button  data-js-submit>Commander 1/3</button>
+		<button  data-js-submit ><a href="#btn2">Commander 1/3</a></button>
 	</form>
-	<form data-js-paimentform>
+	<form data-js-paimentform id="paimentform">
 		<?php
 		if($data["modepaiement"]){
 			?>
@@ -58,6 +58,7 @@
 			foreach ($data["modepaiement"] as $modepaiement) {
 				
 			?>
+				<div>
 				<input type="radio" id="radio-paiement" name="radio-paiement" value="<?=$modepaiement["idModePaiement"]?>" data-js-param="cartechoix"
 				<?php
 				if($modepaiement["idModePaiement"] == "2"){
@@ -67,6 +68,7 @@
 				}
 				?>
 				><label for="radio-paiement"><?=$modepaiement["modePaiement$lang"]?></label>
+			</div>
 			<?php
 			}
 			?>
@@ -77,7 +79,7 @@
 			<?php
 		}
 	?>
-	<button  data-js-btncommander3>Commander 3/3</button>
+	<button  data-js-btncommander3 id="btn3">Commander 3/3</button>
 	</form>
 
 
