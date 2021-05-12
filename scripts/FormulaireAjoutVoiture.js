@@ -24,6 +24,11 @@ class FormulaireAjoutVoiture {
         this._elResultat = this._el.querySelector('[data-js-resultat]');
         this._elFormVoiture = this._el.querySelector('[data-js-component="Form"]');
         this._elFormImage = this._el.querySelector('[data-component-form-image]');
+        this._elIdV = this._el.querySelector('[data-js-param="idV"]');
+        this._elImage = this._el.querySelector('[data-js-param="fichierATeleverser"]');
+        this._elErrImage = this._el.querySelector('[data-component-form-image] .error-message');
+        this._vin;
+        this._elOrdre = this._el.querySelector('[data-js-param="ordre"]');
         this.init();
     }
 
@@ -32,7 +37,7 @@ class FormulaireAjoutVoiture {
         
         this._elSubmit.addEventListener('click', (e) => {
             e.preventDefault();
-            //console.log(this._elFormVoiture);
+            
             let validation = new FormValidator(this._elFormVoiture);
             if (validation.isValid) {
                 let vin = encodeURIComponent(this._elVIN.value);
@@ -51,6 +56,7 @@ class FormulaireAjoutVoiture {
                 let idGroupeMotopropulseur = Number(encodeURIComponent(this._elSelectGMP.options[this._elSelectGMP.selectedIndex].value));
                 let idStatut = Number(encodeURIComponent(this._elSelectStatut.options[this._elSelectStatut.selectedIndex].value));
                 
+
                 this.callAJAXAjoutVoiture(
                     vin,
                     prixVente,
@@ -71,9 +77,18 @@ class FormulaireAjoutVoiture {
         });
         this._elSubmitImage.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log(this._elFormImage);
-            let validation = new FormValidator(this._elFormImage);
-
+                let formImage = this._elFormImage;
+                this._elErrImage.innerHTML = "";
+                let id = Number(encodeURIComponent(this._elIdV.value));
+                let vin = encodeURIComponent(this._vin);
+                if(this._elOrdre.value==""){
+                    this._elOrdre.value = 1;                    
+                } else {
+                    this._elOrdre.value = Number(encodeURIComponent(this._elOrdre.value))+1;
+                }
+                let ordre = Number(encodeURIComponent(this._elOrdre.value));
+                console.log(ordre);
+                this.callAJAXAjoutImage(formImage, id, vin, ordre);
         });
 
     }
@@ -115,15 +130,21 @@ class FormulaireAjoutVoiture {
                         
                         // Traitement du DOM
                         /* console.log("test"); */
-                        let reponse = JSON.parse(xhr.responseText);
-                        console.log(reponse);
+                        let reponse = parseInt(JSON.parse(xhr.responseText));
+                        
+                        
                         if(reponse != 0){
-                            this._elResultat.innerHTML = "<p>La voiture a été ajoutée</p>";
-                        }else{
-                            this._elResultat.innerHTML = "<p>probleme ou niveau de l'ajout</p>";
-                        }    
+                            this._elResultat.innerHTML = "<p>La voiture " + reponse + " a été ajoutée</p>";
+                            this._elIdV.value = reponse;
 
-                        this.viderChamps(); 
+                            this._elFormImage.classList.remove('disabled');
+                            this._vin = this._elVIN.value;
+                            this._elFormVoiture.classList.add('disabled');
+                            this.viderChampsVoiture(); 
+                        }else{
+                            this._elResultat.innerHTML = "<p>probleme au niveau de l'ajout</p>";
+                        }    
+                      
                         
                     } else if (xhr.status === 404) {
                         console.log('Le fichier appelé dans la méthode open() n’existe pas.');
@@ -151,7 +172,7 @@ class FormulaireAjoutVoiture {
         }
         
     }
-    viderChamps = () => {
+    viderChampsVoiture = () => {
         this._elVIN.value = "";
         this._elPrixVente.value = "";
         this._elAnnee.value = "";        
@@ -166,6 +187,80 @@ class FormulaireAjoutVoiture {
         this._elSelectTransmission.selectedIndex = 0;
         this._elSelectGMP.selectedIndex = 0;
         this._elSelectStatut.selectedIndex = 0;
+        
+
+    }
+
+    viderChampsImage = () => {
+        this._elOrdre.value = "";
+        this._elIdV.value = "";
+        this._elImage.value = "";
+    }
+    callAJAXAjoutImage = (formImage, id, vin, ordre) => {
+        
+        // Déclaration de l'objet XMLHttpRequest
+        let xhr;
+        xhr = new XMLHttpRequest();
+        
+        // Initialisation de la requète
+        if (xhr) {	
+            
+            // Ouverture de la requète : fichier recherché
+            xhr.open("post", "index.php?Voiture_AJAX&action=ajoutImage&id=" + id +"&vin="+ vin+"&ordre="+ordre, true);            
+            xhr.setRequestHeader('Accept', 'multipart/form-data');
+
+            // reference : https://codepen.io/tcannonfodder/pen/QjpMoL
+            let data = new FormData(formImage);
+            // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
+            xhr.addEventListener('readystatechange', () => {
+
+                if (xhr.readyState === 4) {							
+                    if (xhr.status === 200) {
+                        
+                        let reponse;
+                        // Traitement du DOM
+                         try {
+                            // Code to run
+                             reponse = JSON.parse(xhr.responseText);
+                        
+                        } 
+      
+                        catch ( e ) {
+                             console.log(xhr.responseText);
+                            // Code to run if an exception occurs
+                             
+                        }
+                        
+                        
+                        
+                        //console.log(reponse["error"]);
+                        if (reponse["error"]) {
+                            this._elErrImage.innerHTML = reponse["msg"];
+                        } else {
+                            console.log(reponse);
+                            this._elResultat.innerHTML += "L'image " + reponse["ordre"] + " a été ajoutée<br/>";
+                            if (reponse["ordre"] == 3) {
+                                this.viderChampsImage();
+                                this._elFormImage.classList.add('disabled');
+                                
+                                this._elFormVoiture.classList.remove('disabled');
+                                
+                            }
+                        }
+                        
+                   
+
+                        
+                    } else if (xhr.status === 404) {
+                        console.log('Le fichier appelé dans la méthode open() n’existe pas.');
+                    }
+                }
+            });
+            // Envoi de la requète
+
+            xhr.send(data);
+        }
+        
     }
 
 }

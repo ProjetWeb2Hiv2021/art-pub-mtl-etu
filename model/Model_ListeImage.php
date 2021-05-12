@@ -5,7 +5,7 @@
 			return "listeImage";
 		}
 		
-		/* Differentes methodes CRUD transmission   */
+		/* Differentes methodes CRUD listeImage   */
 		public function obtenirListeImage($idVoiture) {
 			
 			try {
@@ -15,6 +15,21 @@
 				return $stmt->fetchAll();
 
 			}
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
+				// Ajouter un typeCarburant dans la BD
+		public function ajouteListeImage($chemin, $id, $ordre) {		
+			try {
+				$stmt = $this->connexion->prepare("INSERT INTO listeImage (cheminFichier, idVoiture, ordre) VALUES (:cheminFichier, :idVoiture, :ordre)");
+				$stmt->bindParam(":cheminFichier", $chemin);
+				$stmt->bindParam(":idVoiture", $id);
+				$stmt->bindParam(":ordre", $ordre);
+				$stmt->execute();
+				//return $this->connexion->lastInsertId();
+				return 1;
+			}	
 			catch(Exception $exc) {
 				return 0;
 			}

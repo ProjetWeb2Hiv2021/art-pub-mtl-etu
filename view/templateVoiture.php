@@ -5,25 +5,33 @@
             }else{
                 $lang ="fr";
 
-            }     
+            }  
+            $currentDate = new DateTime();;   
         ?>    
         <button  data-js-btn><?=TXT__DETAIL_ENREG?></button>
     </div>
     
     <div class="ligne">
         <section class="imagesVoiture ligne">
-            <form action="index.php?Voiture&action=ajouterImage&id=19" method="post" enctype="multipart/form-data" data-component-form-image>
+            <form action="index.php?Voiture_AJAX&action=ajoutImage" method="post" enctype="multipart/form-data" data-component-form-image class="disabled">
                 <div class="input-wrapper" data-js-input-wrapper>
-                    <div class="colonne centreV">
-                        <div class="ligne distribue">
-                        <label for="fichierATeleverser">Image à téléverser :</label>
-                        <input type="file" id="fichierATeleverser" name="fichierATeleverser" data-js-param="fichierATeleverser">
+                    <div class="colonne">
+                        <div class="ligne distribue centreV">
+                            <label for="fichierATeleverser">Image à téléverser :</label>
+                            <input type="file" id="fichierATeleverser" name="fichierATeleverser" data-js-param="fichierATeleverser">
+                        </div>
                         <small class="error-message" data-js-error-msg></small>
-                        
+                        <div class="ligne distribue centreV">
+                            <label for="idV">Id :</label>
+                            <input type="text" id="idV" name="idV" required data-js-param="idV" value='' disabled class='sansPointeur'>
                         </div>
+                        <div class="ligne distribue centreV">
+                            <label for="ordre"><?=TXT__AJIMG_ORD?> :</label>
+                            <input type="text" id="ordre" name="ordre" required data-js-param="ordre" value='' disabled class='sansPointeur'>
+                        </div>   
                         <button data-js-btn-aj-img><?=TXT__AJIMG_AJOUT_IMG?></button>
-                        </div>
                     </div>
+                </div>
             </form>
             <?php
                 if(isset($data["listeImage"])){    
@@ -80,7 +88,7 @@
                 <div class="input-wrapper" data-js-input-wrapper>
                     <div class="ligne distribue">
                         <label for="dateArrivee">Date arrivée :</label>
-                        <input type="text" id="dateArrivee" name="dateArrivee" required data-js-param="dateArrivee" value="<?php if(isset($data["voiture"])) echo $data["voiture"]["dateArrivee"];?>">
+                        <input type="text" id="dateArrivee" name="dateArrivee" required data-js-param="dateArrivee" value="<?php if(isset($data["voiture"])) echo $data["voiture"]["dateArrivee"]; else echo $currentDate->format('Y-m-d');?>">
                     </div>
                     <div class="ligne distribue">
                         <label for="prixPaye">Prix payé :</label>
