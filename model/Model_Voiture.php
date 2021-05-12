@@ -306,7 +306,7 @@
 				$stmt->bindParam(":idModele", $idModele);				
 				$stmt->bindParam(":idTransmission", $idTransmission);				
 				$stmt->bindParam(":idStatut", $idStatut);				
-				var_dump($stmt, "vin ". $vin, 
+				 /* var_dump($stmt, "vin ". $vin, 
 								"; prixVente ". $prixVente, 
 								"; annee ".$annee, 
 								"; dateArrivee ".$dateArrivee, 
@@ -320,13 +320,13 @@
 								"; idChassis ". $idChassis, 
                             	"; idModele ". $idModele, 								
 								"; idTransmission ".$idTransmission, 
-								"; idStatut ". $idStatut);
+								"; idStatut ". $idStatut);  */
 				$stmt->execute();
-
-				return 1;
+				$dernier = $this->connexion->lastInsertId();
+				return $dernier;
 			}	
 			catch(Exception $exc) {
-				/* echo $exc->getMessage();  */
+				 /* echo $exc->getMessage();  */ 
 				return 0;
 			}
 		}
