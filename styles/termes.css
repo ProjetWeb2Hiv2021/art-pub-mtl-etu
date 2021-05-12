@@ -1,5 +1,14 @@
 .politiqueVente section {
   margin: 0 40px;
+  text-align: left;
+  background-color: #130602;
+  padding: 40px;
+  color: white;
+  border: 3px solid #dc6a2b;
+}
+.politiqueVente p {
+  line-height: 1.5em;
+  font-weight: 300;
 }
 .politiqueVente h1 {
   text-align: center;
