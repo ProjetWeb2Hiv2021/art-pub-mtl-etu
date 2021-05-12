@@ -137,7 +137,7 @@ define('TXT__UTILISATEUR_AV', 'Ajouter Voiture');
 define('TXT__UTILISATEUR_MV', 'Modifier Voiture');
 define('TXT__UTILISATEUR_CON', 'Connexion');
 define('TXT__UTILISATEUR_JOUR', 'Journal connexions');
-define('TXT__UTILISATEUR_GER_UTI', 'Gestion des utilisateur');
+define('TXT__UTILISATEUR_GER_UTI', 'Gestion des utilisateurs');
 
 /* vue DETAILS VOITURE*/
 define('TXT__DETAIL_RESERVER', 'Réserver');

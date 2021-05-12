@@ -13,10 +13,13 @@
   font-weight: normal;
   border: none;
   border-collapse: collapse;
-  width: 100%;
-  max-width: 100%;
+  width: 60%;
+  max-width: 60%;
   white-space: nowrap;
   background-color: white;
+  table-layout: fixed;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .fl-table td,
@@ -32,13 +35,13 @@
 
 .fl-table thead th {
   color: #ffffff;
-  background: #4fc3a1;
+  background: #130602;
   font-size: 18px;
 }
 
 .fl-table thead th:nth-child(odd) {
   color: #ffffff;
-  background: #324960;
+  background: #dc6a2b;
 }
 
 .fl-table tr:nth-child(even) {
@@ -112,4 +115,14 @@
     display: block;
     text-align: center;
   }
+}
+main.UtilisateurSystemes {
+  min-height: 80vh;
+}
+
+.UtilisateurSystemes h2 {
+  text-align: center;
+}
+.UtilisateurSystemes a {
+  text-decoration: none;
 }
