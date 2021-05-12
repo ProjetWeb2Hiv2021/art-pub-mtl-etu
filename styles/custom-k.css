@@ -261,7 +261,7 @@ div.voiture_liste__image-wrapper {
 }
 .voiture_liste__image-wrapper img {
   border-radius: 2px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .voir-plus {
   margin-bottom: 3rem;
