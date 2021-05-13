@@ -71,7 +71,7 @@ class FormulaireCommande{
             
 
 
-        
+
 
         }else{
             console.log("Non valide");
@@ -310,8 +310,8 @@ class FormulaireCommande{
                     this.callAJAXACM(param, path);  
                     
                     /* document.location.href='index.php?Magasin&action=FormulaireConfPaye'; */
-                    /* sessionStorage.removeItem('commande');
-                    sessionStorage.removeItem('Panier'); */
+                    sessionStorage.removeItem('commande');
+                    sessionStorage.removeItem('Panier');
                 }else{
                    /*  Gannina */
                    this.el_Btncommander3.style.display ="none";
@@ -333,7 +333,7 @@ class FormulaireCommande{
                    let elQuantite = document.querySelector('[data-js-quantite]');
                    payement.classList.remove('hidden');
                    elQuantite.innerHTML = Intl.NumberFormat('fr-CA').format(totalfacture) + "$";
-
+                
                    
 
 
