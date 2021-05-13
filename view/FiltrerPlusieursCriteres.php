@@ -42,14 +42,14 @@
 		
 		<div class="input-wrapper" data-js-input-wrapper>
 			<label><?= TXT_ANNEE?>  </label><br>
-			<input name="annee_min" data-js-annee data-component="anneeMin" placeholder="1900" maxlength="4" min="1900" max=<?=date('Y')?>>
-			<input name="annee_max" data-js-annee data-component="anneeMax" placeholder="<?=date('Y')?>" maxlength="4" min="1900" max=<?=date('Y')?>><br>
+			<input type="number" name="annee_min" data-js-annee data-component="anneeMin" placeholder="1900" min="1900" max=<?=date('Y')?>>
+			<input type="number" name="annee_max" data-js-annee data-component="anneeMax" placeholder="<?=date('Y')?>" min="1900" max=<?=date('Y')?>><br>
 			<small class="error-message" data-js-error-msg></small>
 		</div>
 		<div class="input-wrapper" data-js-input-wrapper>
 			<label><?= TXT_PRIX?> </label><br>
-			<input type="number" data-js-prix data-component="prixMin" name="prix_min" placeholder="De" maxlength="5" mainlength="0">
-			<input type="number" data-js-prix data-component="prixMax" name="prix_max" placeholder="À" maxlength="6" mainlength="0"><br>
+			<input type="number" data-js-prix data-component="prixMin" name="prix_min" placeholder="De">
+			<input type="number" data-js-prix data-component="prixMax" name="prix_max" placeholder="À"><br>
 			<small class="error-message" data-js-error-msg></small>
 		</div>
 		<div class="box-btn_filter">
