@@ -1,4 +1,14 @@
+ <?php  
+            if(isset($_COOKIE['lang'])){
+                $lang = $_COOKIE['lang'];
+            }else{
+                $lang ="fr";
+        
+            } 
+            
+?>    
 <div class="main-k">
+
     <section data-component="VoitureDetail">
         
         <div data-js-component="Form" class="ligne">
@@ -200,30 +210,22 @@
         <div class="ligne aLaFin">
         <a href="index.php"><?=TXT__DETAIL_RETOUR?></a>
         
-        <?php  
-            if(isset($_COOKIE['lang'])){
-                $lang = $_COOKIE['lang'];
-            }else{
-                $lang ="fr";
-        
-            } 
-            $leSysteme = $data["systeme"];
-        ?>    
+       
 
         <?php 
         
             if(!isset($_SESSION["nomUtilisateur"])) 
             
-                echo '<a href="index.php?Utilisateur&action=connexion">'.TXT__DETAIL_AJOUT.'</a>';
+                echo '<a href="index.php?Utilisateur&action=connexion" data-js-btn>'.TXT__DETAIL_AJOUT.'</a>';
             else 
             {
             // Vérifier si la voiture est en stock
                 if(isset($data["voiture"])&&$data["voiture"]["idStatut"] == 3){
-                    echo '<button  data-js-btn >'.TXT__DETAIL_AJOUT.'</button>';
+                    echo '<button data-js-btn >'.TXT__DETAIL_AJOUT.'</button>';
 
                 }
                 else {
-                    echo '<button  data-js-btn disabled>'.TXT__DETAIL_AJOUT.'</button>';                
+                    echo '<button data-js-btn disabled>'.TXT__DETAIL_AJOUT.'</button>';                
                 }
             }   
         
