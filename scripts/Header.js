@@ -29,12 +29,7 @@ class Header {
         }
 
         
-/*         this._elSelectLangue.addEventListener('change', () => {
-            console.log();
-            let langue = this._elSelectLangue.options[this._elSelectLangue.selectedIndex].value;
-            console.log(langue);
-            document.location.href=`index.php?Magasin&action=""&langue=${langue}`;
-        }); */
+
 		
 		        //Afficher conteur dans le header
         var elConteur = document.getElementById("conteurVoiture");

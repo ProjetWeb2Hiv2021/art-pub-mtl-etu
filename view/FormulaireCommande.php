@@ -12,7 +12,7 @@
 		$lang ="fr";
 	} 	 
 	
-	//echo  json_encode(($data["nomUtilisateur"]));
+	
 	if($data["expedition"]){
 		?>
 		
@@ -118,9 +118,7 @@
 			size: 'responsive',
 			label :'checkout'
 		},
-/* 		funding: {
-			disallowed: [ paypal.FUNDING.CREDIT ]
-		}, */
+
 			// Set up the transaction
 			createOrder: function(data, actions) {
 				let eltotaltvs = "" + document.querySelector('[data-js-totalfacture]').innerHTML;
@@ -128,7 +126,7 @@
 				return actions.order.create({
 					purchase_units: [{
 						amount: {
-							//value: '88.44'
+							
 							value: eltotaltvs
 						}
 					}]
@@ -141,7 +139,7 @@
 					// Show a success message to the buyer
 					alert('La transaction a été faite ' + details.payer.name.given_name +'!');
 					console.log(data);
-					//console.log(' ' +$data["nomUtilisateur"]);
+					
 					document.location.href='index.php?Magasin&action=confPayement'; 
 				});
 			}

@@ -66,9 +66,7 @@ class Profil{
                 let idUtilisateur = Number(this._el.querySelector('[data-js-id]').dataset.jsId);
                 console.log(idUtilisateur, nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone, telephonePortable, idTypeUtilisateur, idVille, idProvince);
                 this.callAJAXAMiseAJourUtilisateur(idUtilisateur, nomUtilisateur, motPasse, prenom, nomFamille, courriel, dateNaissance, noCivique, rue, codePostal, telephone , telephonePortable, idTypeUtilisateur, idVille, idProvince);
-                /* setTimeout(function(){ 
-                    document.location.href='index.php?'; 
-                }, 5000); */
+                
     
             }
             this._elbtnSupp.addEventListener('click', (e) => {
