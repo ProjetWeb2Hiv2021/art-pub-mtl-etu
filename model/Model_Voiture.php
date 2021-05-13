@@ -306,27 +306,13 @@
 				$stmt->bindParam(":idModele", $idModele);				
 				$stmt->bindParam(":idTransmission", $idTransmission);				
 				$stmt->bindParam(":idStatut", $idStatut);				
-				 /* var_dump($stmt, "vin ". $vin, 
-								"; prixVente ". $prixVente, 
-								"; annee ".$annee, 
-								"; dateArrivee ".$dateArrivee, 
-								"; prixPaye ".$prixPaye, 
-								"; km ".$km, 
-								"; couleurfr ".$couleurfr,
-								"; couleuren ". $couleuren,
-								"; vedette ". $vedette, 
-								"; idGroupeMotopropulseur ".$idGroupeMotopropulseur,
-								"; idTypeCarburant ".$idTypeCarburant,
-								"; idChassis ". $idChassis, 
-                            	"; idModele ". $idModele, 								
-								"; idTransmission ".$idTransmission, 
-								"; idStatut ". $idStatut);  */
+				 
 				$stmt->execute();
 				$dernier = $this->connexion->lastInsertId();
 				return $dernier;
 			}	
 			catch(Exception $exc) {
-				 /* echo $exc->getMessage();  */ 
+				 
 				return 0;
 			}
 		}
@@ -367,6 +353,23 @@
 				$stmt->bindParam(":idTransmission", $idTransmission);
 				$stmt->bindParam(":idGroupeMotopropulseur", $idGroupeMotopropulseur);
 				$stmt->bindParam(":idStatut", $idStatut);				
+				
+				$stmt->execute();
+
+				return 1;
+			}	
+			catch(Exception $exc) {
+				 
+				return 0;
+			}
+		}
+		
+		public function changerStatutVoiture($idVoiture) {
+
+			try {
+				$stmt = $this->connexion->prepare("UPDATE voiture SET idStatut= 2 WHERE idVoiture=:idVoiture");
+				
+				$stmt->bindParam(":idVoiture", $idVoiture);				
 				
 				$stmt->execute();
 

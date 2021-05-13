@@ -1,8 +1,7 @@
-class GroupeMotopropulseur {
+class Fabricant {
     constructor(el) {
         this._el = el;
-        /* Détail du modele */
-        this._groupeMotopropulseur = this._el.querySelector('[data-js-groupeMotopropulseur]');
+        this._fabricant = this._el.querySelector('[data-js-fabricant]');
         this._elAjouter = this._el.querySelector('[data-js-btnAjouter]');
         this._elMisAjour = this._el.querySelector('[data-js-btnMisAJour]');
         this._elSupprimer = this._el.querySelector('[data-js-btnSupprimer]');
@@ -16,18 +15,16 @@ class GroupeMotopropulseur {
         
         this._elAjouter.addEventListener('click', (e) => {
             e.preventDefault();
-            document.location.href="index.php?GroupeMotopropulseur&action=ajoutMotopropulseur";
+            document.location.href="index.php?Fabricant&action=ajoutFabricant";
         });
         this._elMisAjour.addEventListener('click', (e) => {
             e.preventDefault();
-            //this.callAJAX_MisAJour(e.target.value);
-            if (this._groupeMotopropulseur.value != 0 ) document.location.href="index.php?GroupeMotopropulseur&action=misAjourMotopropulseur&id="+this._groupeMotopropulseur.value;          
+            if (this._fabricant.value != 0 ) document.location.href="index.php?Fabricant&action=misAjourFabricant&id="+this._fabricant.value;     
         });
 
         this._elSupprimer.addEventListener('click', (e) => {
             e.preventDefault();
-            //listeGroupeMotopropulseur = document.querySelector('[data-js-param="groupeMotopropulseur"]');
-            if (this._groupeMotopropulseur.value != 0 ) this.callAJAX_Supprimer(this._groupeMotopropulseur.value);
+            if (this._fabricant.value != 0 ) this.callAJAX_Supprimer(this._fabricant.value);
            
            
         });
@@ -43,7 +40,7 @@ class GroupeMotopropulseur {
         if (xhr) {	
             
             // Ouverture de la requète : fichier recherché
-            xhr.open('POST', 'index.php?GroupeMotopropulseur_AJAX&action=supprimerMotopropulseur');
+            xhr.open('POST', 'index.php?Fabricant_AJAX&action=supprimerFabricant');
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             
             // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
@@ -55,14 +52,14 @@ class GroupeMotopropulseur {
                         // Traitement du DOM
                         let reponse = JSON.parse(xhr.responseText);
                         if(reponse == 1){
-                            this._el.innerHTML = "<p>Le groupe moto propulseur a été supprimé</p>"
+                            this._el.innerHTML = "<p>Le fabricant a été supprimé</p>"
                             setTimeout(function(){ 
-                                document.location.href='index.php?GroupeMotopropulseur&action=connexion'; 
+                                document.location.href='index.php?Fabricant&action=connexion'; 
                             }, 2000);
                         }else{
                             this._el.innerHTML = "<p>probleme ou niveau de la suppresion</p>"
                             setTimeout(function(){ 
-                                document.location.href='index.php?GroupeMotopropulseur&action=connexion'; 
+                                document.location.href='index.php?Fabricant&action=connexion'; 
                             }, 5000);
                         }
 
@@ -74,10 +71,9 @@ class GroupeMotopropulseur {
             });
             // Envoi de la requète
 
-            xhr.send('idMotoPropulseur=' + $id);
+            xhr.send('idFabricant=' + $id);
         }
         
     }
-
 
 }

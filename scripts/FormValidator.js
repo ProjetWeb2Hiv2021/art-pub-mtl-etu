@@ -132,7 +132,7 @@ class FormValidator {
 
             if (inputValue == ""){
                 let inputDataset = elInput[i].dataset.jsParam, 
-                            // let inputName = this._allRequiredInputs[i].name,                         // Recupère la valeur de l'attribut name
+                            
                 msg = `Le champ  ${inputDataset} est obligatoire.`;
                 this.addError(closestElWrapper, elErrorMsg, msg);
             }else{

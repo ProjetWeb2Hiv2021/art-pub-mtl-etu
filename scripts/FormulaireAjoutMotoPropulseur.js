@@ -20,11 +20,7 @@ class FormulaireAjoutMotoPropulseur{
                 this.callAJAXAjoutMotoPropulseur(nomMotoPropulseur);                 
             }            
         });
-/*         this._elSubmitMAJ.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert("Mis à jour");
-        
-        }); */
+
 
 
 

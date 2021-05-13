@@ -6,8 +6,6 @@
 		}
 		
 		/* Differentes methodes CRUD commande */
-
-
 		
 		public function modifierStatutPayment($idCommande) {		
 			try {
@@ -20,6 +18,22 @@
 				return 0;
 			}
 		}
-
+		public function ajouterCommande($idUtilisateur, $idModePaiement, $idExpedition, $dateCommande) {	
+			try {
+				$stmt = $this->connexion->prepare("INSERT INTO commande (idUtilisateur, idModePaiement, idExpedition, dateCommande, idStatut) VALUES (:idUtilisateur, :idModePaiement, :idExpedition, :dateCommande, 1)");
+				
+				$stmt->bindParam(":idUtilisateur", $idUtilisateur);
+				$stmt->bindParam(":idModePaiement", $idModePaiement);
+				$stmt->bindParam(":idExpedition", $idExpedition);
+				$stmt->bindParam(":dateCommande", $dateCommande);
+				$stmt->execute();
+				$idCommande = $this->connexion->lastInsertId();
+				return $idCommande;
+				
+			}	
+			catch(Exception $exc) {
+				return 0;
+			}
+		}
 	}
 ?>

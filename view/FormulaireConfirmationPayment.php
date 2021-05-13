@@ -1,5 +1,10 @@
 <section data-component="FormulaireConfPaye" data-js-component="Form" data-js-confPayment>
-
+<?php
+/* david */
+if(isset($data)){
+	echo " <p>Votre numero de facture est : ".$data."</p>";
+}
+?>
 <!-- Include the PayPal JavaScript SDK -->
 <div  class="payementDesc"  data-js-payement>   
 	<div>
@@ -9,7 +14,7 @@
 					<!-- Set up a container element for the button -->
 			</p>
 			<p> Nous allons vous communiquer par courriel ou téléphone pour la livraison du voiture
-				<strong>(Plus d'information: caruse@yahoo.com)
+				<strong>(Plus d'information: carareus@yahoo.com)
 							
 				</strong>
 			</p>

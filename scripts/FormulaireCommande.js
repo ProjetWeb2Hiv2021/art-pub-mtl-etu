@@ -37,7 +37,8 @@ class FormulaireCommande{
            
             
         });
-
+        this.gesionbtncommander3(); 
+        /* gestion btn retour */
         
 
     }
@@ -70,21 +71,7 @@ class FormulaireCommande{
             
 
 
-        /* this._elProce.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            this._elProce.classList.add('hidden');
-            let recap = this._el.querySelector('[data-js-recap]');
-            recap.classList.add('hidden');
-            
-            let payement = document.querySelector('[data-js-payement]');
-                            
-            payement.classList.remove('hidden');
-
-            let eltotaltvs = "" + document.querySelector('[data-js-prix]').dataset.jsPrix;
-            let elQuantite = document.querySelector('[data-js-quantite]');
-            elQuantite.innerHTML = Intl.NumberFormat('fr-CA').format(eltotaltvs) + "$";
-        }); */
+        
 
         }else{
             console.log("Non valide");
@@ -135,8 +122,7 @@ class FormulaireCommande{
                             this.calculTotal(reponse.prixVente);
                             this. gesionbtncommander2();
                             /* gestion du btn pour le paiement */
-                            this.gesionbtncommander3(); 
-                            /* gestion btn retour */
+                            
                             this.gestionBtnRetour();
 
                         }
@@ -167,10 +153,10 @@ class FormulaireCommande{
                                                 <a data-js-retour>Retour</a>`;
 
                             let recap = this._el.querySelector('[data-js-recap]');
-                            recap.insertAdjacentHTML("afterbegin", htmlUtilisateur);
-
-          
+                            recap.insertAdjacentHTML("afterbegin", htmlUtilisateur);         
                         }
+                        
+                        
                         
                         
                     } else if (xhr.status === 404) {
@@ -296,10 +282,10 @@ class FormulaireCommande{
              if (validation.isValid){
                 /* let totalFacture = totalCommande; */
                 let idUtilisateur = this._el.querySelector('[data-js-utilisateur]').dataset.jsUtilisateur;
-                let idVoiture = this._el.querySelector('[data-js-voiturcommande').dataset.jsVoiturecommande;
+                
                 let totalCommande = Number(this._el.querySelector('[data-js-totalfacture]').innerHTML);
                 console.log(this._el.querySelector('[data-js-totalfacture]'));
-                let idModedePiement = "";
+                let idModePaiement = "";
                 let idExpedition = "";
                 for (let j = 0; j < this._elExpedition.length; j++) {
                     const livraison = this._elExpedition[j];
@@ -312,13 +298,20 @@ class FormulaireCommande{
                     
                     if(option.checked){
                         console.log(option.value);
-                        idModedePiement = option.value;
+                        idModePaiement = option.value;
                     }
+
                 }
 
-                if(idModedePiement !== "5"){
+                if(idModePaiement !== "5"){
                     
-                    console.log("id utilisateur = ",idUtilisateur, "id mode paiment = ",idModedePiement,"id expedition = ", idExpedition, "total commande = ",totalCommande);
+                    let param = `idUtilisateur=${idUtilisateur}&idModePaiement=${idModePaiement}&idExpedition=${idExpedition}`;
+                    let path =`Commande_AJAX&action=ajoutCommande`;
+                    this.callAJAXACM(param, path);  
+                    
+                    /* document.location.href='index.php?Magasin&action=FormulaireConfPaye'; */
+                    /* sessionStorage.removeItem('commande');
+                    sessionStorage.removeItem('Panier'); */
                 }else{
                    /*  Gannina */
                    this.el_Btncommander3.style.display ="none";
@@ -344,10 +337,9 @@ class FormulaireCommande{
                    
 
 
-                   
+
                 }
-                
-                
+
             }
             
         });
@@ -361,6 +353,95 @@ class FormulaireCommande{
             
         });
         
+    }
+    
+    callAJAXACM = (param, path) => {
+
+        // Déclaration de l'objet XMLHttpRequest
+        let xhr;
+        xhr = new XMLHttpRequest();
+
+        // Initialisation de la requète
+        if (xhr) {	
+            
+            // Ouverture de la requète : fichier recherché
+            xhr.open('POST', 'index.php?'+path);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
+            // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
+            xhr.addEventListener('readystatechange', () => {
+
+                if (xhr.readyState === 4) {							
+                    if (xhr.status === 200) {
+                        let reponse = JSON.parse(xhr.responseText);
+                        
+                        this.ajoutLigneCommande(reponse);
+                        this.ajoutFacture(reponse);
+                        
+     
+                    } else if (xhr.status === 404) {
+                        console.log('Le fichier appelé dans la méthode open() n’existe pas.');
+                    }
+                }
+            });
+            // Envoi de la requète
+
+            xhr.send(param);
+        }
+    }
+    ajoutFacture = (idCommande) =>{
+        let param = `idCommande=${idCommande}`;
+        let path =`Commande_AJAX&action=ajoutFacture`;
+        this.callAJAXFACT(param, path);  
+    }
+    ajoutLigneCommande = (idCommande) =>{
+        
+        let path =`Commande_AJAX&action=ajoutLigneCommande`;
+
+        let commande = JSON.parse(sessionStorage.commande);
+            for (let j = 0; j < commande.length; j++) {
+                let idVoiture = commande[j].idVoiture;
+                let param = `idCommande=${idCommande}&idVoiture=${idVoiture}`;
+                console.log(param);
+                this.callAJAXA(param, path);                
+            }
+         
+    }
+    
+    callAJAXFACT = (param, path) => {
+
+        // Déclaration de l'objet XMLHttpRequest
+        let xhr;
+        xhr = new XMLHttpRequest();
+
+        // Initialisation de la requète
+        if (xhr) {	
+            
+            // Ouverture de la requète : fichier recherché
+            xhr.open('POST', 'index.php?'+path);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
+            // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
+            xhr.addEventListener('readystatechange', () => {
+
+                if (xhr.readyState === 4) {							
+                    if (xhr.status === 200) {
+                        let reponse = JSON.parse(xhr.responseText);
+
+                       
+                        this._el.setAttribute("data-js-idfacture", reponse);
+                        document.location.href=`index.php?Magasin&action=confPayement&idFacture=${reponse}`;
+                    
+     
+                    } else if (xhr.status === 404) {
+                        console.log('Le fichier appelé dans la méthode open() n’existe pas.');
+                    }
+                }
+            });
+            // Envoi de la requète
+
+            xhr.send(param);
+        }
     }
       
 }

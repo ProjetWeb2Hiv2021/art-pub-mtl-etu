@@ -10,7 +10,7 @@
 <div class="table-wrapper" data-component="GestionUtilisateurs" data-js-component="Form">
 <h2><?=TXT__UTILISATEUR_ACC?></h2>
     <button><a href="index.php?Utilisateur&action=creerClient"><?=TXT__CRM_CREE_COMPTE?></a></button>
-    <table class="fl-table">
+    <table class="">
         <thead>
         <tr>
             <th><?=TXT__FAU_PSEUDO?></th>
@@ -94,7 +94,7 @@
                     </div>
                     <small class="error-message" data-js-error-msg></small>			
                 </div> 
-            </td>
+            </td><br>
             <td>
                 <div class="input-wrapper" data-js-input-wrapper>
                     <div class="ligne distribue">

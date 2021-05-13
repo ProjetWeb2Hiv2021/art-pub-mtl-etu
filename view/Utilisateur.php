@@ -91,7 +91,14 @@
             ?>           
         </tr>
 
-        		
+
+        <tr>
+            <td></td>
+            <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé")  echo
+            '<td><a href="index.php?Fabricant&action=connexion">Gérer Fabricant </a></td>';
+            ?>           
+        </tr>
+        	
         <tbody>
     </table>
 </div>

@@ -1,4 +1,4 @@
-<section class="formulaireCommande" data-component="FormulaireCommande" data-js-component="Form" data-js-nomutilisateur="<?= $data["nomUtilisateur"]?>">
+section class="formulaireCommande" data-component="FormulaireCommande" data-js-component="Form" data-js-nomutilisateur="<?= $data["nomUtilisateur"]?>">
 
 	
 
@@ -12,17 +12,19 @@
 		$lang ="fr";
 	} 	 
 	
-	//echo  json_encode(($data["nomUtilisateur"]));
+	
 	if($data["expedition"]){
 		?>
 		
 		
 		<div class="input-wrapper" data-js-input-wrapper data-js-radio="required" data-js-param="info" data-js-input="Expedition">
-		<label for="radio-livraison"><?=TXT__FORMCOM_EXP?></label><br>
+		<label for="radio-livraison"><?=TXT__FORMCOM_EXP?></label>
+		<div data-livraion>
 		<?php
 		foreach ($data["expedition"] as $expedition) {
 			
 		?>
+		<div>
 			<input type="radio" id="radio-livraison" name="radio-livraison" value="<?=$expedition["idExpedition"]?>" data-js-param="expedition"><label for="radio-livraison"><?=$expedition["expedition$lang"]?>
 			<?php
 			if($expedition["idExpedition"] == "1"){
@@ -31,11 +33,13 @@
 			
 			?>
 			
-		</label>
+			</label>
+		</div>
 		<?php
 		}
 		?>
 		<br><small class="error-message" data-js-error-msg></small>
+		</div>
 		</div>
 
 		
@@ -118,9 +122,7 @@
 			size: 'responsive',
 			label :'checkout'
 		},
-/* 		funding: {
-			disallowed: [ paypal.FUNDING.CREDIT ]
-		}, */
+
 			// Set up the transaction
 			createOrder: function(data, actions) {
 				let eltotaltvs = "" + document.querySelector('[data-js-totalfacture]').innerHTML;
@@ -128,7 +130,7 @@
 				return actions.order.create({
 					purchase_units: [{
 						amount: {
-							//value: '88.44'
+							
 							value: eltotaltvs
 						}
 					}]
@@ -141,11 +143,15 @@
 					// Show a success message to the buyer
 					alert('La transaction a été faite ' + details.payer.name.given_name +'!');
 					console.log(data);
-					//console.log(' ' +$data["nomUtilisateur"]);
+					
 					document.location.href='index.php?Magasin&action=confPayement'; 
+
 				});
 			}
 		}).render('#paypal-button-container');
+
+
+
 	</script>		
 </div>
 </section>

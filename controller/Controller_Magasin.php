@@ -49,8 +49,11 @@
                         $this->showView($vue, $data);
                         break;	
 					case "afficherPolitique":
+						$vueMenu = "MenuPrincipal";       
+                        $this->showView($vueMenu);
 						$vue = "TermesEtConditions";       
                         $this->showView($vue);
+						
 						break;
 					case "afficherQui":
 						$vue = "QuiNousSommes";       
@@ -106,10 +109,13 @@
 							$vueMenuPrincipal = "MenuPrincipal";
 							$this->showView($vueMenuPrincipal);
 							$vue = "FormulaireConfirmationPayment";
-
+							$data = "";
+							if(isset($params["idFacture"])){
+								$data = $params["idFacture"];
+							}
 
 								
-							$this->showView($vue);
+							$this->showView($vue, $data);
 							break;							
 
 

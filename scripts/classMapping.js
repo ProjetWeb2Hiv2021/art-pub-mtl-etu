@@ -27,8 +27,10 @@ const classMapping = {
     'GestionMarque':GestionMarque,
     'Acheter' :Acheter,
     'FormulaireCommande' :FormulaireCommande,
-    'FormulaireConfPaye' : FormulaireConfPaye
-
+    'FormulaireConfPaye' : FormulaireConfPaye,
+    'Fabricant' : Fabricant,
+    'FormulaireAjoutFabricant' : FormulaireAjoutFabricant,
+    'FormulaireMisAjourFabricant' :FormulaireMisAjourFabricant,
 
 
 };

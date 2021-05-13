@@ -77,7 +77,7 @@
 			   $stmt->bindParam(":rue", $rue);
 			   $stmt->bindParam(":codePostal", $codePostal);
 			   $stmt->bindParam(":telephone", $telephone);
-				$stmt->bindParam(":telephonePortable", $telephonePortable);
+			   $stmt->bindParam(":telephonePortable", $telephonePortable);
 			   $stmt->bindParam(":idTypeUtilisateur", $idTypeUtilisateur);
 			   $stmt->bindParam(":idVille", $idVille);
 			   $stmt->bindParam(":idProvince", $idProvince);
@@ -90,8 +90,8 @@
 		   catch(Exception $exc) {
 			   return 0;
 		   }
-	   }
-	   public function obtenirUtilisateurNomUtilisateur($nomUtilisateur) {
+	    }
+	    public function obtenirUtilisateurNomUtilisateur($nomUtilisateur) {
 			
 			try {
 				if(isset($nomUtilisateur)){
@@ -107,10 +107,10 @@
 				return 0;
 			}
 		   
-	   }
+	    }
 
-	   public function modifierUtilisateur($idUtilisateur, $nomUtilisateur, $motPasse, $prenom, $nomFamille, $courriel, $dateNaissance, $noCivique,
-	   $rue, $codePostal, $telephone, $telephonePortable, $idTypeUtilisateur, $idVille, $idProvince) {
+	    public function modifierUtilisateur($idUtilisateur, $nomUtilisateur, $motPasse, $prenom, $nomFamille, $courriel, $dateNaissance, $noCivique,
+	    $rue, $codePostal, $telephone, $telephonePortable, $idTypeUtilisateur, $idVille, $idProvince) {
 
 		  try {
 			  if($motPasse != ""){
@@ -130,7 +130,7 @@
 			  $stmt->bindParam(":rue", $rue);
 			  $stmt->bindParam(":codePostal", $codePostal);
 			  $stmt->bindParam(":telephone", $telephone);
-				$stmt->bindParam(":telephonePortable", $telephonePortable);
+			  $stmt->bindParam(":telephonePortable", $telephonePortable);
 			  $stmt->bindParam(":idTypeUtilisateur", $idTypeUtilisateur);
 			  $stmt->bindParam(":idVille", $idVille);
 			  $stmt->bindParam(":idProvince", $idProvince);
@@ -143,44 +143,27 @@
 		  catch(Exception $exc) {
 			  return 0;
 		  }
-	  }
-	  public function supprimerUtilisateur($idUtilisateur) {
+		}
+		public function supprimerUtilisateur($idUtilisateur) {
 
-		 try {
-
-			$stmt = $this->connexion->prepare("DELETE FROM utilisateur WHERE idUtilisateur =:idUtilisateur");
-
-			
-			 $stmt->bindParam(":idUtilisateur", $idUtilisateur);
-
-		 		 
-			 $stmt->execute();
-
-			 return 1;
-		 }	
-		 catch(Exception $exc) {
-			 return 0;
-		 }
-	 	}
-/* 		public function obtenirListeUtilisateurs() {
 			try {
-				if(isset($nomUtilisateur)){
-					$stmt = $this->connexion->prepare("SELECT * from utilisateur 
-														JOIN typeutilisateur ON utilisateur.idTypeUtilisateur = typeutilisateur.idTypeUtilisateur
-														JOIN ville ON utilisateur.idVille = ville.idVille
-														JOIN ville ON utilisateur.idVille = ville.idVille");
-					$stmt->bindParam(":nomUtilisateur", $nomUtilisateur);
-					$stmt->execute();
-					return $stmt->fetchAll();
-				}		
-			}catch(Exception $exc) {
-				return 0;
-			}
-	
-		} */
+
+				$stmt = $this->connexion->prepare("DELETE FROM utilisateur WHERE idUtilisateur =:idUtilisateur");
+					
+				$stmt->bindParam(":idUtilisateur", $idUtilisateur);
+						
+				$stmt->execute();
+
+				return 1;
+				}	
+				catch(Exception $exc) {
+					return 0;
+				}
+		}
+
 	 
 
-	}
+	}	
 
 
 ?>
