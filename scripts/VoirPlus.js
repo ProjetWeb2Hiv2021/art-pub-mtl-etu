@@ -12,13 +12,11 @@ class VoirPlus {
         this._elBtn.addEventListener('click', (e) => {
             e.preventDefault();
             let nombreDeVoituresAffiches = document.querySelectorAll('[data-js-voiture-nbr]').length;
-            console.log(nombreDeVoituresAffiches);
-            console.log(this._elNombreDeVoitures);
+            
             if(nombreDeVoituresAffiches < this._elNombreDeVoitures){
                 this.showMore(nombreDeVoituresAffiches);
                 
-            }
-            console.log(document.querySelectorAll('[data-js-voiture-nbr]').length + this._nbrVoitureAcceuil);
+            }            
 
             if(document.querySelectorAll('[data-js-voiture-nbr]').length + this._nbrVoitureAcceuil  >= this._elNombreDeVoitures-1) {
                 

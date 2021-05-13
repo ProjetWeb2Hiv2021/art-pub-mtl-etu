@@ -34,7 +34,7 @@ class FiltrerUnCritere {
             }else if(value === "modele"){
                 param = `filtrerParModele`;
             }
-            console.log(param);
+            
 
             this.callAJAX(param);
 
@@ -70,9 +70,9 @@ class FiltrerUnCritere {
 
                         // Traitement du DOM
                        
-    // Traitement du DOM
+    
                         let reponse = JSON.parse(xhr.responseText);
-                        console.log(reponse);
+                        
                         this._elVoitures.innerHTML="";
                         
                         let html = "";
