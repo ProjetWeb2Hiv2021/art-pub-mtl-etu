@@ -21,15 +21,19 @@
   justify-content: space-between;
 }
 .formulaireCommande form div{
-  max-width: 70%;
+  max-width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
 .formulaireCommande form button{
-  max-width: 20%;
   padding: 5px;
   margin-left: auto;
   margin-right: auto;
+  min-width: 20%;
+  margin-bottom: 20px;
+}
+[data-js-btncommander3]{
+  display: block;
 }
 [data-js-payer]{
   display: block;
@@ -40,13 +44,17 @@
 .formulaireCommande .input-wrapper{
   margin-top: 30px;
   margin-bottom: 30px;
-  padding: 20px;
+  padding: 5px;
+  min-width: 70%;
 
 
 }
 .formulaireCommande .input-wrapper input, .formulaireCommande .input-wrapper label{
   margin-left: 20px;
   margin-top: 20px;
+}
+.formulaireCommande .input-wrapper label{
+  display: inline-block;
 }
 [data-js-formcredit]{
   width: 70%;
@@ -119,6 +127,16 @@
 [data-js-retour]:hover{
   color: red;
   cursor: pointer;
+}
+[data-livraion]{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: none;
+}
+[data-js-input="Expedition"]{
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (max-width: 810px) {
   
