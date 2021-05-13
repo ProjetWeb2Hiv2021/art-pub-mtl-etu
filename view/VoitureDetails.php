@@ -33,23 +33,23 @@
                 
                 <div class="ligne distribue">
                     <label for="vin"><?=TXT__DETAIL_VIN?> :</label>
-                    <input type="text" id="vin" name="vin" required data-js-param="vin" value='<?php echo $data["voiture"]["vin"];?>' disabled class='sansPointeur'>
+                    <input type="text" id="vin" name="vin" required data-js-param="vin" value='<?php echo $data["voiture"]["vin"];?>' disabled class="sansPointeur">
                 </div>                
                 
                 <div class="ligne distribue">
                     <label for="prixVente"><?=TXT__DETAIL_PRIX?> :</label>
-                    <input type="text" id="prixVente" name="prixVente" required data-js-param="prixVente" value='<?php echo $data["voiture"]["prixVente"];?>' disabled class='sansPointeur'>
+                    <input type="text" id="prixVente" name="prixVente" required data-js-param="prixVente" value='<?php echo $data["voiture"]["prixVente"];?>' disabled class="sansPointeur">
                 </div>
                     
                 <div class="ligne distribue">
                     <label for="annee"><?=TXT__DETAIL_ANN?> :</label>
-                    <input type="text" id="annee" name="annee" required data-js-param="annee" value='<?php echo $data["voiture"]["annee"];?>' disabled class='sansPointeur'>
+                    <input type="text" id="annee" name="annee" required data-js-param="annee" value='<?php echo $data["voiture"]["annee"];?>' disabled class="sansPointeur">
                 </div>
                     
                 <div class="ligne distribue">
                     <label for="km"><?=TXT__DETAIL_KM?> :</label>
 
-                    <input type="text" id="km" name="km" required data-js-param="km" value='<?php echo $data["voiture"]["km"];?>' disabled class='sansPointeur'>
+                    <input type="text" id="km" name="km" required data-js-param="km" value='<?php echo $data["voiture"]["km"];?>' disabled class="sansPointeur">
                 </div>
                 <div class="ligne distribue">
                     <label for="couleurfr"><?=TXT__DETAIL_COULFR?> :</label>
@@ -59,11 +59,11 @@
                             }else{
                                 echo $data["voiture"]["couleurfr"];
                             }   
-                            echo "\" disabled class='sansPointeur'";                 
+                            echo "\" disabled class="."\""."sansPointeur";                 
                         ?>">
                 </div>
                 <div class="ligne distribue"><label for="typeCarburant"><?=TXT__DETAIL_TYPE_CAR?> :</label> 
-                    <select name="typeCarburant" id="typeCarburant" data-js-typeCarburant disabled class='sansPointeur'>
+                    <select name="typeCarburant" id="typeCarburant" data-js-typeCarburant disabled class="sansPointeur">
                         <?php
 
                             
@@ -90,7 +90,7 @@
                     
                 
                 <div class="ligne distribue"><label for="modele"><?=TXT__DETAIL_MOD?> :</label> 
-                    <select name="modele" id="modele" data-js-modele disabled class='sansPointeur'>
+                    <select name="modele" id="modele" data-js-modele disabled class="sansPointeur">
                         <?php
                             $modele = $data["modele"];
                             //afficher dynamiquement une option pour chaque modele dans la base de données
@@ -110,7 +110,7 @@
                     
                 
                 <div class="ligne distribue"><label for="chassis"><?=TXT__DETAIL_CHASS?> :</label> 
-                    <select name="chassis" id="chassis" data-js-chassis disabled class='sansPointeur'>
+                    <select name="chassis" id="chassis" data-js-chassis disabled class="sansPointeur">
                         <?php
                             $chassis = $data["chassis"];
                             //afficher dynamiquement une option pour chaque chassis dans la base de données
@@ -134,7 +134,7 @@
                     
                 
                 <div class="ligne distribue"><label for="transmission"><?=TXT__DETAIL_TRANS?> :</label> 
-                    <select name="transmission" id="transmission" data-js-transmission disabled class='sansPointeur'>
+                    <select name="transmission" id="transmission" data-js-transmission disabled class="sansPointeur">
                         <?php
                             $transmission = $data["transmission"];
                             //afficher dynamiquement une option pour chaque transmission dans la base de données
@@ -158,7 +158,7 @@
                     
                 
                 <div class="ligne distribue"><label for="groupeMotopropulseur"><?=TXT__DETAIL_GROUP?> :</label> 
-                    <select name="groupeMotopropulseur" id="groupeMotopropulseur" data-js-gmp disabled class='sansPointeur'>
+                    <select name="groupeMotopropulseur" id="groupeMotopropulseur" data-js-gmp disabled class="sansPointeur">
                         <?php
                             $groupeMotopropulseur = $data["groupeMotopropulseur"];
                             
@@ -177,7 +177,7 @@
                 </div>
                 
                 <div class="ligne distribue"><label for="statut"><?=TXT__DETAIL_STAT?> :</label> 
-                    <select name="statut" id="statut" data-js-param="statut" disabled class='sansPointeur'>
+                    <select name="statut" id="statut" data-js-param="statut" disabled class="sansPointeur">
 
 
                 <?php
