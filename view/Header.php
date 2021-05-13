@@ -123,7 +123,10 @@
 		</div>
 
 	</div>
-		<div class="header-area">
+		
+</header>
+
+<div class="header-area">
 		<!-- site-navbar start -->
 		<div class="navbar-area">
 			<div class="container">
@@ -194,4 +197,3 @@
 			</div>
 		</div><!-- navbar-area end -->
 	</div>	
-</header>
