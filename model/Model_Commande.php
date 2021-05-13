@@ -6,8 +6,6 @@
 		}
 		
 		/* Differentes methodes CRUD commande */
-
-
 		
 		public function modifierStatutPayment($idCommande) {		
 			try {

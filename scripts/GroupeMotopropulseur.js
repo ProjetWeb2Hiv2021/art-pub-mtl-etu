@@ -51,8 +51,6 @@ class GroupeMotopropulseur {
 
                 if (xhr.readyState === 4) {							
                     if (xhr.status === 200) {
-/*                         let closestElWrapper = this._nomMotoPropulseur.closest('[data-js-input-wrapper]');
-                        let elErrorMsg = closestElWrapper.querySelector('[data-js-error-msg]'); */
 
                         // Traitement du DOM
                         let reponse = JSON.parse(xhr.responseText);

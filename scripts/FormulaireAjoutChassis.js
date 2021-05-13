@@ -19,10 +19,7 @@ class FormulaireAjoutChassis{
                 this.callAJAXAjoutChassis(nomChassis);                 
             }            
         });
-/*         this._elSubmitMAJ.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert("Mis à jour");     
-        }); */
+
 
 
 

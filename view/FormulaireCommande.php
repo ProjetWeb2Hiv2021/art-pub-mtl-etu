@@ -12,7 +12,7 @@ section class="formulaireCommande" data-component="FormulaireCommande" data-js-c
 		$lang ="fr";
 	} 	 
 	
-	//echo  json_encode(($data["nomUtilisateur"]));
+	
 	if($data["expedition"]){
 		?>
 		
@@ -122,9 +122,7 @@ section class="formulaireCommande" data-component="FormulaireCommande" data-js-c
 			size: 'responsive',
 			label :'checkout'
 		},
-/* 		funding: {
-			disallowed: [ paypal.FUNDING.CREDIT ]
-		}, */
+
 			// Set up the transaction
 			createOrder: function(data, actions) {
 				let eltotaltvs = "" + document.querySelector('[data-js-totalfacture]').innerHTML;
@@ -132,7 +130,7 @@ section class="formulaireCommande" data-component="FormulaireCommande" data-js-c
 				return actions.order.create({
 					purchase_units: [{
 						amount: {
-							//value: '88.44'
+							
 							value: eltotaltvs
 						}
 					}]
@@ -145,7 +143,7 @@ section class="formulaireCommande" data-component="FormulaireCommande" data-js-c
 					// Show a success message to the buyer
 					alert('La transaction a été faite ' + details.payer.name.given_name +'!');
 					console.log(data);
-					//console.log(' ' +$data["nomUtilisateur"]);
+					
 					document.location.href='index.php?Magasin&action=confPayement'; 
 
 				});

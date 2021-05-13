@@ -1,7 +1,6 @@
 <div class="main-k">
     <div class="header" data-component="MenuPrincipal">
 
-     
             <?php
                 if(isset($_GET['lang']) && $_GET['lang'] == "en"){
                     $lang = "fr";
