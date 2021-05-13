@@ -261,7 +261,7 @@ div.voiture_liste__image-wrapper {
 }
 .voiture_liste__image-wrapper img {
   border-radius: 2px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .voir-plus {
   margin-bottom: 3rem;
@@ -292,6 +292,40 @@ div.menu_profil {
   background-color: #130602;
   top: 83px;
   opacity: 1;
+}
+[data-component="VoitureDetail"] {
+  margin: 0;
+  padding-top: 3rem;
+}
+.imagesVoiture img {
+  background-color: #fff;
+  border: solid 4px #fff;
+  border-radius: 4px;
+  height: 158px;
+  object-fit: cover;
+}
+[data-component="VoitureDetail"] .sansPointeur {
+  border-radius: 4px;
+  height: 30px;
+  padding: 0 6px !important;
+  max-width: 200px;
+  width: 100% !important;
+}
+.aLaFin {
+  justify-content: center;
+  gap: 20px;
+  margin-top: 3rem;
+}
+[data-component="VoitureDetail"] [data-js-component="Form"] {
+  align-items: baseline;
+  justify-content: space-between;
+}
+.imagesVoiture {
+  flex: 2;
+}
+.infoVoiture {
+  max-width: 450px;
+  width: 100%;
 }
 
 /* footer */
@@ -519,6 +553,22 @@ footer .social,
   .li-item a:hover {
     background-color: transparent !important;
   }
+
+  [data-component="VoitureDetail"] {
+    padding-top: 0;
+    padding-bottom: 3rem;
+  }
+  [data-component="VoitureDetail"] [data-js-component="Form"] {
+    align-items: center;
+    flex-direction: column;
+  }
+  .imagesVoiture {
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+  .infoVoiture {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -533,14 +583,6 @@ footer .social,
     display: flex;
     justify-content: center;
   }
-  /* .box-panier {
-    position: absolute;
-    right: 12px;
-    top: 26px;
-  } */
-  /* div.box-panier a {
-    width: 32px;
-  } */
 
   .header a {
     height: 65px;
@@ -602,5 +644,9 @@ footer .social,
   .adresse div,
   .horaire div {
     text-align: center;
+  }
+
+  [data-component="VoitureDetail"] .sansPointeur {
+    max-width: 155px;
   }
 }
