@@ -49,7 +49,7 @@ class FiltrerPlusieursCriteres{
                         this._elSubmit.classList.add('disabled');
                         this._elRafraichir.classList.add('disabled');
                     } 
-                    console.log(input.value);
+                    
                 }
             });
             this.populerSelectMarque();
@@ -58,10 +58,10 @@ class FiltrerPlusieursCriteres{
                 e.preventDefault();
                 let validation = new FormValidator(this._el);
                 
-                console.log(document.querySelector('[data-component="VoirPlus"]'));
+                
                 this.elBtnRetour.classList.remove("hidden");
 
-                console.log(validation.isValid);
+                
                 if (validation.isValid){
                     this.populerListeVoitureRecherche();
                     document.querySelector('[data-component="VoirPlus"]').classList.add("hidden");
@@ -207,7 +207,7 @@ class FiltrerPlusieursCriteres{
         }
         let idMarque = Number(this._elSelectMarque.options[this._elSelectMarque.selectedIndex].dataset.jsIdmarque) ;
         let idModele = Number(this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmodele);
-        console.log(idModele, idMarque, anneeMin, anneeMax, prixMin, prixMax);
+        
         this.chargerListeVoitureRecherche(idModele, idMarque, anneeMin, anneeMax, prixMin, prixMax);
        
     }
@@ -229,7 +229,7 @@ class FiltrerPlusieursCriteres{
 
                         // Traitement du DOM
                        let reponse = JSON.parse(xhr.responseText);
-                       console.log(reponse);
+                       
 
                        this._elVoitures.innerHTML="";
                        
@@ -290,7 +290,7 @@ class FiltrerPlusieursCriteres{
                         }else{
                             let htmlErr = "";
 
-                            htmlErr += `<p>Pas de voiture disponible pour cette recherche</p>`;
+                            htmlErr += `<p>Pas de voiture disponible pour ce filtre</p>`;
                             this._elVoitures.innerHTML = htmlErr;
                         }
 
