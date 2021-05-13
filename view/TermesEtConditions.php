@@ -3,8 +3,7 @@
         <h1><?= TXT__TC_H1?></h1>
         <section>
         <p><?= TXT__TC_P1?></p>
-        <h2><?= TXT__TC_H2_1?></h2>
-        <h3><?= TXT__TC_H2?></h3>
+        <h2><?= TXT__TC_H2_1?></h2>        
         <p><?= TXT__TC_H2?></p>
         <h3><?= TXT__TC_H3_2?></h3>
         <p><?= TXT__TC_P2?></p>
