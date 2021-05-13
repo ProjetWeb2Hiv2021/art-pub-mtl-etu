@@ -9,7 +9,7 @@
 					<!-- Set up a container element for the button -->
 			</p>
 			<p> Nous allons vous communiquer par courriel ou téléphone pour la livraison du voiture
-				<strong>(Plus d'information: caruse@yahoo.com)
+				<strong>(Plus d'information: carareus@yahoo.com)
 							
 				</strong>
 			</p>

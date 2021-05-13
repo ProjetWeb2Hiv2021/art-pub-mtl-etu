@@ -89,7 +89,7 @@ class VoitureDetail {
             // Sauvegarde la variable de session
             sessionStorage.setItem('conteurVoiture', cont);
 
-            alert("Vous avez ajoutez une voiture au panier");
+            alert("Vous avez ajouté une voiture au panier");
         }
         else
             alert("La voiture est déjà dans le panier");
