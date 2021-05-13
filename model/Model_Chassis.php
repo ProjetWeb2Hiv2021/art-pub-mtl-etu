@@ -9,7 +9,7 @@
 		public function obtenirListeChassis() {
 			
 			try {
-				$stmt = $this->connexion->query("SELECT * from chassis where statut = 1;");
+				$stmt = $this->connexion->query("SELECT * from chassis where chassisStatut = 1;");
 
 				$stmt->execute();
 				return $stmt->fetchAll();
@@ -38,7 +38,7 @@
 		// Ajouter un chassis dans la BD
 		public function ajouteChassis($nomChassis) {		
 			try {
-				$stmt = $this->connexion->prepare("INSERT INTO chassis (chassisfr) VALUES (:nomChassis)");
+				$stmt = $this->connexion->prepare("INSERT INTO chassis (chassisfr,chassisen) VALUES (:nomChassis,:nomChassis)");
 				$stmt->bindParam(":nomChassis", $nomChassis);
 				$stmt->execute();
 				return 1;
@@ -56,13 +56,13 @@
 				$existe = $this->chercherChassisdansVoiture($id) ;         
 				if ($existe["cont"]  >= 1 )
 				{					
-					$stmt = $this->connexion->prepare("UPDATE chassis SET statut=0 WHERE idChassis=".$id);
+					$stmt = $this->connexion->prepare("UPDATE chassis SET chassisStatut=0 WHERE idChassis=".$id);
 					$stmt->execute();
 				}
 				else
 				{	
 						//$stmt = $this->connexion->prepare("DELETE FROM groupeMotopropulseur WHERE idGroupeMotopropulseur=" . $id);
-						$stmt = $this->connexion->prepare("UPDATE chassis SET statut=0 WHERE idChassis=".$id);
+						$stmt = $this->connexion->prepare("UPDATE chassis SET chassisStatut=0 WHERE idChassis=".$id);
 						$stmt->execute();
 				}
 
@@ -77,7 +77,7 @@
 		
 		public function modifierChassis($id,$nomChassis) {		
 			try {
-				$stmt = $this->connexion->prepare("UPDATE chassis SET chassisfr=:nomChassis WHERE idChassis=".$id);
+				$stmt = $this->connexion->prepare("UPDATE chassis SET chassisfr=:nomChassis,chassisen=:nomChassis WHERE idChassis=".$id);
 				$stmt->bindParam(":nomChassis", $nomChassis);
 				$stmt->execute();
 

@@ -9,7 +9,7 @@
 		public function obtenirListeTypeCarburant() {
 			
 			try {
-				$stmt = $this->connexion->query("SELECT * from typeCarburant where statut = 1;");
+				$stmt = $this->connexion->query("SELECT * from typeCarburant where tcStatut = 1;");
 
 				$stmt->execute();
 				return $stmt->fetchAll();
@@ -38,7 +38,7 @@
 		// Ajouter un typeCarburant dans la BD
 		public function ajouteTypeCarburant($nomTC) {		
 			try {
-				$stmt = $this->connexion->prepare("INSERT INTO typeCarburant (typeCarburantfr) VALUES (:nomTC)");
+				$stmt = $this->connexion->prepare("INSERT INTO typeCarburant (typeCarburantfr,typeCarburanten) VALUES (:nomTC,:nomTC)");
 				$stmt->bindParam(":nomTC", $nomTC);
 				$stmt->execute();
 				//return $this->connexion->lastInsertId();
@@ -57,13 +57,13 @@
 				$existe = $this->chercherTypeCarburantdansVoiture($id) ;         
 				if ($existe["cont"]  >= 1 )
 				{					
-					$stmt = $this->connexion->prepare("UPDATE typeCarburant SET statut=0 WHERE idTypeCarburant=".$id);
+					$stmt = $this->connexion->prepare("UPDATE typeCarburant SET tcStatut=0 WHERE idTypeCarburant=".$id);
 					$stmt->execute();
 				}
 				else
 				{	
 						//$stmt = $this->connexion->prepare("DELETE FROM typeCarburant WHERE idtypeCarburant=" . $id);
-						$stmt = $this->connexion->prepare("UPDATE typeCarburant SET statut=0 WHERE idTypeCarburant=".$id);
+						$stmt = $this->connexion->prepare("UPDATE typeCarburant SET tcStatut=0 WHERE idTypeCarburant=".$id);
 						$stmt->execute();
 				}
 				//return $stmt->rowCount();
@@ -78,7 +78,7 @@
 		
 		public function modifierTC($id,$nomTC) {		
 			try {
-				$stmt = $this->connexion->prepare("UPDATE typeCarburant SET typeCarburantfr=:nomTC WHERE idTypeCarburant=".$id);
+				$stmt = $this->connexion->prepare("UPDATE typeCarburant SET typeCarburantfr=:nomTC,typeCarburanten=:nomTC WHERE idTypeCarburant=".$id);
 				$stmt->bindParam(":nomTC", $nomTC);
 				$stmt->execute();
 
