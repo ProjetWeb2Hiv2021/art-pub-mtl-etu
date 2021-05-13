@@ -10,67 +10,67 @@
 	<!-- Script -->
 	
 	
-	<script type="text/javascript" src="./scripts/FiltrerUnCritere.js"></script>	
-	<script type="text/javascript" src="./scripts/FormValidator.js"></script>
-	<script type="text/javascript" src="./scripts/FiltrerPlusieursCriteres.js"></script>
-	<script type="text/javascript" src="./scripts/FormulaireAjoutUtilisateur.js"></script>
-	<script type="text/javascript" src="./scripts/Voiture.js"></script>
+	<script  src="./scripts/FiltrerUnCritere.js"></script>	
+	<script  src="./scripts/FormValidator.js"></script>
+	<script  src="./scripts/FiltrerPlusieursCriteres.js"></script>
+	<script  src="./scripts/FormulaireAjoutUtilisateur.js"></script>
+	<script  src="./scripts/Voiture.js"></script>
 
-	<script type="text/javascript" src="./scripts/VoirPlus.js"></script>
+	<script  src="./scripts/VoirPlus.js"></script>
 
-	<script type="text/javascript" src="./scripts/Modele.js"></script>
+	<script  src="./scripts/Modele.js"></script>
 
-	<script type="text/javascript" src="./scripts/Profil.js"></script>
+	<script  src="./scripts/Profil.js"></script>
 
-	<script type="text/javascript" src="./scripts/GestionUtilisateurs.js"></script>
+	<script  src="./scripts/GestionUtilisateurs.js"></script>
 
-	<script type="text/javascript" src="./scripts/GestionModeles.js"></script>
-	<script type="text/javascript" src="./scripts/GestionMarque.js"></script>
-
-
-	<script type="text/javascript" src="./scripts/VoitureDetail.js"></script>
+	<script  src="./scripts/GestionModeles.js"></script>
+	<script  src="./scripts/GestionMarque.js"></script>
 
 
-	<!-- <script type="text/javascript" src="./scripts/VoitureDetailSGC.js"></script> -->
-	<script type="text/javascript" src="./scripts/ConfirmationList.js"></script>														 
+	<script  src="./scripts/VoitureDetail.js"></script>
+
+
+	
+	<script  src="./scripts/ConfirmationList.js"></script>														 
 		
-	<script type="text/javascript" src="./scripts/FormulaireAjoutVoiture.js"></script>
-	<script type="text/javascript" src="./scripts/FormulaireModifierVoiture.js"></script>
+	<script  src="./scripts/FormulaireAjoutVoiture.js"></script>
+	<script  src="./scripts/FormulaireModifierVoiture.js"></script>
 
 
-	<script type="text/javascript" src="./scripts/GroupeMotopropulseur.js"></script>
-	<script type="text/javascript" src="./scripts/FormulaireAjoutMotoPropulseur.js"></script>
-	<script type="text/javascript" src="./scripts/FormulaireMisAjourMotoPropulseur.js"></script>
-	<script type="text/javascript" src="./scripts/Chassis.js"></script>
-	<script type="text/javascript" src="./scripts/FormulaireAjoutChassis.js"></script>
-	<script type="text/javascript" src="./scripts/FormulaireMisAjourChassis.js"></script>
+	<script  src="./scripts/GroupeMotopropulseur.js"></script>
+	<script  src="./scripts/FormulaireAjoutMotoPropulseur.js"></script>
+	<script  src="./scripts/FormulaireMisAjourMotoPropulseur.js"></script>
+	<script  src="./scripts/Chassis.js"></script>
+	<script  src="./scripts/FormulaireAjoutChassis.js"></script>
+	<script  src="./scripts/FormulaireMisAjourChassis.js"></script>
 
 
-	<script type="text/javascript" src="./scripts/TypeCarburant.js"></script>
-	<script type="text/javascript" src="./scripts/FormulaireAjoutTypeCarburant.js"></script>
-	<script type="text/javascript" src="./scripts/FormulaireMisAjourTypeCarburant.js"></script>
-	<script type="text/javascript" src="./scripts/Fabricant.js"></script>
-	<script type="text/javascript" src="./scripts/FormulaireAjoutFabricant.js"></script>
-	<script type="text/javascript" src="./scripts/FormulaireMisAjourFabricant.js"></script>	
+	<script  src="./scripts/TypeCarburant.js"></script>
+	<script  src="./scripts/FormulaireAjoutTypeCarburant.js"></script>
+	<script  src="./scripts/FormulaireMisAjourTypeCarburant.js"></script>
+	<script  src="./scripts/Fabricant.js"></script>
+	<script  src="./scripts/FormulaireAjoutFabricant.js"></script>
+	<script  src="./scripts/FormulaireMisAjourFabricant.js"></script>	
 	
-	<script type="text/javascript" src="./scripts/Acheter.js"></script>	
+	<script  src="./scripts/Acheter.js"></script>	
 	
-	<script type="text/javascript" src="./scripts/FormulaireCommande.js"></script>	
+	<script  src="./scripts/FormulaireCommande.js"></script>	
 
-	<script type="text/javascript" src="./scripts/Header.js"></script>
+	<script  src="./scripts/Header.js"></script>
 
-	<script type="text/javascript" src="./scripts/FormulaireConfPaye.js"></script>
+	<script  src="./scripts/FormulaireConfPaye.js"></script>
 	
-	<script type="text/javascript" src="./scripts/classMapping.js"></script>
-	<script type="text/javascript" src="./scripts/script.js" defer></script>
+	<script  src="./scripts/classMapping.js"></script>
+	<script  src="./scripts/script.js" defer></script>
 
-	<script type="text/javascript" src="./scripts/Mobile.js" defer></script>
+	<script  src="./scripts/Mobile.js" defer></script>
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto:300,400,500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bebas+Neue%7CRoboto:300,400,500&display=swap" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-     <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@700&display=swap" rel="stylesheet">
 
-
+	<!-- Pour empêcher l'erreur du favicon manquant -->
 	<link rel="shortcut icon" href="data:," type="image/x-icon">
 	
 	<!-- Carousel -->
