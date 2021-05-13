@@ -1,10 +1,11 @@
 /* Connexion */
 [data-component="Connexion"] {
   width: 100%;
-  min-height: 80vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: transparent;
 }
 .logo > a {
   display: inline-block;
@@ -18,10 +19,7 @@
 .centreV {
   align-items: center;
 }
-[data-component="Connexion"] a {
-  text-decoration: none;
-  color: black;
-}
+
 [data-component="Connexion"] .ligne {
   margin-bottom: 10px;
 }
@@ -29,12 +27,18 @@
   margin-left: 5px;
   margin-right: 5px;
 }
-[data-component="Connexion"] {
+/* [data-component="Connexion"] {
   background-color: #505050;
+} */
+[data-component="Connexion"] input {
+  border-radius: 6px;
+  border: none;
 }
 
-[data-component="Connexion"],
-[data-component="Connexion"] a {
+[data-component="Connexion"] {
   text-align: center;
   color: #ed712b;
+}
+[data-component="Connexion"] a {
+  margin-bottom: 10px;
 }
