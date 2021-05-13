@@ -105,7 +105,7 @@
 					$expire = 365*24*3600;
 					
 					//Puis on créé le cookie
-					 setcookie("lang", $lang, time() + $expire);
+					setcookie("lang", $lang, time() + $expire);
 
 				}
 				
@@ -114,7 +114,7 @@
 				if(!isset($_COOKIE['lang'])){
 					$expire = 365*24*3600;
 					//Puis on créé le cookie
-					  setcookie("lang", $lang, time() + $expire);
+					setcookie("lang", $lang, time() + $expire);
 				}
 				
 				switch($lang) {
