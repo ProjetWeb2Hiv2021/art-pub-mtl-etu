@@ -109,10 +109,13 @@
 							$vueMenuPrincipal = "MenuPrincipal";
 							$this->showView($vueMenuPrincipal);
 							$vue = "FormulaireConfirmationPayment";
-
+							$data = "";
+							if(isset($params["idFacture"])){
+								$data = $params["idFacture"];
+							}
 
 								
-							$this->showView($vue);
+							$this->showView($vue, $data);
 							break;							
 
 

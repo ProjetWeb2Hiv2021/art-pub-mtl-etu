@@ -1,5 +1,10 @@
 <section data-component="FormulaireConfPaye" data-js-component="Form" data-js-confPayment>
-
+<?php
+/* david */
+if(isset($data)){
+	echo " <p>Votre numero de facture est : ".$data."</p>";
+}
+?>
 <!-- Include the PayPal JavaScript SDK -->
 <div  class="payementDesc"  data-js-payement>   
 	<div>

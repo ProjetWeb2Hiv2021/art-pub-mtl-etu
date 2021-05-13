@@ -147,9 +147,13 @@ section class="formulaireCommande" data-component="FormulaireCommande" data-js-c
 					console.log(data);
 					//console.log(' ' +$data["nomUtilisateur"]);
 					document.location.href='index.php?Magasin&action=confPayement'; 
+
 				});
 			}
 		}).render('#paypal-button-container');
+
+
+
 	</script>		
 </div>
 </section>

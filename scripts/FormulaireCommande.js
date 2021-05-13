@@ -167,11 +167,10 @@ class FormulaireCommande{
                                                 <a data-js-retour>Retour</a>`;
 
                             let recap = this._el.querySelector('[data-js-recap]');
-                            recap.insertAdjacentHTML("afterbegin", htmlUtilisateur);
-
-          
+                            recap.insertAdjacentHTML("afterbegin", htmlUtilisateur);         
                         }
-                        console.log(reponse);
+                        
+                        
                         
                         
                     } else if (xhr.status === 404) {
@@ -323,7 +322,8 @@ class FormulaireCommande{
                     let param = `idUtilisateur=${idUtilisateur}&idModePaiement=${idModePaiement}&idExpedition=${idExpedition}`;
                     let path =`Commande_AJAX&action=ajoutCommande`;
                     this.callAJAXACM(param, path);  
-                    this._el.innerHTML = "<div>Commande validée merci pour votre confiance</div><div>vous receverez un courriel avec en piece jointe votre facture :) ";
+                    
+                    /* document.location.href='index.php?Magasin&action=FormulaireConfPaye'; */
                     /* sessionStorage.removeItem('commande');
                     sessionStorage.removeItem('Panier'); */
                 }else{
@@ -392,7 +392,6 @@ class FormulaireCommande{
                         this.ajoutLigneCommande(reponse);
                         this.ajoutFacture(reponse);
                         
-                        /* this._el.setAttribute("data-js-idCommande", reponse); */
      
                     } else if (xhr.status === 404) {
                         console.log('Le fichier appelé dans la méthode open() n’existe pas.');
@@ -407,20 +406,12 @@ class FormulaireCommande{
     ajoutFacture = (idCommande) =>{
         let param = `idCommande=${idCommande}`;
         let path =`Commande_AJAX&action=ajoutFacture`;
-        this.callAJAXA(param, path);  
+        this.callAJAXFACT(param, path);  
     }
     ajoutLigneCommande = (idCommande) =>{
         
         let path =`Commande_AJAX&action=ajoutLigneCommande`;
-        /* let voitureCommande = this._el.querySelectorAll('[data-js-voiturcommande]');
-        console.log(voitureCommande);
-        for (let j = 0; j < voitureCommande.length; j++) {
-            const voiture = voitureCommande[j];
-            let idVoiture = voiture.dataset.jsVoiturcommande;
-            let param = `idCommande=${idCommande}&idVoiture=${idVoiture}`;
-            console.log(param);
-            this.callAJAXA(param, path);
-        } */
+
         let commande = JSON.parse(sessionStorage.commande);
             for (let j = 0; j < commande.length; j++) {
                 let idVoiture = commande[j].idVoiture;
@@ -429,6 +420,42 @@ class FormulaireCommande{
                 this.callAJAXA(param, path);                
             }
          
+    }
+    
+    callAJAXFACT = (param, path) => {
+
+        // Déclaration de l'objet XMLHttpRequest
+        let xhr;
+        xhr = new XMLHttpRequest();
+
+        // Initialisation de la requète
+        if (xhr) {	
+            
+            // Ouverture de la requète : fichier recherché
+            xhr.open('POST', 'index.php?'+path);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
+            // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
+            xhr.addEventListener('readystatechange', () => {
+
+                if (xhr.readyState === 4) {							
+                    if (xhr.status === 200) {
+                        let reponse = JSON.parse(xhr.responseText);
+
+                       
+                        this._el.setAttribute("data-js-idfacture", reponse);
+                        document.location.href=`index.php?Magasin&action=confPayement&idFacture=${reponse}`;
+                    
+     
+                    } else if (xhr.status === 404) {
+                        console.log('Le fichier appelé dans la méthode open() n’existe pas.');
+                    }
+                }
+            });
+            // Envoi de la requète
+
+            xhr.send(param);
+        }
     }
       
 }
