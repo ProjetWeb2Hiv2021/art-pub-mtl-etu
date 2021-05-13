@@ -12,6 +12,7 @@
 		$lang ="fr";
 	} 	 
 	
+	//echo  json_encode(($data["nomUtilisateur"]));
 	if($data["expedition"]){
 		?>
 		
@@ -101,7 +102,7 @@
 			</p>
 			<p> Les voitures seront disponibles une fois que vous avez fait le payement
 				<strong>(Plus d'information: caruse@yahoo.com)
-							
+				
 				</strong>
 			</p>
 </div>
@@ -122,7 +123,7 @@
 		}, */
 			// Set up the transaction
 			createOrder: function(data, actions) {
-				let eltotaltvs = "" + document.querySelector('[data-js-prix]').dataset.jsPrix;
+				let eltotaltvs = "" + document.querySelector('[data-js-totalfacture]').innerHTML;
 				//console.log(eltotaltvs);
 				return actions.order.create({
 					purchase_units: [{
@@ -138,8 +139,9 @@
 			onApprove: function(data, actions) {
 				return actions.order.capture().then(function(details) {
 					// Show a success message to the buyer
-					alert('Transaction completed by ' + details.payer.name.given_name + '!');
+					alert('La transaction a été faite ' + details.payer.name.given_name +'!');
 					console.log(data);
+					//console.log(' ' +$data["nomUtilisateur"]);
 					document.location.href='index.php?Magasin&action=confPayement'; 
 				});
 			}
