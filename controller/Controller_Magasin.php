@@ -108,12 +108,12 @@
 						case "confPayement":
 							$vueMenuPrincipal = "MenuPrincipal";
 							$this->showView($vueMenuPrincipal);
-								$vue = "FormulaireConfirmationPayment";
+							$vue = "FormulaireConfirmationPayment";
 
 
 								
-								$this->showView($vue);
-								break;							
+							$this->showView($vue);
+							break;							
 
 
 							

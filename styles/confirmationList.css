@@ -9,7 +9,9 @@
     margin-top: 40px;
     font-size: 14pt;
     font-family: "Red Rose", sans-serif;
+   
   }
+
 
 
   [data-component="ConfirmationList"] .total {
@@ -21,3 +23,5 @@
     font-size: medium;
   }
 
+
+  

@@ -13,7 +13,9 @@ class FormulaireCommande{
 
         this.el_FormCarteCredit = this._el.querySelector('[data-js-paimentform]');
         this.el_Btncommander3 = this._el.querySelector('[data-js-btncommander3]');
-        
+
+        this._elPayPal= this._el.querySelector('[data-js-paypal]');
+        this._elProce = this._el.querySelector('[data-js-btnProceder]');        
 
         console.log(this._elCarteCredit);
   
@@ -328,9 +330,25 @@ class FormulaireCommande{
                    /*  Gannina */
                    this.el_Btncommander3.style.display ="none";
                    /*  */
+                   this.el_FormCarteCredit.style.display = "none";
+                   this._elForm.style.display ="none";
+                   let recap = this._el.querySelector('[data-js-recap]');
+                   console.log("Test total");
+                   console.log(document.querySelector('[data-js-totalfacture]'));
+                   console.log(document.querySelector('[data-js-totalfacture]').innerHTML);
+                   let totalfacture = "" + document.querySelector('[data-js-totalfacture]').innerHTML;
+                   recap.classList.add('hidden');
+                   //Afficher le boutton payment par paypal
+                   let payement = document.querySelector('[data-js-payement]');
+                                   
 
+       
+                   //let totalfacture = "" + document.querySelector('[data-js-totalfacture]').dataset.jstotalfacture;
+                   let elQuantite = document.querySelector('[data-js-quantite]');
+                   payement.classList.remove('hidden');
+                   elQuantite.innerHTML = Intl.NumberFormat('fr-CA').format(totalfacture) + "$";
 
-
+                   
 
 
 

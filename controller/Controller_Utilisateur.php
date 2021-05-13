@@ -5,7 +5,18 @@
 		public function traite(array $params) {
 			// Initialiser la vue et la session
             $vue = "";
-            session_start();			
+			if($params["action"]=="deconnexion"){
+				session_start();	
+				session_destroy();
+				unset($_SESSION['nomUtilisateur']);
+				unset($_SESSION['typeUtilisateur']);
+				header('Location: index.php');
+				
+			}
+			
+			session_start();			
+			
+            
 			$this->showView("Head");
 			$this->showView("Header");
 			
@@ -19,7 +30,7 @@
 					 /* Mettre des case selon les paramètres  
                     ne pas oublier le "default:"*/
                     case "connexion":
-						if(isset($_SESSION["typeUtilisateur"])&&($_SESSION["typeUtilisateur"]["typeUtilisateurfr"]==="Administrateur"||$_SESSION["typeUtilisateur"]["typeUtilisateurfr"]==="Employé")){							
+						if(isset($_SESSION["typeUtilisateur"])){							
 							$vue = "Utilisateur";
 							$this->showView($vue);
 						}else{
@@ -95,10 +106,7 @@
 						break;
 					case "deconnexion":
 						if(isset($_SESSION['nomUtilisateur'])){
-							session_destroy();
-							unset($_SESSION['nomUtilisateur']);
-							unset($_SESSION['typeUtilisateur']);
-							header('Location: index.php?Magasin&action=accueil');
+							
 						}
 	
 						break;

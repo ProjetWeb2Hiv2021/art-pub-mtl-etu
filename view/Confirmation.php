@@ -1,5 +1,5 @@
 <main>
-	<h2>Confirmation de la commande</h2>
+	<h2>Mon panier</h2>
 
 	<div data-component="ConfirmationList" 
 	<?php
