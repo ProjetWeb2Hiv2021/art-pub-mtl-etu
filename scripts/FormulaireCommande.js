@@ -70,21 +70,7 @@ class FormulaireCommande{
             
 
 
-        /* this._elProce.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            this._elProce.classList.add('hidden');
-            let recap = this._el.querySelector('[data-js-recap]');
-            recap.classList.add('hidden');
-            
-            let payement = document.querySelector('[data-js-payement]');
-                            
-            payement.classList.remove('hidden');
-
-            let eltotaltvs = "" + document.querySelector('[data-js-prix]').dataset.jsPrix;
-            let elQuantite = document.querySelector('[data-js-quantite]');
-            elQuantite.innerHTML = Intl.NumberFormat('fr-CA').format(eltotaltvs) + "$";
-        }); */
+        
 
         }else{
             console.log("Non valide");
