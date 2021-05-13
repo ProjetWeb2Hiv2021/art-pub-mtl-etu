@@ -8,7 +8,7 @@
 		/* Differentes methodes CRUD fabricant  */
 		public function obtenirListeFabricant() { 
 			try {
-				$stmt = $this->connexion->query("SELECT * from fabricant where statut = 1;");
+				$stmt = $this->connexion->query("SELECT * from fabricant where fabricantStatut = 1;");
 
 				$stmt->execute();
 				return $stmt->fetchAll();
@@ -70,13 +70,13 @@
 				$existe = $this->chercherFabricantdansMarque($id) ;         
 				if ($existe["cont"]  >= 1 )
 				{					
-					$stmt = $this->connexion->prepare("UPDATE fabricant SET statut=0 WHERE idFabricant=".$id);
+					$stmt = $this->connexion->prepare("UPDATE fabricant SET fabricantStatut=0 WHERE idFabricant=".$id);
 					$stmt->execute();
 				}
 				else
 				{	
 						//$stmt = $this->connexion->prepare("DELETE FROM fabricant WHERE idFabricant=" . $id);
-						$stmt = $this->connexion->prepare("UPDATE fabricant SET statut=0 WHERE idFabricant=".$id);
+						$stmt = $this->connexion->prepare("UPDATE fabricant SET fabricantStatut=0 WHERE idFabricant=".$id);
 						$stmt->execute();
 				}
 
@@ -116,6 +116,15 @@
 				return 0;
 			}
 		}
+
+
+
+
+
+
+
+
+
 
 
 	}

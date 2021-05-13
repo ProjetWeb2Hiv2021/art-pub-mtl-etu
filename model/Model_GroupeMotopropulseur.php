@@ -9,7 +9,7 @@
 		public function obtenirListeGpm() {
 			
 			try {
-				$stmt = $this->connexion->query("SELECT * from groupeMotopropulseur where statut = 1");
+				$stmt = $this->connexion->query("SELECT * from groupeMotopropulseur where gmpStatut = 1");
 
 				$stmt->execute();
 				return $stmt->fetchAll();
@@ -57,13 +57,13 @@
 				$existe = $this->chercherGroupeMotopropulseurdansVoiture($id) ;         
 				if ($existe["cont"]  >= 1 )
 				{					
-					$stmt = $this->connexion->prepare("UPDATE groupeMotopropulseur SET statut=0 WHERE idGroupeMotopropulseur=".$id);
+					$stmt = $this->connexion->prepare("UPDATE groupeMotopropulseur SET gmpStatut=0 WHERE idGroupeMotopropulseur=".$id);
 					$stmt->execute();
 				}
 				else
 				{	
 						//$stmt = $this->connexion->prepare("DELETE FROM groupeMotopropulseur WHERE idGroupeMotopropulseur=" . $id);
-						$stmt = $this->connexion->prepare("UPDATE groupeMotopropulseur SET statut=0 WHERE idGroupeMotopropulseur=".$id);
+						$stmt = $this->connexion->prepare("UPDATE groupeMotopropulseur SET gmpStatut=0 WHERE idGroupeMotopropulseur=".$id);
 						$stmt->execute();
 				}
 				//return $stmt->rowCount();
