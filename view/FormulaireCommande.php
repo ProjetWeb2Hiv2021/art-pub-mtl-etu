@@ -1,4 +1,4 @@
-<section class="formulaireCommande" data-component="FormulaireCommande" data-js-component="Form" data-js-nomutilisateur="<?= $data["nomUtilisateur"]?>">
+section class="formulaireCommande" data-component="FormulaireCommande" data-js-component="Form" data-js-nomutilisateur="<?= $data["nomUtilisateur"]?>">
 
 	
 
@@ -17,11 +17,13 @@
 		
 		
 		<div class="input-wrapper" data-js-input-wrapper data-js-radio="required" data-js-param="info" data-js-input="Expedition">
-		<label for="radio-livraison"><?=TXT__FORMCOM_EXP?></label><br>
+		<label for="radio-livraison"><?=TXT__FORMCOM_EXP?></label>
+		<div data-livraion>
 		<?php
 		foreach ($data["expedition"] as $expedition) {
 			
 		?>
+		<div>
 			<input type="radio" id="radio-livraison" name="radio-livraison" value="<?=$expedition["idExpedition"]?>" data-js-param="expedition"><label for="radio-livraison"><?=$expedition["expedition$lang"]?>
 			<?php
 			if($expedition["idExpedition"] == "1"){
@@ -30,11 +32,13 @@
 			
 			?>
 			
-		</label>
+			</label>
+		</div>
 		<?php
 		}
 		?>
 		<br><small class="error-message" data-js-error-msg></small>
+		</div>
 		</div>
 
 		

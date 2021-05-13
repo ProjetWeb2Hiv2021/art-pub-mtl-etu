@@ -1,6 +1,6 @@
 <!-- <div class="main-k"> -->
 
-<header class="header-area">
+<div class="header-area">
 		<!-- site-navbar start -->
 		<div class="navbar-area">
 			<div class="container">
@@ -71,7 +71,7 @@
 			</div>
 		</div><!-- navbar-area end -->
 
-	</header>
+	</div>
 
 	<header class="header ligne distribue header-k" data-component="Header">
 		<div class="main-k main-k_header">

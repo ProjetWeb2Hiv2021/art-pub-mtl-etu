@@ -49,8 +49,11 @@
                         $this->showView($vue, $data);
                         break;	
 					case "afficherPolitique":
+						$vueMenu = "MenuPrincipal";       
+                        $this->showView($vueMenu);
 						$vue = "TermesEtConditions";       
                         $this->showView($vue);
+						
 						break;
 					case "afficherQui":
 						$vue = "QuiNousSommes";       

@@ -378,5 +378,22 @@
 			}
 		}
 		
+		public function changerStatutVoiture($idVoiture) {
+
+			try {
+				$stmt = $this->connexion->prepare("UPDATE voiture SET idStatut= 2 WHERE idVoiture=:idVoiture");
+				
+				$stmt->bindParam(":idVoiture", $idVoiture);				
+				
+				$stmt->execute();
+
+				return 1;
+			}	
+			catch(Exception $exc) {
+				 
+				return 0;
+			}
+		}
+		
 	}
 ?>
