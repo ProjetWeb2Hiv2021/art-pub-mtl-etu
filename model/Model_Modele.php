@@ -36,10 +36,6 @@
 			}
 		}
 
-
-
-
-
 		//Chercher  modèle par idMarque
 		public function getListeModeleByMarque($idMarque) {
 			try {

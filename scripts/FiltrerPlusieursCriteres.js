@@ -71,19 +71,7 @@ class FiltrerPlusieursCriteres{
             this._elRafraichir.addEventListener('click', (e) => {
                 e.preventDefault();
                 document.location.href='index.php?'; 
-               /*  if (this._elSelectModele.options[this._elSelectModele.selectedIndex].value != "") {
-                    this._elSelectMarque.removeAttribute("disabled", "disabled");
-                }
-                
-                this.chargerListeModeleMarqueRafraichir();
-                this._elMinAnnee.value = "";
-                this._elMaxAnnee.value = "";
-                this._elMinPrix.value = "";
-                this._elMaxPrix.value = "";
-
-                this._elSubmit.classList.add('disabled');
-                this._elRafraichir.classList.add('disabled');
-                 */
+               
                 
             });
             this.elBtnRetour.addEventListener('click', (e) => {

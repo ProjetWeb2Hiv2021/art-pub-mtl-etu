@@ -306,27 +306,13 @@
 				$stmt->bindParam(":idModele", $idModele);				
 				$stmt->bindParam(":idTransmission", $idTransmission);				
 				$stmt->bindParam(":idStatut", $idStatut);				
-				 /* var_dump($stmt, "vin ". $vin, 
-								"; prixVente ". $prixVente, 
-								"; annee ".$annee, 
-								"; dateArrivee ".$dateArrivee, 
-								"; prixPaye ".$prixPaye, 
-								"; km ".$km, 
-								"; couleurfr ".$couleurfr,
-								"; couleuren ". $couleuren,
-								"; vedette ". $vedette, 
-								"; idGroupeMotopropulseur ".$idGroupeMotopropulseur,
-								"; idTypeCarburant ".$idTypeCarburant,
-								"; idChassis ". $idChassis, 
-                            	"; idModele ". $idModele, 								
-								"; idTransmission ".$idTransmission, 
-								"; idStatut ". $idStatut);  */
+				 
 				$stmt->execute();
 				$dernier = $this->connexion->lastInsertId();
 				return $dernier;
 			}	
 			catch(Exception $exc) {
-				 /* echo $exc->getMessage();  */ 
+				 
 				return 0;
 			}
 		}
