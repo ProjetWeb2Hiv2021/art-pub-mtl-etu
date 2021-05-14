@@ -404,16 +404,16 @@ class FormulaireCommande{
         this.callAJAXFACT(param, path);  
     }
     ajoutLigneCommande = (idCommande) =>{
-        
         let path =`Commande_AJAX&action=ajoutLigneCommande`;
-
-        let commande = JSON.parse(sessionStorage.commande);
-            for (let j = 0; j < commande.length; j++) {
-                let idVoiture = commande[j].idVoiture;
-                let param = `idCommande=${idCommande}&idVoiture=${idVoiture}`;
-                console.log(param);
-                this.callAJAXA(param, path);                
-            }
+        let voitureCommande = this._el.querySelectorAll('[data-js-voiturcommande]');
+        console.log(voitureCommande);
+        for (let j = 0; j < voitureCommande.length; j++) {
+            const voiture = voitureCommande[j];
+            let idVoiture = voiture.dataset.jsVoiturcommande;
+            let param = `idCommande=${idCommande}&idVoiture=${idVoiture}`;
+            console.log(param);
+            this.callAJAXA(param, path);
+        }
          
     }
     
