@@ -27,27 +27,27 @@ class ConfirmationList {
         //
         var data = JSON.parse(sessionStorage.Panier);
 
-        //Afficher la liste des commandes sur une table
+        //Afficher la liste des commandes sur une Liste
                         var $total = 0;
-                        let myTable= "<table><tr><td style='width: 200px; color: red;text-align: center;'>Nro. voiture</td>";
-                        myTable+= "<td style='width: 100px; color: red; text-align: right;'>Modele</td>";
-                        myTable+="<td style='width: 100px; color: red; text-align: right;'>Km</td>";
-                        myTable+="<td style='width: 100px; color: red; text-align: right;'>Anee</td>";
-                        myTable+="<td style='width: 100px; color: red; text-align: right;'>Couleur</td>";
-                        myTable+="<td style='width: 100px; color: red; text-align: right;'>Prix</td>";
-                        myTable+="<td style='width: 100px; color: red; text-align: right;'><button style='font-size: 10pt;margin-bottom: 30pt;' data-js-btnSuprimmer>Supprimer</button></td>";
+                        let myTable= "<ul class='centreV'><li>VIN</li>";
+                        myTable+= "<li>Modele</li>";
+                        myTable+="<li>Km</li>";
+                        myTable+="<li>Année</li>";
+                        myTable+="<li>Couleur</li>";
+                        myTable+="<li>Prix</li>";
+                        myTable+="<li><button data-js-btnSuprimmer>Supprimer</button></li></ul>";
 
                         for (let i = 0, l = data.length; i < l; i++) {
-                              myTable+="<tr data-js-idVoiture="+ data[i].idVoiture + "><td data-js-vin style='width: 200px;text-align: center;' data-js-vin>"+ data[i].vin + "</td>";
-                              myTable+="<td data-js-modele style='width: 100px;text-align: right;'data-js-modele> "+data[i].modele+ "</td>";
-                              myTable+="<td data-js-km style='width: 200px;text-align: right;' data-js-km>"+ data[i].km + "</td>";
-                              myTable+="<td data-js-annee style='width: 100px;text-align: right;'data-js-annee> "+data[i].annee+ "</td>";
-                              myTable+="<td data-js-couleur style='width: 200px;text-align: right;' data-js-couleur>"+ data[i].couleur + "</td>";
-                              myTable+="<td data-js-prix style='width: 100px;text-align: right;'data-js-prix> "+Intl.NumberFormat('fr-CA').format(data[i].prix)+ "</td>";
-                              myTable+="<td style='width: 100px;text-align: right;'> "+'<input type="checkbox"  data-js-sup value="' +i+'"></input>'+ "</td>";
+                              myTable+="<ul><li data-js-vin data-js-vin>"+ data[i].vin + "</li>";
+                              myTable+="<li data-js-modele data-js-modele> "+data[i].modele+ "</li>";
+                              myTable+="<li data-js-km data-js-km>"+ Intl.NumberFormat().format(data[i].km) + "</li>";
+                              myTable+="<li data-js-annee data-js-annee> "+data[i].annee+ "</li>";
+                              myTable+="<li data-js-couleur data-js-couleur>"+ data[i].couleur + "</li>";
+                              myTable+="<li data-js-prix data-js-prix> "+Intl.NumberFormat('fr-CA').format(data[i].prix)+ "</li>";
+                              myTable+="<li>"+'<input type="checkbox"  data-js-sup value="' +i+'"></input>'+ "</li></ul>";
 
                               
-                              myTable+="</tr>";
+                              
 
                               
 
@@ -55,7 +55,7 @@ class ConfirmationList {
                               $total = $total + parseInt(data[i].prix);
                         }
                                                   
-                          myTable+="</table>";
+                          
                           this._elResults.innerHTML = myTable;
                          
                           //Afficher le total ($)

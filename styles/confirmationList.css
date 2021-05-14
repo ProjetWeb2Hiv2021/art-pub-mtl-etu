@@ -1,27 +1,53 @@
-
-
 [data-component="ConfirmationList"] button {
-    padding: 3px;
-    background-color: #ed712b;
-    color: white;
-    margin-left: 5px;
-    margin-bottom: 20px;
-    margin-top: 40px;
-    font-size: 14pt;
-    font-family: "Red Rose", sans-serif;
-   
-  }
+  padding: 3px;
+  background-color: #ed712b;
+  color: white;
+  margin-left: 5px;
 
+  font-size: 14pt;
+  font-family: "Red Rose", sans-serif;
+}
 
+[data-component="ConfirmationList"] .total {
+  padding: 3px;
+  text-align: right;
 
-  [data-component="ConfirmationList"] .total {
-    padding: 3px;
-    text-align: right;
-    margin-left: 5px;
-    margin-right: 100px;
-    margin-top: 40px;
-    font-size: medium;
-  }
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: medium;
+  background-color: #ffffff;
+  color: #130602;
+  padding: 20px;
+}
 
-
-  
+.confirmationMain {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+[data-component="ConfirmationList"] table {
+  background-color: #ffffff;
+  border: 3px solid black;
+  padding: 20px;
+  color: #130602;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+[data-component="ConfirmationList"] td,
+[data-component="ConfirmationList"] th {
+  border: 1px solid #999;
+  padding: 1rem;
+  vertical-align: middle;
+}
+[data-component="ConfirmationList"] ul {
+  background-color: #ffffff;
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+[data-component="ConfirmationList"] li {
+  width: 125px;
+  padding: 10px 0;
+  color: #130602;
+}
