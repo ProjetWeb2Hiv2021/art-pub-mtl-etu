@@ -40,10 +40,10 @@ class ConfirmationList {
                         for (let i = 0, l = data.length; i < l; i++) {
                               myTable+="<ul data-js-idVoiture="+ data[i].idVoiture+"><li data-js-vin data-js-vin>"+ data[i].vin + "</li>";
                               myTable+="<li data-js-modele data-js-modele> "+data[i].modele+ "</li>";
-                              myTable+="<li data-js-km data-js-km>"+ Intl.NumberFormat().format(data[i].km) + "</li>";
+                              myTable+="<li data-js-km data-js-km>"+ data[i].km + "</li>";
                               myTable+="<li data-js-annee data-js-annee> "+data[i].annee+ "</li>";
                               myTable+="<li data-js-couleur data-js-couleur>"+ data[i].couleur + "</li>";
-                              myTable+="<li data-js-prix data-js-prix> "+Intl.NumberFormat('fr-CA').format(data[i].prix)+ "</li>";
+                              myTable+="<li data-js-prix data-js-prix> "+data[i].prix+ "</li>";
                               myTable+="<li>"+'<input type="checkbox"  data-js-sup value="' +i+'"></input>'+ "</li></ul>";
 
                               

@@ -94,13 +94,13 @@ section class="formulaireCommande" data-component="FormulaireCommande" data-js-c
 <!-- Include the PayPal JavaScript SDK -->
 <div  class="hidden payementDesc"  data-js-payement>   
 	<div>
-			<h1>!Dernière étape</h1>
-			<p> Payer la quantité final par paypal
+			<h1>Dernière étape !</h1>
+			<p> Payer la quantité finale par paypal
 				<h4 data-js-quantite> 300</h4>
 					<!-- Set up a container element for the button -->
 					<div id="paypal-button-container"></div>
 			</p>
-			<p> Les voitures seront disponibles une fois que vous avez fait le payement
+			<p> Les voitures seront disponibles une fois que vous avez fait le paiement
 				<strong>(Plus d'information: caruse@yahoo.com)
 				
 				</strong>
