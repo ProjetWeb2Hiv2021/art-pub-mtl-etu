@@ -31,7 +31,7 @@ CREATE TABLE marque (
 	idMarque TINYINT UNSIGNED AUTO_INCREMENT, 
 	idFabricant TINYINT UNSIGNED NOT NULL,
 	marque VARCHAR(100) NOT NULL,
-	`statut` int(11) NOT NULL DEFAULT '1',
+	`marqueStatut` int(11) NOT NULL DEFAULT '1',
 	PRIMARY KEY (idMarque),
 	FOREIGN KEY (idFabricant) REFERENCES fabricant(idFabricant)
 )ENGINE=InnoDB;
@@ -39,7 +39,7 @@ CREATE TABLE modele (
 	idModele SMALLINT UNSIGNED AUTO_INCREMENT, 
 	idMarque TINYINT UNSIGNED NOT NULL, 	
 	modele VARCHAR(100) NOT NULL,
-	status int(1) NOT NULL DEFAULT 1,
+	modeleStatut int(1) NOT NULL DEFAULT 1,
 	PRIMARY KEY (idModele),	
 	FOREIGN KEY (idMarque) REFERENCES marque(idMarque)
 )ENGINE=InnoDB;

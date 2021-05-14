@@ -20,6 +20,6 @@
 		}
 		?>
 		 >Acheter</button>
-		<button data-js-btnReserver>Réserver</button>
+		
 	</div>
 </main>

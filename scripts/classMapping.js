@@ -31,6 +31,7 @@ const classMapping = {
     'Fabricant' : Fabricant,
     'FormulaireAjoutFabricant' : FormulaireAjoutFabricant,
     'FormulaireMisAjourFabricant' :FormulaireMisAjourFabricant,
+    'GestionPayPal' :GestionPayPal
 
 
 };

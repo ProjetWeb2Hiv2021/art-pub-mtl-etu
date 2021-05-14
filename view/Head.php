@@ -60,7 +60,7 @@
 	<script type="text/javascript" src="./scripts/Header.js"></script>
 
 	<script type="text/javascript" src="./scripts/FormulaireConfPaye.js"></script>
-	
+	<script type="text/javascript" src="./scripts/GestionPayPal.js"></script>
 	<script type="text/javascript" src="./scripts/classMapping.js"></script>
 	<script type="text/javascript" src="./scripts/script.js" defer></script>
 
