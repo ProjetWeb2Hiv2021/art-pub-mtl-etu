@@ -38,7 +38,7 @@ class ConfirmationList {
                         myTable+="<li><button data-js-btnSuprimmer>Supprimer</button></li></ul>";
 
                         for (let i = 0, l = data.length; i < l; i++) {
-                              myTable+="<ul><li data-js-vin data-js-vin>"+ data[i].vin + "</li>";
+                              myTable+="<ul data-js-idVoiture="+ data[i].idVoiture+"><li data-js-vin data-js-vin>"+ data[i].vin + "</li>";
                               myTable+="<li data-js-modele data-js-modele> "+data[i].modele+ "</li>";
                               myTable+="<li data-js-km data-js-km>"+ Intl.NumberFormat().format(data[i].km) + "</li>";
                               myTable+="<li data-js-annee data-js-annee> "+data[i].annee+ "</li>";
