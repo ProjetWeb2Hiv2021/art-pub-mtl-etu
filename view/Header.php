@@ -49,7 +49,7 @@
 
 		?>
 		<h1>Cars Are Us</h1>
-		<div class="ligne centreV">		
+		<div class="ligne centreV h-info">		
 		
 			<div class="connexion ligne centreV">
 				<?php

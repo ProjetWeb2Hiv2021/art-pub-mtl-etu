@@ -528,8 +528,13 @@ footer .social,
   }
   header.header {
     height: 90px;
-    visibility: hidden;
+    /*visibility: hidden;*/
   }
+
+  header.header .main-k.main-k_header .ligne.centreV.h-info {
+    display: none;
+  }
+
   /* .centreV {
     display: none;
   } */
