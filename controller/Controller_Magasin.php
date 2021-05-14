@@ -56,14 +56,20 @@
 						
 						break;
 					case "afficherQui":
+						$vueMenuPrincipal = "MenuPrincipal";
+						$this->showView($vueMenuPrincipal);
 						$vue = "QuiNousSommes";       
                         $this->showView($vue);
 						break;
 					case "afficherContact":
+						$vueMenuPrincipal = "MenuPrincipal";
+						$this->showView($vueMenuPrincipal);
 						$vue = "Contact";       
                         $this->showView($vue);
 						break;
 					case "Confirmation":
+						$vueMenuPrincipal = "MenuPrincipal";
+						$this->showView($vueMenuPrincipal);
 						$vue = "Confirmation";
 						$this->showView($vue);
 						break;

@@ -86,6 +86,8 @@
 						break;
 
 					case "profil":
+						$vueMenuPrincipal = "MenuPrincipal";
+						$this->showView($vueMenuPrincipal);
 						$vueProfil = "Profil";
 						$modelVille= new Model_Ville();
 						$data["ville"] = $modelVille ->obtenirListeVille();

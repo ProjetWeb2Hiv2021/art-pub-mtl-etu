@@ -231,5 +231,8 @@
 			</div>
 
 		</form>
+        <div>
+            <a href="index.php?Utilisateur&action=connexion"><?=TXT__DETAIL_SYSTEME?></a>
+        </div>
 </div>
 
