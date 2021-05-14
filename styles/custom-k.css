@@ -20,7 +20,7 @@ html body {
 .main-k {
   /* background-color: rgb(255, 174, 160); */
   box-sizing: border-box;
-  margin: auto;
+  /* margin: auto; */
   max-width: 1440;
   padding: 0 20px 20px 20px;
   width: 100%;
@@ -365,7 +365,7 @@ footer .social,
   display: flex;
   gap: 10px;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 }
 
 .Profil .btnmodifprofil {
@@ -380,9 +380,7 @@ footer .social,
   display: block;
   height: 50px;
   margin: 0;
-  
 }
-
 
 .Profil .btnsupprofil {
   background-color: #ed712b;
@@ -399,7 +397,6 @@ footer .social,
   line-height: 16px;
   display: block;
   margin: 0;
-  
 }
 
 /* media queries */
@@ -518,7 +515,6 @@ footer .social,
   }
 }
 
-
 @media screen and (max-width: 767px) {
   .box img {
     height: 120px;
@@ -551,7 +547,7 @@ footer .social,
     background: #120902;
     position: fixed;
     z-index: 10;
-    width:100%;
+    width: 100%;
   }
 
   /* navbar css for mobile start */
