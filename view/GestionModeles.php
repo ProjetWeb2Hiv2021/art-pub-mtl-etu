@@ -31,7 +31,7 @@
                     foreach ($data["modele"] as $modele) {
                     ?>
                 
-                    <option data-js-idModele="<?= $modele["idModele"]?>" data-js-idMarque="<?= $modele["idMarque"] ?>" data-js-idstatus="<?= $modele["status"] ?>"   value="<?= $modele["modele"] ?>"><?= $modele["modele"] ?></option>
+                    <option data-js-idModele="<?= $modele["idModele"]?>" data-js-idMarque="<?= $modele["idMarque"] ?>" data-js-idstatus="<?= $modele["modeleStatut"] ?>"   value="<?= $modele["modele"] ?>"><?= $modele["modele"] ?></option>
                     <?php
                     }
                 }

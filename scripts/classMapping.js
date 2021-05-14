@@ -30,7 +30,7 @@ const classMapping = {
     'FormulaireConfPaye' : FormulaireConfPaye,
     'Fabricant' : Fabricant,
     'FormulaireAjoutFabricant' : FormulaireAjoutFabricant,
-    'FormulaireMisAjourFabricant' :FormulaireMisAjourFabricant,
+    'FormulaireMisAjourFabricant' :FormulaireMisAjourFabricant
 
 
 };

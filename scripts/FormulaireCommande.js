@@ -335,7 +335,9 @@ class FormulaireCommande{
                    elQuantite.innerHTML = Intl.NumberFormat('fr-CA').format(totalfacture) + "$";
 
                    
-
+                   let param = `idUtilisateur=${idUtilisateur}&idModePaiement=${idModePaiement}&idExpedition=${idExpedition}`;
+                   let path =`Commande_AJAX&action=ajoutCommande`;
+                   this.callAJAXACM(param, path);  
 
 
                 }
@@ -442,6 +444,55 @@ class FormulaireCommande{
 
             xhr.send(param);
         }
+    }
+      
+
+    gestionPayPal = (section, idExpedition, idUtilisateur,idModePaiement) =>{
+        
+		// Render the PayPal button into #paypal-button-container
+		paypal.Buttons({
+			env: 'sandbox', // Optional: specify 'sandbox' environment
+			client: {
+			sandbox:    'ATlHtKh_utdnQ_wd-x91mInf3gaYJtS2KB0f4b5ewKZrhotDvxID2ROyQQiYaFhf8p4-DMH4ShaNFKfm',
+			production: 'xxxxxxxxx'          
+		},  
+		style: {
+			size: 'responsive',
+			label :'checkout'
+		},
+
+			// Set up the transaction
+			createOrder: function(data, actions) {
+				let eltotaltvs = "" + document.querySelector('[data-js-totalfacture]').innerHTML;
+				//console.log(eltotaltvs);
+				return actions.order.create({
+					purchase_units: [{
+						amount: {
+							
+							value: eltotaltvs
+						}
+					}]
+				});
+			},
+
+			// Finalize the transaction
+			onApprove: function(data, actions) {
+				return actions.order.capture().then(function(details) {
+					// Show a success message to the buyer
+					alert('La transaction a été faite ' + details.payer.name.given_name +'!');
+					console.log(data);
+                    localStorage.setItem('datapaypal', JSON.stringify(data));
+/*                     let param = `idUtilisateur=${idUtilisateur}&idModePaiement=${idModePaiement}&idExpedition=${idExpedition}`;
+                    let path =`Commande_AJAX&action=ajoutCommande`;
+                    section.callAJAXACM(param, path);   */
+
+				});
+			}
+		}).render('#paypal-button-container');
+
+
+
+	
     }
       
 }

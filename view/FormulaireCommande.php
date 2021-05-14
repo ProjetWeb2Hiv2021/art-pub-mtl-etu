@@ -1,4 +1,4 @@
-section class="formulaireCommande" data-component="FormulaireCommande" data-js-component="Form" data-js-nomutilisateur="<?= $data["nomUtilisateur"]?>">
+section class="formulaireCommande" data-component="FormulaireCommande" data-js-component="Form" data-js-nomutilisateur="<?= $data["nomUtilisateur"]?>" data-component="GestionPayPal">
 
 	
 
@@ -89,10 +89,6 @@ section class="formulaireCommande" data-component="FormulaireCommande" data-js-c
 
 
 </section>
-
-<section>
-
-
 <script src="https://www.paypal.com/sdk/js?client-id=test&currency=CAD"></script>
 
 <!-- Include the PayPal JavaScript SDK -->
@@ -110,48 +106,11 @@ section class="formulaireCommande" data-component="FormulaireCommande" data-js-c
 				</strong>
 			</p>
 </div>
-	<script>
-		// Render the PayPal button into #paypal-button-container
-		paypal.Buttons({
-			env: 'sandbox', // Optional: specify 'sandbox' environment
-			client: {
-			sandbox:    'ATlHtKh_utdnQ_wd-x91mInf3gaYJtS2KB0f4b5ewKZrhotDvxID2ROyQQiYaFhf8p4-DMH4ShaNFKfm',
-			production: 'xxxxxxxxx'          
-		},  
-		style: {
-			size: 'responsive',
-			label :'checkout'
-		},
 
-			// Set up the transaction
-			createOrder: function(data, actions) {
-				let eltotaltvs = "" + document.querySelector('[data-js-totalfacture]').innerHTML;
-				//console.log(eltotaltvs);
-				return actions.order.create({
-					purchase_units: [{
-						amount: {
-							
-							value: eltotaltvs
-						}
-					}]
-				});
-			},
-
-			// Finalize the transaction
-			onApprove: function(data, actions) {
-				return actions.order.capture().then(function(details) {
-					// Show a success message to the buyer
-					alert('La transaction a été faite ' + details.payer.name.given_name +'!');
-					console.log(data);
-					
-					document.location.href='index.php?Magasin&action=confPayement'; 
-
-				});
-			}
-		}).render('#paypal-button-container');
-
-
-
-	</script>		
 </div>
 </section>
+
+<section>
+
+
+

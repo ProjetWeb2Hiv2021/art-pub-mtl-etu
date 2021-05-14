@@ -19,7 +19,7 @@
                         if($data["marque"]){
                         foreach ($data["marque"] as $marque) {
                         ?>
-                            <option data-js-idMarque="<?= $marque["idMarque"] ?>" data-js-idFabricant="<?= $marque["idFabricant"] ?>" data-js-idstatus="<?= $marque["statut"] ?>" value="<?= $marque["marque"] ?>"><?= $marque["marque"] ?></option>
+                            <option data-js-idMarque="<?= $marque["idMarque"] ?>" data-js-idFabricant="<?= $marque["idFabricant"] ?>" data-js-idstatus="<?= $marque["marqueStatut"] ?>" value="<?= $marque["marque"] ?>"><?= $marque["marque"] ?></option>
                         <?php
                             }
                         }
