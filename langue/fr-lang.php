@@ -180,4 +180,41 @@ define('TXT__GESTIONUME_GESMOD', 'Gerer marques');
 /* formulaire commande */
 define('TXT__FORMCOM_MPAI', 'Methode de maiement');
 define('TXT__FORMCOM_EXP', 'Expedition');
+
+/* vue  Gestion*/
+define('TXT__GESTICRUD_ADD', 'Ajouter');
+define('TXT__GESTICRUD_MAJ', 'Mettre à jour');
+define('TXT__GESTICRUD_SUPP', 'Supprimer');
+define('TXT__MODELE_GMP', 'Groupe moto propulseur :');
+define('TXT__BTNFORMSUTMIT', 'Soumettre');
+define('TXT__MODELE_TC', 'Type de carburant :');
+define('TXT__MODELE_CHASSIS', 'Chassis :');
+define('TXT__MODELE_MANUFACTURER', 'Fabricant :');
+/* vue  Gestion Fabricant*/
+//define('TXT__GESTIONU_ACT', 'Action');
+define('TXT__GESTIONU_AJFAB', 'Ajouter un fabricant');
+define('TXT__GESTIONU_SUPPFAB', 'Suprimmer fabricant');
+define('TXT__GESTIONU_GESMODFAB', 'Gestion fabricant ');
+define('TXT__GESTIONU_GESMMAJFAB', 'Mette à jour fabricant ');
+
+/* vue  Gestion GRoupeMotoPropulseur*/
+//define('TXT__GESTIONU_ACT', 'Action');
+define('TXT__GESTIONU_AJGMP', 'Ajouter un GMP');
+define('TXT__GESTIONU_SUPPGMP', 'Suprimmer GMP');
+define('TXT__GESTIONU_GESMODGMP', 'Gestion de GMP');
+define('TXT__GESTIONU_GESMMAJGMP', 'Mettre à jour GMP ');
+
+/* vue  Gestion Type de carburant*/
+//define('TXT__GESTIONU_ACT', 'Action');
+define('TXT__GESTIONU_AJTC', 'Ajouter un type de carburant');
+define('TXT__GESTIONU_SUPPTC', 'Suprimmer type de carburant');
+define('TXT__GESTIONU_GESMODTC', 'Gestion type de carburant');
+define('TXT__GESTIONU_GESMMAJTC', 'Mettre à jour type de carburant');
+
+/* vue  Gestion Chassis*/
+//define('TXT__GESTIONU_ACT', 'Action');
+define('TXT__GESTIONU_AJCHAS', 'Ajouter un chassis');
+define('TXT__GESTIONU_SUPPCHAS', 'Suprimmer chassis');
+define('TXT__GESTIONU_GESMODCHAS', 'Gestion de chassis');
+define('TXT__GESTIONU_GESMMAJCHAS', 'Mettre à jour chassis');
 ?>

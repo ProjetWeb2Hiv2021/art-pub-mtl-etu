@@ -16,7 +16,7 @@
 
 
 	<form>
-		<h1>Mettre à jour un type de Carburant</h1>
+		<h1><?=TXT__GESTIONU_GESMMAJTC?></h1>
 		<div class="input-wrapper" data-js-input-wrapper>
 			<div class="ligne distribue">
 				<label for="idTypeCarburant">ID :</label>
@@ -26,7 +26,7 @@
 
 		<div class="input-wrapper" data-js-input-wrapper>
 			<div class="ligne distribue">
-				<label for="typeCarburant">Type de carburant :</label>
+				<label for="typeCarburant"><?=TXT__MODELE_TC?></label>
 				<input type="text" id="typeCarburant" required data-js-param="typeCarburant" value=<?php echo '"'.$type.'"' ?>>
 			</div>
 			
@@ -35,7 +35,7 @@
 		</div> 
 
 
-		<button data-js-btnMAJ>Soumettre</button>
+		<button data-js-btnMAJ><?=TXT__BTNFORMSUTMIT?></button>
 	</form>
 </section>
 

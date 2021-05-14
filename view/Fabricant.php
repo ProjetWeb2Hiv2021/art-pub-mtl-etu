@@ -1,10 +1,10 @@
 <section data-component="Fabricant">
-    <h2>Gérer fabricant</h2>      
+    <h2><?=TXT__GESTIONU_GESMODFAB?></h2>      
     <div data-js-component="Form" class="ligne">
 
         <section class="infoModele" >
 
-            <div class="ligne distribue"><label for="fabricant">Fabricant :</label>
+            <div class="ligne distribue"><label for="fabricant"><?=TXT__GESTIONU_GESMODFAB?> :</label>
                 <select data-js-fabricant name="fabricant" id="fabricant">
                     <?php
                         $fabricant = $data["fabricant"];
@@ -21,9 +21,9 @@
             <div>
             </div>
             <div>
-                <button data-js-btnAjouter>Ajouter</button>
-                <button data-js-btnMisAJour>Mettre à jour</button>
-                <button data-js-btnSupprimer>Supprimer</button>
+            <button data-js-btnAjouter><?=TXT__GESTICRUD_ADD?></button>
+            <button data-js-btnMisAJour><?=TXT__GESTICRUD_MAJ?></button>
+            <button data-js-btnSupprimer><?=TXT__GESTICRUD_SUPP?></button>
             </div>
         </section>        
     </div>
