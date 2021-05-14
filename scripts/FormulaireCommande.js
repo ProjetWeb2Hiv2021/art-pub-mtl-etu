@@ -137,7 +137,7 @@ class FormulaireCommande{
                             }
                             
 
-                            let htmlUtilisateur =`<h2>Veuillez vérifier vos les informations ci dessous</h2>
+                            let htmlUtilisateur =`<h2>Veuillez vérifier les informations ci-dessous</h2>
                                                 <div data-js-utilisateur="${reponse[0].idUtilisateur}">
                                                     <p class="ligne distribue"><span>Nom :</span><span>${reponse[0].nomFamille}</span></p>
                                                     <p class="ligne distribue"><span>Prenom :</span><span>${reponse[0].prenom}</span></p>
@@ -315,9 +315,7 @@ class FormulaireCommande{
                     let path =`Commande_AJAX&action=ajoutCommande`;
                     this.callAJAXACM(param, path);  
                     
-                    /* document.location.href='index.php?Magasin&action=FormulaireConfPaye'; */
-                    /* sessionStorage.removeItem('commande');
-                    sessionStorage.removeItem('Panier'); */
+
                 }else{
                    /*  Gannina */
                    this.el_Btncommander3.style.display ="none";

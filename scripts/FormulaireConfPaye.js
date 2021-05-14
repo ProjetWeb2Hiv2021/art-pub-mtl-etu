@@ -10,6 +10,7 @@ class FormulaireConfPaye {
 
         this._elSubmit.addEventListener('click', (e) => {
             e.preventDefault(); console.log('Confirmation addEventListener');
+                
                 document.location.href='index.php?'; 
 
 
