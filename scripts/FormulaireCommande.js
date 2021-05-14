@@ -98,25 +98,25 @@ class FormulaireCommande{
                 if (xhr.readyState === 4) {							
                     if (xhr.status === 200) {
                         let reponse = JSON.parse(xhr.responseText);
+                        const formatConfig = {
+                                style: "currency",
+                                currency: "CAD", 
+                                minimumFractionDigits: 2,
+                                currencyDisplay: "symbol",
+                            };
+                        const leFormatter = new Intl.NumberFormat("fr-CA", formatConfig);
                         if(reponse.modele && reponse.marque && reponse.couleurfr && reponse.km && reponse.prixVente){
                             let html =`<div data-js-voiturcommande=${reponse.idVoiture}>
                                             <div data-js-description>
-                                                Modele voiture : ${reponse.modele} de la marque ${reponse.marque} de couleur ${reponse.couleurfr} avec ${reponse.km} au compteur
+                                                Modele voiture : ${reponse.modele} de la marque ${reponse.marque} de couleur ${reponse.couleurfr} avec `+new Intl.NumberFormat().format(reponse.km)+` km au compteur
                                             </div>
                                             <div data-js-prix="${reponse.prixVente}">
-                                                ${reponse.prixVente} $
+                                                `+leFormatter.format(reponse.prixVente)+` 
                                             </div>
                                         </div>`;
 
                             let recap = this._el.querySelector('[data-js-utilisateur]');
                             recap.insertAdjacentHTML("beforeend", html);
-                              //Afficher le boutton payment par paypal
-/*                             let payement = document.querySelector('[data-js-payement]');
-                            
-                             payement.classList.remove('hidden'); */
-                             /* this._elProce.classList.remove('hidden'); */
-
-
                             
                             /* calcul prix facture */
                             this.calculTotal(reponse.prixVente);
@@ -135,17 +135,19 @@ class FormulaireCommande{
                                     shipping = 75;
                                 }
                             }
+                            
+
                             let htmlUtilisateur =`<h2>Veuillez vérifier vos les informations ci dessous</h2>
                                                 <div data-js-utilisateur="${reponse[0].idUtilisateur}">
-                                                    <p>Nom :${reponse[0].nomFamille}</p>
-                                                    <p>Prenom :${reponse[0].prenom}</p>
-                                                    <p>Adresse :${reponse[0].noCivique} ${reponse[0].rue} ${reponse[0].ville} ${reponse[0].province} ${reponse[0].codePostal}</p>
-                                                    <p>telephone :${reponse[0].telephone}</p>
+                                                    <p class="ligne distribue"><span>Nom :</span><span>${reponse[0].nomFamille}</span></p>
+                                                    <p class="ligne distribue"><span>Prenom :</span><span>${reponse[0].prenom}</span></p>
+                                                    <p class="ligne distribue"><span>Adresse :</span><span>${reponse[0].noCivique} ${reponse[0].rue} ${reponse[0].ville} ${reponse[0].province} ${reponse[0].codePostal}</span></p>
+                                                    <p class="ligne distribue"><span>Téléphone :</span><span>${reponse[0].telephone}</span></p>
                                                 </div>
                                                 <div data-js-taxe>
-                                                    <div class="prixTaxe" data-js-tvh='${reponse[0].tvh}'><div>TVH: ${reponse[0].tvh} % </div><div data-js-totaltvh></div></div>
-                                                    <div class="prixTaxe" data-js-tvp='${reponse[0].tvp}'><div>TVP: ${reponse[0].tvp} % </div><div data-js-totaltvp></div></div>
-                                                    <div class="prixTaxe" data-js-tvs='${reponse[0].tvs}'><div>TVS: ${reponse[0].tvs} % </div><div data-js-totaltvs></div></div>
+                                                    <div class="prixTaxe" data-js-tvh='${reponse[0].tvh}'><div>TVH: `+reponse[0].tvh+` % </div><div data-js-totaltvh></div></div>
+                                                    <div class="prixTaxe" data-js-tvp='${reponse[0].tvp}'><div>TVP: `+reponse[0].tvp+` % </div><div data-js-totaltvp></div></div>
+                                                    <div class="prixTaxe" data-js-tvs='${reponse[0].tvs}'><div>TVS: `+reponse[0].tvs+` % </div><div data-js-totaltvs></div></div>
                                                     <div class="prixTaxe" data-js-shiping='${shipping}' ><div>Livraison: </div><div data-js-totalshiping></div></div>
                                                     <div class="prixTaxe" data-js-total><div>TOTAL :</div><div data-js-totalfacture></div></div>
                                                 </div>
@@ -190,21 +192,25 @@ class FormulaireCommande{
         let totalTvp = 0;
         let totalTvs = 0;
         let totalShiping = Number(recap.querySelector('[data-js-shiping]').dataset.jsShiping);
-        console.log(totalShiping);
-        console.log(eltotaltvs);
-        console.log(elTotal);
+        
 
-
+        const formatConfig = {
+                                style: "currency",
+                                currency: "CAD", 
+                                minimumFractionDigits: 2,
+                                currencyDisplay: "symbol",
+                            };
+        const leFormatter = new Intl.NumberFormat("fr-CA", formatConfig);
         totalTvh = (Number(prixVente)*Number(elTvh))/100;
         totalTvp = (Number(prixVente)*Number(elTvp))/100;
         totalTvs = (Number(prixVente)*Number(elTvs))/100;
         totalFacture = (Number(prixVente) +totalTvh+totalTvp+totalTvs+totalShiping);
         
-        eltotaltvh.innerHTML = (Number(eltotaltvh.innerHTML) + totalTvh).toFixed(2);
-        eltotaltvp.innerHTML = (Number(eltotaltvp.innerHTML) + totalTvp).toFixed(2);
-        eltotaltvs.innerHTML = (Number(eltotaltvs.innerHTML) + totalTvs).toFixed(2);
-        elTotal.innerHTML = (Number(elTotal.innerHTML) + totalFacture).toFixed(2);
-        eltotalShiping.innerHTML = (Number(eltotalShiping.innerHTML) + totalShiping).toFixed(2);
+        eltotaltvh.innerHTML = leFormatter.format((Number(eltotaltvh.innerHTML) + totalTvh));
+        eltotaltvp.innerHTML = leFormatter.format((Number(eltotaltvp.innerHTML) + totalTvp));
+        eltotaltvs.innerHTML = leFormatter.format((Number(eltotaltvs.innerHTML) + totalTvs));
+        elTotal.innerHTML = leFormatter.format((Number(elTotal.innerHTML) + totalFacture));
+        eltotalShiping.innerHTML = leFormatter.format((Number(eltotalShiping.innerHTML) + totalShiping));
 
     }
  
