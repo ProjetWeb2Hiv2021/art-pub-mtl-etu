@@ -316,8 +316,8 @@ class FormulaireCommande{
                     this.callAJAXACM(param, path);  
                     
                     /* document.location.href='index.php?Magasin&action=FormulaireConfPaye'; */
-                    /* sessionStorage.removeItem('commande');
-                    sessionStorage.removeItem('Panier'); */
+                    sessionStorage.removeItem('commande');
+                    sessionStorage.removeItem('Panier');
                 }else{
                    /*  Gannina */
                    this.el_Btncommander3.style.display ="none";
@@ -344,7 +344,8 @@ class FormulaireCommande{
                    let param = `idUtilisateur=${idUtilisateur}&idModePaiement=${idModePaiement}&idExpedition=${idExpedition}`;
                    let path =`Commande_AJAX&action=ajoutCommande`;
                    this.callAJAXACM(param, path);  
-
+                   sessionStorage.removeItem('commande');
+                   sessionStorage.removeItem('Panier');
 
                 }
 
