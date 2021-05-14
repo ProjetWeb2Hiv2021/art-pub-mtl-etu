@@ -20,7 +20,7 @@ class FormulaireCommande{
         console.log(this._elCarteCredit);
   
         // récupère élément username
-
+        console.log( this._el.querySelectorAll('.paypal-button-label-container').addA);
         this.init();
         
     }
@@ -30,6 +30,7 @@ class FormulaireCommande{
         // appel le script de validation front-end
         
         /* if (validation.isValid){ */
+        
 
         this._elSubmit.addEventListener('click', (e) => {
             e.preventDefault();
@@ -37,6 +38,7 @@ class FormulaireCommande{
            
             
         });
+
         this.gesionbtncommander3(); 
         /* gestion btn retour */
         
@@ -108,7 +110,7 @@ class FormulaireCommande{
                         if(reponse.modele && reponse.marque && reponse.couleurfr && reponse.km && reponse.prixVente){
                             let html =`<div data-js-voiturcommande=${reponse.idVoiture}>
                                             <div data-js-description>
-                                                Modele voiture : ${reponse.modele} de la marque ${reponse.marque} de couleur ${reponse.couleurfr} avec `+reponse.km+` km au compteur
+                                                Modele voiture : ${reponse.modele} de la marque ${reponse.marque} de couleur ${reponse.couleurfr} avec ${reponse.km} km au compteur
                                             </div>
                                             <div data-js-prix="${reponse.prixVente}">
                                                 `+leFormatter.format(reponse.prixVente)+` 
@@ -206,12 +208,11 @@ class FormulaireCommande{
         totalTvs = (Number(prixVente)*Number(elTvs))/100;
         totalFacture = (Number(prixVente) +totalTvh+totalTvp+totalTvs+totalShiping);
         
-        eltotaltvh.innerHTML = (Number(eltotaltvh.innerHTML) + totalTvh).toFixed(2);
-        eltotaltvp.innerHTML = (Number(eltotaltvp.innerHTML) + totalTvp).toFixed(2);
-        eltotaltvp.innerHTML = (Number(eltotaltvp.innerHTML) + totalTvp).toFixed(2);
-        eltotaltvs.innerHTML = (Number(eltotaltvs.innerHTML) + totalTvs).toFixed(2);
-        elTotal.innerHTML = (Number(elTotal.innerHTML) + totalFacture).toFixed(2);
-        eltotalShiping.innerHTML = (Number(eltotalShiping.innerHTML) + totalShiping).toFixed(2);
+        eltotaltvh.innerHTML = leFormatter.format((Number(eltotaltvh.innerHTML) + totalTvh));
+        eltotaltvp.innerHTML = leFormatter.format((Number(eltotaltvp.innerHTML) + totalTvp));
+        eltotaltvs.innerHTML = leFormatter.format((Number(eltotaltvs.innerHTML) + totalTvs));
+        elTotal.innerHTML = leFormatter.format((Number(elTotal.innerHTML) + totalFacture));
+        eltotalShiping.innerHTML = leFormatter.format((Number(eltotalShiping.innerHTML) + totalShiping));
 
     }
  
@@ -291,6 +292,7 @@ class FormulaireCommande{
                 let idUtilisateur = this._el.querySelector('[data-js-utilisateur]').dataset.jsUtilisateur;
                 
                 let totalCommande = Number(this._el.querySelector('[data-js-totalfacture]').innerHTML);
+
                 console.log(this._el.querySelector('[data-js-totalfacture]'));
                 let idModePaiement = "";
                 let idExpedition = "";
@@ -326,11 +328,13 @@ class FormulaireCommande{
                    this.el_FormCarteCredit.style.display = "none";
                    this._elForm.style.display ="none";
                    let recap = this._el.querySelector('[data-js-recap]');
-                   console.log("Test total");
+                   
                    console.log(document.querySelector('[data-js-totalfacture]'));
-                   console.log(document.querySelector('[data-js-totalfacture]').innerHTML);
+                   console.log(Number(document.querySelector('[data-js-totalfacture]').innerHTML));
+
                    let totalfacture = "" + document.querySelector('[data-js-totalfacture]').innerHTML;
                    recap.classList.add('hidden');
+                   console.log(totalfacture);
                    //Afficher le boutton payment par paypal
                    let payement = document.querySelector('[data-js-payement]');
                                    
@@ -341,10 +345,19 @@ class FormulaireCommande{
                    payement.classList.remove('hidden');
                    elQuantite.innerHTML = Intl.NumberFormat('fr-CA').format(totalfacture) + "$";
 
-                   
+                   this.gestionPayPal();
+                   this.ecoutePaypal();
+                  /*  champ.addEventListener("change", function() {
+                    let param = `idUtilisateur=${idUtilisateur}&idModePaiement=${idModePaiement}&idExpedition=${idExpedition}`;
+                           let path =`Commande_AJAX&action=ajoutCommande`;
+                           this.callAJAXACM(param, path);  
+                           sessionStorage.removeItem('commande');
+                           sessionStorage.removeItem('Panier');
+                  }); */
+
                    let param = `idUtilisateur=${idUtilisateur}&idModePaiement=${idModePaiement}&idExpedition=${idExpedition}`;
                    let path =`Commande_AJAX&action=ajoutCommande`;
-                   this.callAJAXACM(param, path);  
+                   this.callAJAXACMPAYPAL(param, path);  
                    sessionStorage.removeItem('commande');
                    sessionStorage.removeItem('Panier');
 
@@ -402,28 +415,20 @@ class FormulaireCommande{
     ajoutFacture = (idCommande) =>{
         let param = `idCommande=${idCommande}`;
         let path =`Commande_AJAX&action=ajoutFacture`;
+       
+        
         this.callAJAXFACT(param, path);  
     }
     ajoutLigneCommande = (idCommande) =>{
-        
         let path =`Commande_AJAX&action=ajoutLigneCommande`;
-
         let voitureCommande = this._el.querySelectorAll('[data-js-voiturcommande]');
-
         console.log(voitureCommande);
-
         for (let j = 0; j < voitureCommande.length; j++) {
-
             const voiture = voitureCommande[j];
-
             let idVoiture = voiture.dataset.jsVoiturcommande;
-
             let param = `idCommande=${idCommande}&idVoiture=${idVoiture}`;
-
             console.log(param);
-
             this.callAJAXA(param, path);
-
         }
          
     }
@@ -500,6 +505,8 @@ class FormulaireCommande{
 					alert('La transaction a été faite ' + details.payer.name.given_name +'!');
 					console.log(data);
                     localStorage.setItem('datapaypal', JSON.stringify(data));
+                    document.querySelector('[data-js-paypal]').style.backgroundColor = "red";
+                    /* document.querySelector('.paypal-button-label-container').focus(); */
 /*                     let param = `idUtilisateur=${idUtilisateur}&idModePaiement=${idModePaiement}&idExpedition=${idExpedition}`;
                     let path =`Commande_AJAX&action=ajoutCommande`;
                     section.callAJAXACM(param, path);   */
@@ -507,10 +514,96 @@ class FormulaireCommande{
 				});
 			}
 		}).render('#paypal-button-container');
-
+       
 
 
 	
     }
-      
+    ecoutePaypal = () =>{
+        var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutationRecord) {
+                document.location.href=`index.php?Magasin&action=confPayement&idFacture`;
+               });    
+             });
+            
+            var target = document.querySelector('[data-js-paypal]');
+            observer.observe(target, { attributes : true, attributeFilter : ['style'] });
+    }
+    callAJAXFACTPAYPAL = (param, path) => {
+
+        // Déclaration de l'objet XMLHttpRequest
+        let xhr;
+        xhr = new XMLHttpRequest();
+
+        // Initialisation de la requète
+        if (xhr) {	
+            
+            // Ouverture de la requète : fichier recherché
+            xhr.open('POST', 'index.php?'+path);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
+            // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
+            xhr.addEventListener('readystatechange', () => {
+
+                if (xhr.readyState === 4) {							
+                    if (xhr.status === 200) {
+                        let reponse = JSON.parse(xhr.responseText);
+
+                       
+                        this._el.setAttribute("data-js-idfacture", reponse);
+                        
+                    
+     
+                    } else if (xhr.status === 404) {
+                        console.log('Le fichier appelé dans la méthode open() n’existe pas.');
+                    }
+                }
+            });
+            // Envoi de la requète
+
+            xhr.send(param);
+        }
+    }
+    callAJAXACMPAYPAL = (param, path) => {
+
+        // Déclaration de l'objet XMLHttpRequest
+        let xhr;
+        xhr = new XMLHttpRequest();
+
+        // Initialisation de la requète
+        if (xhr) {	
+            
+            // Ouverture de la requète : fichier recherché
+            xhr.open('POST', 'index.php?'+path);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
+            // Écoute l'objet XMLHttpRequest instancié et défini le comportement en callback
+            xhr.addEventListener('readystatechange', () => {
+
+                if (xhr.readyState === 4) {							
+                    if (xhr.status === 200) {
+                        let reponse = JSON.parse(xhr.responseText);
+                        
+                        this.ajoutLigneCommande(reponse);
+                        this.ajoutFacturepaypal(reponse);
+                        
+     
+                    } else if (xhr.status === 404) {
+                        console.log('Le fichier appelé dans la méthode open() n’existe pas.');
+                    }
+                }
+            });
+            // Envoi de la requète
+
+            xhr.send(param);
+        }
+    }
+    ajoutFacturepaypal = (idCommande) =>{
+        let param = `idCommande=${idCommande}`;
+        let path =`Commande_AJAX&action=ajoutFacture`;
+       
+        
+        this.callAJAXFACTPAYPAL(param, path);  
+    }
+
 }

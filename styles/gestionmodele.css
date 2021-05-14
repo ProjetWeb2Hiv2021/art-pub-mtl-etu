@@ -9,6 +9,10 @@
   flex-direction: column;
   justify-content: space-between;
 }
+#gestionModeles a{
+  text-decoration: none;
+  color: white;
+}
 #gestionModeles input, #gestionModeles button,  #gestionModeles select{
   height: 30px;
 }
@@ -16,7 +20,7 @@
   line-height: initial;
   border-radius: initial;
   position: relative;
-  top :-6px
+  top :-8px
 
 }
 
@@ -52,50 +56,3 @@
     margin-right: auto;
   }
 }
-
-/* .FormulaireAjoutUtilisateur .distribue input, .FormulaireAjoutUtilisateur .distribue select{
-  width: 40%;
-}
-
-.FormulaireAjoutUtilisateur form{
-  max-width: 70%;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top:30px;
-  margin-bottom:30px;
-}
-.FormulaireAjoutUtilisateur button {
-  background-color: #ed712b;
-  color: white;
-  padding: 5px 5px;
-  margin: 2px 2px;
-  cursor: pointer;
-  text-shadow: 1px 1px 1px #000;
-  border-radius: 5px;
-  width: 100px;
-  display: block;
-  margin-left: auto;
-
-}
-.input-wrapper {
-  margin-bottom: 15px;
-}
-
-@media screen and (max-width: 615px) {
-  
-  .FormulaireAjoutUtilisateur .distribue{
-    flex-direction: column;
-  }
-  .FormulaireAjoutUtilisateur .distribue input, .Profil .distribue select{
-    width: 100%;
-    min-width: 200px;
-  }
-  .FormulaireAjoutUtilisateur .input-wrapper{
-    align-content: center;
-  }
-  .FormulaireAjoutUtilisateur .distribue label{
-    font-size: 14pt;
-  }
-
-}
- */

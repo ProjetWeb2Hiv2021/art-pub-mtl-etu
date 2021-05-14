@@ -9,6 +9,10 @@
   flex-direction: column;
   justify-content: space-between;
 }
+#gestionMarque a{
+  text-decoration: none;
+  color: white;
+}
 #gestionMarque input, #gestionMarque button,  #gestionMarque select{
   height: 30px;
 }
@@ -16,7 +20,7 @@
   line-height: initial;
   border-radius: initial;
   position: relative;
-  top :-6px
+  top :-8px
 
 }
 
