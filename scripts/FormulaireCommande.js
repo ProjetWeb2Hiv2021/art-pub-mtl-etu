@@ -108,7 +108,7 @@ class FormulaireCommande{
                         if(reponse.modele && reponse.marque && reponse.couleurfr && reponse.km && reponse.prixVente){
                             let html =`<div data-js-voiturcommande=${reponse.idVoiture}>
                                             <div data-js-description>
-                                                Modele voiture : ${reponse.modele} de la marque ${reponse.marque} de couleur ${reponse.couleurfr} avec `+new Intl.NumberFormat().format(reponse.km)+` km au compteur
+                                                Modele voiture : ${reponse.modele} de la marque ${reponse.marque} de couleur ${reponse.couleurfr} avec `+reponse.km+` km au compteur
                                             </div>
                                             <div data-js-prix="${reponse.prixVente}">
                                                 `+leFormatter.format(reponse.prixVente)+` 
@@ -206,11 +206,12 @@ class FormulaireCommande{
         totalTvs = (Number(prixVente)*Number(elTvs))/100;
         totalFacture = (Number(prixVente) +totalTvh+totalTvp+totalTvs+totalShiping);
         
-        eltotaltvh.innerHTML = leFormatter.format((Number(eltotaltvh.innerHTML) + totalTvh));
-        eltotaltvp.innerHTML = leFormatter.format((Number(eltotaltvp.innerHTML) + totalTvp));
-        eltotaltvs.innerHTML = leFormatter.format((Number(eltotaltvs.innerHTML) + totalTvs));
-        elTotal.innerHTML = leFormatter.format((Number(elTotal.innerHTML) + totalFacture));
-        eltotalShiping.innerHTML = leFormatter.format((Number(eltotalShiping.innerHTML) + totalShiping));
+        eltotaltvh.innerHTML = (Number(eltotaltvh.innerHTML) + totalTvh).toFixed(2);
+        eltotaltvp.innerHTML = (Number(eltotaltvp.innerHTML) + totalTvp).toFixed(2);
+        eltotaltvp.innerHTML = (Number(eltotaltvp.innerHTML) + totalTvp).toFixed(2);
+        eltotaltvs.innerHTML = (Number(eltotaltvs.innerHTML) + totalTvs).toFixed(2);
+        elTotal.innerHTML = (Number(elTotal.innerHTML) + totalFacture).toFixed(2);
+        eltotalShiping.innerHTML = (Number(eltotalShiping.innerHTML) + totalShiping).toFixed(2);
 
     }
  
@@ -315,13 +316,9 @@ class FormulaireCommande{
                     let path =`Commande_AJAX&action=ajoutCommande`;
                     this.callAJAXACM(param, path);  
                     
-<<<<<<< HEAD
-
-=======
-                    /* document.location.href='index.php?Magasin&action=FormulaireConfPaye'; */
+                    
                     sessionStorage.removeItem('commande');
                     sessionStorage.removeItem('Panier');
->>>>>>> de5c52588472b59d1e3a07f78cade61947eba694
                 }else{
                    /*  Gannina */
                    this.el_Btncommander3.style.display ="none";
@@ -411,13 +408,23 @@ class FormulaireCommande{
         
         let path =`Commande_AJAX&action=ajoutLigneCommande`;
 
-        let commande = JSON.parse(sessionStorage.commande);
-            for (let j = 0; j < commande.length; j++) {
-                let idVoiture = commande[j].idVoiture;
-                let param = `idCommande=${idCommande}&idVoiture=${idVoiture}`;
-                console.log(param);
-                this.callAJAXA(param, path);                
-            }
+        let voitureCommande = this._el.querySelectorAll('[data-js-voiturcommande]');
+
+        console.log(voitureCommande);
+
+        for (let j = 0; j < voitureCommande.length; j++) {
+
+            const voiture = voitureCommande[j];
+
+            let idVoiture = voiture.dataset.jsVoiturcommande;
+
+            let param = `idCommande=${idCommande}&idVoiture=${idVoiture}`;
+
+            console.log(param);
+
+            this.callAJAXA(param, path);
+
+        }
          
     }
     
