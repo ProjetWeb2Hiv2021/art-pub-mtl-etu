@@ -2,10 +2,10 @@
 
 	<!-- plusieurs criteres -->
 	<form>
-		<h1>Ajouter un fabricant</h1>
+		<h1><?=TXT__GESTIONU_AJFAB?></h1>
 		<div class="input-wrapper" data-js-input-wrapper>
 			<div class="ligne distribue">
-				<label for="fabricant">Fabricant :</label>
+				<label for="fabricant"><?=TXT__MODELE_MANUFACTURER?></label>
 				<input type="text" id="fabricant" required data-js-param="fabricant">
 			</div>
 			
@@ -14,7 +14,7 @@
 		</div> 
 
 
-		<button data-js-btn>Soumettre</button>
+		<button data-js-btn><?=TXT__BTNFORMSUTMIT?></button>
 	</form>
 </section>
 

@@ -2,10 +2,10 @@
 
 	<!-- plusieurs criteres -->
 	<form>
-		<h1>Ajouter un type de carburant</h1>
+		<h1><?=TXT__GESTIONU_AJTC?></h1>
 		<div class="input-wrapper" data-js-input-wrapper>
 			<div class="ligne distribue">
-				<label for="typecarburant">TypeCarburant :</label>
+				<label for="typecarburant"><?=TXT__MODELE_TC?></label>
 				<input type="text" id="typeCarburant" required data-js-param="typeCarburant">
 			</div>
 			
@@ -14,7 +14,7 @@
 		</div> 
 
 
-		<button data-js-btn>Soumettre</button>
+		<button data-js-btn><?=TXT__BTNFORMSUTMIT?></button>
 	</form>
 </section>
 

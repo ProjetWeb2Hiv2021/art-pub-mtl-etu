@@ -72,7 +72,7 @@
         <tr>
             
             <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
-            '<td><a href="index.php?GroupeMotopropulseur&action=connexion">Gérer GroupeMotopropulseur</a></td>';
+            '<td><a href="index.php?GroupeMotopropulseur&action=connexion">'.TXT__GESTIONU_GESMODGMP.'</a></td>';
             ?> 
                     
         </tr>
@@ -80,14 +80,14 @@
         <tr>
             
              <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
-            '<td><a href="index.php?Chassis&action=connexion">Gérer Chassis</a></td>';
+            '<td><a href="index.php?Chassis&action=connexion">'.TXT__GESTIONU_GESMODCHAS.'</a></td>';
             ?>          
         </tr>
 
         <tr>
             
             <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé") echo
-            '<td><a href="index.php?TypeCarburant&action=connexion">Gérer TypeCarburant</a></td>';
+            '<td><a href="index.php?TypeCarburant&action=connexion">'.TXT__GESTIONU_GESMODTC.'</a></td>';
             ?>           
         </tr>
 
@@ -95,7 +95,7 @@
         <tr>
             <td></td>
             <?php if(isset($_SESSION["typeUtilisateur"])&& $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Administrateur"|| $_SESSION["typeUtilisateur"]["typeUtilisateurfr"]=="Employé")  echo
-            '<td><a href="index.php?Fabricant&action=connexion">Gérer Fabricant </a></td>';
+            '<td><a href="index.php?Fabricant&action=connexion">'.TXT__GESTIONU_GESMODFAB.'</a></td>';
             ?>           
         </tr>
         	
