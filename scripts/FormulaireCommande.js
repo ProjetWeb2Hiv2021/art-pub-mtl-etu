@@ -110,10 +110,10 @@ class FormulaireCommande{
                         if(reponse.modele && reponse.marque && reponse.couleurfr && reponse.km && reponse.prixVente){
                             let html =`<div data-js-voiturcommande=${reponse.idVoiture}>
                                             <div data-js-description>
-                                                Modele voiture : ${reponse.modele} de la marque ${reponse.marque} de couleur ${reponse.couleurfr} avec `+new Intl.NumberFormat().format(reponse.km)+` km au compteur
+                                                Modele voiture : ${reponse.modele} de la marque ${reponse.marque} de couleur ${reponse.couleurfr} avec ${reponse.km} km au compteur
                                             </div>
                                             <div data-js-prix="${reponse.prixVente}">
-                                                `+leFormatter.format(reponse.prixVente)+` 
+                                                `+(Number(reponse.prixVente)).toFixed(2)+`
                                             </div>
                                         </div>`;
 
@@ -139,7 +139,7 @@ class FormulaireCommande{
                             }
                             
 
-                            let htmlUtilisateur =`<h2>Veuillez vérifier vos les informations ci dessous</h2>
+                            let htmlUtilisateur =`<h2>Veuillez vérifier les informations ci-dessous</h2>
                                                 <div data-js-utilisateur="${reponse[0].idUtilisateur}">
                                                     <p class="ligne distribue"><span>Nom :</span><span>${reponse[0].nomFamille}</span></p>
                                                     <p class="ligne distribue"><span>Prenom :</span><span>${reponse[0].prenom}</span></p>
@@ -208,11 +208,11 @@ class FormulaireCommande{
         totalTvs = (Number(prixVente)*Number(elTvs))/100;
         totalFacture = (Number(prixVente) +totalTvh+totalTvp+totalTvs+totalShiping);
         
-        eltotaltvh.innerHTML = leFormatter.format((Number(eltotaltvh.innerHTML) + totalTvh));
-        eltotaltvp.innerHTML = leFormatter.format((Number(eltotaltvp.innerHTML) + totalTvp));
-        eltotaltvs.innerHTML = leFormatter.format((Number(eltotaltvs.innerHTML) + totalTvs));
-        elTotal.innerHTML = (Number(elTotal.innerHTML) + totalFacture);
-        eltotalShiping.innerHTML = leFormatter.format((Number(eltotalShiping.innerHTML) + totalShiping));
+        eltotaltvh.innerHTML = (Number(eltotaltvh.innerHTML) + totalTvh).toFixed(2);
+        eltotaltvp.innerHTML = (Number(eltotaltvp.innerHTML) + totalTvp).toFixed(2);
+        eltotaltvs.innerHTML = (Number(eltotaltvs.innerHTML) + totalTvs).toFixed(2);
+        elTotal.innerHTML = (Number(elTotal.innerHTML) + totalFacture).toFixed(2);
+        eltotalShiping.innerHTML = (Number(eltotalShiping.innerHTML) + totalShiping).toFixed(2);
 
     }
  
@@ -318,7 +318,7 @@ class FormulaireCommande{
                     let path =`Commande_AJAX&action=ajoutCommande`;
                     this.callAJAXACM(param, path);  
                     
-                    /* document.location.href='index.php?Magasin&action=FormulaireConfPaye'; */
+                    
                     sessionStorage.removeItem('commande');
                     sessionStorage.removeItem('Panier');
                 }else{
