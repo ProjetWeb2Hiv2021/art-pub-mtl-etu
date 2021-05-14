@@ -20,10 +20,10 @@
             </div>
             <div>
             </div>
-            <div>
-            <button data-js-btnAjouter><?=TXT__GESTICRUD_ADD?></button>
-            <button data-js-btnMisAJour><?=TXT__GESTICRUD_MAJ?></button>
-            <button data-js-btnSupprimer><?=TXT__GESTICRUD_SUPP?></button>
+            <div class = "gestionBoutton">
+                <button data-js-btnAjouter><?=TXT__GESTICRUD_ADD?></button>
+                <button data-js-btnMisAJour><?=TXT__GESTICRUD_MAJ?></button>
+                <button data-js-btnSupprimer><?=TXT__GESTICRUD_SUPP?></button>
             </div>
         </section>        
     </div>
