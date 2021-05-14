@@ -97,6 +97,7 @@
 				if(isset($nomUtilisateur)){
 					$stmt = $this->connexion->prepare("SELECT * from utilisateur 
 													JOIN province ON utilisateur.idProvince = province.Idprovince
+													JOIN ville ON utilisateur.idVille = ville.IdVille
 													WHERE nomUtilisateur=:nomUtilisateur");
 					$stmt->bindParam(":nomUtilisateur", $nomUtilisateur);
 					$stmt->execute();

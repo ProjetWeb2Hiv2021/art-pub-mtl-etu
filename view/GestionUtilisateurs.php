@@ -19,7 +19,7 @@
                     foreach ($data["utilisateurs"] as $utilisateur) {
                     ?>
                 
-                    <option data-js-param="username" value="<?= $utilisateur["nomUtilisateur"]?>"  data-js-idutilisateur="<?= $utilisateur["idUtilisateur"]?>" data-js-idprovince="<?= $utilisateur["idProvince"]?>"
+                    <option value="<?= $utilisateur["nomUtilisateur"]?>"  data-js-idutilisateur="<?= $utilisateur["idUtilisateur"]?>" data-js-idprovince="<?= $utilisateur["idProvince"]?>"
                     data-js-idville="<?= $utilisateur["idVille"]?>" data-js-idtypeutilisateur="<?= $utilisateur["idTypeUtilisateur"]?>"
                     data-js-username="<?= $utilisateur["nomUtilisateur"]?>" 
                     data-js-motpasse="<?= $utilisateur["motPasse"]?>" 
@@ -29,9 +29,9 @@
                     data-js-datenaissance="<?= $utilisateur["dateNaissance"]?>" 
                     data-js-telephone="<?= $utilisateur["telephone"]?>" 
                     data-js-nocivique="<?= $utilisateur["noCivique"]?>" 
-                    data-js-rue="<?= $utilisateur["ruedateNaissance"]?>" 
+                    data-js-rue="<?= $utilisateur["rue"]?>" 
                     data-js-codepostal="<?= $utilisateur["codePostal"]?>" 
-                    data-js-telephoneportable>="<?= $utilisateur["telephonePortable"]?>"><?= $utilisateur["nomUtilisateur"] ?></option>
+                    data-js-telephoneportable="<?= $utilisateur["telephonePortable"]?>"><?= $utilisateur["nomUtilisateur"] ?></option>
                     <?php
                     }
                 }
