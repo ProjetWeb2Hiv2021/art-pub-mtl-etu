@@ -2,10 +2,10 @@
 
 	<!-- plusieurs criteres -->
 	<form>
-		<h1>Ajouter un chassis</h1>
+		<h1><?=TXT__GESTIONU_AJCHAS?></h1>
 		<div class="input-wrapper" data-js-input-wrapper>
 			<div class="ligne distribue">
-				<label for="chassis">Chassis :</label>
+				<label for="chassis"><?=TXT__MODELE_CHASSIS?> </label>
 				<input type="text" id="chassis" required data-js-param="chassis">
 			</div>
 			
@@ -14,7 +14,7 @@
 		</div> 
 
 
-		<button data-js-btn>Soumettre</button>
+		<button data-js-btn><?=TXT__BTNFORMSUTMIT?></button>
 	</form>
 </section>
 

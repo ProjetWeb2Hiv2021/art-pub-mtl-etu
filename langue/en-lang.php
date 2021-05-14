@@ -177,6 +177,45 @@ define('TXT__GESTIONUME_GESMOD', 'Trademark management');
 define('TXT__FORMCOM_MPAI', 'Method of housing');
 define('TXT__FORMCOM_EXP', 'Shipping');
 
+/* vue  Gestion*/
+define('TXT__GESTICRUD_ADD', 'Add');
+define('TXT__GESTICRUD_MAJ', 'Edit');
+define('TXT__GESTICRUD_SUPP', 'Delete');
+define('TXT__BTNFORMSUTMIT', 'Submit');
+define('TXT__MODELE_GMP', 'GMP :');
+define('TXT__MODELE_TC', 'Motor fuel :');
+define('TXT__MODELE_CHASSIS', 'Rolling chassis :');
+define('TXT__MODELE_MANUFACTURER', 'Manufacturer :');
+/* vue  Gestion Fabricant*/
+//define('TXT__GESTIONU_ACT', 'Action');
+define('TXT__GESTIONU_AJFAB', 'Add new manufacturer');
+define('TXT__GESTIONU_SUPPFAB', 'Delete manufacturer');
+define('TXT__GESTIONU_GESMODFAB', 'Manufacturer management');
+define('TXT__GESTIONU_GESMMAJFAB', 'Update manufacturer');
+
+
+/* vue  Gestion GRoupeMotoPropulseur*/
+//define('TXT__GESTIONU_ACT', 'Action');
+define('TXT__GESTIONU_AJGMP', 'Add new GMP');
+define('TXT__GESTIONU_SUPPGMP', 'Delete GMP');
+define('TXT__GESTIONU_GESMODGMP', 'GMP management');
+define('TXT__GESTIONU_GESMMAJGMP', 'Update GMP');
+
+/* vue  Gestion Type de carburant*/
+//define('TXT__GESTIONU_ACT', 'Action');
+define('TXT__GESTIONU_AJTC', 'Add new Motor fuel');
+define('TXT__GESTIONU_SUPPTC', 'Delete Motor fuel');
+define('TXT__GESTIONU_GESMODTC', 'Motor fuel management');
+define('TXT__GESTIONU_GESMMAJTC', 'Update Motor fuel management');
+
+/* vue  Gestion Chassis*/
+//define('TXT__GESTIONU_ACT', 'Action');
+define('TXT__GESTIONU_AJCHAS', 'Add new Rolling chassis');
+define('TXT__GESTIONU_SUPPCHAS', 'Delete Rolling chassis');
+define('TXT__GESTIONU_GESMODCHAS', 'Rolling chassis management');
+define('TXT__GESTIONU_GESMMAJCHAS', 'Update rolling chassis');
+
+
 
 
 

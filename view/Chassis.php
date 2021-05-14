@@ -1,10 +1,10 @@
 <section data-component="Chassis">
-    <h2>Gérer chassis</h2>      
+    <h2><?=TXT__GESTIONU_GESMODCHAS?></h2>      
     <div data-js-component="Form" class="ligne">
 
         <section class="infoModele" >
 
-            <div class="ligne distribue"><label for="chassis">Chassis :</label>
+            <div class="ligne distribue"><label for="chassis"><?=TXT__GESTIONU_GESMODCHAS?> :</label>
                 <select data-js-chassis name="chassis" id="chassis">
                     <?php
                         $chassis = $data["chassis"];
@@ -21,9 +21,9 @@
             <div>
             </div>
             <div>
-                <button data-js-btnAjouter>Ajouter</button>
-                <button data-js-btnMisAJour>Mettre à jour</button>
-                <button data-js-btnSupprimer>Supprimer</button>
+            <button data-js-btnAjouter><?=TXT__GESTICRUD_ADD?></button>
+                <button data-js-btnMisAJour><?=TXT__GESTICRUD_MAJ?></button>
+                <button data-js-btnSupprimer><?=TXT__GESTICRUD_SUPP?></button>
             </div>
         </section>        
     </div>

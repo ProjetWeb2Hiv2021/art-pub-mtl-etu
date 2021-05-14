@@ -1,10 +1,10 @@
 <section data-component="GroupeMotopropulseur">
-    <h2>Gérer groupe motopropulseur</h2>   
+    <h2><?=TXT__GESTIONU_GESMODGMP?></h2>   
     <div data-js-component="Form" class="ligne">
 
         <section class="infoModele" >
 
-            <div class="ligne distribue"><label for="groupeMoto">Groupe motopropulseur :</label>
+            <div class="ligne distribue"><label for="groupeMoto"><?=TXT__GESTIONU_GESMODGMP?> :</label>
                 <select data-js-groupeMotopropulseur name="groupeMoto" id="groupeMoto">
                     <?php
                         $groupeMotopropulseur = $data["groupeMotopropulseur"];
@@ -21,9 +21,9 @@
             <div>
             </div>
             <div>
-                <button data-js-btnAjouter>Ajouter</button>
-                <button data-js-btnMisAJour>Mettre à jour</button>
-                <button data-js-btnSupprimer>Supprimer</button>
+                <button data-js-btnAjouter><?=TXT__GESTICRUD_ADD?></button>
+                <button data-js-btnMisAJour><?=TXT__GESTICRUD_MAJ?></button>
+                <button data-js-btnSupprimer><?=TXT__GESTICRUD_SUPP?></button>
             </div>
         </section>        
     </div>

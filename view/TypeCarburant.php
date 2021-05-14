@@ -1,10 +1,10 @@
 <section data-component="TypeCarburant">
-    <h2>Gérer type de carburant</h2>
+    <h2><?=TXT__GESTIONU_GESMODTC?></h2>
     <div data-js-component="Form" class="ligne">
 
         <section class="infoModele" >
 
-            <div class="ligne distribue"><label for="typeCarburant">TypeCarburant :</label>
+            <div class="ligne distribue"><label for="typeCarburant"><?=TXT__GESTIONU_GESMODTC?> :</label>
                 <select data-js-typeCarburant name="typeCarburant" id="typeCarburant">
                     <?php
                         $typeCarburant = $data["typeCarburant"];
@@ -21,9 +21,9 @@
             <div>
             </div>
             <div>
-                <button data-js-btnAjouter>Ajouter</button>
-                <button data-js-btnMisAJour>Mettre à jour</button>
-                <button data-js-btnSupprimer>Supprimer</button>
+            <button data-js-btnAjouter><?=TXT__GESTICRUD_ADD?></button>
+            <button data-js-btnMisAJour><?=TXT__GESTICRUD_MAJ?></button>
+            <button data-js-btnSupprimer><?=TXT__GESTICRUD_SUPP?></button>
             </div>
         </section>        
     </div>

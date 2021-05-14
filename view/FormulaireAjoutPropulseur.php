@@ -2,10 +2,10 @@
 
 	<!-- plusieurs criteres -->
 	<form>
-		<h1>Ajouter un groupe MotoPropulseur</h1>
+		<h1><?=TXT__GESTIONU_AJGMP?></h1>
 		<div class="input-wrapper" data-js-input-wrapper>
 			<div class="ligne distribue">
-				<label for="groupeMoto">GroupeMotopropulseur :</label>
+				<label for="groupeMoto"><?=TXT__MODELE_GMP?></label>
 				<input type="text" id="groupeMotopropulseur" required data-js-param="groupeMotopropulseur">
 			</div>
 			
@@ -14,7 +14,7 @@
 		</div> 
 
 
-		<button data-js-btn>Soumettre</button>
+		<button data-js-btn><?=TXT__BTNFORMSUTMIT?></button>
 	</form>
 </section>
 

@@ -18,7 +18,7 @@
 
 
 	<form>
-		<h1>Mettre à jour groupe MotoPropulseur</h1>
+		<h1><?=TXT__GESTIONU_GESMMAJGMP?></h1>
 		<div class="input-wrapper" data-js-input-wrapper>
 			<div class="ligne distribue">
 				<label for="idGroupeMoto">ID :</label>
@@ -28,7 +28,7 @@
 
 		<div class="input-wrapper" data-js-input-wrapper>
 			<div class="ligne distribue">
-				<label for="groupeMoto">GroupeMotopropulseur :</label>
+				<label for="groupeMoto"><?=TXT__MODELE_GMP?></label>
 				<input type="text" id="groupeMotopropulseur" required data-js-param="groupeMotopropulseur" value=<?php echo '"'.$groupeMoto.'"' ?>>
 			</div>
 			
@@ -37,7 +37,7 @@
 		</div> 
 
 
-		<button data-js-btnMAJ>Soumettre</button>
+		<button data-js-btnMAJ><?=TXT__BTNFORMSUTMIT?></button>
 	</form>
 </section>
 
