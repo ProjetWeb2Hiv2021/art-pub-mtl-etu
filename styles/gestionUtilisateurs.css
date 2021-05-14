@@ -1,0 +1,99 @@
+#GestionUtilisateurs{
+  max-width: 80%;
+  min-width: 50%;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  padding: 35px;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#GestionUtilisateurs [data-js-utilisateurs]{
+  height: 30px;
+  margin-top: 20px;
+}
+#GestionUtilisateurs .supp{
+  border: 0;
+    background-color: red;
+    
+}
+#GestionUtilisateurs input, #GestionUtilisateurs label, #GestionUtilisateurs select{
+  width:300px;
+
+}
+#GestionUtilisateurs select{
+  margin-left:initial;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+#GestionUtilisateurs a{
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 840px) {
+  #GestionUtilisateurs .ligne{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+  }
+  #GestionUtilisateurs .ligne select{
+    display: block;
+  }
+  #GestionUtilisateurs .input-wrapper [data-js-utilisateurs]{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+ 
+}
+
+/* .FormulaireAjoutUtilisateur .distribue input, .FormulaireAjoutUtilisateur .distribue select{
+  width: 40%;
+}
+
+.FormulaireAjoutUtilisateur form{
+  max-width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top:30px;
+  margin-bottom:30px;
+}
+.FormulaireAjoutUtilisateur button {
+  background-color: #ed712b;
+  color: white;
+  padding: 5px 5px;
+  margin: 2px 2px;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 5px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+
+}
+.input-wrapper {
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 615px) {
+  
+  .FormulaireAjoutUtilisateur .distribue{
+    flex-direction: column;
+  }
+  .FormulaireAjoutUtilisateur .distribue input, .Profil .distribue select{
+    width: 100%;
+    min-width: 200px;
+  }
+  .FormulaireAjoutUtilisateur .input-wrapper{
+    align-content: center;
+  }
+  .FormulaireAjoutUtilisateur .distribue label{
+    font-size: 14pt;
+  }
+
+}
+ */

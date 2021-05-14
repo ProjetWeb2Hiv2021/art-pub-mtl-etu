@@ -1,0 +1,54 @@
+#gestionMarque{
+  max-width: 80%;
+  min-width: 50%;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  padding: 35px;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#gestionMarque input, #gestionMarque button,  #gestionMarque select{
+  height: 30px;
+}
+#gestionMarque button{
+  line-height: initial;
+  border-radius: initial;
+  position: relative;
+  top :-6px
+
+}
+
+
+
+@media screen and (max-width: 950px) {
+  #gestionMarque td{
+    display: block;
+ 
+  }
+  #gestionMarque select, #gestionMarque input{
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #gestionMarque .input-wrapper{
+    display: flex;
+  }
+  #gestionMarque th{
+    display: none;
+  }
+  #gestionMarque button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  #gestionMarque [data-js-ajoutmarque] > table{
+
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

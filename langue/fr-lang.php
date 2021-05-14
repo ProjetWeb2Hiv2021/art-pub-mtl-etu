@@ -169,13 +169,13 @@ define('TXT__VOITURE_LISTE_ERR', 'pas de voitures pour le moment');
 define('TXT__GESTIONU_GER', 'Gestion');
 /* vue  Gestion MODELE*/
 define('TXT__GESTIONU_ACT', 'Action');
-define('TXT__GESTIONU_AJMOD', 'Ajouter nouveau modele');
+define('TXT__GESTIONU_AJMOD', 'Ajouter');
 define('TXT__GESTIONU_SUPP', 'Supprimer modele');
 define('TXT__GESTIONU_GESMOD', 'Gestion des modeles');
 /* vue  Gestion MODELE*/
 define('TXT__GESTIONUME_ACT', 'Action');
-define('TXT__GESTIONUME_MODIF', 'Modifier marque');
-define('TXT__GESTIONUME_AJMOD', 'Ajouter nouvelle marque');
+define('TXT__GESTIONUME_MODIF', 'Modifier');
+define('TXT__GESTIONUME_AJMOD', 'Ajouter ');
 define('TXT__GESTIONUME_GESMOD', 'Gerer marques');
 /* formulaire commande */
 define('TXT__FORMCOM_MPAI', 'Methode de maiement');

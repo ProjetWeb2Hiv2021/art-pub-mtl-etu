@@ -7,13 +7,13 @@
     } 
 ?>
 
-<div class="table-wrapper" data-component="GestionUtilisateurs" data-js-component="Form">
+<div class="table-wrapper" data-component="GestionUtilisateurs" data-js-component="Form" id="GestionUtilisateurs">
 <h2><?=TXT__UTILISATEUR_ACC?></h2>
     <button><a href="index.php?Utilisateur&action=creerClient"><?=TXT__CRM_CREE_COMPTE?></a></button>
 
     <div class="input-wrapper" data-js-input-wrapper>
                 <select name="utilisateurs" data-js-utilisateurs size=1>
-                    
+                <option value="">Choisissez un utilisateur</option> 
             <?php 
                 if($data["utilisateurs"]){
                     foreach ($data["utilisateurs"] as $utilisateur) {
@@ -227,7 +227,7 @@
 			<div class="box-btnProfil">
 			<button class="btnmodifprofil" data-js-btn><?=TXT__PROFIL_MODIFIER?></button>
 
-			<button class="btnsupprofil" data-js-btn-supp><?=TXT__PROFIL_SUPP?></button>
+			<button class="btnmodifprofil supp" data-js-btn-supp><?=TXT__PROFIL_SUPP?></button>
 			</div>
 
 		</form>
