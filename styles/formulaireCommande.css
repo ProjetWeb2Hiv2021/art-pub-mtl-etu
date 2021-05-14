@@ -1,16 +1,16 @@
-
-.formulaireCommande{
+.formulaireCommande {
   width: 100%;
 
   display: flex;
   flex-direction: column;
-
+  height: 70vh;
+  justify-content: center;
 }
-#paimentform{
+#paimentform {
   display: none;
 }
 
-.formulaireCommande form{
+.formulaireCommande form {
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -20,49 +20,48 @@
   background-color: rgba(0, 0, 0, 0.2);
   justify-content: space-between;
 }
-.formulaireCommande form div{
+.formulaireCommande form div {
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
-.formulaireCommande form button{
+.formulaireCommande form button {
   padding: 5px;
   margin-left: auto;
   margin-right: auto;
   min-width: 20%;
   margin-bottom: 20px;
 }
-[data-js-btncommander3]{
+[data-js-btncommander3] {
   display: block;
 }
-[data-js-payer]{
+[data-js-payer] {
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 25px;
 }
-.formulaireCommande .input-wrapper{
+.formulaireCommande .input-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 5px;
   min-width: 70%;
-
-
 }
-.formulaireCommande .input-wrapper input, .formulaireCommande .input-wrapper label{
+.formulaireCommande .input-wrapper input,
+.formulaireCommande .input-wrapper label {
   margin-left: 20px;
   margin-top: 20px;
 }
-.formulaireCommande .input-wrapper label{
+.formulaireCommande .input-wrapper label {
   display: inline-block;
 }
-[data-js-formcredit]{
+[data-js-formcredit] {
   width: 70%;
   margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
 }
-[data-js-recap]{
+[data-js-recap] {
   max-width: 70%;
   margin-top: 50px;
   margin-bottom: 70px;
@@ -72,77 +71,75 @@
   margin-left: auto;
   margin-right: auto;
 }
-[data-js-voiturcommande]{
+[data-js-voiturcommande] {
   display: flex;
   justify-content: space-between;
 }
-[data-js-voiturcommande] div{
+[data-js-voiturcommande] div {
   display: inline-block;
-
 }
-[data-js-voiturcommande] > div{
+[data-js-voiturcommande] > div {
   max-width: 70%;
-
 }
-[data-js-taxe]{
+[data-js-taxe] {
   display: flex;
   flex-direction: column;
   margin-bottom: 35px;
-  
 }
-[data-js-taxe] div{
+[data-js-taxe] div {
   width: 40%;
 }
-.prixTaxe{
+.prixTaxe {
   display: flex;
   margin-top: 20px;
   margin-left: auto;
 }
-.prixTaxe div{
+.prixTaxe div {
   text-align: right;
 }
 
-[data-js-taxe]{
+[data-js-taxe] {
   display: flex;
   flex-direction: column;
-  
 }
 
-[data-js-totaltvh], [data-js-totaltvp], [data-js-totaltvs], [data-js-totalfacture], [data-js-totalshiping]{
+[data-js-totaltvh],
+[data-js-totaltvp],
+[data-js-totaltvs],
+[data-js-totalfacture],
+[data-js-totalshiping] {
   margin-left: 50px;
 }
-#btn2 a, [data-js-submit] a{
+#btn2 a,
+[data-js-submit] a {
   width: 100%;
   text-decoration: none;
   color: white;
-
 }
-.data-js-paimentform [data-js-param="info"]{
+.data-js-paimentform [data-js-param="info"] {
   display: flex;
   flex-direction: row;
 }
-.formulaireCommande form [data-js-param="info"] div{
+.formulaireCommande form [data-js-param="info"] div {
   display: inline-block;
 }
-[data-js-retour]:hover{
+[data-js-retour]:hover {
   color: red;
   cursor: pointer;
 }
-[data-livraion]{
+[data-livraion] {
   display: flex;
   flex-direction: column;
   width: 100%;
   margin: none;
 }
-[data-js-input="Expedition"]{
+[data-js-input="Expedition"] {
   display: flex;
   flex-direction: column;
 }
 @media screen and (max-width: 810px) {
-  
-  .formulaireCommande form [data-js-param="info"] div{
+  .formulaireCommande form [data-js-param="info"] div {
     display: block;
     margin: initial;
   }
-
 }
