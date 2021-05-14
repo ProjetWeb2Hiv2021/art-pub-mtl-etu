@@ -44,10 +44,6 @@
   background: #dc6a2b;
 }
 
-.fl-table tr:nth-child(even) {
-  background: #dfdbdb;
-}
-
 /* Responsive */
 
 @media (max-width: 767px) {
@@ -125,4 +121,5 @@ main.UtilisateurSystemes {
 }
 .UtilisateurSystemes a {
   text-decoration: none;
+  width: 235px;
 }

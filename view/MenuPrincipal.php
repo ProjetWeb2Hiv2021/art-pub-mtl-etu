@@ -18,7 +18,7 @@
             
                 <li class="item-right" data-js-langue><a href="index.php?Magasin&action=accueil&lang=<?=$lang?>"><?=$lang?></a></li>
             </ul>
-            </h5> 
+             
                 <hr>     
         </div>
 

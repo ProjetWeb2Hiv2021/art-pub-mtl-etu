@@ -1,4 +1,3 @@
-</div>
 <footer>
   <div class="content-footer">
     <div class="adresse">

@@ -35,7 +35,7 @@
 
 		public function miseAJourMarque($idMarque, $nouvelleValeurMarque, $idFabricant, $statut){
 			try {
-				$stmt = $this->connexion->prepare("UPDATE marque SET idFabricant=:idFabricant,marque=:nouvelleValeurMarque,statut=:statut WHERE idMarque=:idMarque");
+				$stmt = $this->connexion->prepare("UPDATE marque SET idFabricant=:idFabricant,marque=:nouvelleValeurMarque,marqueStatut=:statut WHERE idMarque=:idMarque");
 				$stmt->bindParam(":idMarque", $idMarque);
 				$stmt->bindParam(":idFabricant", $idFabricant);
 				$stmt->bindParam(":nouvelleValeurMarque", $nouvelleValeurMarque);
@@ -51,7 +51,7 @@
 		
 		public function ajouterMarque($marque, $idFabricant, $statut){
 			try {
-				$stmt = $this->connexion->prepare("INSERT INTO marque (marque, idFabricant, statut) VALUES (:marque, :idFabricant, :statut)");
+				$stmt = $this->connexion->prepare("INSERT INTO marque (marque, idFabricant, marqueStatut) VALUES (:marque, :idFabricant, :statut)");
 				$stmt->bindParam(":marque", $marque);
 				$stmt->bindParam(":idFabricant", $idFabricant);
 				$stmt->bindParam(":statut", $statut);

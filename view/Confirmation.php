@@ -1,4 +1,4 @@
-<main>
+<main class="confirmationMain">
 	<h2>Mon panier</h2>
 
 	<div data-component="ConfirmationList" 

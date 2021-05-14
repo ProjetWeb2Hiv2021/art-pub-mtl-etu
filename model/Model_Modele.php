@@ -39,7 +39,7 @@
 		//Chercher  modèle par idMarque
 		public function getListeModeleByMarque($idMarque) {
 			try {
-							$stmt = $this->connexion->query("SELECT idModele, idMarque,modele FROM modele where status=1  && idMarque='" . $idMarque."'");
+							$stmt = $this->connexion->query("SELECT idModele, idMarque,modele FROM modele where modeleStatut=1  && idMarque='" . $idMarque."'");
 							$stmt->execute();
 							return $stmt->fetchAll();
 							//return 1;
@@ -73,7 +73,7 @@
 				$existe = $this->chercherModeledasnVoiture($id) ;         
 				if ($existe["cont"]  >= 1 )
 				{					
-					$stmt = $this->connexion->prepare("UPDATE modele SET status=0 WHERE idModele=".$id);
+					$stmt = $this->connexion->prepare("UPDATE modele SET modeleStatut=0 WHERE idModele=".$id);
 					$stmt->execute();
 				}
 				
@@ -197,7 +197,7 @@
 		}
 		public function miseAJourModele($idModele, $nouvelleValeurModels, $idMarque,$status){
 			try {
-				$stmt = $this->connexion->prepare("UPDATE modele SET idMarque=:idMarque,modele=:model,status=:status WHERE idModele=:idModele");
+				$stmt = $this->connexion->prepare("UPDATE modele SET idMarque=:idMarque,modele=:model,modeleStatut=:status WHERE idModele=:idModele");
 				$stmt->bindParam(":idModele", $idModele);
 				$stmt->bindParam(":idMarque", $idMarque);
 				$stmt->bindParam(":model", $nouvelleValeurModels);
@@ -212,7 +212,7 @@
 		}
 		public function ajouterModele($model, $idMarque, $status) {		
 			try {
-				$stmt = $this->connexion->prepare("INSERT INTO modele (modele, idMarque, status) VALUES (:model, :idMarque, :status)");
+				$stmt = $this->connexion->prepare("INSERT INTO modele (modele, idMarque, modeleStatut) VALUES (:model, :idMarque, :status)");
 				$stmt->bindParam(":idMarque", $idMarque);
 				$stmt->bindParam(":model", $model);
 				$stmt->bindParam(":status", $status);

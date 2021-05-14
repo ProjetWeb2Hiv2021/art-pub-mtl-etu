@@ -49,7 +49,7 @@ class FiltrerPlusieursCriteres{
                         this._elSubmit.classList.add('disabled');
                         this._elRafraichir.classList.add('disabled');
                     } 
-                    console.log(input.value);
+                    
                 }
             });
             this.populerSelectMarque();
@@ -58,10 +58,10 @@ class FiltrerPlusieursCriteres{
                 e.preventDefault();
                 let validation = new FormValidator(this._el);
                 
-                console.log(document.querySelector('[data-component="VoirPlus"]'));
+                
                 this.elBtnRetour.classList.remove("hidden");
 
-                console.log(validation.isValid);
+                
                 if (validation.isValid){
                     this.populerListeVoitureRecherche();
                     document.querySelector('[data-component="VoirPlus"]').classList.add("hidden");
@@ -207,7 +207,7 @@ class FiltrerPlusieursCriteres{
         }
         let idMarque = Number(this._elSelectMarque.options[this._elSelectMarque.selectedIndex].dataset.jsIdmarque) ;
         let idModele = Number(this._elSelectModele.options[this._elSelectModele.selectedIndex].dataset.jsIdmodele);
-        console.log(idModele, idMarque, anneeMin, anneeMax, prixMin, prixMax);
+        
         this.chargerListeVoitureRecherche(idModele, idMarque, anneeMin, anneeMax, prixMin, prixMax);
        
     }
@@ -229,7 +229,7 @@ class FiltrerPlusieursCriteres{
 
                         // Traitement du DOM
                        let reponse = JSON.parse(xhr.responseText);
-                       console.log(reponse);
+                       
 
                        this._elVoitures.innerHTML="";
                        
@@ -275,13 +275,11 @@ class FiltrerPlusieursCriteres{
                                 <img src="${cheminFichier}" alt="" class="voiture_liste__image">
                                 </div> 
                                 <div class = "info_voiture">
-                                    <h2>${marque}</h2>
-                                    <h2>${modele}</h2>
-                                    <h3>${prixVente}&nbsp;$</h3>                                    
-                                    <span>${annee}</span><br>                             
-                                    <span>${km} Km</span><br>                                                   
-                                    <span>${groupeMotopropulseur}</span><br>
-                                    
+                                    <h2>${reponse[j]["marque"]}&nbsp;${reponse[j]["modele"]}</h2>                                    
+                                    <h3>`+new Intl.NumberFormat().format(reponse[j]["prixVente"])+`&nbsp;$</h3>
+                                    <span>${reponse[j]["annee"]}</span>                             
+                                    <span>`+new Intl.NumberFormat().format(reponse[j]["km"])+` Km</span>
+                                    <span>${reponse[j]["groupeMotopropulseur"]}</span>                                    
                                 </div>             
                                 </article>`
                                 
@@ -292,7 +290,7 @@ class FiltrerPlusieursCriteres{
                         }else{
                             let htmlErr = "";
 
-                            htmlErr += `<p>Pas de voiture disponible pour cette recherche</p>`;
+                            htmlErr += `<p>Pas de voiture disponible pour ce filtre</p>`;
                             this._elVoitures.innerHTML = htmlErr;
                         }
 

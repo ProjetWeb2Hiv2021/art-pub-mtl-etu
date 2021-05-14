@@ -7,7 +7,7 @@
 			foreach ($data["utilisateur"] as $utilisateur) {
 	?>
 		<form data-js-id="<?= $utilisateur["idUtilisateur"]?>">
-			<button class="btnsupprofil" data-js-btn-supp><?=TXT__PROFIL_SUPP?></button>
+			
 			<div class="input-wrapper" data-js-input-wrapper>
 				<div class="ligne distribue">
 					<label for="username"><?=TXT__FAU_PSEUDO?></label>
@@ -189,14 +189,19 @@
 				</div>
 				<small class="error-message" data-js-error-msg></small>			
 			</div>
-
+			<div class="box-btnProfil">
 			<button class="btnmodifprofil" data-js-btn 
-			<?php
+						<?php
 				if(isset($data["commande"])){
 					echo "data-js-commande=1";
 				}
 			?>
+
 			><?=TXT__PROFIL_MODIFIER?></button>
+
+			<button class="btnsupprofil" data-js-btn-supp><?=TXT__PROFIL_SUPP?></button>
+			</div>
+
 		</form>
 	<?php
 		}
