@@ -8,10 +8,10 @@
 
 ?>
 
-<div class="table-wrapper" data-component="GestionModeles">
+<div class="table-wrapper" data-component="GestionModeles" id="gestionModeles">
 <h2><?=TXT__GESTIONU_GESMOD?></h2>
-    <div data-js-reponse style='text-align:center;color:green'></div>
-    <table class="fl-table">
+    <div data-js-reponse ></div>
+    <table class="">
         <thead>
         <tr>
             <th><?=TXT_MODELE?></th>
@@ -109,7 +109,7 @@
     </table>
     <h2><?=TXT__GESTIONU_AJMOD?></h2>
     <div data-js-ajoutmodel>
-        <table class="fl-table">
+        <table class="">
             <thead>
             <tr>
                 <th><?=TXT_MODELE?></th>

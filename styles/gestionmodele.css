@@ -1,0 +1,101 @@
+#gestionModeles{
+  max-width: 80%;
+  min-width: 50%;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  padding: 35px;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#gestionModeles input, #gestionModeles button,  #gestionModeles select{
+  height: 30px;
+}
+#gestionModeles button{
+  line-height: initial;
+  border-radius: initial;
+  position: relative;
+  top :-6px
+
+}
+
+
+
+@media screen and (max-width: 950px) {
+  #gestionModeles td{
+    display: block;
+ 
+  }
+  #gestionModeles select, #gestionModeles input{
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #gestionModeles .input-wrapper{
+    display: flex;
+  }
+  #gestionModeles th{
+    display: none;
+  }
+  #gestionModeles button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  [data-js-ajoutmodel]{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* .FormulaireAjoutUtilisateur .distribue input, .FormulaireAjoutUtilisateur .distribue select{
+  width: 40%;
+}
+
+.FormulaireAjoutUtilisateur form{
+  max-width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top:30px;
+  margin-bottom:30px;
+}
+.FormulaireAjoutUtilisateur button {
+  background-color: #ed712b;
+  color: white;
+  padding: 5px 5px;
+  margin: 2px 2px;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 5px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+
+}
+.input-wrapper {
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 615px) {
+  
+  .FormulaireAjoutUtilisateur .distribue{
+    flex-direction: column;
+  }
+  .FormulaireAjoutUtilisateur .distribue input, .Profil .distribue select{
+    width: 100%;
+    min-width: 200px;
+  }
+  .FormulaireAjoutUtilisateur .input-wrapper{
+    align-content: center;
+  }
+  .FormulaireAjoutUtilisateur .distribue label{
+    font-size: 14pt;
+  }
+
+}
+ */

@@ -16,6 +16,9 @@
 @import "./custom-k.css";
 @import "./voitureListeSGC.css";
 @import "./formulaireCommande.css";
+@import "./gestionUtilisateurs.css";
+@import "./gestionmodele.css";
+@import "./gestionmarque.css";
 
 body {
   background-color: #303030;
