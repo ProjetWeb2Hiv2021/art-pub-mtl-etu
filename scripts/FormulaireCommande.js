@@ -140,6 +140,7 @@ class FormulaireCommande{
                             
 
                             let htmlUtilisateur =`<h2>Veuillez vérifier les informations ci-dessous</h2>
+
                                                 <div data-js-utilisateur="${reponse[0].idUtilisateur}">
                                                     <p class="ligne distribue"><span>Nom :</span><span>${reponse[0].nomFamille}</span></p>
                                                     <p class="ligne distribue"><span>Prenom :</span><span>${reponse[0].prenom}</span></p>
@@ -347,13 +348,7 @@ class FormulaireCommande{
 
                    this.gestionPayPal();
                    this.ecoutePaypal();
-                  /*  champ.addEventListener("change", function() {
-                    let param = `idUtilisateur=${idUtilisateur}&idModePaiement=${idModePaiement}&idExpedition=${idExpedition}`;
-                           let path =`Commande_AJAX&action=ajoutCommande`;
-                           this.callAJAXACM(param, path);  
-                           sessionStorage.removeItem('commande');
-                           sessionStorage.removeItem('Panier');
-                  }); */
+
 
                    let param = `idUtilisateur=${idUtilisateur}&idModePaiement=${idModePaiement}&idExpedition=${idExpedition}`;
                    let path =`Commande_AJAX&action=ajoutCommande`;
