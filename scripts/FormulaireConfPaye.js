@@ -7,6 +7,11 @@ class FormulaireConfPaye {
 
     init = (e) => {
         console.log('Confirmation init test');
+        //Vider Panier
+        var elConteur = document.getElementById("conteurVoiture");
+        elConteur.innerHTML = "";
+        sessionStorage.removeItem('conteurVoiture');
+        sessionStorage.removeItem('Panier'); 
 
         this._elSubmit.addEventListener('click', (e) => {
             e.preventDefault(); console.log('Confirmation addEventListener');

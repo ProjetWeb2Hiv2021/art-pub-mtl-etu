@@ -8,10 +8,10 @@
 
 ?>
 
-<div class="table-wrapper" data-component="GestionMarque">
+<div class="table-wrapper" data-component="GestionMarque" id="gestionMarque">
 <h2><?=TXT__GESTIONUME_GESMOD?></h2>
     <div data-js-reponse></div>
-    <table class="fl-table">
+    <table class="">
                     <div class="input-wrapper" data-js-input-wrapper>
                             <select name="marque" data-js-marque size=1>
                         <?php
@@ -87,7 +87,7 @@
     </table>
     <h2><?=TXT__GESTIONU_AJMOD?></h2>
     <div data-js-ajoutmarque>
-        <table class="fl-table">
+        <table class="">
             <thead>
             <tr>
             <th><?=TXT__MODELE_MARQUE?></th>

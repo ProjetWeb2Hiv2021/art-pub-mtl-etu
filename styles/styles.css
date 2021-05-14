@@ -17,6 +17,9 @@
 @import "./voitureListeSGC.css";
 @import "./formulaireConfPaye.css";
 @import "./formulaireCommande.css";
+@import "./gestionUtilisateurs.css";
+@import "./gestionmodele.css";
+@import "./gestionmarque.css";
 
 body {
   background-color: #303030;
