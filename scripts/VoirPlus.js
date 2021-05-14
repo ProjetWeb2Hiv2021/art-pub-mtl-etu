@@ -18,7 +18,7 @@ class VoirPlus {
                 
             }            
 
-            if(document.querySelectorAll('[data-js-voiture-nbr]').length + this._nbrVoitureAcceuil  >= this._elNombreDeVoitures-1) {
+            if(document.querySelectorAll('[data-js-voiture-nbr]').length + this._nbrVoitureAcceuil  >= this._elNombreDeVoitures) {
                 
                 this._el.classList.add('hidden');
                 console.log(this._el.classList);
