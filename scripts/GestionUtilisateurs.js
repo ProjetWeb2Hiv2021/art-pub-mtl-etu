@@ -68,19 +68,19 @@ class GestionUtilisateurs{
             }
 
         }
-console.log(this.el_selectusername.dataset.jsUsername);
+        console.log(this.el_username);
 
-        this.el_username.value = this.el_selectusername.dataset.jsUsername;
-        this.el_motPasse.value = this.el_selectusername.dataset.jsMotpasse;
-        this.el_prenom.value = this.el_selectusername.dataset.jsPrenom;
-        this.el_nomFamille.value = this.el_selectusername.dataset.jsNomfamille;
-        this.el_courriel.value = this.el_selectusername.dataset.jsCourriel;   
-        this.el_dateNaissance.value = this.el_selectusername.dataset.jsDatenaissance;
-        this.el_telephone.value = this.el_selectusername.dataset.jsTelephone;
-        this.el_noCivique.value = this.el_selectusername.dataset.jsNocivique;
-        this.el_rue.value = this.el_selectusername.dataset.jsRue;
-        this.el_codePostal.value = this.el_selectusername.dataset.jsCodepostal;
-        this.el_telephonePortable.value = this.el_selectusername.dataset.jsTelephoneportable;				    
+        this.el_username.value = this.el_selectusername.options[this.el_selectusername.selectedIndex].dataset.jsUsername;
+       /*  this.el_motPasse.value = this.el_selectusername.options[this.el_selectusername.selectedIndex].dataset.jsMotpasse; */
+        this.el_prenom.value = this.el_selectusername.options[this.el_selectusername.selectedIndex].dataset.jsPrenom;
+        this.el_nomFamille.value = this.el_selectusername.options[this.el_selectusername.selectedIndex].dataset.jsNomfamille;
+        this.el_courriel.value = this.el_selectusername.options[this.el_selectusername.selectedIndex].dataset.jsCourriel;   
+        this.el_dateNaissance.value = this.el_selectusername.options[this.el_selectusername.selectedIndex].dataset.jsDatenaissance;
+        this.el_telephone.value = this.el_selectusername.options[this.el_selectusername.selectedIndex].dataset.jsTelephone;
+        this.el_noCivique.value = this.el_selectusername.options[this.el_selectusername.selectedIndex].dataset.jsNocivique;
+        this.el_rue.value = this.el_selectusername.options[this.el_selectusername.selectedIndex].dataset.jsRue;
+        this.el_codePostal.value = this.el_selectusername.options[this.el_selectusername.selectedIndex].dataset.jsCodepostal;
+        this.el_telephonePortable.value = this.el_selectusername.options[this.el_selectusername.selectedIndex].dataset.jsTelephoneportable;		    
         
           
         });
