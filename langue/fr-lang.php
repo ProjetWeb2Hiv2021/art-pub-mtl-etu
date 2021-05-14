@@ -178,7 +178,7 @@ define('TXT__GESTIONUME_MODIF', 'Modifier');
 define('TXT__GESTIONUME_AJMOD', 'Ajouter ');
 define('TXT__GESTIONUME_GESMOD', 'Gerer marques');
 /* formulaire commande */
-define('TXT__FORMCOM_MPAI', 'Methode de maiement');
+define('TXT__FORMCOM_MPAI', 'Methode de paiement');
 define('TXT__FORMCOM_EXP', 'Expedition');
 
 /* vue  Gestion*/
