@@ -1,4 +1,4 @@
-section class="formulaireCommande" data-component="FormulaireCommande" data-js-component="Form" data-js-nomutilisateur="<?= $data["nomUtilisateur"]?>" data-component="GestionPayPal">
+section class="formulaireCommande" data-component="FormulaireCommande" data-js-component="Form" data-js-nomutilisateur="<?= $data["nomUtilisateur"]?>">
 
 	
 
@@ -108,9 +108,7 @@ section class="formulaireCommande" data-component="FormulaireCommande" data-js-c
 </div>
 
 </div>
-</section>
 
-<section>
 
 
 
