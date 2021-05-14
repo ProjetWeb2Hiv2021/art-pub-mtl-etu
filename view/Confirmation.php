@@ -1,4 +1,4 @@
-<main>
+<main class="confirmationMain">
 	<h2>Mon panier</h2>
 
 	<div data-component="ConfirmationList" 
@@ -20,6 +20,6 @@
 		}
 		?>
 		 >Acheter</button>
-		<button data-js-btnReserver>Réserver</button>
+		
 	</div>
 </main>
