@@ -67,9 +67,11 @@
   margin-bottom: 70px;
   border-top: 1px solid #dc6a2b;
   border-bottom: 1px solid #dc6a2b;
-  padding: 10px;
+  padding: 10px 40px;
   margin-left: auto;
   margin-right: auto;
+  background-color: #ffffff;
+  color: #130602;
 }
 [data-js-voiturcommande] {
   display: flex;
